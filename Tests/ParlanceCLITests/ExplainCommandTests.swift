@@ -44,7 +44,7 @@ private final class ExplainNotice<Value: Sendable>: Sendable {
   }
   func wait() async throws -> Value {
     let deadline = DispatchWorkItem { self.resolve(.failure(Deadline())) }
-    DispatchQueue.global().asyncAfter(deadline: .now() + 3, execute: deadline)
+    DispatchQueue.global().asyncAfter(deadline: .now() + 30, execute: deadline)
     defer { deadline.cancel() }
     return try await withCheckedThrowingContinuation { continuation in
       let result: Result<Value, any Error>? = state.withLock { state in
