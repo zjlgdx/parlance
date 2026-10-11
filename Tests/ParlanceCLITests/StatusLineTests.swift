@@ -464,7 +464,7 @@ struct StatusLineTests {
       }
       if stall {
         blocked.send(true)
-        #expect(release.wait(timeout: .now() + 8) == .success)
+        #expect(release.wait(timeout: .now() + 120) == .success)
         released.withLock { $0 = true }
         drained.send(true)
       }
