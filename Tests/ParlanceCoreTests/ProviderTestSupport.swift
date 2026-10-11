@@ -5,8 +5,9 @@ import os
 @testable import ParlanceCore
 
 struct TestDeadline: Error {}
+// The default is generous for slow shared CI machines; a passing operation returns as soon as it ends.
 func bounded<T: Sendable>(
-  timeout duration: Duration = .seconds(2),
+  timeout duration: Duration = .seconds(30),
   _ operation: @escaping @Sendable () async throws -> T
 ) async throws -> T {
   let (stream, continuation) = AsyncThrowingStream<T, any Error>.makeStream()
