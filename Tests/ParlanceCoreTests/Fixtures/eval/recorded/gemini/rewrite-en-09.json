@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Run ⟦0⟧. It reports a missing header error despite the library already being installed.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>运行 ⟦0⟧。尽管库已经安装，但它报告了缺少头文件的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错误。</gloss>\n<alts><alt><text>Execute ⟦0⟧. Address the missing header error occurring"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " even though the library is installed.</text><note>使用更具执行力的动词 Address 来替代描述性表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述，更符合指令风格。</note></alt></alts>\n<fixes><fix>“run ⟦0⟧ have"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error about missing header”语法不合规范，缺少主谓一致及介词，已修正为更地道的英文描述。</fix></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 153,
+            "promptTokens" : 952
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-09",
+    "input" : "run `make test` have error about missing header, i already install the library before"
+  }
+}

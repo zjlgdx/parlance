@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Run ⟦0⟧ and check whether ⟦1⟧ occurs due to an"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " incorrect paths configuration in tsconfig.</best>\n<gloss>运行 ⟦0⟧ 并检查 ⟦1⟧ 是否"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "由于 tsconfig 中的 paths 配置错误而发生。</gloss>\n<alts><alt><text>Execute ⟦0⟧ and investigate"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " if the error ⟦1⟧ is caused by a misconfigured paths in tsconfig.</text><note>使用 investigate"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 替代 check whether，语义更偏向深入排查。</note></alt></alts>\n<fixes><fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“帮我查一下是不是”被转化为命令式的“check whether”，符合面向编码代理的简洁技术语气要求"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 151,
+            "promptTokens" : 967
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-02",
+    "input" : "跑 `npm run build` 报错 `Cannot find module './config'`，帮我查一下是不是 tsconfig 的 paths 配错了"
+  }
+}

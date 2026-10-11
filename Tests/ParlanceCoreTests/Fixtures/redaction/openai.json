@@ -1,0 +1,50 @@
+[
+  {
+    "name": "minimum",
+    "input": "sk-FAKEabcdefghijklmnop",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "project",
+    "input": "sk-proj-FAKEabcdefghijklmnop",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "anthropic",
+    "input": "sk-ant-FAKEabcdefghijklmnop",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "key characters",
+    "input": "sk-FAKE_abcd-efgh_ijkl-mnop",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "prose",
+    "input": "key (sk-FAKEabcdefghijklmnop), end",
+    "expected": "key ([REDACTED]), end",
+    "pem": false
+  },
+  {
+    "name": "too short",
+    "input": "sk-FAKEabcdefghijklmno",
+    "expected": "sk-FAKEabcdefghijklmno",
+    "pem": false
+  },
+  {
+    "name": "embedded identifier",
+    "input": "prefixsk-FAKEabcdefghijklmnop",
+    "expected": "prefixsk-FAKEabcdefghijklmnop",
+    "pem": false
+  },
+  {
+    "name": "sentence punctuation",
+    "input": "Value sk-FAKEabcdefghijklmnop.",
+    "expected": "Value [REDACTED].",
+    "pem": false
+  }
+]

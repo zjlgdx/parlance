@@ -1,0 +1,135 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">根本原因：`Package.resolved` 将 swift-collections 锁定在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "1.1.0 版本，但新的目标模块导入了在 1.1.3 中才添加的 `OrderedSet"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` API。CI 环境使用的是锁定文件，因此会在那里失败，而本地构建则会浮动更新到较新版本。请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "使用 `swift package update swift-collections` 来升级版本锁定。</translation>\n\n<plain>这段文本解释了由于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "版本锁定文件导致 CI 构建失败的原因，并给出了升级依赖包的解决方法。</plain>\n\n<terms><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><word>Root cause</word>\n<meaning>根本原因</meaning><here>导致问题的根本原因</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>Package.resolved</word>\n<meaning>Swift 包管理器版本锁定文件</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">记录了项目中各依赖项具体锁定版本的文件的名称</here></term>\n<term><word>swift-collections</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<meaning>Swift 集合扩展库</meaning><here>项目中引用的第三方 Swift 集合库名称</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>OrderedSet</word>\n<meaning>有序集合</meaning><here>代码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中调用的具体 API 类型</here></term>\n<term><word>CI</word>\n<meaning>持续集成</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>自动化构建和测试环境</here></term>\n<term><word>lockfile</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<meaning>锁定文件</meaning><here>指 Package.resolved，用于确保各环境依赖版本一致</here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></term>\n<term><word>float</word>\n<meaning>浮动（版本）</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本地未严格限制锁定文件，自动使用了更新的版本</here></term>\n<term><word>Bump the pin</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<meaning>提升固定版本</meaning><here>升级依赖包的锁定版本</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">swift package update swift-collections</word>\n<meaning>更新 swift-collections 包的命令</meaning><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "here>用于更新依赖版本的终端命令</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 458,
+            "promptTokens" : 328
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-09",
+    "input" : "Root cause: `Package.resolved` pins swift-collections 1.1.0, but the new target imports `OrderedSet` APIs that were added in 1.1.3. CI uses the lockfile, so it fails there while local builds float to the newer version. Bump the pin with `swift package update swift-collections`.",
+    "source" : "codex"
+  }
+}

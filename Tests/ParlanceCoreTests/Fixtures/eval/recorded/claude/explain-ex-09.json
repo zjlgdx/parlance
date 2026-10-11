@@ -1,0 +1,586 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>根"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原因：`Package.res"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "olved` "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定了 swift-coll"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ections 1.1.0，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "但"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "新的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " target 导"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "入了 1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".1.3 才"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "入的 `Ordered"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Set` API"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。CI 使用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "lockfile，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此在那"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里构建失败；本地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "构建则会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "浮动到较"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "新版本。用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `swift package update swift"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "-collections` 提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "升这个版本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这段"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "话"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明了 CI 构"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "建失败的原因：依"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "赖版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定在较"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧的 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "1.1.0，而新"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代码需要 1.1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".3 才"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有的 API，解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "决办法是更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "新该"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "依赖的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定版本。</plain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<terms>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>p"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ins</word><ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/p"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪnz/</ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "钉住、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "固定（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "版本）</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Package.resolved 把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "swift-collections 固"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定在 1.1.0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 版本，不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再自动升"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "级。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>lockfile</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈlɒk"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪl/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>锁文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件，记录依赖精"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确版本的文件</me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Package.resolved，CI"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 依"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "它安"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "装固"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本的依赖。</here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></term><term><word>float"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loʊt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>浮动，随"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变化</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本地构建没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定版本，会自"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用较新的 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "swift-collections 版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "B"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ump</word><ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/b"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʌmp/</ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a><meaning>提升"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "（版本号"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "）</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "swift-collections 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "锁定版本从 1."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "1.0 升级到包"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "含所"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "需 API 的版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 867,
+            "promptTokens" : 463,
+            "reasoningTokens" : 296
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-09",
+    "input" : "Root cause: `Package.resolved` pins swift-collections 1.1.0, but the new target imports `OrderedSet` APIs that were added in 1.1.3. CI uses the lockfile, so it fails there while local builds float to the newer version. Bump the pin with `swift package update swift-collections`.",
+    "source" : "codex"
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">已知限制，文档字符串中有记录：超时时只有 `/bin/sh` 被终止"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。它启动的辅助进程可能会比命令行工具（CLI）存活得更久，因为它故意留在前台进程组中，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这样通过 `/dev/tty` 提示的工具才能继续工作。</translation>\n\n<plain>这段文本解释了一个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "已知的程序限制：超时时只会杀死 shell 进程，而其启动的子进程可能会继续运行。</plain>\n\n<terms><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><word>Known limit</word>\n<meaning>已知限制</meaning><here>已知限制</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>docstring</word>\n<meaning>文档字符串</meaning><here>文档"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "字符串</here></term>\n<term><word>timeout</word>\n<meaning>超时</meaning><here>超时</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "here></term>\n<term><word>helper</word>\n<meaning>辅助程序，辅助进程</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">辅助进程</here></term>\n<term><word>CLI</word>\n<meaning>命令行界面"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，命令行工具</meaning><here>命令行工具</here></term>\n<term><word>foreground process group</word>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>前台进程组</meaning><here>前台进程组</here></term>\n<term><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>/dev/tty</word>\n<meaning>控制终端设备文件</meaning><here>/dev/tty</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 316,
+            "promptTokens" : 309
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-15",
+    "input" : "Known limit, documented in the docstring: on timeout only `/bin/sh` is killed. A helper it started may outlive the CLI, because it deliberately stays in the foreground process group so tools that prompt via `/dev/tty` keep working.",
+    "source" : "claude-code"
+  }
+}

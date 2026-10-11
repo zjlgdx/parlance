@@ -1,0 +1,105 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">当配置的 `api_key_cmd` 输出持续不断或意外"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "大量的标准输出/标准错误时，两个流都会无限制地追加长达 30 秒，因此该进程可能会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消耗数吉字节的内存/空间，并在超时触发之前被杀死。限制保留的输出，同时继续排"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "空两个管道。</translation>\n\n<plain>这段文本描述了一个安全/资源控制问题：需要限制命令输出流的大小以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "防止内存耗尽，同时仍要读取管道中的数据避免阻塞。</plain>\n\n<terms><term><word>api_"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "key_cmd</word><meaning>用于获取 API 密钥的配置命令</meaning><here>配置的用于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "获取 API 密钥的命令</here></term><term><word>stdout/stderr</word><meaning>标准输出和标准错误"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "流</meaning><here>标准输出和标准错误流</here></term><term><word>appended without limit</word><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>无限制地追加</meaning><here>无限制地追加</here></term><term><word>Cap"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the retained output</word><meaning>限制保留的输出</meaning><here>限制保留的输出大小</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>drain both pipes</word><meaning>排空两个管道</meaning><here>持续读取并排"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "空两个管道中的数据</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 291,
+            "promptTokens" : 316
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-04",
+    "input" : "When a configured `api_key_cmd` emits continuous or unexpectedly large stdout/stderr, both streams are appended without limit for up to 30 seconds, so the process can consume gigabytes and be killed before the timeout fires. Cap the retained output while continuing to drain both pipes.",
+    "source" : "codex"
+  }
+}

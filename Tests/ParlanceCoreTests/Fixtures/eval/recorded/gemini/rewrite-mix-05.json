@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Fix ⟦0⟧ dependency array by adding ⟦1⟧, which causes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " data not to refresh after switching users.</best>\n<gloss>修复 ⟦0⟧ 依赖数组，漏"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "掉了 ⟦1⟧，导致切换用户后数据没刷新。</gloss>\n<alts><alt><text>Update"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the ⟦0⟧ dependency array to include ⟦1⟧, preventing data from not refreshing after switching users.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "现在分词短语替代原因状语从句，使指令更紧凑。</note></alt></alts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>“漏了”直接机译为“missing”更地道，输入中的“导致……”从句稍"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "显冗长，重写为祈使句加原因状语更符合技术指令风格。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 175,
+            "promptTokens" : 969
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-05",
+    "input" : "这个 `useEffect` 依赖数组漏了 `userId`，导致切换用户后数据没刷新，修一下"
+  }
+}

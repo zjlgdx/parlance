@@ -1,0 +1,526 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>This"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " race condition only appears when c"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ancellation and completion happen"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " almost simultaneously:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " first increment the generation number,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " then trigger the cancell"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation token, and a late completion"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " event from the old stream will be"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " discarded because its generation number"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " doesn't match.</transl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation>\n<plain>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个竞态只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取消和完成几"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "乎同时发生时出"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "现，旧流迟到"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的完成事件因代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际号不匹配而被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "丢弃。</plain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<terms>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>race condition</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><ipa>/re"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪs kənˈd"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪʃn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>竞态条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件，多个操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "执行顺序不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定时产"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "生的并发错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "完成操作几"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "乎同时发生时才"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出现的并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发问题。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>generation number"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˌdʒenə"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈreɪʃn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ˈnʌmb"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ə"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>代际号，用来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "标记某"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "轮操作或版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本的递"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "增编"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "号。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">每"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次取"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "递增，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用于区分当前流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "与旧流的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "事件。</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>cancellation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " token</word><ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/ˌkænsə"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈleɪʃn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ˈtə"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʊkən/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>取"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消令"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "牌，用于通知异"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "步操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作停止执行的信"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "号对象。</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><here>触发它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "来通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "知正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行的流应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "当"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取消。</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>stale</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><ipa>/ste"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪl/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "经失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "效的。</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>指旧流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迟到的完成事件"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，其代际号已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "经"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过期"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 901,
+            "promptTokens" : 429,
+            "reasoningTokens" : 365
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-20",
+    "input" : "这个竞态只在取消和完成几乎同时发生时出现：先递增代际号再触发取消令牌，旧流迟到的完成事件就会因为代际号不匹配被丢弃。",
+    "source" : "claude-code"
+  }
+}

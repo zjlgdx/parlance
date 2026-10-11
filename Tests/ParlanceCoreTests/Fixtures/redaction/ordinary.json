@@ -1,0 +1,38 @@
+[
+  {
+    "name": "directory listing",
+    "input": "/workspace/services/payments/production/region1\n/workspace/services/payments/production/region2\n/workspace/services/payments/production/region3\n/workspace/services/payments/production/region4",
+    "expected": "/workspace/services/payments/production/region1\n/workspace/services/payments/production/region2\n/workspace/services/payments/production/region3\n/workspace/services/payments/production/region4",
+    "pem": false
+  },
+  {
+    "name": "nested path",
+    "input": "/workspace//services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/file.swift",
+    "expected": "/workspace//services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/file.swift",
+    "pem": false
+  },
+  {
+    "name": "class columns",
+    "input": "AbstractSingletonProxyFactoryBeanConfigurationProviderAlpha\nAbstractSingletonProxyFactoryBeanConfigurationProviderBravo\nAbstractSingletonProxyFactoryBeanConfigurationProviderDelta\nAbstractSingletonProxyFactoryBeanConfigurationProviderOmega",
+    "expected": "AbstractSingletonProxyFactoryBeanConfigurationProviderAlpha\nAbstractSingletonProxyFactoryBeanConfigurationProviderBravo\nAbstractSingletonProxyFactoryBeanConfigurationProviderDelta\nAbstractSingletonProxyFactoryBeanConfigurationProviderOmega",
+    "pem": false
+  },
+  {
+    "name": "URL path",
+    "input": "https://example.com/workspace//services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/file.swift",
+    "expected": "https://example.com/workspace//services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/services/payments/production/region1/file.swift",
+    "pem": false
+  },
+  {
+    "name": "temporary directory",
+    "input": "cd /var/folders/q7/zp4x1m8k2v6c9b3n5h0t7r1w00000gn/T/abc && ls /var/folders/q7/zp4x1m8k2v6c9b3n5h0t7r1w00000gn/T/",
+    "expected": "cd /var/folders/q7/zp4x1m8k2v6c9b3n5h0t7r1w00000gn/T/abc && ls /var/folders/q7/zp4x1m8k2v6c9b3n5h0t7r1w00000gn/T/",
+    "pem": false
+  },
+  {
+    "name": "REST path with ids",
+    "input": "/api/v1/Users/U123/Orders/O456/Items/I789/Refunds/R012/Notes",
+    "expected": "/api/v1/Users/U123/Orders/O456/Items/I789/Refunds/R012/Notes",
+    "pem": false
+  }
+]

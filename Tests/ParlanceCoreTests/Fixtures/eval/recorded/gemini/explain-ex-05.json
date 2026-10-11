@@ -1,0 +1,115 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">等待 `consumer.result` 是没有时间限制的。如果流在消费端"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "任务被取消时停止结束其迭代，测试将会挂起而不是失败。将其包装在 `bounded { _ ="
+          }
+        },
+        {
+          "text" : {
+            "_0" : " await consumer.result }` 中。</translation>\n\n<plain>这段输入解释了为什么在测试中等待消费"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "端结果需要加上超时限制，以防止测试无限期挂起。</plain>\n\n<terms><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">consumer.result</word>\n<meaning>消费端结果</meaning>\n<here>消费端任务的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "执行结果</here></term>\n<term><word>time limit</word>\n<meaning>时间限制</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<here>超时限制</here></term>\n<term><word>stream</word>\n<meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "流</meaning>\n<here>异步数据流</here></term>\n<term><word>iteration</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>\n<meaning>迭代</meaning>\n<here>对流的迭代处理</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>cancelled</word>\n<meaning>已取消</meaning>\n<here>任务"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被取消的状态</here></term>\n<term><word>hangs</word>\n<meaning>挂"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "起</meaning>\n<here>程序卡住无响应</here></term>\n<term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "bounded</word>\n<meaning>有界的</meaning>\n<here>带有边界（如时间限制）的包装函数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 323,
+            "promptTokens" : 304
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-05",
+    "input" : "Await `consumer.result` waits with no time limit. If the stream stops ending its iteration when the consumer task is cancelled, the test hangs instead of failing. Wrap it in `bounded { _ = await consumer.result }`.",
+    "source" : "claude-code"
+  }
+}

@@ -1,0 +1,68 @@
+[
+  {
+    "name": "minimum segments",
+    "input": "eyJFAKEa.FAKEabcd.FAKEwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "base64url characters",
+    "input": "eyJFAKE_abc.FAKE-ab_cd.FAKE_sig-nature",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "short segment",
+    "input": "eyJFAKEa.FAKEabc.FAKEwxyz",
+    "expected": "eyJFAKEa.FAKEabc.FAKEwxyz",
+    "pem": false
+  },
+  {
+    "name": "embedded word",
+    "input": "prefixeyJFAKEa.FAKEabcd.FAKEwxyz",
+    "expected": "prefixeyJFAKEa.FAKEabcd.FAKEwxyz",
+    "pem": false
+  },
+  {
+    "name": "only two segments",
+    "input": "eyJFAKEa.FAKEabcd",
+    "expected": "eyJFAKEa.FAKEabcd",
+    "pem": false
+  },
+  {
+    "name": "sentence .",
+    "input": "Bearer eyJFAKEa.FAKEabcd.FAKEwxyz.",
+    "expected": "Bearer [REDACTED].",
+    "pem": false
+  },
+  {
+    "name": "sentence ...",
+    "input": "Bearer eyJFAKEa.FAKEabcd.FAKEwxyz...",
+    "expected": "Bearer [REDACTED]...",
+    "pem": false
+  },
+  {
+    "name": "sentence .,",
+    "input": "Bearer eyJFAKEa.FAKEabcd.FAKEwxyz.,",
+    "expected": "Bearer [REDACTED].,",
+    "pem": false
+  },
+  {
+    "name": "sentence )",
+    "input": "Bearer eyJFAKEa.FAKEabcd.FAKEwxyz)",
+    "expected": "Bearer [REDACTED])",
+    "pem": false
+  },
+  {
+    "name": "sentence !",
+    "input": "Bearer eyJFAKEa.FAKEabcd.FAKEwxyz!",
+    "expected": "Bearer [REDACTED]!",
+    "pem": false
+  },
+  {
+    "name": "dotted continuation",
+    "input": "eyJFAKEa.FAKEabcd.FAKEwxyz.field",
+    "expected": "eyJFAKEa.FAKEabcd.FAKEwxyz.field",
+    "pem": false
+  }
+]

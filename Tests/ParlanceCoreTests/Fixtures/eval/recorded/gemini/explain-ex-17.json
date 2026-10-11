@@ -1,0 +1,90 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">All six items have been fixed, with modifications limited to the working tree. Unified"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " null checking: `KeySources.hasEnvironmentKey` is shared among automatic merchant selection, HTTP checks, key retrieval, and status; SSH"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " variables are still judged based on \"existence\".</translation>\n<plain>这句话说明了六个问题已全部"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修复且仅改动了工作树，并统一了空值判断逻辑，同时保留了SSH变量原有的存在性"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "判断方式。</plain>\n<terms><term><word>工作树</word>\n<meaning>working tree"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning>\n<here>working tree</here></term><term><word>判空</word>\n<meaning>null check"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning>\n<here>null check</here></term><term><word>自动选商</word>\n<meaning>automatic"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " merchant selection</meaning>\n<here>automatic merchant selection</here></term><term><word>SSH 变量</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<meaning>SSH variable</meaning>\n<here>SSH variable</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 228,
+            "promptTokens" : 307
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-17",
+    "input" : "六项均已修复，仅修改工作树。统一判空：`KeySources.hasEnvironmentKey` 供自动选商、HTTP 检查、取 Key、status 共用；SSH 变量仍按“存在”判断。",
+    "source" : "codex"
+  }
+}

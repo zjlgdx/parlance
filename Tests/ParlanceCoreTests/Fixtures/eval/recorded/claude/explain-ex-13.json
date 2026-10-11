@@ -1,0 +1,471 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是一个破坏性变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更，影"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "响所有设置过 `"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "PARLANCE_B"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ASE_URL` 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用户：该变量不再"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被读取。应引导他"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "们改用 config"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".toml 中 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`[providers.compatible"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "]` 下的 `base"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "_url`。我建议在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发布说明中说明此"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "事，而不是添加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "弃用过渡代码。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</translation>\n<plain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">这段话说明不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再读取环境变量 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "PARLANCE_B"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ASE_URL 会造"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成破坏性变更，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用户应改用配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置文件中的 base_"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "url，并建议在发布"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明里告知，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而不是保留兼容"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代码。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "breaking change</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>破坏性变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更，指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "新版本不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "兼容旧版本用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "导致原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有功能失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "效的修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不再读取 PARL"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ANCE_BASE_"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "URL 变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量，使依"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "赖它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的用户配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置失效。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>deprec"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation shim</word><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>弃用过渡"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代码，为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "持"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "暂时可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用而添加的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "兼容层。</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><here>作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "者不想为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量保留这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "种兼容代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码，因此选"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "择不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "添"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>release notes</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>发布说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明，随"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "版本发"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "布的更新内"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "容与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "注"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意事项文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "档"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作者建"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "议在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这里告知用户变更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "内容和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迁移方"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 979,
+            "promptTokens" : 451,
+            "reasoningTokens" : 509
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-13",
+    "input" : "This is a breaking change for anyone who set `PARLANCE_BASE_URL`: the variable is no longer read. Point them to `base_url` under `[providers.compatible]` in config.toml. I'd mention it in the release notes rather than adding a deprecation shim.",
+    "source" : "claude-code"
+  }
+}

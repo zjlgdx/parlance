@@ -1,0 +1,839 @@
+#!/bin/bash
+# scripts/land — the only merge path (AGENTS.md 授权 / 约定). GitHub Free private repos have no branch
+# protection or required checks, so this script is the merge gate. It pins the PR head once, binds every
+# check to that exact commit, and merges with --match-head-commit so a later push cannot slip in.
+#
+# Start only from a trusted checkout tracking main. Before loading helpers, fetch and pin origin/main,
+# extract land, cla-check and scripts/lib/ as raw ls-tree/cat-file objects (not git archive), then run that
+# temporary copy once with an argument marker. Local stale/edited helpers and export-ignore attributes do
+# not select the checks. The shell environment and the entry script itself remain trusted prerequisites.
+# Known limits: starting land in a PR checkout, editing the entry point, forging its internal argument,
+# or merging in the web UI can bypass this gate. Deliberately crafted filesystem aliases are outside the
+# collaborator-error threat model. Commit emails can be forged: provenance checks detect omissions, not
+# consent. Old-version coauthors must update signatures in their own PR first. A second maintainer can
+# move main between the final read and merge (match-head-commit pins only head); the post-merge check
+# reports that race, requiring a correction PR or GitHub's up-to-date-branch requirement.
+#
+# Checks (all on the pinned head):
+#   PR is open, not a draft, targets main, mergeable; title follows `type(scope): summary` and holds no
+#       closing keyword (it becomes the squash subject on main);
+#   the head contains origin/main, so CI tested the tree that lands (GitHub reports CLEAN, never BEHIND, on
+#       an unprotected repo, so this is checked locally; remedy: merge origin/main into the branch);
+#   CLA signatures, protected paths, authors/coauthors and NFD/casefold path conflicts (cla-check ①–⑤);
+#   owner confirmation (--owner-confirmed) when the PR is associated with a needs-design/external-action
+#       issue — a same-repo closing reference, or an open issue named by `Refs/Closes/Fixes/Resolves #N` in the
+#       body or by the <type>/<N>-<slug> branch (parsed by scripts/lib/pr_refs.py) — or changes docs/designs/
+#       (local diff, renames split);
+#   the first `Head:` line of the PR body's `## Verification` section names the head (the evidence listed there
+#       is bound to that exact commit; a sha anywhere else in the body does not count);
+#   CI: the newest pull_request run of .github/workflows/ci.yml on the head completed and its `gate` job
+#       passed; with Package.swift or App/Parlance.xcodeproj its `swift` job passed too, or, while the macOS
+#       tier is not provisioned (repo variable PL_MACOS_RUNNER unset), the local gate stamp for the head stands in. A job
+#       passed when it concluded success on a runner and its gate step (`Gate (portable components)`,
+#       `Gate (swift)`: the names ci.yml gives them) succeeded; a success with no runner, with no steps or
+#       around a skipped or missing gate step ran no gate;
+#   a chatgpt-codex-connector verdict that names the head: its review of that commit, or its comment or
+#       summary row citing that commit. A reaction names no commit and GitHub moves inline comments onto
+#       newer heads, so neither counts; a comment or row that says the review failed is no verdict, whatever
+#       commit it cites; gh-pr-follow-through's waiter, where it can be used, can only veto;
+#   zero unresolved review threads (outdated ones included: dispose of them explicitly).
+# A run that may merge holds a lock in the git dir: a second run started in the same clone meanwhile is refused
+# instead of merging onto a main it did not check. Then: refuse if main moved during the checks; squash-merge
+# with subject "<title> (#N)" and a body built here (PR link, `Closes #N` for the checked closing issues,
+# co-author trailers of the branch commits); report a merge that still landed on another main than the checked
+# one (one the head does not contain); delete the remote branch with a lease on the pinned head; remove the
+# branch's linked worktree when it holds no uncommitted or untracked file and its ignored files are all
+# rebuildable build output (or the per-machine agent settings); delete the local branch by compare-and-swap
+# unless a checkout still has it (the main checkout is never removed or switched from another one); a local
+# branch that is not at the merged head is kept with its checkouts; fast-forward local main; close
+# fully-closed issues; list issues this merge unblocked.
+# A PR that is already merged into main gets none of the checks above and no merge: land checks only that the
+# merge landed on a main the head contains (as after its own merge), finishes the cleanup (what a run cut short
+# after the merge, or a branch deletion that failed, left behind) and ends `merged` or
+# `merged-with-cleanup-issues`. So the answer to `merge-unverified` and to a remote branch that was not
+# deleted is to run land on the PR again. It does not close an issue that was reopened in the meantime.
+#
+# Usage: scripts/land <pr> [--dry-run] [--owner-confirmed] [--allow-no-ci] [--no-bot-verdict]
+#   --dry-run          run every check and print the squash message, change nothing; for a PR that is already
+#                      merged: list what is left of its cleanup, change nothing
+#   --owner-confirmed  per-act: the owner approved merging this PR in the current conversation
+#   --allow-no-ci      per-act: CI could not run (runner outage); the local gate stamp for the head stands in.
+#                      Only when the head has no ci.yml pull_request run, or its jobs never started or were
+#                      cancelled; CI that ran (a job failed or still running, a run completed without the
+#                      required jobs passing, or a failure in any ci.yml run or earlier attempt on the head)
+#                      still blocks.
+#   --no-bot-verdict   per-act: the Codex bot is unavailable; its verdict is not checked
+# Exit codes: 0 merged or cleaned up after an earlier merge (or dry-run passed), 1 a check failed, the merge or
+# the cleanup stopped, or the PR could not be read, 2 usage error (also: not run inside a git checkout).
+# The last line is `LAND result=<ready|blocked|merged|merged-with-cleanup-issues|merge-refused|merge-unverified|
+# error>`, except for --help and for exit 2, which print no LAND line.
+
+set -uo pipefail
+
+usage="usage: scripts/land <pr> [--dry-run] [--owner-confirmed] [--allow-no-ci] [--no-bot-verdict]"
+# This marker is deliberately an argument, never inherited from the environment.
+BASE_TIP=""
+if [ "${1:-}" = --land-from-base ]; then
+  [ $# -ge 3 ] && printf '%s' "$2" | grep -Eq '^[0-9a-f]{40}$' || exit 2
+  BASE_TIP=$2
+  shift 2
+fi
+LAND_ARGS=("$@")
+PR=""; DRY_RUN=0; OWNER_CONFIRMED=0; ALLOW_NO_CI=0; NO_BOT_VERDICT=0
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --dry-run) DRY_RUN=1 ;;
+    --owner-confirmed) OWNER_CONFIRMED=1 ;;
+    --allow-no-ci) ALLOW_NO_CI=1 ;;
+    --no-bot-verdict) NO_BOT_VERDICT=1 ;;
+    -h|--help) awk 'NR > 1 && /^#/ {sub(/^# ?/, ""); print; next} NR > 1 {exit}' "$0"; exit 0 ;;
+    *) if [ -z "$PR" ] && printf '%s' "$1" | grep -Eq '^#?[0-9]+$'; then PR=${1#\#}
+       else echo "land: unexpected argument $1" >&2; echo "$usage" >&2; exit 2; fi ;;
+  esac
+  shift
+done
+[ -n "$PR" ] || { echo "$usage" >&2; exit 2; }
+
+ROOT=$(git rev-parse --show-toplevel) || exit 2
+cd "$ROOT" || exit 2
+
+# Bootstrap is inline: no helper from the working tree may run before extraction.
+if [ -z "$BASE_TIP" ]; then
+  bootstrap_fail() {
+    echo "land: FAIL trusted entry: $*" >&2
+    printf 'LAND result=error pr=%s head=?\n' "$PR"
+    exit 1
+  }
+  git fetch -q origin "+refs/heads/main:refs/remotes/origin/main" || bootstrap_fail "cannot fetch main from origin"
+  BASE_TIP=$(git rev-parse --verify refs/remotes/origin/main) || bootstrap_fail "cannot pin origin/main"
+  printf '%s' "$BASE_TIP" | grep -Eq '^[0-9a-f]{40}$' || bootstrap_fail "invalid main commit id"
+  TRUSTED=$(mktemp -d "${TMPDIR:-/tmp}/pl-land.XXXXXX") || bootstrap_fail "cannot create temporary directory"
+  trap 'rm -rf "$TRUSTED"' EXIT
+  trap 'exit 130' INT
+  trap 'exit 143' TERM
+  if ! python3 -B - "$BASE_TIP" "$TRUSTED" <<'BOOTSTRAP'
+import pathlib, re, subprocess, sys
+
+def git(*args):
+    return subprocess.run(["git", *args], stdout=subprocess.PIPE, check=True).stdout
+
+try:
+    data = git("ls-tree", "-r", "-z", sys.argv[1], "--", "scripts/land", "scripts/cla-check", "scripts/lib/")
+    if not data or not data.endswith(b"\0"):
+        raise ValueError("missing or truncated tool tree (-z)")
+    entries = {}
+    for record in data[:-1].split(b"\0"):
+        m = re.fullmatch(rb"(100644|100755) blob ([0-9a-f]{40})\t(.+)", record, re.S)
+        if not m:
+            raise ValueError("malformed or non-regular tool tree entry")
+        _, oid, raw_path = m.groups()
+        path = raw_path.decode("utf-8")
+        if path in entries or any(p in ("", ".", "..") for p in path.split("/")):
+            raise ValueError("invalid tool path " + repr(path))
+        if path not in ("scripts/land", "scripts/cla-check") and not path.startswith("scripts/lib/"):
+            raise ValueError("unexpected tool path " + repr(path))
+        entries[path] = oid.decode("ascii")
+    required = {"scripts/land", "scripts/cla-check", "scripts/lib/cla_check.py",
+                "scripts/lib/pr_refs.py", "scripts/lib/check_pr_title.py"}
+    missing = required - entries.keys()
+    if missing:
+        raise ValueError("base toolchain is incomplete: " + ", ".join(sorted(missing)))
+    for path, oid in entries.items():
+        content = git("cat-file", "blob", oid)
+        target = pathlib.Path(sys.argv[2]) / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(content)
+except (OSError, ValueError, subprocess.CalledProcessError) as exc:
+    sys.exit("land: cannot extract trusted base tools: " + str(exc))
+BOOTSTRAP
+  then bootstrap_fail "cannot load complete raw base toolchain"; fi
+  /bin/bash "$TRUSTED/scripts/land" --land-from-base "$BASE_TIP" "${LAND_ARGS[@]}"
+  exit $?
+fi
+
+LIB="$(cd "$(dirname "$0")" && pwd)/lib"
+BOT='chatgpt-codex-connector[bot]'
+PER_ACT=""
+[ "$OWNER_CONFIRMED" -eq 0 ] || PER_ACT="$PER_ACT,--owner-confirmed"
+[ "$ALLOW_NO_CI" -eq 0 ] || PER_ACT="$PER_ACT,--allow-no-ci"
+[ "$NO_BOT_VERDICT" -eq 0 ] || PER_ACT="$PER_ACT,--no-bot-verdict"
+
+problems=0; HEAD=""; MERGE_SHA=""; FOUND_MERGED=0
+ok()   { printf 'land: ok    %s\n' "$*"; }
+bad()  { printf 'land: FAIL  %s\n' "$*"; problems=$((problems + 1)); }
+info() { printf 'land: info  %s\n' "$*"; }
+result() {  # result <exit code> <result> [note] — print the LAND line callers report, and exit
+  printf 'LAND result=%s pr=%s head=%s' "$2" "$PR" "${HEAD:-?}"
+  [ -z "$MERGE_SHA" ] || printf ' merge=%s' "$MERGE_SHA"
+  [ -z "$PER_ACT" ] || printf ' per-act=%s' "${PER_ACT#,}"
+  [ -z "${3:-}" ] || printf ' %s' "$3"
+  printf '\n'
+  exit "$1"
+}
+issue_meta() {  # issue_meta <n> → "<state>\t<label,...>\t<issue|pr>\t<title>\t<state reason>"; non-zero when
+  local raw     # unreadable: 3 when GitHub has no such issue (404), 1 otherwise
+  if ! raw=$(gh api "repos/$REPO/issues/$1" 2>/dev/null); then
+    printf '%s' "$raw" | grep -Eq '"status": *"404"' && return 3  # gh prints the error body on stdout
+    return 1
+  fi
+  printf '%s' "$raw" | python3 -c '
+import json, sys
+i = json.load(sys.stdin)
+print("\t".join([i["state"], ",".join(l["name"] for l in i.get("labels") or []),
+                 "pr" if i.get("pull_request") else "issue", " ".join((i.get("title") or "").split()),
+                 i.get("state_reason") or ""]))' 2>/dev/null
+}
+wt_of() {  # the worktree that has $BRANCH checked out (porcelain paths may contain spaces)
+  git worktree list --porcelain | awk -v b="refs/heads/$BRANCH" '/^worktree /{p = substr($0, 10)} $0 == "branch " b {print p; exit}'
+}
+same_dir() { [ "$(cd "$1" 2>/dev/null && pwd -P)" = "$(cd "$2" 2>/dev/null && pwd -P)" ]; }
+take_lock() {  # non-zero when another land run holds $LOCK: a live one, or one whose pid is not written yet
+  local holder
+  if ! mkdir "$LOCK" 2>/dev/null; then
+    holder=$(cat "$LOCK/pid" 2>/dev/null) || return 1
+    printf '%s' "$holder" | grep -Eq '^[0-9]+$' || return 1
+    ! kill -0 "$holder" 2>/dev/null || return 1
+    info "removing the stale lock of land run $holder (no such process)"
+    rm -rf "$LOCK"
+    mkdir "$LOCK" 2>/dev/null || return 1
+  fi
+  echo "$$" > "$LOCK/pid"
+}
+earlier_attempt_failures() {  # jobs that failed in any attempt of the re-run runs ($RERUN_IDS); non-zero when unreadable
+  local id jobs_all
+  for id in $RERUN_IDS; do
+    jobs_all=$(gh api --paginate --slurp "repos/$REPO/actions/runs/$id/jobs?filter=all&per_page=100" 2>/dev/null) || return 1
+    printf '%s' "$jobs_all" | python3 -c '
+import json, sys
+for page in json.load(sys.stdin):
+    for j in page.get("jobs") or []:
+        if j.get("status") == "completed" and j.get("conclusion") not in ("success", "skipped", "neutral", "cancelled"):
+            print("%s (run %s, attempt %s)" % (j.get("name"), sys.argv[1], j.get("run_attempt") or "?"))' "$id" 2>/dev/null || return 1
+  done
+}
+stamp_for_no_ci() {  # stamp_for_no_ci <why CI did not run>: let the local stamp stand in (--allow-no-ci),
+  local earlier      # unless CI ran and failed in any ci.yml run or attempt on the head
+  if ! earlier=$(earlier_attempt_failures); then
+    bad "cannot read the earlier attempts of the re-run CI runs on $HEAD (--allow-no-ci fails closed)"
+  elif [ -n "$FAILED_RUNS$earlier" ]; then
+    bad "--allow-no-ci is for CI that could not run; on $HEAD it ran and failed: ${FAILED_RUNS:+$FAILED_RUNS }$(printf '%s' "$earlier" | tr '\n' ' ')"
+  else
+    need_stamp="${need_stamp:+$need_stamp; }--allow-no-ci: $1"
+  fi
+}
+
+# ---------- after the merge: cleanup and issues ----------
+# A squash commit's only parent is the main it landed on. When the head contains that main, the tree that
+# landed is the head's, the one CI and the gate saw; otherwise another merge got in first (the lock does not
+# cover other clones or the web UI). Checked after this run's merge and again by a run that finds the PR
+# merged: that is how a rerun after merge-unverified verifies the merge.
+landed_check() {
+  local landed_on
+  git cat-file -e "$HEAD^{commit}" 2>/dev/null || git fetch -q origin "$HEAD" 2>/dev/null || true
+  landed_on=$(git rev-parse --verify --quiet "${MERGE_SHA:-none}^1" 2>/dev/null) || landed_on=""
+  if [ -z "$landed_on" ] || ! git cat-file -e "$HEAD^{commit}" 2>/dev/null; then
+    bad "cannot tell which main the merge landed on (${MERGE_SHA:-the merge commit} or the head is not available here): check the push CI run on main"
+  elif ! git merge-base --is-ancestor "$landed_on" "$HEAD"; then
+    bad "the merge landed on main ${landed_on:0:7}, which the head ${HEAD:0:7} does not contain (another merge got in first): the landed tree was never tested; check the push CI run on main for $MERGE_SHA"
+  fi
+}
+# One implementation for both ways in: right after this run's merge, and for a PR found merged (FOUND_MERGED=1),
+# where it is all that land does. Prints the LAND line and exits.
+after_merge() {
+  local note="" rc drop_branch current main_wt wt tip drop_wt keep still n meta st blocked
+  [ "$FOUND_MERGED" -eq 0 ] || note="(already merged: cleanup only)"
+  git fetch -q origin "+refs/heads/main:refs/remotes/origin/main" 2>/dev/null || true
+  landed_check
+  git ls-remote --exit-code origin "refs/heads/$BRANCH" >/dev/null 2>&1; rc=$?
+  case $rc in
+    0) # pre-push refuses branch deletions except this exact one (ref and pinned sha), under a lease on that sha
+       if PARLANCE_LAND_DELETE="refs/heads/$BRANCH $HEAD" git push -q --force-with-lease="refs/heads/$BRANCH:$HEAD" origin --delete "$BRANCH"; then
+         ok "deleted remote branch $BRANCH"
+       else
+         bad "remote branch $BRANCH not deleted (it moved past the merged head, or the push was refused or failed); left in place: rerun scripts/land $PR, which deletes it while it is at the merged head ${HEAD:0:7} and keeps it once it holds other commits"
+       fi ;;
+    2) info "remote branch $BRANCH is already gone" ;;
+    *) bad "cannot check remote branch $BRANCH (git ls-remote exit $rc); left as is" ;;
+  esac
+  # What finishes the cleanup by hand when land keeps the branch: the commands land itself runs. The branch goes
+  # by compare-and-swap (after a squash merge `git branch -d` reports it as not merged); a checkout leaves the
+  # branch for main, or for a detached origin/main where main is checked out elsewhere.
+  drop_branch="git update-ref -d refs/heads/$BRANCH $HEAD"
+  current=$(git rev-parse --abbrev-ref HEAD)
+  main_wt=$(git worktree list --porcelain | awk '/^worktree / && !seen++ {print substr($0, 10)}')  # git lists it first
+  wt=$(wt_of)
+  tip=$(git rev-parse --verify --quiet "refs/heads/$BRANCH") || tip=""
+  if [ -n "$tip" ] && [ "$tip" != "$HEAD" ]; then
+    # Not at the merged head: unpushed commits, or new work under the same name. Neither the branch nor a
+    # checkout of it is touched.
+    bad "local $BRANCH is at ${tip:0:7}, not at the merged head ${HEAD:0:7}; kept${wt:+, with its checkout $wt} (unpushed commits, or new work under the same name?)"
+  else
+    # A linked worktree only: the main checkout cannot be removed (reported below when it still holds the branch).
+    if [ -n "$wt" ] && ! same_dir "$wt" "$ROOT" && ! same_dir "$wt" "$main_wt"; then
+      # `git worktree remove` deletes ignored files along with the worktree, and evidence, run records, local
+      # overrides and secrets are all ignored: remove it only when every ignored file is rebuildable output (or
+      # the per-machine .claude/settings.local.json). Non-ASCII names are listed as they are, so they match too; a
+      # name git still quotes (a control character, a quote) keeps the worktree. grep and tr read bytes (LC_ALL=C):
+      # a name that is not valid in the locale's encoding must not make them drop it. The removal reads untracked
+      # files itself: where git is set to hide them (status.showUntrackedFiles=no), a plain `git worktree remove`
+      # sees a clean worktree and deletes them.
+      drop_wt="git -c status.showUntrackedFiles=normal worktree remove \"$wt\" && $drop_branch"
+      keep=$(git -C "$wt" -c core.quotePath=false ls-files --others --ignored --exclude-standard 2>/dev/null \
+        | LC_ALL=C grep -Ev '^build/gate/|(^|/)(\.build|\.swiftpm|DerivedData|__pycache__|xcuserdata)/|(^|/)\.DS_Store$|\.xcuserstate$|^\.claude/settings\.local\.json$' \
+        | head -n 3 | LC_ALL=C tr '\n' ' ')
+      if [ -n "$keep" ]; then
+        bad "worktree $wt holds local evidence, run records or other ignored files that are not build output (${keep% } ...); left in place: move them out, then: $drop_wt"
+      elif git -c status.showUntrackedFiles=normal worktree remove "$wt" 2>/dev/null; then
+        ok "removed worktree $wt"
+      else
+        bad "worktree $wt has uncommitted or untracked files, or is locked; left in place: commit, move or discard them, then: $drop_wt"
+      fi
+    fi
+    if [ "$current" = "$BRANCH" ]; then
+      if [ -z "$(git status --porcelain)" ]; then
+        git switch -q main 2>/dev/null || git switch -q --detach refs/remotes/origin/main \
+          || bad "could not switch this checkout off $BRANCH; local branch kept"
+      else
+        bad "this checkout is on $BRANCH with uncommitted changes; not switching or deleting it (after dealing with them: { git switch main || git switch --detach origin/main; } && $drop_branch)"
+      fi
+    fi
+    still=$(wt_of)
+    if [ -n "$still" ]; then
+      if same_dir "$still" "$ROOT"; then :  # reported above: uncommitted changes, or the switch failed
+      elif same_dir "$still" "$main_wt"; then
+        bad "local $BRANCH is checked out in the main checkout $still; kept, and that checkout is not touched from here (to finish: { git -C \"$still\" switch main || git -C \"$still\" switch --detach origin/main; } && $drop_branch)"
+      else
+        bad "local $BRANCH is still checked out in worktree $still; kept (once that worktree is removed: $drop_branch)"
+      fi
+    elif git rev-parse --verify --quiet "refs/heads/$BRANCH" >/dev/null; then
+      if git update-ref -d "refs/heads/$BRANCH" "$HEAD" 2>/dev/null; then ok "deleted local branch $BRANCH"
+      else bad "local $BRANCH is not at the merged head; kept (unpushed commits?)"; fi
+    fi
+  fi
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = main ]; then
+    if [ -n "$(git status --porcelain --untracked-files=normal)" ]; then  # even where git hides untracked files
+      info "local main not fast-forwarded: this checkout has uncommitted or untracked files; once they are handled: git merge --ff-only origin/main"
+    elif git merge -q --ff-only refs/remotes/origin/main 2>/dev/null; then ok "local main fast-forwarded to $(git rev-parse --short HEAD)"
+    else info "local main not fast-forwarded (it has commits origin/main lacks?)"; fi
+  fi
+
+  for n in $CLOSING; do
+    if ! meta=$(issue_meta "$n"); then bad "cannot read #$n after the merge"; continue; fi
+    st=$(printf '%s' "$meta" | cut -f1)
+    if [ "$st" != open ]; then
+      ok "#$n is $st"
+    elif [ "$FOUND_MERGED" -eq 1 ] && [ "$(printf '%s' "$meta" | cut -f5)" = reopened ]; then
+      # Right after a merge an open closing issue only waits to be closed. Found open at a later run it may
+      # have been reopened on purpose: that is not undone here.
+      info "#$n is open again (reopened after it was closed): not closed by this cleanup; close it by hand if #$PR did complete it"
+    elif gh issue close "$n" --repo "$REPO" --reason completed --comment "Done in #$PR${MERGE_SHA:+ (merge $MERGE_SHA)}." >/dev/null; then
+      ok "closed #$n"
+    else
+      bad "could not close #$n"
+    fi
+    blocked=$(gh api "repos/$REPO/issues/$n/dependencies/blocking" 2>/dev/null | python3 -c '
+import json, sys
+for i in json.load(sys.stdin):
+    if i.get("state") == "open":
+        print("%s\t%s" % (i["number"], " ".join((i.get("title") or "").split())))' 2>/dev/null) || blocked=""
+    [ -z "$blocked" ] || printf '%s\n' "$blocked" | while IFS="$(printf '\t')" read -r b title; do
+      remaining=$(gh api "repos/$REPO/issues/$b/dependencies/blocked_by" 2>/dev/null | python3 -c '
+import json, sys
+print(sum(1 for i in json.load(sys.stdin) if i.get("state") == "open"))' 2>/dev/null) || remaining="?"
+      [ "$remaining" != 0 ] || info "unblocked: #$b $title"
+    done
+  done
+
+  [ "$problems" -eq 0 ] || result 1 merged-with-cleanup-issues "$note"
+  result 0 merged "$note"
+}
+# --dry-run on a PR found merged: what `after_merge` would still act on. Changes nothing (it fetches main, as every
+# dry run does). Prints the LAND line and exits.
+left_of_cleanup() {
+  local note="(already merged; dry run: nothing changed)" out tip wt n meta left=0
+  git fetch -q origin "+refs/heads/main:refs/remotes/origin/main" 2>/dev/null || true
+  landed_check
+  if out=$(git ls-remote origin "refs/heads/$BRANCH" 2>/dev/null); then
+    tip=${out%%[[:space:]]*}
+    if [ -z "$tip" ]; then info "remote branch $BRANCH is already gone"
+    elif [ "$tip" = "$HEAD" ]; then left=1; info "left: remote branch $BRANCH, at the merged head (land deletes it)"
+    else left=1; info "left: remote branch $BRANCH, at ${tip:0:7} and no longer at the merged head ${HEAD:0:7} (land does not delete it)"; fi
+  else
+    bad "cannot check remote branch $BRANCH"
+  fi
+  wt=$(wt_of)
+  tip=$(git rev-parse --verify --quiet "refs/heads/$BRANCH") || tip=""
+  if [ -n "$tip" ] && [ "$tip" != "$HEAD" ]; then
+    left=1; info "left: local branch $BRANCH, at ${tip:0:7} and not at the merged head ${HEAD:0:7} (land keeps it${wt:+ and its checkout $wt})"
+  else
+    [ -z "$wt" ] || { left=1; info "left: $BRANCH is checked out in $wt (land removes a linked worktree that holds nothing to keep, and switches its own clean checkout to main)"; }
+    [ -z "$tip" ] || { left=1; info "left: local branch $BRANCH, at the merged head (land deletes it once no checkout has it)"; }
+  fi
+  if [ "$(git rev-parse --abbrev-ref HEAD)" = main ] && ! git merge-base --is-ancestor refs/remotes/origin/main HEAD 2>/dev/null; then
+    left=1; info "left: local main lacks commits of origin/main (land fast-forwards it in a clean checkout)"
+  fi
+  for n in $CLOSING; do
+    if ! meta=$(issue_meta "$n"); then bad "cannot read #$n"; continue; fi
+    [ "$(printf '%s' "$meta" | cut -f1)" = open ] || continue
+    if [ "$(printf '%s' "$meta" | cut -f5)" = reopened ]; then info "#$n is open again (reopened after it was closed): land does not close it"
+    else left=1; info "left: #$n is open (land closes it)"; fi
+  done
+  [ "$left" -eq 1 ] || info "nothing is left of the cleanup"
+  [ "$problems" -eq 0 ] || result 1 merged-with-cleanup-issues "$note"
+  result 0 merged "$note"
+}
+
+REPO=$(gh repo view --json nameWithOwner --jq .nameWithOwner) || { echo "land: cannot resolve repo (gh auth?)" >&2; result 1 error; }
+[ -z "${PARLANCE_OWNER_APPROVED:-}" ] || info "PARLANCE_OWNER_APPROVED does not apply here: land's per-act flags are --owner-confirmed, --allow-no-ci and --no-bot-verdict"
+
+# ---------- pin the head and read the PR (one read, one parse) ----------
+pr_json=$(gh pr view "$PR" --repo "$REPO" --json number,state,isDraft,baseRefName,headRefName,headRefOid,title,url,mergeable,body,commits,closingIssuesReferences,mergeCommit) \
+  || { echo "land: cannot read PR #$PR" >&2; result 1 error; }
+# Lines: head, state, isDraft, base, branch, url, mergeable, title; same-repo closing issues; cross-repo closing
+# refs; closing refs without a repository; associated issues; the commit the body binds its Verification to;
+# the branch's number when nothing else names it; the merge commit of a merged PR. References in the body and
+# the branch are read by scripts/lib/pr_refs.py, shared with /pl-next.
+pr_fields=$(printf '%s' "$pr_json" | python3 -B -c '
+import json, re, sys
+repo = sys.argv[1].lower()
+sys.path.insert(0, sys.argv[2])
+from pr_refs import body_refs, branch_issue
+d = json.load(sys.stdin)
+local, cross, unknown = [], [], []
+for i in d.get("closingIssuesReferences") or []:
+    r = i.get("repository") or {}
+    slug = "%s/%s" % ((r.get("owner") or {}).get("login", ""), r.get("name", ""))
+    if slug == "/":
+        unknown.append(str(i["number"]))
+    elif slug.lower() == repo:
+        local.append(i["number"])
+    else:
+        cross.append("%s#%s" % (slug, i["number"]))
+body = d.get("body") or ""
+assoc = set(local) | body_refs(body, repo)
+branch = branch_issue(d.get("headRefName") or "")
+branch_only = "" if branch is None or branch in assoc else str(branch)
+if branch is not None:
+    assoc.add(branch)
+# The commit the body binds its evidence to: the first hex token on the "Head:" line of its "## Verification"
+# section, where the PR template puts it. A sha anywhere else says nothing about what was verified. HTML
+# comments are dropped first (the template explains itself in them); one left open runs to the end.
+bound, inside = "", False
+for line in re.sub(r"<!--.*?(?:-->|\Z)", "", body, flags=re.S).splitlines():
+    if re.match(r"\s*#{1,2}\s", line):  # a heading of level 1 or 2 opens the Verification section, or closes it
+        inside = re.match(r"\s*##\s+Verification\s*$", line) is not None
+    elif inside and re.match(r"\s*(?:[-*+]\s+)?Head:", line):
+        token = re.search(r"(?<![0-9A-Fa-f])[0-9A-Fa-f]{7,40}(?![0-9A-Fa-f])", line.split(":", 1)[1])
+        bound = token.group(0).lower() if token else ""
+        break
+for key in ("headRefOid", "state", "isDraft", "baseRefName", "headRefName", "url", "mergeable", "title"):
+    print(" ".join(str("" if d.get(key) is None else d.get(key)).splitlines()))
+print(" ".join(str(n) for n in sorted(set(local))))
+print(" ".join(cross))
+print(" ".join(unknown))
+print(" ".join(str(n) for n in sorted(assoc)))
+print(bound)
+print(branch_only)
+print((d.get("mergeCommit") or {}).get("oid") or "")
+' "$REPO" "$LIB") || { echo "land: cannot parse PR #$PR" >&2; result 1 error; }
+{ IFS= read -r HEAD; IFS= read -r STATE; IFS= read -r DRAFT; IFS= read -r BASE_REF; IFS= read -r BRANCH
+  IFS= read -r URL; IFS= read -r MERGEABLE; IFS= read -r TITLE; IFS= read -r CLOSING; IFS= read -r CROSS_REFS
+  IFS= read -r UNKNOWN_REFS; IFS= read -r ASSOC; IFS= read -r BODY_HEAD; IFS= read -r BRANCH_ONLY
+  IFS= read -r MERGE_SHA; } <<<"$pr_fields"
+printf '%s' "$HEAD" | grep -Eq '^[0-9a-f]{40}$' || { echo "land: PR #$PR has no usable head sha" >&2; result 1 error; }
+info "PR #$PR $URL"
+info "pinned head $HEAD ($BRANCH → $BASE_REF)"
+
+# A PR that is already merged into main is neither checked nor merged again: only its cleanup is finished
+# (below, once the lock is held). Merged into another base, or closed without a merge: refused like any PR
+# that is not open.
+if [ "$STATE" = MERGED ] && [ "$BASE_REF" = main ]; then
+  FOUND_MERGED=1
+  info "PR #$PR is already merged${MERGE_SHA:+ (as $MERGE_SHA)}: no merge and none of its checks, only where it landed and what is left of its cleanup"
+else
+  if [ "$STATE" = OPEN ]; then ok "state OPEN"; else bad "state is $STATE"; fi
+  if [ "$DRAFT" = False ]; then ok "not a draft"; else bad "PR is a draft"; fi
+  if [ "$BASE_REF" = main ]; then ok "targets main"; else bad "base is $BASE_REF, expected main"; fi
+  if title_err=$(python3 "$LIB/check_pr_title.py" "$TITLE" 2>&1); then ok "title '$TITLE'"; else bad "$title_err (AGENTS.md 约定)"; fi
+  if [ "$MERGEABLE" = MERGEABLE ]; then ok "mergeable"; else bad "mergeable=$MERGEABLE (resolve conflicts, or wait for GitHub to compute it)"; fi
+fi
+
+# ---------- one merging run per clone ----------
+# Two runs that both re-read main and then merge would put the second PR on a main no check saw. The lock
+# covers runs sharing this git dir, from here to exit. It is not airtight (another clone, the web UI, two runs
+# taking over one stale lock at the same moment): a merge that still got in between is reported after the
+# merge instead (see landed_check). A run that only finishes the cleanup of a merged PR takes the lock as well: it
+# removes, switches and fast-forwards checkouts of this clone.
+LOCK=""
+if [ "$DRY_RUN" -eq 0 ]; then
+  LOCK="$(cd "$(git rev-parse --git-common-dir)" && pwd -P)/parlance-land.lock"
+  if take_lock; then
+    trap 'rm -rf "$LOCK"' EXIT
+  else
+    bad "another land run holds $LOCK (pid $(cat "$LOCK/pid" 2>/dev/null || echo unknown)): wait for it, then rerun; if no land is running, remove that directory"
+    result 1 blocked "problems=$problems"
+  fi
+fi
+if [ "$FOUND_MERGED" -eq 1 ]; then
+  if [ "$DRY_RUN" -eq 1 ]; then left_of_cleanup; else after_merge; fi
+fi
+
+# ---------- the head and current main, locally: base freshness ----------
+# BASE_TIP was pinned before the trusted re-execution; never substitute a newer main here.
+have_head=0
+if git cat-file -e "$HEAD^{commit}" 2>/dev/null || { git fetch -q origin "$HEAD" 2>/dev/null && git cat-file -e "$HEAD^{commit}" 2>/dev/null; }; then
+  have_head=1
+else
+  bad "pinned head $HEAD is not available locally and cannot be fetched: CLA, Swift applicability, docs/designs/ and base checks cannot run"
+fi
+if [ -n "$BASE_TIP" ] && [ "$have_head" -eq 1 ]; then
+  if git merge-base --is-ancestor "$BASE_TIP" "$HEAD"; then
+    ok "head contains main ($(git rev-parse --short "$BASE_TIP"))"
+  else
+    bad "head is $(git rev-list --count "$HEAD..$BASE_TIP") commit(s) behind main: git merge origin/main into $BRANCH (no rebase: pre-push refuses non-fast-forward), scripts/gate, push, @codex review, wait for CI on the new head"
+  fi
+fi
+
+# ---------- CLA and provenance on the same base/head as the ancestor check ----------
+if [ "$have_head" -eq 1 ]; then
+  if cla_out=$(/bin/bash "$LIB/../cla-check" "$REPO" "$PR" "$BASE_TIP" "$HEAD" 2>&1); then
+    ok "$cla_out"
+  else
+    bad "CLA check failed: $cla_out"
+  fi
+fi
+
+# ---------- owner confirmation (AGENTS.md 授权) ----------
+needs_owner=""; before_owner_checks=$problems
+for ref in $CROSS_REFS; do info "cross-repo closing reference $ref: not checked or closed by land"; done
+for n in $UNKNOWN_REFS; do bad "closing reference #$n carries no repository: cannot tell whether it is an issue of $REPO"; done
+for n in $ASSOC; do
+  meta=$(issue_meta "$n"); meta_rc=$?
+  if [ "$meta_rc" -eq 3 ] && [ "$n" = "$BRANCH_ONLY" ]; then
+    info "branch $BRANCH: #$n is not an issue of $REPO (404), so the branch name associates nothing (ticketless branches are <type>/<slug>, slug not starting with a digit)"
+    continue
+  fi
+  if [ "$meta_rc" -eq 3 ]; then bad "the PR names #$n, which is not an issue of $REPO (404): fix the reference (the owner-confirmation check fails closed)"; continue; fi
+  if [ "$meta_rc" -ne 0 ]; then bad "cannot read issue #$n (the owner-confirmation check fails closed)"; continue; fi
+  st=$(printf '%s' "$meta" | cut -f1); labels=$(printf '%s' "$meta" | cut -f2); kind=$(printf '%s' "$meta" | cut -f3)
+  if [ "$kind" = pr ]; then info "#$n is a pull request, not an issue"; continue; fi
+  case " $CLOSING " in *" $n "*) closing=1 ;; *) closing=0 ;; esac
+  [ "$closing" -eq 1 ] || [ "$st" = open ] || continue  # a closed issue only cited for context gates nothing
+  case ",$labels," in
+    *,needs-design,*|*,external-action,*) needs_owner="$needs_owner #$n($labels)" ;;
+  esac
+done
+# The diff's own exit status is checked (not a pipe's): unreadable objects must not read as "no design change".
+if [ -n "$BASE_TIP" ] && [ "$have_head" -eq 1 ] && fork=$(git merge-base "$BASE_TIP" "$HEAD") \
+   && design_list=$(git diff --name-only --no-renames "$fork" "$HEAD" -- docs/designs/); then
+  DESIGN_FILES=$(printf '%s' "$design_list" | tr '\n' ' ')
+  [ -z "$DESIGN_FILES" ] || needs_owner="$needs_owner design-docs(${DESIGN_FILES% })"
+else
+  bad "cannot tell whether the PR changes docs/designs/ (needs the head and origin/main, readable, locally)"
+fi
+if [ -n "$needs_owner" ]; then
+  if [ "$OWNER_CONFIRMED" -eq 1 ]; then ok "owner confirmation given for:$needs_owner"
+  else bad "owner must confirm this merge:$needs_owner → stop at merge-ready (land --dry-run only), report, rerun with --owner-confirmed after the owner approves"; fi
+elif [ "$problems" -eq "$before_owner_checks" ]; then  # not after a check above failed closed
+  ok "no owner-confirmation trigger"
+fi
+
+# ---------- exact-head evidence in the PR body (AGENTS.md 验证) ----------
+if [ -z "$BODY_HEAD" ]; then
+  bad "PR body has no \"- Head: <full sha>\" line naming a commit under \"## Verification\" (.github/pull_request_template.md): write the head ${HEAD:0:7} there, above the evidence gathered on it"
+elif [ "${HEAD#"$BODY_HEAD"}" != "$HEAD" ]; then
+  ok "PR body binds its Verification to the head (Head: $BODY_HEAD)"
+else
+  bad "PR body binds its Verification to $BODY_HEAD (its Head line), not to the head ${HEAD:0:7}: update that line and the evidence under it"
+fi
+
+# ---------- CI on the pinned head: the newest pull_request run of ci.yml ----------
+STAMP="$(git rev-parse --git-common-dir)/parlance-gate/$HEAD"
+need_stamp=""  # why the local gate stamp must stand in for CI
+has_swift=0
+if [ "$have_head" -eq 1 ]; then
+  # ls-tree tells "no such path" (empty output) from "tree unreadable" (non-zero); cat-file -e cannot.
+  if root_entry=$(git ls-tree --name-only "$HEAD" -- Package.swift App/Parlance.xcodeproj 2>/dev/null); then
+    [ -z "$root_entry" ] || has_swift=1
+  else
+    bad "cannot read the tree of $HEAD to check for Package.swift or App/Parlance.xcodeproj (the swift evidence check fails closed)"
+  fi
+fi
+swift_ci=none  # none: neither package nor App project | required: the swift job must pass | stamp: macOS tier not provisioned
+if [ "$has_swift" -eq 1 ]; then
+  if var_err=$(gh variable get PL_MACOS_RUNNER --repo "$REPO" 2>&1 >/dev/null); then
+    swift_ci=required
+  elif printf '%s' "$var_err" | grep -q 'was not found'; then
+    swift_ci=stamp; need_stamp="swift CI not provisioned"
+    info "swift CI not provisioned (repo variable PL_MACOS_RUNNER unset; macOS tier not enabled): the local gate stamp for $HEAD stands in for the swift job"
+  else
+    swift_ci=required
+    bad "cannot read repo variable PL_MACOS_RUNNER ($(printf '%s' "$var_err" | head -n 1)): fails closed"
+  fi
+fi
+required="gate"; [ "$swift_ci" != required ] || required="gate swift"
+# One read of every run on the head; land itself keeps the ci.yml runs of exactly this sha. Printed: the URLs
+# of those that ran and failed, whatever their event, and the ids of re-run ones (a run object shows only its
+# latest attempt) — both still block --allow-no-ci — then the newest pull_request run, the one judged (older,
+# superseded runs on the same sha are ignored).
+if runs_json=$(gh api --paginate --slurp "repos/$REPO/actions/runs?head_sha=$HEAD&per_page=100" 2>/dev/null) \
+   && run=$(printf '%s' "$runs_json" | python3 -c '
+import json, sys
+head = sys.argv[1]
+ci = [r for page in json.load(sys.stdin) for r in page.get("workflow_runs") or []
+      if r.get("path") == ".github/workflows/ci.yml" and r.get("head_sha") == head]
+url = lambda r: r.get("html_url") or "run %s" % r["id"]
+failed = [r for r in ci if r.get("status") == "completed" and r.get("conclusion") not in ("success", "skipped", "neutral", "cancelled")]
+print(" ".join(url(r) for r in failed))
+print(" ".join(str(r["id"]) for r in ci if (r.get("run_attempt") or 1) > 1))
+runs = [r for r in ci if r.get("event") == "pull_request"]
+if runs:
+    r = max(runs, key=lambda r: (r.get("run_number") or 0, r.get("id") or 0))
+    for v in (r["id"], r.get("status") or "unknown", r.get("conclusion") or "none", url(r)):
+        print(v)
+' "$HEAD" 2>/dev/null); then
+  { IFS= read -r FAILED_RUNS; IFS= read -r RERUN_IDS; IFS= read -r RUN_ID; IFS= read -r RUN_STATUS
+    IFS= read -r RUN_CONCL; IFS= read -r RUN_URL; } <<<"$run"
+  if [ -z "$RUN_ID" ]; then
+    if [ "$ALLOW_NO_CI" -eq 1 ]; then stamp_for_no_ci "no ci.yml pull_request run for the head"
+    else bad "no ci.yml pull_request run for $HEAD (runner offline? bash tools/ci-runner/runnerctl status; 'not run' is not green)"; fi
+  else
+    # One line per job: name, status, conclusion, and for a required job that concluded success what is missing
+    # to show that it ran the gate: a runner, and the gate step (named as in ci.yml) with conclusion success.
+    # GitHub reports success for a job as a whole; one that was never assigned a runner, has no steps, or whose
+    # gate step was skipped or is not there tested nothing.
+    if jobs_json=$(gh api --paginate --slurp "repos/$REPO/actions/runs/$RUN_ID/jobs?filter=latest&per_page=100" 2>/dev/null) \
+       && jobs=$(printf '%s' "$jobs_json" | python3 -c '
+import json, sys
+GATE_STEP = {"gate": "Gate (portable components)", "swift": "Gate (swift)"}
+for page in json.load(sys.stdin):
+    for j in page.get("jobs") or []:
+        missing = ""
+        if j.get("name") in GATE_STEP and j.get("conclusion") == "success":
+            want, steps = GATE_STEP[j["name"]], j.get("steps") or []
+            ended = [s.get("conclusion") or "unfinished" for s in steps if s.get("name") == want]
+            unsuccessful = [c for c in ended if c != "success"]
+            if not j.get("runner_name"):
+                missing = "no runner was assigned"
+            elif not steps:
+                missing = "it has no steps"
+            elif not ended:
+                missing = "it has no step named %r" % want
+            elif unsuccessful:
+                missing = "its step %r is %s" % (want, unsuccessful[0])
+        print("%s\t%s\t%s\t%s" % (j.get("name"), j.get("status"), j.get("conclusion") or "none", missing))' 2>/dev/null); then
+      job_state() {  # "<status>/<conclusion>" of a job, "absent" without one; a success that ran no gate says so
+        printf '%s\n' "$jobs" | awk -F'\t' -v j="$1" '$1 == j {s = $2 "/" $3 ($4 == "" ? "" : " but did not run the gate (" $4 ")")} END {print (s == "" ? "absent" : s)}'
+      }
+      failed_jobs=$(printf '%s\n' "$jobs" | awk -F'\t' '$2 == "completed" && $3 !~ /^(success|skipped|neutral|cancelled)$/ {print $1}' | tr '\n' ' ')
+      running_jobs=$(printf '%s\n' "$jobs" | awk -F'\t' '$2 == "in_progress" {print $1}' | tr '\n' ' ')
+      green=1
+      { [ "$RUN_STATUS" = completed ] && [ -z "$failed_jobs" ]; } || green=0
+      for j in $required; do [ "$(job_state "$j")" = completed/success ] || green=0; done
+      if [ "$green" -eq 1 ]; then
+        ok "CI run $RUN_URL passed on $HEAD (${required// /, })"
+        [ "$ALLOW_NO_CI" -eq 0 ] || info "--allow-no-ci was not needed: CI passed"
+      elif [ "$ALLOW_NO_CI" -eq 1 ]; then
+        if [ -n "$failed_jobs" ]; then
+          bad "--allow-no-ci is for CI that could not run; on $HEAD it ran and failed: ${failed_jobs% } ($RUN_URL)"
+        elif [ -n "$running_jobs" ]; then
+          bad "CI is running on $HEAD ($RUN_URL: ${running_jobs% }): wait, then land without --allow-no-ci"
+        elif [ "$RUN_STATUS" = completed ] && [ "$RUN_CONCL" != cancelled ]; then
+          bad "--allow-no-ci is for CI that could not run; run $RUN_URL completed ($RUN_CONCL) without passing:$(for j in $required; do printf ' %s=%s' "$j" "$(job_state "$j")"; done)"
+        else
+          stamp_for_no_ci "CI did not run ($RUN_STATUS/$RUN_CONCL, $RUN_URL)"
+        fi
+      elif [ "$RUN_STATUS" != completed ]; then
+        bad "CI run $RUN_URL is $RUN_STATUS on $HEAD: wait for it (stuck in the queue → bash tools/ci-runner/runnerctl status)"
+      else
+        for j in $required; do
+          st=$(job_state "$j"); [ "$st" = completed/success ] || bad "CI job '$j' is $st on $HEAD ($RUN_URL)"
+        done
+        other=$(printf '%s' "$failed_jobs" | tr ' ' '\n' | awk -v r=" $required " 'NF && index(r, " " $0 " ") == 0' | tr '\n' ' ')
+        [ -z "$other" ] || bad "CI jobs failed on $HEAD: $other($RUN_URL)"
+      fi
+    else
+      bad "cannot read the jobs of CI run $RUN_URL"
+    fi
+  fi
+else
+  bad "cannot read CI runs for $HEAD"
+fi
+if [ -n "$need_stamp" ]; then
+  if [ -f "$STAMP" ]; then ok "local gate stamp for $HEAD present ($need_stamp; record 'CI 未运行 + 原因' in the PR)"
+  else bad "no local gate stamp for $HEAD ($need_stamp): run the full scripts/gate on that commit with a clean tree"; fi
+fi
+
+# ---------- Codex bot verdict on the pinned head (AGENTS.md 评审) ----------
+# Only what names the commit counts as a verdict: a substantive bot review submitted on the head (if its body
+# says "Reviewed commit:", that must be the head too), a bot comment naming the head after "Reviewed commit:",
+# or a row of the bot's status table saying Completed for the head. A thumbs-up reaction names no commit, and
+# GitHub rewrites an inline comment's commit_id to newer heads: neither is read. Of the bot's status comments
+# about the head (or about no commit), the most recently updated one is the round's state, so a stale Running
+# comment does not outlive the verdict posted after it, while a Running or Failed one newer than every verdict
+# blocks. A comment or row that says Running, Failed, Error or Cancelled is that state even when it also cites
+# the head: a citation is read only where neither is reported.
+# gh-pr-follow-through's waiter, when installed, is then asked once and can only veto: the bot's eyes
+# reaction (the one in-progress signal not read here), its failed exit, a moved head. Its count of Running
+# markers is not used: it includes the ones set aside above, and one that is current has already blocked. Its
+# failed exit reads Failed markers in the same coarser way and stays a veto: it fails closed, and a new
+# @codex review clears it. Its "done" is never the verdict: it also accepts a thumbs-up newer than the head
+# commit and inline comments GitHub moved. A waiter that cannot be used (a version lacking a flag passed here,
+# a crash, GitHub unreadable to it) is an optional helper missing: it is reported and raises no veto.
+HELPER="${HOME:-}/.claude/skills/gh-pr-follow-through/scripts/wait_for_bot_review.py"
+# shellcheck disable=SC2016  # the backticks below are in python regexes, not shell expansions
+if [ "$NO_BOT_VERDICT" -eq 1 ]; then
+  info "--no-bot-verdict: $BOT verdict not checked (bot unavailable; say so in the PR's Review section)"
+elif reviews_json=$(gh api --paginate --slurp "repos/$REPO/pulls/$PR/reviews?per_page=100" 2>/dev/null) \
+     && comments_json=$(gh api --paginate --slurp "repos/$REPO/issues/$PR/comments?per_page=100" 2>/dev/null) \
+     && verdict=$(printf '%s\n%s' "$reviews_json" "$comments_json" | python3 -c '
+import json, re, sys
+head, bot = sys.argv[1], sys.argv[2]
+text = sys.stdin.read()
+dec = json.JSONDecoder()
+reviews, end = dec.raw_decode(text)
+comments, _ = dec.raw_decode(text[end:].lstrip())
+flat = lambda pages: [x for p in pages for x in (p if isinstance(p, list) else [p])]
+mine = lambda x: (x.get("user") or {}).get("login") == bot
+SHA = r"`([0-9A-Fa-f]{7,40})`"  # a commit id as the bot writes one; compared in lower case, as the head is
+is_head = lambda sha: head.startswith(sha.lower())
+reviewed = lambda body: re.search(r"Reviewed commit:\**\s*" + SHA, body)
+has_review, review_at = False, ""
+for r in filter(mine, flat(reviews)):
+    body = (r.get("body") or "").strip()
+    m = reviewed(body)
+    if r.get("commit_id") == head and (body or r.get("state") in ("APPROVED", "CHANGES_REQUESTED")) \
+            and (not m or is_head(m.group(1))):
+        has_review, review_at = True, max(review_at, r.get("submitted_at") or "")
+markers = []  # (updated, id, running|failed|comment) for each bot comment that speaks about this head
+for c in filter(mine, flat(comments)):
+    body = c.get("body") or ""
+    # A status table is read row by row (a row naming another commit says nothing here), and the rest of the
+    # comment as one more unit, read the same way: a comment without a table is that one unit.
+    lines, row = body.splitlines(), lambda l: l.lstrip().startswith("|")
+    units = [(u, re.findall(SHA, u)) for u in [l for l in lines if row(l)] + ["\n".join(l for l in lines if not row(l))]]
+    ours = [(u, named) for u, named in units if not named or any(is_head(s) for s in named)]
+    status = "\n".join(u for u, _ in ours)
+    m = reviewed(body)
+    # Running and failed are read before any citation of the head: a comment that says the review failed is
+    # no verdict on the commit it names.
+    if re.search(r"\bRunning\b", status):
+        kind = "running"
+    elif re.search(r"\b(Failed|Error|Errored|Cancel+ed)\b", status):
+        kind = "failed"
+    elif m and is_head(m.group(1)):
+        kind = "comment"
+    elif any(named and re.search(r"\bCompleted\b", u) for u, named in ours):
+        kind = "comment"
+    else:
+        continue
+    markers.append((c.get("updated_at") or c.get("created_at") or "", c.get("id") or 0, kind))
+latest = max(markers) if markers else None
+if latest and latest[2] != "comment" and not (review_at and review_at > latest[0]):
+    print(latest[2])
+elif has_review:
+    print("review")
+else:
+    print("comment" if latest else "none")' "$HEAD" "$BOT" 2>/dev/null); then
+  case "$verdict" in
+    review|comment)
+      veto=""; consulted=""
+      if [ -f "$HELPER" ]; then
+        bot_out=$(python3 "$HELPER" --pr "$PR" --gh-repo "$REPO" --bot "$BOT" --head "$HEAD" --timeout 0 2>&1); bot_rc=$?
+        # Here-strings, not pipes: under pipefail a grep that stops at its first match kills the writer of a
+        # large output (the waiter prints whole comment bodies), and the pipeline then reads as "no match".
+        progress=$(grep -m 1 '^t=' <<<"$bot_out") || progress=""
+        usable=1
+        case $bot_rc in
+          0) ;;
+          2) # 2 is the waiter's timeout (no verdict in its own window, which is not the rule above), and
+             # argparse's usage error when its version lacks a flag passed here
+             if ! grep -q 'timeout after' <<<"$bot_out"; then usable=0
+             elif grep -Eq '(^| )eyes=[1-9]' <<<"$progress"; then
+               veto="$BOT is still reviewing $HEAD (wait_for_bot_review: $progress): wait for its verdict"
+             fi ;;
+          3) veto="the PR head moved while the bot verdict was read: rerun land on the new head" ;;
+          4) veto="$BOT reported a failed review of $HEAD: post @codex review again" ;;
+          *) usable=0 ;;  # 1 is its error exit (GitHub unreadable to it) and a crash
+        esac
+        if [ "$usable" -eq 1 ]; then consulted="; wait_for_bot_review raised no veto"
+        else info "cannot use the bot waiter ($HELPER, exit $bot_rc: $(grep -v '^t=' <<<"$bot_out" | tail -n 1)): its veto is skipped, as when it is not installed"; fi
+      fi
+      if [ -n "$veto" ]; then bad "$veto"; else ok "$BOT verdict on $HEAD (its $verdict$consulted)"; fi ;;
+    running) bad "$BOT is still reviewing $HEAD: wait for its verdict" ;;
+    failed) bad "$BOT reported a failed review of $HEAD: post @codex review again" ;;
+    *) bad "no $BOT verdict on $HEAD: post @codex review and wait (no reply in ~10 min = bot unavailable, not clean)" ;;
+  esac
+else
+  bad "cannot read reviews and comments for the $BOT verdict"
+fi
+
+# ---------- review threads ----------
+# shellcheck disable=SC2016  # GraphQL variables, bound by -f/-F
+if threads_json=$(gh api graphql --paginate --slurp -f query='
+  query($owner:String!,$name:String!,$number:Int!,$endCursor:String) {
+    repository(owner:$owner,name:$name) { pullRequest(number:$number) {
+      reviewThreads(first:100, after:$endCursor) { pageInfo { hasNextPage endCursor } nodes { isResolved } } } } }' \
+  -f owner="${REPO%%/*}" -f name="${REPO##*/}" -F number="$PR" 2>/dev/null) \
+  && unresolved=$(printf '%s' "$threads_json" | python3 -c '
+import json, sys
+print(sum(1 for p in json.load(sys.stdin) for t in p["data"]["repository"]["pullRequest"]["reviewThreads"]["nodes"] if not t["isResolved"]))' 2>/dev/null); then
+  if [ "$unresolved" = 0 ]; then ok "no unresolved review threads"; else bad "$unresolved unresolved review thread(s): reply with the disposition and resolve each"; fi
+else
+  bad "cannot read review threads"
+fi
+
+# ---------- squash message: the PR link, Closes lines for the checked closing issues, co-author trailers ----------
+# Passed explicitly: the repo default (every branch commit message) could carry closing keywords for issues
+# these checks never saw. Printed before the result line, so a blocked run (an owner-confirmation stop
+# included) still shows what would be written to main.
+SUBJECT="$TITLE (#$PR)"
+if BODY=$(printf '%s' "$pr_json" | python3 -c '
+import json, re, sys
+d = json.load(sys.stdin)
+lines = [d.get("url") or ""]
+closing = sys.argv[1].split()
+if closing:
+    lines += [""] + ["Closes #" + n for n in closing]
+seen, trailers = set(), []
+for c in d.get("commits") or []:
+    # Same trailer block scripts/lib/cla_check.py checks: the last paragraph before a --- separator.
+    body = re.split(r"^---(?:[ \t].*)?$", c.get("messageBody") or "", maxsplit=1, flags=re.M)[0]
+    for line in body.strip().split("\n\n")[-1].splitlines():
+        m = re.match(r"\s*co-authored-by:\s*(\S.*?)\s*$", line, re.I)
+        if m and m.group(1).lower() not in seen:
+            seen.add(m.group(1).lower())
+            trailers.append("Co-Authored-By: " + m.group(1))
+if trailers:
+    lines += [""] + trailers
+print("\n".join(lines))' "$CLOSING"); then
+  info "squash subject: $SUBJECT"
+  printf '%s\n' "$BODY" | sed 's/^/land:       | /'
+else
+  bad "cannot build the squash message"
+fi
+
+[ "$problems" -eq 0 ] || result 1 blocked "problems=$problems"
+[ "$DRY_RUN" -eq 0 ] || result 0 ready "(dry run: nothing merged)"
+
+# ---------- merge (compare-and-swap on the pinned head) ----------
+# The merge API takes no base precondition: re-read main right before merging (a seconds-wide window remains).
+main_now=$(gh api "repos/$REPO/git/ref/heads/main" --jq .object.sha 2>/dev/null) || main_now=""
+[ -n "$main_now" ] || result 1 merge-refused "(cannot re-read main; rerun land)"
+[ "$main_now" = "$BASE_TIP" ] || result 1 merge-refused "(main moved during the checks: ${BASE_TIP:0:7} → ${main_now:0:7}; rerun land)"
+if ! gh pr merge "$PR" --repo "$REPO" --squash --match-head-commit "$HEAD" --subject "$SUBJECT" --body "$BODY"; then
+  result 1 merge-refused "(head moved or GitHub refused; re-verify, then rerun land)"
+fi
+merged=$(gh pr view "$PR" --repo "$REPO" --json state,mergeCommit 2>/dev/null | python3 -c '
+import json, sys
+d = json.load(sys.stdin)
+print(d.get("state") or "?", (d.get("mergeCommit") or {}).get("oid") or "")' 2>/dev/null) || merged="?"
+if [ "${merged%% *}" != MERGED ]; then
+  # A run on a merged PR only finishes the cleanup, so running land again is the way out either way: it finds
+  # the PR merged and finishes, or finds it open and checks it again.
+  echo "land: gh pr merge succeeded, but the read that verifies it gave state '${merged%% *}'" >&2
+  result 1 merge-unverified "(rerun scripts/land $PR to verify the merge and finish the cleanup)"
+fi
+MERGE_SHA=${merged#* }
+ok "merged as $MERGE_SHA"
+after_merge

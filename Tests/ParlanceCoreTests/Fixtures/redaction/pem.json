@@ -1,0 +1,128 @@
+[
+  {
+    "name": "complete",
+    "input": "before\n-----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY-----\nafter",
+    "expected": "before\n[REDACTED]\nafter",
+    "pem": true
+  },
+  {
+    "name": "certificate",
+    "input": "-----BEGIN CERTIFICATE-----\nFAKE\n-----END CERTIFICATE-----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "openssh",
+    "input": "-----BEGIN OPENSSH PRIVATE KEY-----\nFAKE\n-----END OPENSSH PRIVATE KEY-----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "open tail",
+    "input": "before -----BEGIN RSA PRIVATE KEY----- FAKE tail",
+    "expected": "before [REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "unpaired end",
+    "input": "FAKE first line\nFAKE earlier line\nFAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8\n-----END RSA PRIVATE KEY----- after",
+    "expected": "[REDACTED] after",
+    "pem": true
+  },
+  {
+    "name": "JSON escaped",
+    "input": "{\"key\": \"-----BEGIN RSA PRIVATE KEY-----\\nFAKE body\\n-----END RSA PRIVATE KEY-----\"}",
+    "expected": "{\"key\": \"[REDACTED]\"}",
+    "pem": true
+  },
+  {
+    "name": "diff",
+    "input": "+ -----BEGIN RSA PRIVATE KEY-----\n+ FAKE\n+ -----END RSA PRIVATE KEY-----\n+ after",
+    "expected": "+ [REDACTED]\n+ after",
+    "pem": true
+  },
+  {
+    "name": "numbered quote",
+    "input": "12 > -----BEGIN RSA PRIVATE KEY-----\n13 > FAKE\n14 > -----END RSA PRIVATE KEY-----\n15 > after",
+    "expected": "12 > [REDACTED]\n15 > after",
+    "pem": true
+  },
+  {
+    "name": "complete then begin",
+    "input": "-----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY----- middle -----BEGIN RSA PRIVATE KEY----- FAKE",
+    "expected": "[REDACTED] middle [REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "end then complete",
+    "input": "FAKE -----END RSA PRIVATE KEY----- middle -----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY-----",
+    "expected": "[REDACTED] middle [REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "complete then end",
+    "input": "-----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY----- FAKE middle -----END RSA PRIVATE KEY-----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "begin then complete",
+    "input": "-----BEGIN RSA PRIVATE KEY----- FAKE -----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY----- after",
+    "expected": "[REDACTED] after",
+    "pem": true
+  },
+  {
+    "name": "multiple ends",
+    "input": "FAKE -----END RSA PRIVATE KEY----- FAKE -----END RSA PRIVATE KEY----- after",
+    "expected": "[REDACTED] after",
+    "pem": true
+  },
+  {
+    "name": "label independent",
+    "input": "-----BEGIN RSA PRIVATE KEY----- FAKE -----END CERTIFICATE-----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "spaced label",
+    "input": "-----BEGIN FAKE LABEL -----FAKE-----END FAKE LABEL -----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "overlap assignment",
+    "input": "TOKEN=\"-----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY-----\"",
+    "expected": "TOKEN=\"[REDACTED]\"",
+    "pem": true
+  },
+  {
+    "name": "adjacent non-PEM",
+    "input": "-----END RSA PRIVATE KEY-----sk-FAKEabcdefghijklmnop",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "non-PEM preceding end",
+    "input": "sk-FAKEabcdefghijklmnop\nFAKE earlier\nFAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8\n-----END RSA PRIVATE KEY-----",
+    "expected": "[REDACTED]",
+    "pem": true
+  },
+  {
+    "name": "no markers",
+    "input": "BEGIN FAKE body END",
+    "expected": "BEGIN FAKE body END",
+    "pem": false
+  },
+  {
+    "name": "incomplete marker",
+    "input": "----BEGIN FAKE---- body ----END FAKE----",
+    "expected": "----BEGIN FAKE---- body ----END FAKE----",
+    "pem": false
+  },
+  {
+    "name": "previous PEM preserves prefix",
+    "input": "keep -----BEGIN X-----\nFAKE\n-----END X----- middle FAKE -----END X----- tail",
+    "expected": "keep [REDACTED] tail",
+    "pem": true
+  }
+]

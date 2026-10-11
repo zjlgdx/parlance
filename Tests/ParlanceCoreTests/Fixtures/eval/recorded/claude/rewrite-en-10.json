@@ -1,0 +1,571 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not add any new dependency"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Its license must be MI"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "T or Apache, so check"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the license before adding it.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>不要添加任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "何新的依赖。其"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "许可证必须是 M"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "IT 或 Apache"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，因此在添加之前"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "检查许可证。</g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Do not"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " add new"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " dependencies. Any d"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ependency must use an MIT"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " or Apache license,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " so check this before adding it."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "何新的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "依赖\"改为复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数形"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式，并用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"check"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this\" 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代许"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "可证，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直接；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "佳版本相同。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note></alt><alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<text>Do not add new d"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ependencies unless their license is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " MIT or Apache."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Check the license before adding any"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " dependency.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把许"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "可证要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在条件从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句中，先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制再"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查步骤，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "许"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "可证必须是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " MIT 或 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Apache\"表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述为允"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "许添"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加的条件。</note></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt></alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<fixes><fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "please not use"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正确："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "祈使句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的否定应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"please\" 与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指令语气不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "搭配，应删去。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix><fix>\"the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " license must be MIT or ap"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ache\" 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"apache\" 是专"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有名词"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，应大"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"Apache\"。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</fix><fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "check before add"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正确：介词 \"before"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 后应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接动名"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应为 \"check"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "... before adding\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<fix>两个独"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "立分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仅用逗号连接，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "属"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逗号连接错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误（comma splice"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "），应拆分为两个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句子或使用连接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1171,
+            "promptTokens" : 1154,
+            "reasoningTokens" : 659
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-10",
+    "input" : "please not use any new dependency, the license must be MIT or apache, check before add"
+  }
+}

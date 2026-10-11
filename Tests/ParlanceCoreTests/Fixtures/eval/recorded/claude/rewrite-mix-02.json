@@ -1,0 +1,346 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Run ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧, which f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ails with ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧. Check whether the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " paths option in tsconf"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ig is misconfigured."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</best>\n<gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行 ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧，报错 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧。检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查 tsconfig "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的 paths 选"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "项是否配错了。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><alt><text>Run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", which errors with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧. Check"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " whether the paths setting in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " tsconfig is miscon"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "figured.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "报"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错\"译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "errors，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"pa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ths\"译成 set"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ting，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更接近技术说明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "向的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍是同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一个配置项。</note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></alt><alt><text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Running ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ fails with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Check whether t"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "sconfig's paths m"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "apping is wrong.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " mapping 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代 paths 的作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用，更具体"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"改成了\"mapping"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is wrong\"，判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语气略"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 922,
+            "promptTokens" : 1354,
+            "reasoningTokens" : 590
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-02",
+    "input" : "跑 `npm run build` 报错 `Cannot find module './config'`，帮我查一下是不是 tsconfig 的 paths 配错了"
+  }
+}

@@ -1,0 +1,561 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<transl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation>信"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "号掩码重置是正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确的。它用 `PO"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "SIX_SPAW"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "N_SETSIGM"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ASK` 设置一个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "空掩码；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "失败路径会关闭"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "全部六个描述符，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并且 `destroy`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 只在 `init` "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成功之后才注册。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "如果没有这一步，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从 GCD 工作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "线程派生的辅助"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "进程会继承被阻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "塞的 SIGT"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ERM 和 SIG"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "INT。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这段话认"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为信号掩码的重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置是正确的，因为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "如"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果不做"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这一步，从 GC"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "D 工作线程启"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "辅助进程会继承被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "阻塞的 SI"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "GTERM 和 S"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "IGINT 信号。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</plain>\n<terms"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>POS"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "IX_S"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "PAWN_SETS"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "IGMASK</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>pos"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix_spawn 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "属性标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "志，用于在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子进程启动时设置"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "其信号掩码。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子进程的信号掩"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码设为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "空，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "阻塞任何信号。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term>\n<term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>GCD</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>Grand"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Central Dispatch，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "苹果的并发任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务调度框"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "架。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " GCD 工作线"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程派生"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "辅助进程的场"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "景，该"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "线程原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本可能带有被阻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "塞的信号。</here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">SIGTERM</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><meaning>终"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "止信号，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "请求进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "常结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "束。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">这里是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误继"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "承、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "阻塞的信号之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一。</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>destroy"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><meaning>销"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "毁、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "释"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "放资源的函数或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "操作。</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在 init 成功后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "才注"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "册，确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "保只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理已正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确初始化的资源。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term>\n</ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1128,
+            "promptTokens" : 477,
+            "reasoningTokens" : 552
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-11",
+    "input" : "The signal-mask reset is correct. It sets an empty mask with `POSIX_SPAWN_SETSIGMASK`; the failure path closes all six descriptors, and `destroy` is only registered after `init` succeeds. Without it, a helper spawned from a GCD worker thread would inherit blocked SIGTERM and SIGINT.",
+    "source" : "claude-code"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Explain how to fix the Sendable warning when calling ⟦1⟧ inside"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a class of ⟦0⟧ under Swift 6.</best>\n<gloss>在 Swift 6 下的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧ 的类中调用 ⟦1⟧ 时报 Sendable 警告，解释该如何修改。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts><alt><text>Explain the correct way to resolve the Sendable warning triggered by calling ⟦1⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " within a class of ⟦0⟧ under Swift 6.</text><note>使用更正式的技术词汇（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "resolve、triggered by）来重写指令，使其语气更符合面向编码代理的规范。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><fix>原句是关于 Swift 6 警告的求助式问句，已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "转换为面向编码代理的祈使句指令（Explain how to fix ...）。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 189,
+            "promptTokens" : 971
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-09",
+    "input" : "Swift 6 下 `@MainActor` 的 class 里调用 `Task.detached` 报 Sendable 警告，怎么改才对"
+  }
+}

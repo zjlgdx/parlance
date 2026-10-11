@@ -1,0 +1,276 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not modify the database migration"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " files. Only change the service lay"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "er, then run the unit t"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ests.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>不要修改数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据库迁移文件。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "只修改服务层，修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改完成后运行单元"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "测试。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Leave"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the database migration files untouched"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Change only the service layer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", then run the unit tests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "”译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "leave unt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ouched，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语化，含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义与原文一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Don't"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " edit any database migration files."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Only modify the service layer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", and run the unit tests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " afterward.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "don't edit 和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " af"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terward 强调“任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "何”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迁移文件和先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺序，语气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "略"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "显随"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意，但"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令内"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "容相同。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 537,
+            "promptTokens" : 1159,
+            "reasoningTokens" : 286
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-06",
+    "input" : "不要动数据库迁移文件，只改服务层，改完跑一下单元测试"
+  }
+}

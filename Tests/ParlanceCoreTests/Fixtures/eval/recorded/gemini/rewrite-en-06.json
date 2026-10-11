@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Investigate the flaky test that sometimes passes and sometimes fails, and check for potential timing issues.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>调查那个时而通过时而失败的不稳定测试，并检查潜在的时序问题。</gloss>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alts><alt><text>Check the flaky test that occasionally passes and fails, and analyze if it is caused"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " by timing problems.</text><note>使用 analyze 代替 check，语气更具技术性。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><fix>“sometime pass sometime fail”语法错误且不地道，已修正为 “"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "sometimes passes and sometimes fails”或通过重写使其符合指令语气。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 144,
+            "promptTokens" : 837
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-06",
+    "input" : "the test is flaky, sometime pass sometime fail, maybe is timing problem, pls check"
+  }
+}

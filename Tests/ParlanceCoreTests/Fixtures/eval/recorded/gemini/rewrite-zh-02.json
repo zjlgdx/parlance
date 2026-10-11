@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Split this function into two: one for parsing and one for validation. Update the tests accordingly"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<gloss>将此函数拆分为两个：一个用于解析，一个用于验证。相应地更新测试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</gloss>\n<alts><alt><text>Refactor this function into two separate functions—one responsible for parsing"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and the other for validation—and update the tests accordingly.</text><note>使用更正式的技术动词 refactor 代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "替 split，并用破折号使结构更紧凑。</note></alt></alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>输入已经是目标语言（英文），在此处不适用（输入为中文，属于 Case A）。</fix></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 149,
+            "promptTokens" : 839
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-02",
+    "input" : "把这个函数拆成两个，一个负责解析，一个负责校验，测试也要跟着拆"
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "exact length",
+    "input": "AIzaFAKEabcdefghijklmnopqrstuvwxyzabcde",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "short",
+    "input": "AIzaFAKEabcdefghijklmnopqrstuvwxyzabcd",
+    "expected": "AIzaFAKEabcdefghijklmnopqrstuvwxyzabcd",
+    "pem": false
+  },
+  {
+    "name": "overlong",
+    "input": "AIzaFAKEabcdefghijklmnopqrstuvwxyzabcdef",
+    "expected": "AIzaFAKEabcdefghijklmnopqrstuvwxyzabcdef",
+    "pem": false
+  },
+  {
+    "name": "sentence punctuation",
+    "input": "Value AIzaFAKEabcdefghijklmnopqrstuvwxyzabcde.",
+    "expected": "Value [REDACTED].",
+    "pem": false
+  }
+]

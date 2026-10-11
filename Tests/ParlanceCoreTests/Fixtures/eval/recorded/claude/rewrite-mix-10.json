@@ -1,0 +1,321 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Change ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ in ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧ to read from"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the environment variable "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦2⟧, defa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ulting to 30 if it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is not set.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>把 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 里的 ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "1⟧ 改成"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从环境变量 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦2⟧ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "读取，未设置时默"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认为 30。</glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Update "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " so that ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ reads its value from"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the environment variable "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦2⟧, falling"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " back to 30 when it is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " unset.</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出改动目"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "标和回退逻辑"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整，但"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句子"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "长。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>In "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧, repl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ace ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ with a read from the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " environment variable ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "2⟧, using 30"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " as the default when the variable"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is not set.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " replace 强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "替换原有的写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "死"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "值，适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合想"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "突"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出改动性"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "质"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的场"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 865,
+            "promptTokens" : 1374,
+            "reasoningTokens" : 532
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-10",
+    "input" : "把 config.yaml 里的 `timeout: 30` 改成从环境变量 `APP_TIMEOUT` 读，没设的话默认 30"
+  }
+}

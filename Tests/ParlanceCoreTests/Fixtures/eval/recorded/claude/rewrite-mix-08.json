@@ -1,0 +1,356 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Run the migration script "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " first, and only"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " run it for real after"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " confirming there"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " are no problems.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 先跑一遍"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迁移脚本 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确认没问题后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再真正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "执"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<text>First"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " run the migration script "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and verify there are no problems"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " before running it for real.</text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><note>与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " best 意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思相同，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更接近原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认没问题\"译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确的校"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "验动作 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "verify。</note></alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><alt><text>Test"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the migration script ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "1⟧ with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ before"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " running"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " it for real, and confirm"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " it complet"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es without probl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ems.</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "test 概"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "括\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "先跑一遍\"，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"确认没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题\"写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确认执"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行无"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "偏向测"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 701,
+            "promptTokens" : 1347,
+            "reasoningTokens" : 388
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-08",
+    "input" : "用 `--dry-run` 先跑一遍迁移脚本 scripts/migrate.sh，确认没问题再真跑"
+  }
+}

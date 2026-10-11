@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">A conflict occurred during git rebase, and ⟦0⟧ was modified"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on both sides. Explain the safest way to resolve it.</best>\n<gloss>在 git rebase 期间发生了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "冲突，且 ⟦0⟧ 在两侧都被修改了。解释最安全地解决它的方法。</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts><alt><text>Resolve the git rebase conflict where ⟦0⟧ was modified on both sides, using"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the safest approach.</text><note>使用祈使句直接指示代理解决冲突，语气更符合 agent 预"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "设。</note></alt></alts>\n<fixes><fix>输入为中文且目标语言为英文，因此按照"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Case A 处理，不包含 fixes 部分。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 156,
+            "promptTokens" : 956
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-04",
+    "input" : "git rebase 的时候冲突了，`package-lock.json` 两边都改了，怎么处理最安全"
+  }
+}

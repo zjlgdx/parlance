@@ -1,0 +1,651 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>I"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " want to refactor this class without"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " breaking other places that use it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Explain how to do this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " safely.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>我想重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "构这个类，同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时不破"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "坏其他使用它的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地方。请说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明如何安"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "全地做到这一点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>I want to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " refactor this class without brea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "king the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " other"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " code that uses it. Expl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ain how to do this safely."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</text><note>与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思相同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把\"other places"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "换"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成\"other"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " code\"，更明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确地指代调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个类的代码，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气也"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>I want to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " refactor this class without brea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "king its existing callers."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Explain how to do this safely"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "exist"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ing callers\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "（现"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有调用方"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "）代替 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"places"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " that use it\"，更简"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "洁、更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "技术性，适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合面"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "向编"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指令。</note></alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></alts>\n<fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es><fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "i want refactor\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少 \"to\"，且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首 \"i\" 应大"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写为 \"I\"。动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"to ref"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "actor\" 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"want\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "准"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "搭配。</fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<fix>\"but not break\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺，应改为 \"without"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " breaking\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，表示"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "破坏的前提下\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，更符合英语习"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "惯。</fix><f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix>\"other"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " place"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " who use it\" 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"who\" 用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "于指人"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，此"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或代码，应改为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"that\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，并使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数 \"places that use it\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"other places\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 保持一致。</f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix><fix>\"how to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " do safe\" 不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达，\"saf"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "e\" 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "形容词，应作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "副"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "饰动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改为 \"how"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to do this safely\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 950,
+            "promptTokens" : 1152,
+            "reasoningTokens" : 422
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-08",
+    "input" : "i want refactor this class but not break other place who use it, how to do safe"
+  }
+}

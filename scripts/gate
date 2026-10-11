@@ -1,0 +1,548 @@
+#!/bin/bash
+# scripts/gate — Parlance's single verification entry point. Local runs, .githooks/ and CI all call this
+# script; do not copy its commands anywhere else (AGENTS.md 验证).
+#
+# Usage:
+#   scripts/gate [--base <ref>] [--require-clean] [component ...]   full run (default: every component)
+#   scripts/gate --staged                                            fast pre-commit subset, staged files only
+#   scripts/gate --list                                              show components and whether they apply
+#
+# Components, each with the failure it prevents:
+#   docs     broken relative links in Markdown; design docs missing required sections (docs/designs/*.md);
+#            whitespace errors in the change
+#   shell    syntax errors, bash 4+ constructs (a static lint, because CI's /bin/bash is newer than the
+#            macOS 3.2 every script must run on) and shellcheck findings in repo shell scripts
+#   actions  invalid workflow syntax, expressions or runner labels (actionlint)
+#   harness  agent-harness drift: AGENTS.md over its byte budget, broken skill/agent frontmatter or paths, a CI
+#            workflow that stops running the gate as pinned; PR-reference, guard, git-hook, land, CI-runner,
+#            doctor, ticket-selection, Codex-worker, PR-title and gate regressions (runs their counterexample
+#            tables)
+#   secrets  committed (merge resolutions included), staged or untracked credentials (gitleaks with the repo's
+#            .gitleaks.toml); a stash is not scanned
+#   swift    Package.swift and/or App/Parlance.xcodeproj: format, build, tests (zero executed fails).
+#            Package only: gitignored files inside the package or behind a symlink in it (on
+#            disk here, absent from the commit), a Package.resolved missing from the commit or out of date,
+#            AppKit imports in ParlanceCore or the targets it depends on, dependencies outside the license
+#            allowlist, format drift, build and test failures, zero executed tests. Skipped and cancelled tests
+#            do not count as executed, with one exception no log shows: a parameterized test whose cases each
+#            call Test.cancel is reported as passed, so a live test's switch belongs in an `.enabled(if:)` trait
+#
+# Output: one line per component (PASS, FAIL, or N/A when it does not apply) and a final `GATE result=...
+# head=... dirty=...` line; full logs go to build/gate/. A run fails when a component fails, when a component
+# is N/A where that is not allowed, or when the working tree changed or HEAD moved while the gate ran (the
+# commit would no longer be what was checked). A full run (no component arguments, not --staged) that passes
+# on a clean tree writes a gate stamp for HEAD under "$(git rev-parse --git-common-dir)/parlance-gate/";
+# .githooks/pre-push and scripts/land read it. Missing tools fail the component (fail-closed). N/A is allowed
+# only for swift while both Package.swift and App/Parlance.xcodeproj are absent, for actions while there are
+# no workflows, and in --staged subsets.
+#
+# Exit codes: 0 pass, 1 fail, 2 usage error.
+
+set -uo pipefail
+# The caller's SHELLCHECK_OPTS (--severity=error, -e SC2086) would weaken shellcheck here and inside actionlint.
+unset SHELLCHECK_OPTS
+
+ALL_COMPONENTS="docs shell actions harness secrets swift"
+
+usage() { sed -n '2,/^# Exit codes/p' "$0" | sed 's/^# \{0,1\}//'; }
+
+BASE=""
+REQUIRE_CLEAN=0
+STAGED=0
+LIST=0
+COMPONENTS=""
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --base) [ $# -ge 2 ] || { echo "gate: --base needs a ref" >&2; exit 2; }; BASE=$2; shift 2 ;;
+    --require-clean) REQUIRE_CLEAN=1; shift ;;
+    --staged) STAGED=1; shift ;;
+    --list) LIST=1; shift ;;
+    -h|--help) usage; exit 0 ;;
+    -*) echo "gate: unknown option $1" >&2; exit 2 ;;
+    *)
+      case " $ALL_COMPONENTS " in
+        *" $1 "*) COMPONENTS="$COMPONENTS $1" ;;
+        *) echo "gate: unknown component '$1' (components: $ALL_COMPONENTS)" >&2; exit 2 ;;
+      esac
+      shift ;;
+  esac
+done
+
+ROOT=$(git rev-parse --show-toplevel 2>/dev/null) || { echo "gate: not inside a git repository" >&2; exit 2; }
+cd "$ROOT" || exit 2
+export PYTHONDONTWRITEBYTECODE=1 PYTHONIOENCODING=utf-8
+LIB="$ROOT/scripts/lib"
+LOG_DIR="$ROOT/build/gate"
+mkdir -p "$LOG_DIR"
+
+# The working tree's state, apart from the gate's own logs. Compared before and after the components: a
+# component that writes, deletes or rewrites a file fails the run, so a stamp always means "this tree passed".
+tree_state() {
+  git --no-optional-locks -c core.quotePath=false status --porcelain --untracked-files=all -- . ':(exclude)build/gate'
+}
+
+# Where HEAD is: its commit, the branch it names and the length of its reflog. Also compared before and after:
+# a branch switch on a clean tree leaves `git status` empty at both ends, yet the components that ran after it
+# checked another commit's files. Only the reflog shows a HEAD that moved away and came back (with reflogs
+# switched off, that one case goes unseen). Its entries are counted through git: a repository in the reftable
+# format has no logs/HEAD file to read.
+head_state() {
+  printf '%s ref=%s reflog-entries=%s' "$(git rev-parse --verify --quiet HEAD || echo none)" \
+    "$(git symbolic-ref -q HEAD || echo detached)" "$(git rev-list -g HEAD 2>/dev/null | wc -l | tr -d ' ')"
+}
+
+HEAD_BEFORE=$(head_state)
+HEAD_SHA=${HEAD_BEFORE%% *}
+TREE_BEFORE=$(tree_state)
+if [ -n "$TREE_BEFORE" ]; then DIRTY=1; else DIRTY=0; fi
+
+if [ -z "$BASE" ] && [ "$STAGED" -eq 0 ]; then
+  if git rev-parse --verify --quiet origin/main >/dev/null; then
+    BASE=$(git merge-base origin/main HEAD 2>/dev/null || true)
+  fi
+fi
+if [ -n "$BASE" ]; then
+  BASE=$(git rev-parse --verify --quiet "$BASE^{commit}") || { echo "gate: --base is not a commit" >&2; exit 2; }
+fi
+
+# ---------- helpers ----------
+
+CUR=""          # component being run
+need() {        # need <tool> <install hint>
+  if ! command -v "$1" >/dev/null 2>&1; then
+    echo "missing tool: $1 (install: $2)"
+    return 1
+  fi
+}
+detail() { printf '%s\n' "$*" > "$LOG_DIR/$CUR.detail"; }
+na() { detail "$*"; : > "$LOG_DIR/$CUR.na"; }  # the component does not apply; the caller then returns 0
+
+# Path lists fed to the checkers are NUL-separated and never C-quoted (-z), so names with spaces or non-ASCII
+# characters reach them intact. Read them with `while IFS= read -r -d '' f`.
+staged_files() {  # staged paths that still exist (added, copied, modified, renamed)
+  git diff -z --cached --name-only --diff-filter=ACMR
+}
+repo_files() {  # tracked plus untracked-but-not-ignored files (a tracked file deleted from the tree is listed,
+  # so comp_docs and is_shell_script skip paths that are not files)
+  git ls-files -z --cached --others --exclude-standard
+}
+staged_change_matches() {  # staged_change_matches <ERE>: does any staged change match? Deletions count, and a
+  # rename counts under both its old and its new path (--no-renames lists it as a deletion plus an addition).
+  # grep reads everything (no -q): an early exit would SIGPIPE git and fail the pipeline under pipefail.
+  git -c core.quotePath=false diff --cached --name-only --no-renames | grep -E "$1" >/dev/null
+}
+
+is_shell_script() {
+  [ -f "$1" ] || return 1  # deleted from the working tree: nothing to lint (as in comp_docs)
+  case "$1" in
+    *.sh) return 0 ;;
+    *.md|*.png|*.json|*.yml|*.yaml|*.py|*.swift|*.toml|*.plist) return 1 ;;
+  esac
+  head -n 1 "$1" 2>/dev/null | grep -Eq '^#!(/bin/(ba)?sh|/usr/bin/env (ba)?sh)( |$)'
+}
+
+have_workflows() {
+  local f
+  for f in .github/workflows/*.yml .github/workflows/*.yaml; do
+    [ -f "$f" ] && return 0
+  done
+  return 1
+}
+
+# ---------- components ----------
+# Each component returns 0 (pass) or non-zero (fail). One that does not apply calls `na <reason>` and then
+# returns 0; no exit code means N/A, so a tool's own exit status can never be mistaken for it.
+
+comp_docs() {
+  need python3 "xcode-select --install" || return 1
+  local rc=0 n=0 f
+  local -a md=()
+  if [ "$STAGED" -eq 1 ]; then
+    git -c core.quotePath=false diff --cached --check || rc=1
+  elif [ -n "$BASE" ]; then
+    git -c core.quotePath=false diff --check "$BASE" -- . || rc=1
+  else
+    git -c core.quotePath=false diff --check HEAD -- . || rc=1
+  fi
+  while IFS= read -r -d '' f; do
+    case "$f" in *.md) [ -f "$f" ] && md+=("$f") ;; esac
+  done < <(if [ "$STAGED" -eq 1 ]; then staged_files; else repo_files; fi)
+  for f in ${md[@]+"${md[@]}"}; do
+    case "$f" in
+      docs/designs/*.md)
+        n=$((n + 1))
+        bash "$LIB/check-design-doc.sh" "$f" || rc=1 ;;
+    esac
+  done
+  if [ "${#md[@]}" -gt 0 ]; then
+    python3 "$LIB/check_docs.py" "${md[@]}" || rc=1
+  fi
+  detail "design docs checked: $n"
+  return $rc
+}
+
+comp_shell() {
+  need shellcheck "brew install shellcheck" || return 1
+  need python3 "xcode-select --install" || return 1
+  local rc=0 f
+  local -a scripts=()
+  while IFS= read -r -d '' f; do
+    is_shell_script "$f" && scripts+=("$f")
+  done < <(if [ "$STAGED" -eq 1 ]; then staged_files; else repo_files; fi)
+  for f in ${scripts[@]+"${scripts[@]}"}; do
+    /bin/bash -n "$f" || { echo "syntax error (/bin/bash -n): $f"; rc=1; }
+    shellcheck -x "$f" || rc=1
+  done
+  if [ "${#scripts[@]}" -gt 0 ]; then
+    python3 "$LIB/check_bash32.py" "${scripts[@]}" || rc=1
+  fi
+  detail "scripts checked: ${#scripts[@]}"
+  return $rc
+}
+
+comp_actions() {
+  if ! have_workflows; then
+    na "no workflows"
+    return 0
+  fi
+  if [ "$STAGED" -eq 1 ] && ! staged_change_matches '^(public/)?\.github/'; then
+    na "no staged workflow changes"
+    return 0
+  fi
+  need actionlint "brew install actionlint" || return 1
+  # Any non-zero exit fails: 1 findings, 2 usage error, 3 fatal (for example an unparsable actionlint.yaml).
+  actionlint -no-color || return 1
+  # The public snapshot's workflows live under public/ here; lint them before they are exported.
+  if [ -d public/.github/workflows ]; then
+    actionlint -no-color public/.github/workflows/*.yml || return 1
+  fi
+}
+
+harness_check() {  # harness_check <repo path> [args...]: run one check; a missing file is a failure
+  if [ ! -f "$1" ]; then
+    echo "harness check missing: $1"
+    return 1
+  fi
+  case "$1" in
+    *.py) python3 "$@" ;;
+    *) bash "$@" ;;
+  esac
+}
+
+comp_harness() {
+  need python3 "xcode-select --install" || return 1
+  if [ "$STAGED" -eq 1 ] && ! staged_change_matches '^(AGENTS\.md|CLAUDE\.md|\.claude/|\.githooks/|(public/)?\.github/workflows/|scripts/|tools/|docs/development\.md)'; then
+    na "no staged harness changes"
+    return 0
+  fi
+  # The self-tests build throwaway repositories. Under a git hook, GIT_DIR/GIT_INDEX_FILE point at this
+  # repository (a linked worktree, `git commit -a`), and would redirect their git commands here; clear git's
+  # local variables for them. Each test clears them as well (check_harness.py requires it).
+  (
+    # shellcheck disable=SC2046  # the variable names are single words
+    unset $(git rev-parse --local-env-vars)
+    rc=0
+    harness_check scripts/lib/check_harness.py || rc=1
+    harness_check scripts/lib/pr_refs.py --self-test || rc=1
+    # Missing private files still fail in a private tree, even if AGENTS.md was deleted.
+    if [ -e AGENTS.md ] || [ -e CLAUDE.md ] || [ -d .claude ] || [ -d tools ] \
+      || git ls-files --error-unmatch AGENTS.md >/dev/null 2>&1; then
+      harness_check scripts/lib/test_guard.py || rc=1
+      harness_check scripts/lib/test-git-hooks.sh || rc=1
+      harness_check scripts/lib/test-land.sh || rc=1
+      harness_check tools/ci-runner/test-controller.sh || rc=1
+      harness_check tools/ci-runner/test-macos-controller.sh || rc=1
+      harness_check scripts/lib/test-doctor.sh || rc=1
+      harness_check .claude/skills/pl-next/scripts/test_select_next.py || rc=1
+      harness_check .claude/skills/pl-next/scripts/test-codex-worker.sh || rc=1
+    else
+      echo "private harness: N/A (public snapshot has no agent or runner files)"
+    fi
+    harness_check scripts/lib/test-cla-check.sh || rc=1
+    # The exporter stays private; standalone gate fixtures do not contain it either.
+    if [ -e scripts/export-public ] || [ -e AGENTS.md ] \
+      || git ls-files --error-unmatch AGENTS.md >/dev/null 2>&1; then
+      harness_check scripts/lib/test-export-public.sh || rc=1
+    else
+      echo "export-public tests: N/A (no private exporter)"
+    fi
+    if harness_check scripts/lib/check_pr_title.py --self-test; then echo "check_pr_title: self-test ok"; else rc=1; fi
+    harness_check scripts/lib/test-gate.sh || rc=1
+    exit $rc
+  )
+}
+
+# leaks <git|dir> <args...>: one gitleaks scan with the repo's configuration. --config on every call:
+# `gitleaks dir <file>` would otherwise look for a config next to that file (and a user's GITLEAKS_CONFIG would
+# win everywhere), dropping the repo's Redactor-fixture allowlist.
+# gitleaks reads the patches git prints and exits 0 when it cannot: colour forced on (color.ui or color.diff =
+# always) makes them unparsable, a `-diff` or `binary` attribute replaces a file's patch with "Binary files
+# differ", and a failing git call only shows as ERR lines in its log. So its git runs with color.diff=never
+# (which decides for patches, whatever color.ui says) and without the user's attributes file (settings passed
+# in the environment beat the repository's and the user's config files; a caller's `git -c`, which would beat
+# those, is dropped), without the tree's .gitattributes (GIT_ATTR_SOURCE, git 2.40+), and a scan that logs an
+# error fails. Attributes in $GIT_DIR/info/attributes still apply: nothing here can switch them off.
+leaks() {
+  local mode=$1 rc=0 n=${GIT_CONFIG_COUNT:-0} err="$LOG_DIR/secrets.err" kv errors
+  local -a cfg=()
+  shift
+  for kv in color.diff=never core.attributesFile=/dev/null; do
+    cfg+=("GIT_CONFIG_KEY_$n=${kv%%=*}" "GIT_CONFIG_VALUE_$n=${kv#*=}")
+    n=$((n + 1))
+  done
+  env -u GIT_CONFIG_PARAMETERS GIT_ATTR_SOURCE="$EMPTY_TREE" GIT_CONFIG_COUNT="$n" "${cfg[@]}" \
+    gitleaks "$mode" --no-banner --redact --log-level warn --config "$ROOT/.gitleaks.toml" "$@" 2>"$err" || rc=1
+  cat "$err"
+  # gitleaks logs every line git writes to stderr as an error; a git `warning:` or `hint:` (CRLF conversion
+  # under core.autocrlf, say) comes with a complete scan and does not count.
+  errors=$(sed $'s/\x1b\\[[0-9;]*m//g' "$err" | grep -E '^[^ ]+ (ERR|FTL) ' \
+    | grep -Ev ' (ERR|FTL) (\[git\] (warning|hint): |error="stderr is not empty")')
+  if [ -n "$errors" ]; then
+    echo "gitleaks logged an error: this scan may not have read everything it was asked to"
+    rc=1
+  fi
+  return $rc
+}
+
+comp_secrets() {
+  need gitleaks "brew install gitleaks" || return 1
+  local rc=0 f
+  if [ ! -f "$ROOT/.gitleaks.toml" ]; then
+    echo "missing $ROOT/.gitleaks.toml"
+    return 1
+  fi
+  EMPTY_TREE=$(git hash-object -t tree /dev/null) || return 1
+  if [ "$STAGED" -eq 1 ]; then
+    leaks git --pre-commit --staged . || rc=1
+    detail "staged changes scanned"
+    return $rc
+  fi
+  # --diff-merges=first-parent: `git log -p` prints no patch for a merge commit by default, which would hide
+  # whatever a conflict resolution added. The full-history form repeats gitleaks' own default log options, plus
+  # --exclude=refs/stash (it has to come before --all): a stash entry is a merge commit, so its patch would be
+  # scanned as well, but it is local work in progress that no push sends.
+  if [ -n "$BASE" ] && [ "$BASE" != "$HEAD_SHA" ]; then
+    leaks git --log-opts="--diff-merges=first-parent $BASE..HEAD" . || rc=1
+    detail "commits $BASE..HEAD + uncommitted changes scanned"
+  else
+    leaks git --log-opts="--full-history --exclude=refs/stash --all --diff-filter=tuxdb --diff-merges=first-parent" . || rc=1
+    detail "full history + uncommitted changes scanned"
+  fi
+  leaks git --pre-commit . || rc=1
+  leaks git --pre-commit --staged . || rc=1
+  # Untracked files, as repo-relative paths: the allowlist in .gitleaks.toml is anchored at ^Tests/.
+  while IFS= read -r -d '' f; do
+    [ -f "$f" ] || continue
+    leaks dir "$f" || rc=1
+  done < <(git ls-files -z --others --exclude-standard)
+  return $rc
+}
+
+comp_swift() {
+  if [ ! -f Package.swift ] && [ ! -d App/Parlance.xcodeproj ]; then
+    na "docs-first: Package.swift and App/Parlance.xcodeproj absent"
+    return 0
+  fi
+  local rc=0 f
+  if [ "$STAGED" -eq 1 ]; then
+    local -a files=()
+    while IFS= read -r -d '' f; do
+      case "$f" in *.swift) files+=("$f") ;; esac
+    done < <(staged_files)
+    if [ "${#files[@]}" -eq 0 ]; then
+      na "no staged Swift files"
+      return 0
+    fi
+    need swift "install Xcode and run xcode-select -s" || return 1
+    [ -f .swift-format ] || { echo ".swift-format is missing"; return 1; }
+    swift format lint --strict "${files[@]}" || rc=1
+    detail "staged Swift files linted: ${#files[@]}"
+    return $rc
+  fi
+  need swift "install Xcode and run xcode-select -s" || return 1
+  need python3 "xcode-select --install" || return 1
+  [ -f .swift-format ] || { echo ".swift-format is missing"; return 1; }
+  local package_brief="" app_brief=""
+  if [ -f Package.swift ]; then
+    comp_swift_package || rc=1
+    [ ! -f "$LOG_DIR/$CUR.detail" ] || package_brief=$(cat "$LOG_DIR/$CUR.detail")
+  fi
+  if [ -d App/Parlance.xcodeproj ]; then
+    comp_swift_app || rc=1
+    [ ! -f "$LOG_DIR/xcode-summary.txt" ] || app_brief=$(cat "$LOG_DIR/xcode-summary.txt")
+  fi
+  detail "${package_brief:+package: $package_brief }${app_brief:+app: $app_brief}"
+  return $rc
+}
+
+comp_swift_package() {
+  local rc=0 p
+  for p in .swift-format Sources Tests; do
+    [ -e "$p" ] || { echo "Package.swift exists but $p is missing: the swift gate needs .swift-format, Sources/ and Tests/"; rc=1; }
+  done
+  [ "$rc" -eq 0 ] || return 1
+  swift --version 2>&1 | head -n 1
+  local args="--no-color-diagnostics"
+  if [ -n "${CODEX_SANDBOX:-}" ] || [ "${PARLANCE_SWIFTPM_DISABLE_SANDBOX:-0}" = "1" ]; then
+    # SwiftPM's own manifest sandbox cannot nest inside Codex's Seatbelt sandbox (sandbox_apply EPERM).
+    args="$args --disable-sandbox"
+    export CLANG_MODULE_CACHE_PATH="$ROOT/.build/ModuleCache"
+  fi
+
+  # 1. Resolve before anything reads Package.resolved, and require resolution to leave it as committed: a
+  #    missing or stale file means the license check, CI and `swift build` would each see different pins.
+  local before=absent after=absent
+  [ -f Package.resolved ] && before=$(git hash-object Package.resolved)
+  # shellcheck disable=SC2086
+  swift package $args resolve || return 1
+  [ -f Package.resolved ] && after=$(git hash-object Package.resolved)
+  if [ "$after" != "$before" ]; then
+    if [ "$before" = absent ]; then
+      echo "Package.resolved is missing: \`swift package resolve\` created it. Review it and commit it."
+    else
+      echo "Package.resolved is out of date: \`swift package resolve\` rewrote it. Review the change and commit it."
+    fi
+    rc=1
+  elif [ "$after" != absent ] && ! git ls-files --error-unmatch Package.resolved >/dev/null 2>&1; then
+    echo "Package.resolved is not tracked: git add it (CI and the license allowlist check the committed pins)."
+    rc=1
+  fi
+
+  # 2. Invariants that follow the manifest: ParlanceCore's import closure, declared dependencies pinned,
+  #    pins in the license allowlist, no gitignored file in a target directory (it would be built here and
+  #    be missing from the commit this run vouches for).
+  # shellcheck disable=SC2086
+  swift package $args dump-package > "$LOG_DIR/swift-manifest.json" || return 1
+  python3 "$LIB/check_swift_invariants.py" --manifest "$LOG_DIR/swift-manifest.json" || rc=1
+
+  # 3. Format.
+  swift format lint --strict --parallel --recursive Package.swift Sources Tests || rc=1
+
+  # 4. Build and test with the committed pins only (a second line of defence behind step 1).
+  # shellcheck disable=SC2086
+  swift build $args --force-resolved-versions || return 1
+  # shellcheck disable=SC2086
+  swift test $args --force-resolved-versions > "$LOG_DIR/swift-test.log" 2>&1
+  local trc=$? brief
+  cat "$LOG_DIR/swift-test.log"
+  [ "$trc" -eq 0 ] || rc=1
+  python3 "$LIB/swift_test_summary.py" "$LOG_DIR/swift-test.log" || rc=1
+  brief=$(python3 "$LIB/swift_test_summary.py" --brief "$LOG_DIR/swift-test.log" 2>/dev/null)
+  detail "${brief:-tests=?}"
+  return $rc
+}
+
+comp_swift_app() {
+  local rc=0 result="$LOG_DIR/Parlance.xcresult"
+  rm -f "$LOG_DIR/xcode-summary.txt"
+  need xcodebuild "install Xcode and run xcode-select -s" || return 1
+  need xcrun "install Xcode and run xcode-select -s" || return 1
+  swift format lint --strict --parallel --recursive App || rc=1
+  rm -rf "$result"
+  xcodebuild -project App/Parlance.xcodeproj -scheme Parlance -destination 'platform=macOS' \
+    -derivedDataPath build/xcode -resultBundlePath "$result" build test \
+    CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= > "$LOG_DIR/xcode-test.log" 2>&1 || rc=1
+  cat "$LOG_DIR/xcode-test.log"
+  xcrun xcresulttool get test-results summary --path "$result" > "$LOG_DIR/xcode-summary.json" || return 1
+  python3 - "$LOG_DIR/xcode-summary.json" > "$LOG_DIR/xcode-summary.txt" <<'PYCODE' || rc=1
+import json, sys
+with open(sys.argv[1]) as source:
+    summary = json.load(source)
+# Passed tests prove execution; skipped tests and an empty successful test action do not.
+passed = summary["passedTests"]
+failed = summary["failedTests"]
+skipped = summary["skippedTests"]
+if any(type(n) is not int or n < 0 for n in (passed, failed, skipped)):
+    sys.exit("invalid xcresult test counts")
+print(f"tests={passed + failed} passed={passed} failed={failed} skipped={skipped}")
+if passed == 0 or failed != 0 or summary["result"] != "Passed":
+    sys.exit("xcode tests failed or zero tests executed")
+PYCODE
+  cat "$LOG_DIR/xcode-summary.txt"
+  return $rc
+}
+
+applies() {  # used by --list
+  case "$1" in
+    swift) if [ -f Package.swift ] || [ -d App/Parlance.xcodeproj ]; then echo "active"; else echo "n/a (docs-first: Package.swift and App/Parlance.xcodeproj absent)"; fi ;;
+    actions) if have_workflows; then echo "active"; else echo "n/a (no workflows)"; fi ;;
+    *) echo "active" ;;
+  esac
+}
+
+if [ "$LIST" -eq 1 ]; then
+  for c in $ALL_COMPONENTS; do printf '%-8s %s\n' "$c" "$(applies "$c")"; done
+  exit 0
+fi
+
+if [ "$REQUIRE_CLEAN" -eq 1 ] && [ "$DIRTY" -eq 1 ]; then
+  echo "gate: --require-clean but the working tree has changes:" >&2
+  printf '%s\n' "$TREE_BEFORE" | head -n 20 >&2
+  exit 1
+fi
+
+[ -n "$COMPONENTS" ] || COMPONENTS=" $ALL_COMPONENTS"
+
+PASSED=""; FAILED=""; SKIPPED=""
+for c in $COMPONENTS; do
+  CUR=$c
+  rm -f "$LOG_DIR/$c.detail" "$LOG_DIR/$c.na"
+  start=$SECONDS
+  "comp_$c" > "$LOG_DIR/$c.log" 2>&1
+  crc=$?
+  took=$((SECONDS - start))
+  info=""
+  [ -f "$LOG_DIR/$c.detail" ] && info=$(cat "$LOG_DIR/$c.detail")
+  if [ "$crc" -eq 0 ] && [ -f "$LOG_DIR/$c.na" ]; then
+    SKIPPED="$SKIPPED,$c"; printf 'gate: %-8s N/A   %3ss  %s\n' "$c" "$took" "$info"
+  elif [ "$crc" -eq 0 ]; then
+    PASSED="$PASSED,$c"; printf 'gate: %-8s PASS  %3ss  %s\n' "$c" "$took" "$info"
+  else
+    FAILED="$FAILED,$c"; printf 'gate: %-8s FAIL  %3ss  %s (log: build/gate/%s.log)\n' "$c" "$took" "$info" "$c"
+    echo "----- $c: last 40 lines -----"
+    tail -n 40 "$LOG_DIR/$c.log"
+    echo "-----"
+  fi
+done
+
+# N/A is only legitimate for: swift with neither package nor App project, actions without workflows,
+# and --staged subsets.
+if [ "$STAGED" -eq 0 ]; then
+  for c in $(echo "$SKIPPED" | tr ',' ' '); do
+    case "$c" in
+      swift) { [ ! -f Package.swift ] && [ ! -d App/Parlance.xcodeproj ]; } || FAILED="$FAILED,swift(n/a-not-allowed)" ;;
+      actions) if have_workflows; then FAILED="$FAILED,actions(n/a-not-allowed)"; fi ;;
+      *) FAILED="$FAILED,$c(n/a-not-allowed)" ;;
+    esac
+  done
+fi
+
+TREE_AFTER=$(tree_state)
+if [ "$TREE_AFTER" != "$TREE_BEFORE" ]; then
+  FAILED="$FAILED,tree-modified-by-gate"
+  lines() { [ -z "$1" ] || printf '%s\n' "$1"; }
+  echo "gate: the working tree changed while the gate ran, so it is not what was checked (git status, < before, > after):"
+  diff <(lines "$TREE_BEFORE") <(lines "$TREE_AFTER") | sed -n 's/^\([<>]\) /    \1 /p'
+fi
+HEAD_AFTER=$(head_state)
+if [ "$HEAD_AFTER" != "$HEAD_BEFORE" ]; then
+  FAILED="$FAILED,head-moved-during-gate"
+  echo "gate: HEAD moved while the gate ran (a commit, branch switch or reset), so $HEAD_SHA is not what every component checked:"
+  printf '    < %s\n    > %s\n' "$HEAD_BEFORE" "$HEAD_AFTER"
+fi
+
+RESULT=pass
+[ -z "$FAILED" ] || RESULT=fail
+printf 'GATE result=%s head=%s dirty=%s base=%s pass=%s na=%s fail=%s\n' \
+  "$RESULT" "$HEAD_SHA" "$DIRTY" "${BASE:-none}" "${PASSED#,}" "${SKIPPED#,}" "${FAILED#,}"
+
+full_run=0
+[ "$COMPONENTS" = " $ALL_COMPONENTS" ] && [ "$STAGED" -eq 0 ] && full_run=1
+if [ "$RESULT" = pass ] && [ "$full_run" -eq 1 ] && [ "$DIRTY" -eq 0 ] && [ "$HEAD_SHA" != none ]; then
+  stamp_dir="$(git rev-parse --git-common-dir)/parlance-gate"
+  mkdir -p "$stamp_dir"
+  printf 'head=%s\ndate=%s\npass=%s\nna=%s\n' "$HEAD_SHA" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "${PASSED#,}" "${SKIPPED#,}" > "$stamp_dir/$HEAD_SHA"
+  echo "gate: stamp written for $HEAD_SHA"
+fi
+
+[ "$RESULT" = pass ]

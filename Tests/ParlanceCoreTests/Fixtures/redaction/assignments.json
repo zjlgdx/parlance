@@ -1,0 +1,230 @@
+[
+  {
+    "name": "KEY",
+    "input": "KEY=FAKE-value",
+    "expected": "KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "TOKEN",
+    "input": "TOKEN=FAKE-value",
+    "expected": "TOKEN=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "SECRET",
+    "input": "SECRET=FAKE-value",
+    "expected": "SECRET=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "PASSWORD",
+    "input": "PASSWORD=FAKE-value",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "API_KEY",
+    "input": "API_KEY=FAKE-value",
+    "expected": "API_KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "GITHUB_TOKEN",
+    "input": "GITHUB_TOKEN=FAKE-value",
+    "expected": "GITHUB_TOKEN=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "DB_PASSWORD",
+    "input": "DB_PASSWORD=FAKE-value",
+    "expected": "DB_PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "client_secret",
+    "input": "client_secret=FAKE-value",
+    "expected": "client_secret=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "api.key",
+    "input": "api.key=FAKE-value",
+    "expected": "api.key=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "api-key",
+    "input": "api-key=FAKE-value",
+    "expected": "api-key=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "JSON",
+    "input": "{\"api_key\": \"FAKE-value\", \"ok\": 1}",
+    "expected": "{\"api_key\": \"[REDACTED]\", \"ok\": 1}",
+    "pem": false
+  },
+  {
+    "name": "export",
+    "input": "export X_TOKEN = \"FAKE two words\"",
+    "expected": "export X_TOKEN = \"[REDACTED]\"",
+    "pem": false
+  },
+  {
+    "name": "single quotes",
+    "input": "'client_secret' : 'FAKE value'",
+    "expected": "'client_secret' : '[REDACTED]'",
+    "pem": false
+  },
+  {
+    "name": "escaped quotes",
+    "input": "PASSWORD=\"FAKE \\\"quoted\\\" value\"",
+    "expected": "PASSWORD=\"[REDACTED]\"",
+    "pem": false
+  },
+  {
+    "name": "unquoted YAML",
+    "input": "secret: FAKE-value # comment",
+    "expected": "secret: [REDACTED] # comment",
+    "pem": false
+  },
+  {
+    "name": "escaped single quote",
+    "input": "TOKEN='FAKE can\\'t'",
+    "expected": "TOKEN='[REDACTED]'",
+    "pem": false
+  },
+  {
+    "name": "prefix overlap",
+    "input": "API_KEY=sk-FAKEabcdefghijklmnop",
+    "expected": "API_KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "random overlap",
+    "input": "TOKEN=FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "TOKEN=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "several on one line",
+    "input": "KEY=FAKE-one; TOKEN=FAKE-two",
+    "expected": "KEY=[REDACTED]; TOKEN=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "short value",
+    "input": "password: FAKE",
+    "expected": "password: [REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "leading separator",
+    "input": "_KEY=FAKE-value",
+    "expected": "_KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "unquoted padding",
+    "input": "KEY=FAKE-padded==",
+    "expected": "KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "reference plus literal",
+    "input": "TOKEN=${VAR}FAKE-suffix",
+    "expected": "TOKEN=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 0",
+    "input": "PASSWORD=FAKE#private-suffix",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 1",
+    "input": "PASSWORD=FAKE{private-suffix}",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 2",
+    "input": "PASSWORD=FAKE[private-suffix]",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 3",
+    "input": "PASSWORD=FAKE}private-suffix",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 4",
+    "input": "PASSWORD=FAKE]private-suffix",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 5",
+    "input": "PASSWORD=FAKE,private;value",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "internal punctuation 6",
+    "input": "PASSWORD=FAKE(private)",
+    "expected": "PASSWORD=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "CJK adjacent",
+    "input": "这是KEY=FAKEvalue123",
+    "expected": "这是KEY=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "closing code",
+    "input": "call(KEY=FAKEvalue);",
+    "expected": "call(KEY=[REDACTED]);",
+    "pem": false
+  },
+  {
+    "name": "nested closing code",
+    "input": "[{TOKEN=FAKEvalue}]",
+    "expected": "[{TOKEN=[REDACTED]}]",
+    "pem": false
+  },
+  {
+    "name": "balanced secret closing code",
+    "input": "call(TOKEN=FAKE{value})",
+    "expected": "call(TOKEN=[REDACTED])",
+    "pem": false
+  },
+  {
+    "name": "JSX key",
+    "input": "<li key={item.id}>{item.name}</li>",
+    "expected": "<li key={item.id}>{item.name}</li>",
+    "pem": false
+  },
+  {
+    "name": "JSX self-closing",
+    "input": "<Row key={x.id} />",
+    "expected": "<Row key={x.id} />",
+    "pem": false
+  },
+  {
+    "name": "template placeholder",
+    "input": "f\"https://api.example.com/?api_key={api_key}\"",
+    "expected": "f\"https://api.example.com/?api_key={api_key}\"",
+    "pem": false
+  },
+  {
+    "name": "CJK after value",
+    "input": "这是KEY=FAKEvalue123，然后继续说明",
+    "expected": "这是KEY=[REDACTED]，然后继续说明",
+    "pem": false
+  }
+]

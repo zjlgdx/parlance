@@ -1,0 +1,70 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Refactor ⟦0⟧ to use a multi-stage build so the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " final image does not include ⟦1⟧.</best>\n<gloss>将 ⟦0⟧ 重构为使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多阶段构建，以便最终镜像不包含 ⟦1⟧。</gloss>\n<alts><alt><text>Update"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧ for a multi-stage build, excluding ⟦1⟧ from the final image.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更简练的动词 updating 和 excluding，指令风格更强。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 117,
+            "promptTokens" : 968
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-06",
+    "input" : "把 Dockerfile 改成 multi-stage build，最终镜像不要带 `node_modules` 里的 devDependencies"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Investigate why the login page shows a blank screen on Safari while working properly on Chrome.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>调查为什么登录页面在 Safari 上显示白屏而在 Chrome 上工作正常。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Check why the login page results in a white screen on Safari compared to Chrome.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " results in a white screen 替代 shows a blank screen，表达更自然。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 98,
+            "promptTokens" : 836
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-01",
+    "input" : "帮我看看为什么登录页面在 Safari 上白屏，Chrome 上是好的"
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">`RunnerAttempt` 的提取保留了 `fix` 行为：`SectionStreamParser"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "()` 已经默认使用 `.fix` schema；新代码显式传入了 `.fix`。严格重试、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`firstBest` 回退以及“`aborted` 绝不回退”的规则仍然保留在 `Rewrite"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Runner.run` 中，且未发生改变。</translation>\n\n<plain>这段话解释了代码重构"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后，`RunnerAttempt` 和相关解析器在提取、重试以及回退逻辑上保持了原有的行为不变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</plain>\n\n<terms>\n<term>\n<word>RunnerAttempt</word>\n<meaning>运行"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尝试（代码中的类或对象名）</meaning>\n<here>代码中负责处理运行尝试提取的组件"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here>\n</term>\n<term>\n<word>extraction</word>\n<meaning>提取；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "抽取</meaning>\n<here>指代码中对特定数据的提取操作</here>\n</term>\n<term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<word>SectionStreamParser</word>\n<meaning>区段流解析器（代码中的类名）</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<here>用于解析区段流的解析器类</here>\n</term>\n<term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<word>schema</word>\n<meaning>模式；架构；图式</meaning>\n<here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">此处指数据结构或解析模式配置</here>\n</term>\n<term>\n<word>Strict"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " retry</word>\n<meaning>严格重试</meaning>\n<here>一种不放宽条件的重试机制</here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n</term>\n<term>\n<word>fallback</word>\n<meaning>回退；后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "备方案</meaning>\n<here>当主流程失败时转入的备用处理逻辑</here>\n</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term>\n<term>\n<word>aborted</word>\n<meaning>已中止的</meaning>\n<here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指任务或状态被中止的情况</here>\n</term>\n<term>\n<word>RewriteRunner.run</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>\n<meaning>重写运行器的运行方法（代码路径）</meaning>\n<here>包含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重试和回退规则的具体运行函数</here>\n</term>\n</terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 501,
+            "promptTokens" : 325
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-03",
+    "input" : "The `RunnerAttempt` extraction keeps `fix` behaviour: `SectionStreamParser()` already defaulted to the `.fix` schema; the new code passes `.fix` explicitly. Strict retry, `firstBest` fallback and the rule that `aborted` never falls back are still in `RewriteRunner.run` and did not change.",
+    "source" : "claude-code"
+  }
+}

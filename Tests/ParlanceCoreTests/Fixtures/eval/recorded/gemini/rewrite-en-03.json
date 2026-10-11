@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Explain why this function sometimes returns null, and check whether it is because the cache is not"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ready.</best>\n<gloss>解释为什么此函数有时返回 null，并检查是否是因为缓存未就绪。</gloss>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts><alt><text>Determine why this function returns null intermittently and verify if the cache is not ready.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " intermittently 替代 sometimes，表达更加技术化。</note></alt></alts>\n<fixes><fix>将口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语化的 \"i think is because\" 改为并列的排查指令 \"and check whether\"，符合技术指令的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "严谨性。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 136,
+            "promptTokens" : 834
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-03",
+    "input" : "why this function return null sometimes? i think is because cache not ready"
+  }
+}

@@ -1,0 +1,69 @@
+name: release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    runs-on: macos-26
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify tag version
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          python3 - <<'PY'
+          import os, re
+          from pathlib import Path
+          versions = re.findall(r'^\s*public static let current = "([^"]+)"\s*$', Path("Sources/ParlanceCLI/Version.swift").read_text(), re.M)
+          tag = os.environ["RELEASE_TAG"]
+          if len(versions) != 1 or tag != "v" + versions[0]:
+              raise SystemExit("release tag must match Version.current")
+          PY
+      - name: Tools (installs a pinned version only where the runner lacks it)
+        run: bash scripts/install-tools.sh
+      - name: Gate (all components)
+        run: bash scripts/gate --require-clean
+      - name: Build and verify release executable
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          swift build -c release --product pl
+          actual=$(.build/release/pl --version)
+          printf 'pl --version: %s\n' "$actual"
+          test "$actual" = "${RELEASE_TAG#v}"
+      - name: Source archive for Homebrew
+        env:
+          RELEASE_REPOSITORY: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: |
+          url="https://github.com/${RELEASE_REPOSITORY}/archive/refs/tags/${RELEASE_TAG}.tar.gz"
+          archive="$RUNNER_TEMP/parlance-source.tar.gz"
+          curl --fail --location --retry 3 "$url" --output "$archive"
+          sha256=$(shasum -a 256 "$archive" | cut -d ' ' -f 1)
+          {
+            echo 'Update the tap formula with these source archive values:'
+            printf '\n- url: %s\n- sha256: %s\n' "$url" "$sha256"
+          } >> "$GITHUB_STEP_SUMMARY"
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        # Last step, and a rerun keeps a release that already exists.
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            echo "release $RELEASE_TAG already exists"
+          else
+            gh release create "$RELEASE_TAG" --generate-notes --verify-tag
+          fi

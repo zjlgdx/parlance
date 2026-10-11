@@ -1,0 +1,316 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>A"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " git rebase hit a con"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "flict: ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ was changed on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " both sides. Explain the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " safest way to resolve it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>git rebase 时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发生冲突："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ 两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "边都被修改了。解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "释处理这个问题的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最安全方法。</g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>During git r"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ebase, a conflict occ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "urred because ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ was modified on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " both sides. Explain the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " safest way to resolve it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "冲突原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因写得更明确，点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " rebase 过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程中两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "边都改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "了同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt><al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><text>Resolve"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the git"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " rebase conflict on "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " where both sides changed it."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Explain the safest way to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " proceed.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首，直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接要求执"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "决，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“怎么处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "安全”译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "proceed 的安全做"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 787,
+            "promptTokens" : 1325,
+            "reasoningTokens" : 482
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-04",
+    "input" : "git rebase 的时候冲突了，`package-lock.json` 两边都改了，怎么处理最安全"
+  }
+}

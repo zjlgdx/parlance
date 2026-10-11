@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>Do not use any new dependencies. Ensure the license is MIT or Apache"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", and check it before adding.</best>\n<gloss>请不要使用任何新的依赖项。确保许可证为 MIT 或 Apache，并在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "添加之前进行检查。</gloss>\n<alts><alt><text>Avoid adding new dependencies. Verify that any"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " dependency uses the MIT or Apache license prior to addition.</text><note>使用更符合规范的技术指令语气（Avoid /"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Verify），表达更加正式。</note></alt></alts>\n<fixes><fix>“please not use”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 不符合英文语法，正确形式为 “please do not use” 或直接使用祈使句。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 144,
+            "promptTokens" : 838
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-10",
+    "input" : "please not use any new dependency, the license must be MIT or apache, check before add"
+  }
+}

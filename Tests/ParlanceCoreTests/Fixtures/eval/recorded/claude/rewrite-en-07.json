@@ -1,0 +1,486 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Add a rate limit to the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " API: each user may make at most"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 60 requests per minute"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Return"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 429 for requests over the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " limit.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " API 添加一个速"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "率限制：每个用户"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "每分钟最多发"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "起"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 60 次请求。超"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过限制的请求返"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回 429。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Add a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " rate limit to the API:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " each user is limited to 60"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " requests per minute, and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " requests over the limit get a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 429 response.</text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<note>与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " best 含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义相"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "同，但用被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动句说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明超"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求的结果，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Limit"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " each user to 60 requests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " per minute on the API, and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " return 429 for requests over"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the limit.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首，突"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出“每个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用户”；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 return"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接给"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令，更简短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"add one limit\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道，应为 \"add a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " rate limit\"，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " API"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 添加速率限制；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "limit\" 单"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "独使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不够"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明确。</fix><f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix>\"each user one minute"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " max 60 times\" 语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序混"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "乱，应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改为 \"each user may make"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " at most 60 requests per"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " minute\"，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "每个用户每分钟"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最多 60 次请求"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix><fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"over it return 429\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序不通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺，应改为 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Return 429 for requests over"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the limit\"，即超过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限制的请求返回 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "429。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 851,
+            "promptTokens" : 1155,
+            "reasoningTokens" : 385
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-07",
+    "input" : "add one limit for the api, each user one minute max 60 times, over it return 429"
+  }
+}

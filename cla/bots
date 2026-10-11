@@ -1,0 +1,6 @@
+# Account exemptions use numeric ids, not reusable logins.
+account 199175422 chatgpt-codex-connector[bot]
+account 49699333 dependabot[bot]
+account 41898282 github-actions[bot]
+# AI coauthor email exemptions do not confer account or maintainer privileges.
+email noreply@anthropic.com

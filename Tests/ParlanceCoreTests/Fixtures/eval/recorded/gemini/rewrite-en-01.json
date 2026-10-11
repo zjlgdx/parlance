@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Fix the bug where the login page displays a white screen in Safari while working"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " correctly in Chrome.</best>\n<gloss>修复登录页面在 Safari 中显示白屏而在 Chrome 中工作正常的问题。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts><alt><text>Resolve the white screen issue on the login page in Safari that does"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " not occur in Chrome.</text><note>使用 resolve 代替 fix，表达更加自然准确。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><fix>原句中的 \"is white screen\" 语法不通顺，应改为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"displays a white screen\" 或 \"has a white screen issue\"。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 136,
+            "promptTokens" : 838
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-01",
+    "input" : "please help me fix the bug that login page is white screen in safari but chrome is ok"
+  }
+}

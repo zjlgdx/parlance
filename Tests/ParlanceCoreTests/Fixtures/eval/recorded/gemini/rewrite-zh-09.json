@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Write a script that deletes backups older than thirty days every day at midnight and prints the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " files to be deleted before deleting them.</best>\n<gloss>编写一个脚本，每天凌晨删除三十天前的备份，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并在删除前打印要删除的文件。</gloss>\n<alts><alt><text>Create a daily midnight cron"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " job or script to delete backups older than 30 days, logging the filenames prior to deletion.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更偏向运维指令的表达方式，将“脚本”具体化为包含 cron 任务或脚本的表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 128,
+            "promptTokens" : 843
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-09",
+    "input" : "帮我写一个脚本，每天凌晨把三十天前的备份删掉，删之前先打印要删的文件"
+  }
+}

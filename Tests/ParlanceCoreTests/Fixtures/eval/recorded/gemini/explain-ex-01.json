@@ -1,0 +1,120 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">同源基础 URL 覆盖错误地将 API 密钥设置为可选而非必需。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "当 `entry?.baseURL` 存在时，`requiresKey` 的计算结果为 `false`，因此 `pl fix` 会在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有 API 密钥的情况下继续调用提供商，而不是以退出码 3 立即失败。</translation>\n\n<plain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">这段文本解释了一个软件缺陷：同源基础URL的覆盖逻辑导致API密钥误判为可选，从而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "绕过了原本应有的密钥检查并引发了错误调用。</plain>\n\n<terms><term><word>Same-origin</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><meaning>同源的</meaning><here>指协议、域名和端口相同的网络请求来源策略</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>base URL override</word><meaning>基础 URL 覆盖</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指对默认基础 URL 的重写配置</here></term>\n<term><word>API key</word><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "API 密钥</meaning><here>用于验证调用者身份的密钥</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">optional</word><meaning>可选的</meaning><here>在此处指不需要强制提供</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>required</word><meaning>必需的</meaning><here>在此处指必须提供"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term>\n<term><word>evaluates to</word><meaning>计算结果为</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指表达式执行后的布尔值结果</here></term>\n<term><word>provider</word><meaning>提供"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "商</meaning><here>指后端服务或模型提供商</here></term>\n<term><word>exit code</word><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>退出码</meaning><here>程序终止时返回给系统的状态码</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 383,
+            "promptTokens" : 314
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-01",
+    "input" : "Same-origin base URL override wrongly makes API key optional instead of required. When `entry?.baseURL` is present, `requiresKey` evaluates to `false`, so `pl fix` proceeds to invoke the provider without an API key instead of failing immediately with exit code 3.",
+    "source" : "claude-code"
+  }
+}

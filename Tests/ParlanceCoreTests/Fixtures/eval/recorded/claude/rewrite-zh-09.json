@@ -1,0 +1,381 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Write a script that run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "s every day in the early morning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and deletes backups older than"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 30 days. Before de"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "leting, print the files that will"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " be remov"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ed.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>写一个脚"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本，每天凌晨"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "删除超"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过30"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "天的备份。删除之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "打印出将要删除的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文件。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Write a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " script"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " that de"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "letes backups older than 30"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " days,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "s daily in the early morning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", and prints the list of files"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to be deleted before dele"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ting them.</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "构最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接近，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "删"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前先打印\"放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "末，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "贴近英文的说明方"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Write a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " daily early-morning job"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " that remov"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es backups older than th"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "irty days,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " printing each file it is about to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " delete first.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "job\" 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代定"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时任务，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把\"先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "打印\"写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "伴随动作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "紧凑，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "偏向运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "维习"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "惯用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 692,
+            "promptTokens" : 1170,
+            "reasoningTokens" : 389
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-09",
+    "input" : "帮我写一个脚本，每天凌晨把三十天前的备份删掉，删之前先打印要删的文件"
+  }
+}

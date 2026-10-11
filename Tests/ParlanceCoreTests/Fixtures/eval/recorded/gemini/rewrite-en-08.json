@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Refactor this class without breaking its usages. Explain how to do it safely.</best>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>重构这个类且不破坏其用法。解释如何安全地做到这一点。</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts><alt><text>I want to refactor this class without breaking its usages. Explain how to do it safely.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>保留了原文的“我想……”结构，语气更接近用户的起初表述。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes><fix>“not break other place who use it”语法不正确，且表达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不够地道，已修正为“without breaking its usages”。</fix><fix>“how to do safe”语法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错误，已修正为“Explain how to do it safely.”。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 165,
+            "promptTokens" : 839
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-08",
+    "input" : "i want refactor this class but not break other place who use it, how to do safe"
+  }
+}

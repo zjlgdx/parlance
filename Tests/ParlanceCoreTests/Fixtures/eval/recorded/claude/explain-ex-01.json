@@ -1,0 +1,501 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "源 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "base URL "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "覆盖错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误地将 API key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 设为可选，而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不是必需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。当 `entry?."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "baseURL` 存在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时，`requiresKey"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结果为 `false`，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因此 `pl fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在没有 API key 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "情况下继"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "续调用服"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务商，而不是立即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以退出码 3 失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这是一个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺陷报告："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "设"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置了同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "源 baseURL 后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误地不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再要求 API key，导"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致 pl fix 没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有 key 也"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "继续调用服务商，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而不是直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接报错退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</plain>\n<terms"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>same-orig"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "in</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>同源，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指协"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "议、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "机和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "端口都"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "相同的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "源。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " base URL 与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "当前来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "源相同的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "覆盖配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>requiresKey"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><meaning>是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "否需要 key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的布"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尔判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">该变量在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " baseURL 存"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在时错误地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 false，导"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "跳过 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>exit code 3"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><meaning>退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "3，表示程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序以错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误状态结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "束。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少 API key 时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "该"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出码立"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "即失败，但实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有发"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "生。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 845,
+            "promptTokens" : 454,
+            "reasoningTokens" : 421
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-01",
+    "input" : "Same-origin base URL override wrongly makes API key optional instead of required. When `entry?.baseURL` is present, `requiresKey` evaluates to `false`, so `pl fix` proceeds to invoke the provider without an API key instead of failing immediately with exit code 3.",
+    "source" : "claude-code"
+  }
+}

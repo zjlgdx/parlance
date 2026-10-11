@@ -1,0 +1,501 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not change the database file."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Only modify the service layer,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " then run the unit tests."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</best>\n<gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">不要修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改数据库文件。只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修改服务层，然后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "运行单元测试。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><alt><text>Do"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " not modify the database file."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Limit your"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " changes to the service layer,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " then"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " run the unit tests.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "only modify\"改为\"lim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it your changes to\"，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更正式，明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "范围"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仅限服务层。</note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></alt><alt><text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Leave the database file unt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ouched. Make"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " chang"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es only in the service layer,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and run the unit tests af"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terward"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"le"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ave untouched\"强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调不动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据库文件，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把测"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试步"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "骤放在修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后，表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺序更清楚。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note></alt></alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<fixes><fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "dont\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "撇号，应写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"don't\"或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的\"Do not\"；句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首也"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "大写。</fix><f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix>\"after run the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " unit test\"语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法不通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺，\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "after\"后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "名词\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "running\"，或用\"then run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"连"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "unit test\"作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复数动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象应为\"un"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it tests\"。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "三"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个指令连在一起"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "点，应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "拆分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为两句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，用句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "号或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逗号分隔，使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指令更清楚。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 674,
+            "promptTokens" : 1151,
+            "reasoningTokens" : 256
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-02",
+    "input" : "dont change the database file, only modify service layer and after run the unit test"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">我更新了 `src/auth/session.ts`，以便在令牌过期"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前 60 秒刷新，而不是在第一次收到 401 时刷新。现在的重试路径是幂等的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，我还添加了一个会在旧代码上失败的回归测试。所有 214 个测试均已通过；`npm run lint"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 没有报告任何新的警告。</translation>\n<plain>这段输入说明了开发者对认证会话文件进行了修改，优化"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "了令牌刷新逻辑并确保了重试的幂等性，同时通过了测试和代码检查。</plain>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms><term><word>token</word>\n<meaning>令牌，代币</meaning><here>用于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "身份验证的访问令牌</here></term>\n<term><word>expiry</word>\n<meaning>到期，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "期满</meaning><here>令牌失效的时间点</here></term>\n<term><word>401</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<meaning>401 状态码</meaning><here>HTTP 401 未授权错误响应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term>\n<term><word>idempotent</word>\n<meaning>幂等的</meaning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多次执行产生相同效果的重试机制</here></term>\n<term><word>regression test</word>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>回归测试</meaning><here>为防止旧 bug 复发而新增的测试用例</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>lint</word>\n<meaning>代码检查，语法检查</meaning><here>用于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "检查代码风格和潜在错误的工具</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 350,
+            "promptTokens" : 328
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-06",
+    "input" : "I've updated `src/auth/session.ts` to refresh the token 60 seconds before expiry instead of on the first 401. The retry path is now idempotent, and I added a regression test that fails on the old code. All 214 tests pass; `npm run lint` reports no new warnings.",
+    "source" : "claude-code"
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Make the button b"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "igger and its color darker,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " because"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " users cannot see it clear"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ly right now.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>把按"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "钮做大一些，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "颜色加深一些，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因为现在用户看不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清楚它。</glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Make the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " button larger and its color darker"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " so users can see it clearly"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思相同，但用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"so\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "目的，句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子更短。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Increase the button size and dar"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ken its color, since"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " users currently have trouble se"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "eing it.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更正式，用 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "increase\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"darken\" 和 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "have trouble se"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "eing\" 代替口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语化的说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"more big\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道，形"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "容词比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "较级"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 \"bigger\"（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 \"larger\"）。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</fix><fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "color more deep\" 不地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道，描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述颜色深"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "浅应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 \"darker\"，\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "deep\" 通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "常用于描述深"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "度。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</fix><fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "user cannot see it clear"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题：主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"user\" 应为复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数 \"users\"，修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "饰动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词 \"see"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 应使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用副词 \"clearly"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是形容词 \"clear"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 887,
+            "promptTokens" : 1152,
+            "reasoningTokens" : 484
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-04",
+    "input" : "make the button more big and the color more deep, now user cannot see it clear"
+  }
+}

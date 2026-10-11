@@ -1,0 +1,361 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Lower the log level,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " since production log"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ging"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is too noisy right now,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " but do"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " not drop any"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error logs.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>把日志"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "级别调低一些"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为线上日"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "志现"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在太"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "吵了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "条错误日志都不能"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "少。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Redu"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ce the log"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ging verbosity in production because"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " it is too noisy, but"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " keep every"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error log.</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更偏向线"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "上环"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "境的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "具体语境，强调“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "降低日志详"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "细程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "度”，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文更正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Ra"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ise the min"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "imum log level to c"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ut production"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " noise, but make sure no"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error-"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "level log is lost.</text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“调低”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解为提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "高最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "低"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出级别以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "减少日"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "志，并把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能少”明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确为错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误级别日"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "志不能丢失，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达更具体"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 478,
+            "promptTokens" : 1162,
+            "reasoningTokens" : 212
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-08",
+    "input" : "把日志级别调低一点，现在线上太吵了，但是错误日志一条都不能少"
+  }
+}

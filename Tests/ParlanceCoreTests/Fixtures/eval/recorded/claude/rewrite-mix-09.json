@@ -1,0 +1,371 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">In"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Swift 6, calling"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦1⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " inside the class of "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ tri"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ggers a Sendable war"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning. Explain how to f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix this Sendable warning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>在 Swift "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "6 下，在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的 class 里调用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 会触发 Send"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "able 警告。说明如"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "何修复此 Send"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "able 警告。</glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>In Sw"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ift 6, explain how to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix the Sendable war"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning raised when calling "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "side the class of ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧.</text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<note>把问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题合"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给出请求，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更直接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "部"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "分信"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "息都"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "保留。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt><alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><text>Swift 6"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ": calling ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ from a class in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " gives a Sendable"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " warning. Explain the corre"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ct fix.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">更简短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "the correct fix\" 对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"才对\"，强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确的修法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，而不只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是消"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "除警告。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1294,
+            "promptTokens" : 1357,
+            "reasoningTokens" : 936
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-09",
+    "input" : "Swift 6 下 `@MainActor` 的 class 里调用 `Task.detached` 报 Sendable 警告，怎么改才对"
+  }
+}

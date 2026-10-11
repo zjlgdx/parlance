@@ -1,0 +1,125 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">由于在流式传输开始前将整个响应正文解码为了一个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `[String: Any]`，导致了内存尖峰。改用增量 SSE 解析器后，对于 4"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " MB 的响应，峰值 RSS 保持在约 18 MB 左右，而之前则高达 310 MB"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</translation>\n<plain>这句话解释了通过将响应解析方式从一次性解码改为增量解析，成功"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "大幅降低了内存消耗。</plain>\n<terms><term><word>memory spike</word>\n<meaning>内存尖"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "峰，指内存占用突然大幅上升</meaning><here>由于一次性解码响应体导致的内存占用急剧上升"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "现象</here></term>\n<term><word>[String: Any]</word>\n<meaning>键为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "字符串、值为任意类型的字典（Swift 语言中的数据结构）</meaning><here>用于存放解码后整个响应正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文的字典结构</here></term>\n<term><word>streaming</word>\n<meaning>流式传输</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>数据按块逐步传输和处理的过程</here></term>\n<term><word>incremental SSE parser</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<meaning>增量 SSE（Server-Sent Events）解析器</meaning><here>一种能够逐块解析"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "服务器推送事件的解析器</here></term>\n<term><word>peak RSS</word>\n<meaning>峰"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "值常驻集大小（Resident Set Size），指进程占用的物理内存峰值</meaning><here>程序在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处理该请求过程中达到的最高物理内存占用量</here></term>\n<term><word>response body</word>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>响应正文</meaning><here>HTTP 响应中携带的具体数据内容</here></term></terms"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 384,
+            "promptTokens" : 310
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-16",
+    "input" : "The memory spike is from decoding the whole response body into a `[String: Any]` before streaming starts. Switching to the incremental SSE parser keeps peak RSS flat at about 18 MB for a 4 MB response, versus 310 MB before.",
+    "source" : "codex"
+  }
+}

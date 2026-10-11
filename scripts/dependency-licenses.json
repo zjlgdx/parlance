@@ -1,0 +1,12 @@
+{
+  "swift-argument-parser": {
+    "license": "Apache-2.0 WITH Swift-exception",
+    "url": "https://github.com/apple/swift-argument-parser",
+    "reason": "Command-line parsing and completion scripts for ParlanceCLI"
+  },
+  "tomldecoder": {
+    "license": "MIT",
+    "url": "https://github.com/dduan/TOMLDecoder",
+    "reason": "Reading config.toml in ParlanceCLI"
+  }
+}

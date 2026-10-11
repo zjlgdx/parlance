@@ -1,0 +1,12 @@
+# gitleaks configuration for `scripts/gate secrets` and CI.
+# Uses gitleaks' default rule set. Redactor tests need secret-shaped samples: keep them under
+# Tests/**/Fixtures/redaction/ (allowlisted below) and make them obviously fake. Never allowlist a real key.
+
+title = "parlance"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Fake secret-shaped samples used by Redactor tests"
+paths = ['''^Tests/.*/Fixtures/redaction/''']

@@ -1,0 +1,336 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>This"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " dependency array is missing"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦1⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", so data does not refresh"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " after switching users. Fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " it.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>这个 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "依"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "赖数组漏了 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，导致切换用户后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数据不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "刷新。修复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "它。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>The depend"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ency array of ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ is missing "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " which causes data to not refres"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "h after switching users. F"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix it.</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更正式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "书"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面语写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "漏了\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少\"，并用\"which"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " causes\"明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果关系。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Fix ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧: its dependency array"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is missing ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧, so data stays"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " stale after switching users.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令放在开头，用\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "stale\"描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述数据未"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "刷新的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "状态，句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "紧凑，不再"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "单"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "独加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一句\"Fix it.\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 765,
+            "promptTokens" : 1353,
+            "reasoningTokens" : 441
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-05",
+    "input" : "这个 `useEffect` 依赖数组漏了 `userId`，导致切换用户后数据没刷新，修一下"
+  }
+}

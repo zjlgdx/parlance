@@ -1,0 +1,100 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">对于任何设置了 `PARLANCE_BASE_URL` 的人来说，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这是一个破坏性变更：该变量不再被读取。请指引他们在 config.toml 中的 `[providers.compatible]` 下设置"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `base_url`。我会在发布说明中提及此事，而不是添加弃用兼容层。</translation>\n\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "plain>这段话讨论了一个软件更新中的不兼容改动，决定移除某个环境变量并在配置文件中替换它，同时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "选择直接在更新日志中说明而非保留过渡代码。</plain>\n\n<terms><term><word>breaking change</word><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>破坏性变更</meaning><here>会导致现有用户配置或代码失效的重大修改</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>deprecationshim</word><meaning>弃用兼容层</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为向后兼容旧功能而临时保留的代码</here></term>\n<term><word>release notes</word><meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">发布说明</meaning><here>软件新版本更新日志</here></term>\n<term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "config.toml</word><meaning>TOML 配置文件</meaning><here>项目的配置文件</here></term></terms"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 250,
+            "promptTokens" : 319
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-13",
+    "input" : "This is a breaking change for anyone who set `PARLANCE_BASE_URL`: the variable is no longer read. Point them to `base_url` under `[providers.compatible]` in config.toml. I'd mention it in the release notes rather than adding a deprecation shim.",
+    "source" : "claude-code"
+  }
+}

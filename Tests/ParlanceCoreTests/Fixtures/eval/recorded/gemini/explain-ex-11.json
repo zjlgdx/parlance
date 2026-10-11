@@ -1,0 +1,120 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">信号掩码重置是正确的。它通过 `POSIX_SPAWN_SETSIGMASK"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 设置了一个空掩码；失败路径会关闭所有六个描述符，并且 `destroy` 只有在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `init` 成功后才会注册。如果没有它，从 GCD 工作线程派生的辅助进程将继承被阻塞的 SIG"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "TERM 和 SIGINT。</translation>\n\n<plain>这段话解释了一处代码修改的正确性，即它确保了生成的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子进程不会意外继承被阻塞的信号。</plain>\n\n<terms><term><word>signal-mask</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>\n<meaning>信号掩码</meaning><here>信号掩码</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">POSIX_SPAWN_SETSIGMASK</word>\n<meaning>POSIX 进程衍生设置信号掩码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "标志</meaning><here>POSIX 进程衍生设置信号掩码标志</here></term>\n<term><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>failure path</word>\n<meaning>失败路径</meaning><here>错误处理的分支路径</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>descriptors</word>\n<meaning>描述符</meaning><here>文件描述"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "符</here></term>\n<term><word>GCD worker thread</word>\n<meaning>GCD 工作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "线程</meaning><here>Grand Central Dispatch 工作线程</here></term>\n<term><word>SIGTERM</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word>\n<meaning>终止信号</meaning><here>终止信号 SIGTERM</here></term>\n<term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "SIGINT</word>\n<meaning>中断信号</meaning><here>中断信号 SIGINT</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 355,
+            "promptTokens" : 323
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-11",
+    "input" : "The signal-mask reset is correct. It sets an empty mask with `POSIX_SPAWN_SETSIGMASK`; the failure path closes all six descriptors, and `destroy` is only registered after `init` succeeds. Without it, a helper spawned from a GCD worker thread would inherit blocked SIGTERM and SIGINT.",
+    "source" : "claude-code"
+  }
+}

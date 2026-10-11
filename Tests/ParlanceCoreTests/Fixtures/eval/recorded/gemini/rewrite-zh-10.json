@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Check whether this code has concurrency issues. Explain whether two simultaneous requests could deduct"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the balance twice.</best>\n<gloss>检查这段代码是否存在并发问题。说明两个并发请求是否会扣除两次余额。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><alt><text>Analyze this code for concurrency issues and determine if simultaneous requests can cause the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " balance to be deducted twice.</text><note>使用更具分析性的语气表达相同的需求。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><fix>原文为口语化问句，改写为祈使句以符合 coding agent 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令的规范。同时将“两个请求同时进来”准确转化为技术表述。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 145,
+            "promptTokens" : 836
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-10",
+    "input" : "这段代码有并发问题吗？两个请求同时进来会不会把余额扣两次"
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>All"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " six items have"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " been fixed, and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " only the working tree was modified"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Unified emp"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ty-"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "value checking"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ": `KeySources.h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "asEnvironmentK"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ey` is shared by autom"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "atic vendor selection,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " HTTP checks, key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " retrieval, and status"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "; SSH variables are still"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " judged by wh"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ether they exist.</translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<plain>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "段话说明六个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题已修复，且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "只改动了工作树，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "环"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "境变量 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Key 的判空逻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "辑统一到 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`KeySources.has"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "EnvironmentKey"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`，而 SSH "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变量仍只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "否存在。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">working tree</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>工作树"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Git "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仓库中实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "编辑的文件目"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "录，区"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "别于已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "暂存或已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "提交的内容。</me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning><here>表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次修复只改动了本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件，没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有暂存或提交。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">null"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " check</word><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "空，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量是否为空或无效"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "值的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "操作。</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里指把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "散的判空逻辑"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "统一成同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一个函数处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>hasEnv"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ironmentKey</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查环"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "境变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量中是否存在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Key 的方法名"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "自"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动选商、HTTP"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 检查、取 Key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 和 status 都共"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用这一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "判断。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">SSH</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>安"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "全外"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "壳协议，用于加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "密远程连接的网络"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "协议。</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>此处 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "SSH 变量没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "统一判空"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍按“存在”来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "判断。</here></term></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 878,
+            "promptTokens" : 441,
+            "reasoningTokens" : 360
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-17",
+    "input" : "六项均已修复，仅修改工作树。统一判空：`KeySources.hasEnvironmentKey` 供自动选商、HTTP 检查、取 Key、status 共用；SSH 变量仍按“存在”判断。",
+    "source" : "codex"
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>The"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " last fix introduced a reg"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ression: when paginating the order"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " list, the last page shows du"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "plicate entries.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>上"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一次的修复引入了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一个回归问题：订"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "单列表分页时，最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后一页会显示重复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的条目。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>The previous"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix introduced a regression"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ": the order list shows dupl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "icate items on the last page when"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " paginating.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题现"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "末"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，突"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "订单列表”和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“最后一页”这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "两个位置，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文更直接。</note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></alt><alt><text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Last fix caused a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " regression: on the final page of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the paginated order list, items"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " appear twice.</text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<note>更简短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的电报"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，省"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "去"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "上"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次那"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个”的口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代，适合放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明的开头。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 701,
+            "promptTokens" : 1161,
+            "reasoningTokens" : 439
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-04",
+    "input" : "上次那个修复引入了回归，订单列表分页的时候最后一页会重复显示"
+  }
+}

@@ -1,0 +1,596 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>This"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " refactor moved the retry"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " logic from the UI layer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to the provider layer, so"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the UI only displ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ays state"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". The benefit is that the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " retry strategy lives in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " one place;"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the dr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "awback is that the UI can"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "'t see the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " details of each retry, so a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " callback would need"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to be added if required"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</translation>\n<pl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ain>这段"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "话说明本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次重构把重试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逻辑移到了 prov"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ider 层，好"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处是策"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "略统"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一，代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "价是 UI 无"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法获取每次重试的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "细节，需要时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "额"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "外加回"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word>ref"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "actor</word><ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">/riːˈfæ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ktər/</ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>重构，在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不改变外"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "部行为的前"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "提下调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整代码结构。</me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning><here>对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这次重构”，指这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代码结构的调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>retry logic</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "riː"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈtraɪ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈlɑ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "d"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʒ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪk/</ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>重试逻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "辑，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求失败后再"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尝试的处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逻辑”本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "身，被从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " UI 层"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "搬走"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><term><word>provider"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "prəˈvaɪ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "dər/</ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "供者，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "封"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "装数据或服"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务访"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问的一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "层。</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">“provider 层”是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "项"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "目中的一个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "架构层，负责实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际的请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求与重试。</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><term><word>callback"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈkɔːl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "bæk/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>回调，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "函"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为参数传入"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，在特"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定事件发生时被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调用。</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "需要额外加的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "于把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "每次重试的细节通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "知给"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " UI。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 928,
+            "promptTokens" : 444,
+            "reasoningTokens" : 369
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-18",
+    "input" : "这次重构把重试逻辑从 UI 层挪到了 provider 层，UI 只负责展示状态。好处是重试策略只有一处，坏处是 UI 拿不到每次重试的细节，需要的话得加一个回调。",
+    "source" : "claude-code"
+  }
+}

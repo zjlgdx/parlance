@@ -1,0 +1,566 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Fix the b"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ug where the login page shows a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " white screen in Safari,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " while it works f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ine in Chrome.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修复登录页在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Safari 中显示白"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "屏、而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在 Chrome 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行正常的 bug。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<text>Fix the login page"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " white screen b"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ug in Safari."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " It"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " works in Chrome.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接简"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "两个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "浏览器的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "拆成两句，突"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出问题所"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>The login page"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " shows a white screen in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Safari but renders correctly"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " in Chrome. F"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix this bug.</text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<note>先描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述现"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象再下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令，适合需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理解问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题背景的场景。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note></alt></alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<fixes><fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "please help me\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 是对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "方的客"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在给"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "编"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理的指令中可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以去"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "掉，直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "祈使句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"Fix\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "样的请求。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"the bug"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " that login page is white screen\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法不完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整：关"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "系"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "谓语，应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改为 \"the bug where"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the login page shows a white scre"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "en\"，明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "白"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "屏\"是页"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面表现出"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "现象。</fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "but chrome is ok\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 用词"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语化，\"ch"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "rome\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 应大"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "品牌名 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"Chrome\"，且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"ok\" 可改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 \"works"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fine\" 以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更符合技术描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述的语域"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 782,
+            "promptTokens" : 1156,
+            "reasoningTokens" : 325
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-01",
+    "input" : "please help me fix the bug that login page is white screen in safari but chrome is ok"
+  }
+}

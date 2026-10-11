@@ -1,0 +1,29 @@
+.DS_Store
+__pycache__/
+
+# Build output (SwiftPM, Xcode, gate logs, validation evidence working sets). /build/ is anchored to the root:
+# unanchored, it would also ignore a source directory named Build on a case-insensitive disk.
+.build/
+.swiftpm/
+/build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+
+# Agent run state (/pl-next, /pl-review)
+.pl-runs/
+
+# Per-machine agent overrides
+CLAUDE.local.md
+AGENTS.local.md
+AGENTS.override.md
+.claude/settings.local.json
+
+# Secrets and signing material
+.env
+.env.*
+*.p12
+*.p8
+*.cer
+*.mobileprovision
+*.provisionprofile

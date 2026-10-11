@@ -1,0 +1,2 @@
+# Used by `scripts/gate shell` and by actionlint for workflow run: blocks.
+external-sources=true

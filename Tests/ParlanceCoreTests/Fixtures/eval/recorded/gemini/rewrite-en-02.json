@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Do not change the database file, only modify the service layer, and then run the unit tests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<gloss>不要修改数据库文件，仅修改服务层，然后运行单元测试。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt><text>Refrain from modifying the database file, update only the service layer, and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " subsequently execute the unit tests.</text><note>使用更正式的动词替代简单祈使句，适用于指令"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "性更强的场景。</note></alt></alts>\n<fixes><fix>输入已经是目标语言，无需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "纠正语法错误，此处对标点和连词进行了轻微润色以更符合技术指令规范。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 146,
+            "promptTokens" : 836
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-02",
+    "input" : "dont change the database file, only modify service layer and after run the unit test"
+  }
+}

@@ -1,0 +1,541 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Run ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧. It fails with a miss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ing header error, even"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " though I installed the library earl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ier.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行 ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧。它报错，提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示缺少头文件，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "但我之前已经安装"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过这个库了。</g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Run "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " It fails with a missing header"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error, although the library is already install"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ed.</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "点放在\"库"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "已安"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "装\"这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一状态上，句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "子更简洁，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "去"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "掉了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"我之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前\"的时间语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt><al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><text>Run "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧. It"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " gives a missing header error,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " but I installed the library before."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尽量"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "贴近原文结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "构，保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "留\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "before\"的口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语感"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直白。</note></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt></alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<fixes><fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "have error\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道，应改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ails with an"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " error\" 或 \"gives"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " an error\"，英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序报错用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"get/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "see"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it an error\" 或 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fail"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " with\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"have error\"。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"i\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应大"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写为 \"I\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中第"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一人称代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词总"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是大写。</fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<fix>\"install\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "去式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应为 \"installed\"，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因为描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前已完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成的动作。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"before\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "放在句末表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示\"之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前\"时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "较"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口语，正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清晰的表达是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"earlier\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 或 \"previously\"。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 977,
+            "promptTokens" : 1312,
+            "reasoningTokens" : 513
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-09",
+    "input" : "run `make test` have error about missing header, i already install the library before"
+  }
+}

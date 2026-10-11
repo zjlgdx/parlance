@@ -1,0 +1,135 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">我无法在沙盒内部运行完整的门禁检查（gate）：应用程序"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "测试需要 `com.apple.testmanagerd.control`，而沙盒会阻止它。软件包构建、格式化以及"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 201 个软件包测试均已通过，8 个被跳过。请在沙盒外部运行 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`scripts/gate` 以包含应用程序测试。</translation>\n\n<plain>这段输入说明了由于沙盒权限限制无法在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "内部运行完整的应用测试，并给出了已通过和跳过的测试情况以及后续操作建议。</plain>\n\n<terms><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><word>gate</word>\n<meaning>门禁；把关；自动化检查流程</meaning>\n<here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">指代脚本中用于全面测试和检查的 gate 流程</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">sandbox</word>\n<meaning>沙盒；安全隔离区</meaning>\n<here>用于限制程序权限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的安全运行环境</here></term>\n<term><word>App tests</word>\n<meaning>应用测试；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应用程序测试</meaning>\n<here>需要特定系统权限的应用程序相关测试</here></term>\n<term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Package build</word>\n<meaning>软件包构建；包编译</meaning>\n<here>编译构建软件包的过程</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>formatting</word>\n<meaning>格式化；代码格式检查</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<here>对代码风格和格式进行检查的过程</here></term>\n<term><word>package"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " tests</word>\n<meaning>软件包测试；包测试</meaning>\n<here>针对软件包本身的单元"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或集成测试</here></term>\n<term><word>skipped</word>\n<meaning>已跳过</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>\n<here>在测试运行中被略过的测试用例数量</here></term>\n<term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "scripts/gate</word>\n<meaning>门禁脚本</meaning>\n<here>用于执行完整门"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "禁检查的脚本文件路径</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 445,
+            "promptTokens" : 321
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-12",
+    "input" : "I couldn't run the full gate inside the sandbox: App tests need `com.apple.testmanagerd.control`, which the sandbox blocks. Package build, formatting and 201 package tests passed, 8 skipped. Please run `scripts/gate` outside the sandbox to cover the App tests.",
+    "source" : "codex"
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Change ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ to ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and stop using completion handl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ers.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>把 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ 改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成 ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧，不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再使"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 completion handler"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Replace ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ and st"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "op using the completion handler."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Replace …"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " with\" 强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调替"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "换动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作，\"the completion handler"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "特"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定的那"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个回调，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文更具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Change "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ and don't use completion"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " handlers anymore.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>用 \"don"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "'t …"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " anymore\" 直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文的\"别"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语气更口语化，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合直接下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达指令。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 607,
+            "promptTokens" : 1341,
+            "reasoningTokens" : 336
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-01",
+    "input" : "把 `fetchUser()` 改成 async/await，别再用 completion handler 了"
+  }
+}

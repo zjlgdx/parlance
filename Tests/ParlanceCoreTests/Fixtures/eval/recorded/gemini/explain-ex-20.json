@@ -1,0 +1,99 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "retrying" : {
+            "after" : {
+              "attoseconds" : 747000000000000000,
+              "seconds" : 0
+            },
+            "cause" : "rate_limit"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">This race condition only occurs when cancellation and completion happen almost simultaneously: by first incrementing the generation number"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and then triggering the cancellation token, delayed completion events from the old stream will be discarded because the generation numbers do not match.</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这句话解释了一个只在取消和完成操作同时发生时才会出现的竞态条件及其解决方法。</plain>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms><term><word>竞态</word>\n<meaning>竞态条件（Race Condition）</meaning><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "here>多线程或异步编程中因执行顺序不确定而导致的问题</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">取消令牌</word>\n<meaning>Cancellation Token</meaning><here>用于发出取消操作信号的对象</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>代际号</word>\n<meaning>Generation number</meaning><here>用于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "区分不同生命周期或版本的标识号</here></term>\n<term><word>流</word>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>Stream</meaning><here>数据流或异步事件序列</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 227,
+            "promptTokens" : 299
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-20",
+    "input" : "这个竞态只在取消和完成几乎同时发生时出现：先递增代际号再触发取消令牌，旧流迟到的完成事件就会因为代际号不匹配被丢弃。",
+    "source" : "claude-code"
+  }
+}

@@ -1,0 +1,646 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个不稳定的失败"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "源于防抖计时器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "与卸载清理之间"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的竞态：计时器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回调可能在组件"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "卸载后才触发，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "通过过期的引用调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 `setState`。在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " effect 的清理函"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数中清除计时器，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "可以确定性地修复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "该问题。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这段话"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明偶发性的错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误是因为防抖计"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时器在组件卸载"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后仍可能执行，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从而在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧引用上调用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "setState，而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在清理函数中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清除计时器就能"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "彻底解决。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</plain>\n<terms"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>flaky"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈfleɪki"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>不稳定的，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时好时坏的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述失败时有时无"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "难以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "稳定复现。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">race</word><ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">/reɪs/</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ipa><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "竞态条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件，指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作的执行顺序不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确定</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">计"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时器回调与卸载"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清理两者"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "谁先执行是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不确定的，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而引发错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>debounce tim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "er</word><ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/dɪˈba"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʊns "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈtaɪmər"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>防抖计时器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用于延迟执行函"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合并短时间内的多"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次触发</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的计时器在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "组"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件卸载后仍可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能触发回"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>st"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ale reference</word><ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a>/ste"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪl ˈr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɛfərəns/</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ipa><meaning>过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "期引"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用，指指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "向已失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "效对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象的引用</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><here>回"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍持有组件"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "卸载后已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "失效的引"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">de"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terministically</word><ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a>/d"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪˌtɜː"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "rmɪˈn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪstɪkli/</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ipa><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确定性地，结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果每"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次都一致</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><here>清除计时器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "后，问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题每"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次都能"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被彻底消除，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不再随机出现"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</here></term><term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<word>setState</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>更新组件状"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "态的函数（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "识符）</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>在已卸载组"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧引用上调用它是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "导致错误的直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1552,
+            "promptTokens" : 445,
+            "reasoningTokens" : 836
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-07",
+    "input" : "The flaky failure comes from a race between the debounce timer and the unmount cleanup: the timer callback can fire after the component unmounts and call `setState` on a stale reference. Clearing the timer in the effect's cleanup function fixes it deterministically.",
+    "source" : "codex"
+  }
+}

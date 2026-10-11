@@ -1,0 +1,336 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Check whether this code has a conc"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "urrency problem and whether"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " two requ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ests arriving at the same time"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " could deduct the balance tw"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ice.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>检查这段代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码是否存"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在并发问题，以及"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "两个同时到达的请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求是否可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能把余额扣两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Check wh"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ether this code has concurrency"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " issues, in particular whether"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " two simultaneous requests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " could deduct the balance tw"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ice.</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发问题\"说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "得"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更具体，点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "关"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "注的是同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时到达的两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个请求，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt><al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><text>Check this code"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " for race conditions and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " determine whether two concurr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ent requests could deduct the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " same balance twice.</text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><note>用了更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "技术化"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "race con"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ditions\"（竞态条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件），语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义更精"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个说法，所以是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "替换"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不是直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 585,
+            "promptTokens" : 1161,
+            "reasoningTokens" : 297
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-10",
+    "input" : "这段代码有并发问题吗？两个请求同时进来会不会把余额扣两次"
+  }
+}

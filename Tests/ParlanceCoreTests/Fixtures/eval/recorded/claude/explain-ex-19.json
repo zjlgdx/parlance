@@ -1,0 +1,636 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>The"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " over"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "all gate check failed because the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " sandbox blocks the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " App's test connection to testm"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "anagerd, while all the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " package tests themselves pass"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". It"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is recommended to re-run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the complete gate check outside"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the sandbox to confir"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "m.</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这段话说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体门禁检查失败"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因是沙盒阻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "止了 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "App 连接 testman"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "agerd，建议在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "沙盒外"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "跑一次"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确认。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gate check</word><ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɡe"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪt t"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʃek"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>门"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "禁检查，指流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程中判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "否继续推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "进的一组检查。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "门禁\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整体门"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "禁失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "组"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "检查没有通过。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "here></term><term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "sandbox</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<ipa>/ˈs"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ændbɒks"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>沙盒，一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "种隔离的运行环"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "境，限制程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序的访问权限。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "沙盒限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " App 与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " testmanagerd "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的连接，是失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败的直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接原因。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>test"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "managerd</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>系"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "统的测试管"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理守"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "护进程标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "识符"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "（保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "持"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原样"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，不翻译）。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>App "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "需要连"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被沙盒阻止"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</here></term><term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<word>package tests</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<ipa>/ˈp"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "æk"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪdʒ tests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>包测试，针"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "对软"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件包本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "身进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行的测试。</mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning><here>包"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "测试本身全部通过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，说明问题不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在包的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "内容上。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>re-run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " outside the sandbox</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "沙盒外"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重新运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>建"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "议的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "验"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "证方"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "于确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认门"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "禁失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "实是由沙盒造"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成的。</here></term></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1278,
+            "promptTokens" : 427,
+            "reasoningTokens" : 686
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-19",
+    "input" : "门禁整体失败的原因是沙盒阻止 App 测试连接 testmanagerd，包测试本身全部通过。建议在沙盒外重跑一次完整门禁确认。",
+    "source" : "codex"
+  }
+}

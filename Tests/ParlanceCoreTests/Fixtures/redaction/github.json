@@ -1,0 +1,56 @@
+[
+  {
+    "name": "ghp_",
+    "input": "ghp_FAKEabcdefghijklmnopqrstuvwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "gho_",
+    "input": "gho_FAKEabcdefghijklmnopqrstuvwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "ghu_",
+    "input": "ghu_FAKEabcdefghijklmnopqrstuvwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "ghs_",
+    "input": "ghs_FAKEabcdefghijklmnopqrstuvwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "ghr_",
+    "input": "ghr_FAKEabcdefghijklmnopqrstuvwxyz",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "fine-grained",
+    "input": "github_pat_FAKE_abcdefghijklmnopqrstuvwxyz_ABCDEFGH",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "short classic",
+    "input": "ghp_FAKEabcdefghijklmnopqrstuvwxy",
+    "expected": "ghp_FAKEabcdefghijklmnopqrstuvwxy",
+    "pem": false
+  },
+  {
+    "name": "short fine-grained",
+    "input": "github_pat_FAKE_abcdefghijklmnopqrstuvwxyz_ABCDEFG",
+    "expected": "github_pat_FAKE_abcdefghijklmnopqrstuvwxyz_ABCDEFG",
+    "pem": false
+  },
+  {
+    "name": "sentence punctuation",
+    "input": "Value ghp_FAKEabcdefghijklmnopqrstuvwxyz.",
+    "expected": "Value [REDACTED].",
+    "pem": false
+  }
+]

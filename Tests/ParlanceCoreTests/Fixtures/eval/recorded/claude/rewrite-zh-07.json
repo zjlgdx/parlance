@@ -1,0 +1,326 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Write a reply to this PR"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "'s review comments explaining why"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " I disagree with three of them"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回复这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个 PR 评"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "审意见的消"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "息，解释我为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "什么不同意其"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "三条。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Dra"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ft a reply to the three review"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " comments I disagree with on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this PR, explaining why"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>Pu"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts the three"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " dis"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "agreed comments first and fr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ames \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回复\" as dr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "afting a re"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ply;"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " it is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " clos"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "er to the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Chinese word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " order but slightly more focused"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on the comments than"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on the reply itself.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note></alt><alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<text>Write a reply to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " three"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " PR's review comments, expl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aining why I disagree with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " each"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>Mak"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es expl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "icit that the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " expl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "anation applies to each of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the three comments, which the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Chinese impl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ies with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "释为什么\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " but does not sp"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ell out.</note></alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 517,
+            "promptTokens" : 1163,
+            "reasoningTokens" : 240
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-07",
+    "input" : "这个 PR 的评审意见里有三条我不同意，帮我写个回复解释为什么"
+  }
+}

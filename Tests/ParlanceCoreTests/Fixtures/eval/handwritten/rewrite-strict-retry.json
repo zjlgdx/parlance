@@ -1,0 +1,58 @@
+{
+  "kind": "rewrite",
+  "testCase": {
+    "id": "strict-retry",
+    "category": "mixed-code",
+    "input": "修复 `fetchUser()`"
+  },
+  "attempts": [
+    {
+      "events": [
+        {
+          "text": {
+            "_0": "<best>Fix it.</best><gloss>修复函数。</gloss><alts><alt><text>Repair ⟦0⟧.</text><note>简短</note></alt></alts>"
+          }
+        },
+        {
+          "finished": {
+            "_0": "stop"
+          }
+        }
+      ]
+    },
+    {
+      "events": [
+        {
+          "text": {
+            "_0": "<best>Fix ⟦0⟧.</best><gloss>修复函"
+          }
+        },
+        {
+          "text": {
+            "_0": "数。</gloss><alts><alt><text>Repair ⟦0⟧.</text><note>简短</note></alt></alts>"
+          }
+        },
+        {
+          "finished": {
+            "_0": "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "sectionsComplete": true,
+    "termPasses": 3,
+    "termVersions": 4,
+    "bestEligible": true,
+    "bestHasResidue": false,
+    "strictRetryUsed": true,
+    "fallback": false,
+    "failures": {
+      "placeholders_changed": 1
+    }
+  },
+  "schemaVersion": 1,
+  "preset": "handwritten",
+  "model": "test-only"
+}

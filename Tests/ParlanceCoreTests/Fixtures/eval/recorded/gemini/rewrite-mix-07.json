@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">⟦0⟧ is too slow. Analyze whether an index is needed for the table"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " with 20 million rows.</best>\n<gloss>⟦0⟧ 太慢了。分析含两千万行的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "表是否需要加索引。</gloss>\n<alts><alt><text>Check if ⟦0⟧ needs an index"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". The table has 20 million rows.</text><note>用祈使句简化了“帮我看看”，更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "符合 agent 指令的简洁风格。</note></alt></alts>\n<fixes><fix>输入为混合"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语言且非全英文，属于 Case A 翻译任务，故不生成 fixes 段落。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 144,
+            "promptTokens" : 955
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-07",
+    "input" : "`SELECT * FROM orders WHERE user_id = ?` 太慢了，帮我看看要不要加 index，表有两千万行"
+  }
+}

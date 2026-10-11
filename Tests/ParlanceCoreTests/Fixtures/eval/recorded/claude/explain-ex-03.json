@@ -1,0 +1,676 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "RunnerAttempt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 提取保留了 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`fix` 行为："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`SectionStreamPar"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ser()` 本来就默"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认使用 `.fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 模式；新代码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "显"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式传入 `.fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`。严格重试、`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "firstBest` 回退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以及 `aborted`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 永不回退的规则"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍保留在 `R"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ewriteRunner.run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 中，没有改变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</translation>\n<pl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ain>这段话"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `RunnerAtt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "empt` 部"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "分抽取"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出来后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的 `fix` 行"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "持不变，重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回退的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "规"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "则"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`RewriteRunner"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".run` 里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，没有被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修改。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "RunnerAttempt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>运"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尝试（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个代码类型"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "概"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "念的名称）</mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "抽取出来的代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码单元，即"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次运行器"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的尝试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逻辑。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>fix</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一种"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解析或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理模式的名称</me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".fix` 这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "schema（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "模式），新"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧代码都"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "使用它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，行为保持一致。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Strict retry</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>严格重试</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`RewriteRunner"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".run` 中的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "种重试策略，本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改没有改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "它。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>firstBest f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "allback</word><meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">firstBest 回退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回到 `firstBest"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果的机"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制，仍保留在 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`RewriteRunner"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".run`"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 中。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">aborted</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中止"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>指被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "止的状态，规"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "则是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "状"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "态永"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不回退，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一规则没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "化。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 998,
+            "promptTokens" : 478,
+            "reasoningTokens" : 412
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-03",
+    "input" : "The `RunnerAttempt` extraction keeps `fix` behaviour: `SectionStreamParser()` already defaulted to the `.fix` schema; the new code passes `.fix` explicitly. Strict retry, `firstBest` fallback and the rule that `aborted` never falls back are still in `RewriteRunner.run` and did not change.",
+    "source" : "claude-code"
+  }
+}

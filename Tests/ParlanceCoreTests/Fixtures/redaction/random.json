@@ -1,0 +1,182 @@
+[
+  {
+    "name": "mixed forty",
+    "input": "FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "base64 slash",
+    "input": "FAKEa1B2c3D4e5F6g7H8/FAKEi9J0k1L2m3N4p5Q6+r7S8==",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "minimum length",
+    "input": "FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "short",
+    "input": "FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N",
+    "expected": "FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N",
+    "pem": false
+  },
+  {
+    "name": "lowercase",
+    "input": "fakea1b2c3d4e5f6g7h8i9j0k1l2m3n4p5q6r7s8",
+    "expected": "fakea1b2c3d4e5f6g7h8i9j0k1l2m3n4p5q6r7s8",
+    "pem": false
+  },
+  {
+    "name": "word-like slash known miss",
+    "input": "FAKEword/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "FAKEword/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "pem": false
+  },
+  {
+    "name": "mostly letters known miss",
+    "input": "FAKEabcdefghijklmnopqrstuvwxyzABCD1",
+    "expected": "FAKEabcdefghijklmnopqrstuvwxyzABCD1",
+    "pem": false
+  },
+  {
+    "name": "FAKE generated alnum length 32, 2 digits; not a credential",
+    "input": "MVaatzQJz8eBhD4ZiuOWHuUhvXKycDgy",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "FAKE generated alnum length 40, 3 digits; not a credential",
+    "input": "Isg2OeLTbi3eBZIsOoKv9UALGRTjoZwshWTiqWeW",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "FAKE generated alnum length 64, 4 digits; not a credential",
+    "input": "oBXAYtlGlkQSqpGBVb3LGzFqxyhXGvHzu4CJhQx9KfTwbFUcpRDQboqmYa5OsMWN",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "FAKE generated 44-character base64 with short slash segment; not a credential",
+    "input": "4/QEip/JTaQDyvOVQAe4TlU9kNgb4mXUS7gDZUXTx+U=",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "sentence .",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8.",
+    "expected": "The key is [REDACTED].",
+    "pem": false
+  },
+  {
+    "name": "sentence ...",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8...",
+    "expected": "The key is [REDACTED]...",
+    "pem": false
+  },
+  {
+    "name": "sentence .,",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8.,",
+    "expected": "The key is [REDACTED].,",
+    "pem": false
+  },
+  {
+    "name": "sentence ?!",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8?!",
+    "expected": "The key is [REDACTED]?!",
+    "pem": false
+  },
+  {
+    "name": "sentence )",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8)",
+    "expected": "The key is [REDACTED])",
+    "pem": false
+  },
+  {
+    "name": "sentence 。",
+    "input": "The key is FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8。",
+    "expected": "The key is [REDACTED]。",
+    "pem": false
+  },
+  {
+    "name": "URL path",
+    "input": "https://example.com/dl/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "https://example.com/dl/[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "URL path punctuation",
+    "input": "https://example.com/dl/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8.",
+    "expected": "https://example.com/dl/[REDACTED].",
+    "pem": false
+  },
+  {
+    "name": "slash variant 0",
+    "input": "/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "slash variant 1",
+    "input": "FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8/",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "slash variant 2",
+    "input": "FAKEa1B2c3D4e5F6g7H8//i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "slash variant 3",
+    "input": "/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8//",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "URL port and query syntax",
+    "input": "https://example.com:443/dl/FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8?download=1",
+    "expected": "https://example.com:443/dl/[REDACTED]?download=1",
+    "pem": false
+  },
+  {
+    "name": "URL query value",
+    "input": "https://example.com/download?id=FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8&se=2026",
+    "expected": "https://example.com/download?id=[REDACTED]&se=2026",
+    "pem": false
+  },
+  {
+    "name": "URL fragment",
+    "input": "https://example.com/cb#code=FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "https://example.com/cb#code=[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "URL user info",
+    "input": "https://user:FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8@example.com/repo.git",
+    "expected": "https://user:[REDACTED]@example.com/repo.git",
+    "pem": false
+  },
+  {
+    "name": "CJK after URL",
+    "input": "地址：https://example.com/docs，密钥是FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "地址：https://example.com/docs，密钥是[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "URL query base64 with slash",
+    "input": "https://example.com/download?id=FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6/r7S8&x=1",
+    "expected": "https://example.com/download?id=[REDACTED]&x=1",
+    "pem": false
+  },
+  {
+    "name": "URL fragment base64 with slash",
+    "input": "https://example.com/cb#t=FAKEa1B2c3D4e5F6g7H8/FAKEi9J0k1L2m3N4p5Q6+r7S8",
+    "expected": "https://example.com/cb#t=[REDACTED]",
+    "pem": false
+  }
+]

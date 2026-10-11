@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Add a retry mechanism in ⟦0⟧, targeting only 5xx errors,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " up to 3 attempts, using exponential backoff.</best>\n<gloss>在 ⟦0⟧ 里加个 retry，只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "对 5xx 重试，最多 3 次，用 exponential backoff。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Implement exponential backoff retry logic in ⟦0⟧ for 5xx errors, with a maximum of 3 attempts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>使用更符合命令式风格的动词 Implement，并调整了语序。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><fix>输入为中文，属于 Case A，不需要 fixes 段落。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 152,
+            "promptTokens" : 962
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-03",
+    "input" : "在 src/api/client.ts 里加个 retry，只对 5xx 重试，最多 3 次，用 exponential backoff"
+  }
+}

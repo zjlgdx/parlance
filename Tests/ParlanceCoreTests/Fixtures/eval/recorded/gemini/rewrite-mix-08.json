@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Run the migration script ⟦1⟧ with ⟦0⟧ first,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " verify that there are no issues, and then execute it for real.</best>\n<gloss>使用 ⟦0⟧ 先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "跑一遍迁移脚本 ⟦1⟧，确认没问题再真跑</gloss>\n<alts><alt><text>Execute"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " migration script ⟦1⟧ with ⟦0⟧ first, ensure there are no errors, then run it.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " execute 代替 run，ensure 代替 verify，表述更正式。</note></alt></alts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>输入为中文，属于 Case A，不需要 fixes 部分。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 144,
+            "promptTokens" : 967
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-08",
+    "input" : "用 `--dry-run` 先跑一遍迁移脚本 scripts/migrate.sh，确认没问题再真跑"
+  }
+}

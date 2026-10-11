@@ -1,0 +1,70 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Do not modify any code yet. Explain the data flow of this module, from"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the incoming request to the database write.</best>\n<gloss>先不要修改任何代码。请解释这个模块的数据流，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从请求进入直到写入数据库。</gloss>\n<alts><alt><text>Without modifying any code, explain the data flow"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " of this module from the incoming request to the database write.</text><note>使用分词结构简化了句子，表达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更紧凑。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 109,
+            "promptTokens" : 840
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-03",
+    "input" : "先别改代码，帮我解释一下这个模块的数据流，从请求进来到写数据库"
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "论：无阻塞性"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题。已检查原始"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "位置窗口化、独"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "立的前后对比与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尾部处理、精确的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " PEM 交集、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`.prepared` 排"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序、取消逻辑"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "、深层资格判定与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "主题复用、后续历"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "史记录上限，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以及重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回退行"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为的保留情况。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这是一条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "审查结论，表示检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查没有发现必"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "须修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复才能继续的问题"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，并列出了已检查"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的项目。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms><term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">VERDICT</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>裁决，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结论</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>审查"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结果的标题"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，表示本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次审查的总体结论"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>no bl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ocking findings</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "nə"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʊ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈblɒ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "kɪ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ŋ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈfaɪnd"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪŋz"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>没有阻塞"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "性问题</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>审查未"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发现必"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "须先"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复才能通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过的问题。</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><term><word>t"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ail handling</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>尾部处理"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据序列末尾部"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "分的处理逻辑"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被检查。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>PEM"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " intersections</word><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>P"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "EM 交集</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "PEM 相"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "关的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "交集计算进行了精"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确性"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "检查。</here></term></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1095,
+            "promptTokens" : 461,
+            "reasoningTokens" : 662
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-02",
+    "input" : "VERDICT: no blocking findings\n\nChecked original-position windowing, independent before/after and tail handling, exact PEM intersections, `.prepared` ordering, cancellation, deep eligibility and subject reuse, follow-up history limits, and preservation of rewrite retry/fallback behavior.",
+    "source" : "codex"
+  }
+}

@@ -1,0 +1,130 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">裁决：无阻塞性发现\n\n已检查原始位置加窗、独立的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "之前/之后与尾部处理、精确的 PEM 交集、`.prepared` 排序、取消、深度资格与主题"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复用、后续历史记录限制，以及重写重试/回退行为的保留。</translation>\n\n<plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这段文本是一份代码审查或测试的结论，表示没有发现阻止合并或通过的问题，并列出了所有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "经过检查的具体技术项目。</plain>\n\n<terms><term><word>VERDICT</word><meaning>裁决，结论"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>审查结果的标题</here></term>\n<term><word>blocking findings</word><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning>阻塞性发现，阻碍进展的问题</meaning><here>指阻止代码合并或发布严重缺陷</here></term>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>windowing</word><meaning>加窗，窗口处理</meaning><here>一种数据"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "处理技术</here></term>\n<term><word>tail handling</word><meaning>尾部处理</meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><here>处理数据流或列表末尾的逻辑</here></term>\n<term><word>PEM intersections</word><meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">PEM 交集</meaning><here>与 PEM 相关的数据交集计算</here></term>\n<term><word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">cancellation</word><meaning>取消，撤销</meaning><here>异步操作或任务的取消机制"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</here></term>\n<term><word>eligibility</word><meaning>资格，合格性</meaning><here>判断"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是否满足特定条件的逻辑</here></term>\n<term><word>subject reuse</word><meaning>主题复用</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>对象或主题的重复使用</here></term>\n<term><word>rewrite retry/fallback behavior"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><meaning>重写重试/回退行为</meaning><here>当重写失败时的重试与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "降级备用策略</here></term></terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 423,
+            "promptTokens" : 311
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-02",
+    "input" : "VERDICT: no blocking findings\n\nChecked original-position windowing, independent before/after and tail handling, exact PEM intersections, `.prepared` ordering, cancellation, deep eligibility and subject reuse, follow-up history limits, and preservation of rewrite retry/fallback behavior.",
+    "source" : "codex"
+  }
+}

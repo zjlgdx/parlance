@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Increase the button size and make its color darker so that users can see it clearly.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>增大按钮尺寸并使其颜色更深，以便用户能清晰地看到它。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Enlarge the button and deepen its color to improve visibility.</text><note>使用更简洁的“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Enlarge”和“deepen”替换了更长短语，更符合技术指令的风格。</note></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt></alts>\n<fixes><fix>“more big”和“more deep”是错误的比较级语法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，应分别使用“bigger”（或“increase the size”）和“darker”（或“deepen”）。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 153,
+            "promptTokens" : 837
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-04",
+    "input" : "make the button more big and the color more deep, now user cannot see it clear"
+  }
+}

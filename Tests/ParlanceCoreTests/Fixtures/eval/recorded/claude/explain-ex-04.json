@@ -1,0 +1,586 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<transl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation>当"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "配置的 `api_key"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "_cmd` 持续"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "输出或输出异常大"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "量的 stdout/st"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "derr 时，两个流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "都会在最长 30 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "秒内被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "无限制地追加，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程可能消耗数 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "GB 内存，并在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "超时触发之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前被杀死"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。应限制保留的输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出量，同时继续读"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取（排空）两个管"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这句话的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意思是：配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置的命令输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，程序会无"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限制地保存输出而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "耗尽内存，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此要限制保存的输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出量，同时继续读"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取两个管道。</pl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ain>\n<terms>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<word>api_key_cm"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "d</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>配置项"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "名"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "称，指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "于"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "获取 API "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "密钥的命令</me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning><here>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个配置好"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的命令，它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "输出过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多导"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致了问题</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<term><word>st"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "dout/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "stderr</word><ip"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "a>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˌstiːd"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈaʊt/ /"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˌstiːd"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɜ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ː"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "r/</ipa><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>标准输出和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "标准错误输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出两个数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据流</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">命令产"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "生的两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出流，都"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "被无限制地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "保存下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "来</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>drain</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><ipa>/dre"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪn/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>排空，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "持续读取并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "丢弃数据，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "使其"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不会堆积</mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning><here>即使限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制了保存量"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，也必须继"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "续读取两个管道，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "避免进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "管"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道阻塞而卡"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "住</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<term><word>pipes</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "word><ipa>/pa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪps/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>管"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道，进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程之"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "间或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "进程与输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "之间传递数据的通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "stdout 和 stder"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "r 对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应的两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个输出管道</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term>\n</terms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1110,
+            "promptTokens" : 458,
+            "reasoningTokens" : 534
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-04",
+    "input" : "When a configured `api_key_cmd` emits continuous or unexpectedly large stdout/stderr, both streams are appended without limit for up to 30 seconds, so the process can consume gigabytes and be killed before the timeout fires. Cap the retained output while continuing to drain both pipes.",
+    "source" : "codex"
+  }
+}

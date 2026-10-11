@@ -1,0 +1,64 @@
+[
+  {
+    "name": "unicode and disjoint",
+    "input": "🧪é 中 sk-FAKEabcdefghijklmnop / -----BEGIN RSA PRIVATE KEY-----\nFAKE body\n-----END RSA PRIVATE KEY----- 😀",
+    "expected": "🧪é 中 [REDACTED] / [REDACTED] 😀",
+    "pem": true,
+    "spans": [
+      {
+        "start": 6,
+        "end": 29,
+        "pem": false
+      },
+      {
+        "start": 32,
+        "end": 103,
+        "pem": true
+      }
+    ]
+  },
+  {
+    "name": "scalar boundary",
+    "input": "sk-FAKEabcdefghijklmnoṕ 😀",
+    "expected": "[REDACTED]́ 😀",
+    "pem": false,
+    "spans": [
+      {
+        "start": 0,
+        "end": 23,
+        "pem": false
+      }
+    ]
+  },
+  {
+    "name": "adjacent assignments",
+    "input": "KEY=\"sk-FAKEabcdefghijklmnop\" TOKEN=FAKEa1B2c3D4e5F6g7H8i9J0k1L2m3N4p5Q6r7S8",
+    "expected": "KEY=\"[REDACTED]\" TOKEN=[REDACTED]",
+    "pem": false,
+    "spans": [
+      {
+        "start": 5,
+        "end": 28,
+        "pem": false
+      },
+      {
+        "start": 36,
+        "end": 76,
+        "pem": false
+      }
+    ]
+  },
+  {
+    "name": "long block keeps original coordinates",
+    "input": "prefix -----BEGIN FAKE BLOCK----- FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body  FAKE body -----END FAKE BLOCK----- suffix",
+    "expected": "prefix [REDACTED] suffix",
+    "pem": true,
+    "spans": [
+      {
+        "start": 7,
+        "end": 8857,
+        "pem": true
+      }
+    ]
+  }
+]

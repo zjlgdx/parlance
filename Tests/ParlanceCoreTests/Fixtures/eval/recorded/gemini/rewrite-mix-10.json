@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Update ⟦0⟧ to read ⟦1⟧ from the environment variable ⟦2⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", defaulting to 30 if unset.</best>\n<gloss>更新 ⟦0⟧ 中的 ⟦1⟧ 以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从环境变量 ⟦2⟧ 读取，如果未设置则默认为 30。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Modify ⟦0⟧ so that ⟦1⟧ is read from environment variable ⟦2⟧ with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a default value of 30 if not set.</text><note>使用更为详尽的从句结构来表达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "条件和默认值设定，语气略有不同。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 141,
+            "promptTokens" : 982
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-10",
+    "input" : "把 config.yaml 里的 `timeout: 30` 改成从环境变量 `APP_TIMEOUT` 读，没设的话默认 30"
+  }
+}

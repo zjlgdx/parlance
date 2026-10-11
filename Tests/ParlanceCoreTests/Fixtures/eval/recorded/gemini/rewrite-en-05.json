@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Explain the data flow of this module from the incoming request to the database write.</best>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>解释此模块从入站请求到数据库写入的数据流。</gloss>\n<alts><alt><text>Describe the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " data flow of this module starting from request ingestion up to the database write operation.</text><note>使用更丰富的技术"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词汇（ingestion、operation）替换了基础表达，描述更加精确。</note></alt></alts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>将 \"data flow\" 改为 \"the data flow of\", 并在 \"request come in\" 和 \"write"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " db\" 处加上了冠词和介词以符合语法。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 147,
+            "promptTokens" : 837
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-05",
+    "input" : "can you explain me how this module data flow, from request come in to write db"
+  }
+}

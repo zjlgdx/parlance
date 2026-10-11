@@ -1,0 +1,331 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not change any code yet."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Explain the data flow of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this module, from when a request com"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es in to when the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " data is written to the database.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "先别"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改代码。解释一下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这个模块的数据流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，从请求进来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "到数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据写入数据库。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Do not"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " modify any code for"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " now. Explain the data fl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ow of this module, from the inc"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "oming request to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the database write.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"for now\" 对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应原文的\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "先\"，强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调暂时不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"y"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "et\" 版"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "本更直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接地说明本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "次只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "释，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不修改。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt><alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><text>Don't edit"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the code y"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "et. Walk through the data"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " flow of this module, from the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " incoming request to the final database"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " write.</text><note>语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更口语，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "walk through\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 强调按"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺序逐步讲"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解，适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "步理"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程的场"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "景。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 652,
+            "promptTokens" : 1163,
+            "reasoningTokens" : 368
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-03",
+    "input" : "先别改代码，帮我解释一下这个模块的数据流，从请求进来到写数据库"
+  }
+}

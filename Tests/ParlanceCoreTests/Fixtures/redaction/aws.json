@@ -1,0 +1,38 @@
+[
+  {
+    "name": "AKIA",
+    "input": "AKIAFAKEABCDEFGHIJKL",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "ASIA",
+    "input": "ASIAFAKEABCDEFGHIJKL",
+    "expected": "[REDACTED]",
+    "pem": false
+  },
+  {
+    "name": "lowercase",
+    "input": "akiaFAKEABCDEFGHIJKL",
+    "expected": "akiaFAKEABCDEFGHIJKL",
+    "pem": false
+  },
+  {
+    "name": "short",
+    "input": "AKIAFAKEABCDEFGHIJK",
+    "expected": "AKIAFAKEABCDEFGHIJK",
+    "pem": false
+  },
+  {
+    "name": "overlong",
+    "input": "AKIAFAKEABCDEFGHIJKLM",
+    "expected": "AKIAFAKEABCDEFGHIJKLM",
+    "pem": false
+  },
+  {
+    "name": "sentence punctuation",
+    "input": "Value AKIAFAKEABCDEFGHIJKL.",
+    "expected": "Value [REDACTED].",
+    "pem": false
+  }
+]

@@ -1,0 +1,366 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Add rate limiting to this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " endpoint: each user may"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " make at most 60 requests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " per minute."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Return 429 when a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " user exceeds the limit"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这个接口添加限流"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "：每个用户每分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "钟最多 60 次请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "户超出"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限制时返回 429。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Add"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " rate limiting to this API"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " endpoint: lim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it each user to 60 requ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ests per minute, and resp"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ond with HTTP 429"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " when the limit is exce"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "eded.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"接口\"译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "API endpoint，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "补"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "全"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "429"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " HTTP 429，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "偏技"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "术规"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "范。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Limit"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " each user to 60 requests"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " per minute on this endpo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "int, and return "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "429 for requests over the lim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it.</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "流\"的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "前"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "户的限制，句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式更简短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象是用户而"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "非接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口本身。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 647,
+            "promptTokens" : 1163,
+            "reasoningTokens" : 338
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-05",
+    "input" : "给这个接口加一个限流，每个用户每分钟最多 60 次，超了返回 429"
+  }
+}

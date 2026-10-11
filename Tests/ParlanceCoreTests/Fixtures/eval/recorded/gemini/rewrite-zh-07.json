@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Write a reply to the PR review comments explaining why I disagree with three of them"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<gloss>写一个对PR评审意见的回复，解释为什么我不同意其中三条。</gloss>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alts><alt><text>Draft a response to the three PR review comments I disagree with, explaining the rationale"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>用 rationale 替换解释原因，显得更加专业和简洁。</note></alt></alts>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fixes><fix>“帮我写个回复解释为什么”被转写为祈使句“Write a reply..."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " explaining why”，符合面向编码代理的指令语调。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 139,
+            "promptTokens" : 840
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-07",
+    "input" : "这个 PR 的评审意见里有三条我不同意，帮我写个回复解释为什么"
+  }
+}

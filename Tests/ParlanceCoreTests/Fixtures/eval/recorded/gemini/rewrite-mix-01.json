@@ -1,0 +1,75 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Replace ⟦0⟧ with ⟦1⟧ and stop using completion handlers.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>将 ⟦0⟧ 替换为 ⟦1⟧，并停止使用 completion handler。</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts><alt><text>Refactor ⟦0⟧ to ⟦1⟧, removing all completion handlers.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">用 Refactor 替代 Replace，语气更贴近代码重构场景。</note></alt></alts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>“别再用 completion handlers 了”翻译为“stop using completion handlers.”更符合祈使语气。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 131,
+            "promptTokens" : 964
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-01",
+    "input" : "把 `fetchUser()` 改成 async/await，别再用 completion handler 了"
+  }
+}

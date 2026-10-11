@@ -1,0 +1,386 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Add a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " retry in"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Retry only on 5"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "xx responses, up to "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "3 times, using exponential"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " backoff.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "添加重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "只对 5xx 响"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应重试，最多重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试 3 次，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "使用指数退避。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><alt><text>In"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", add a retry that"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " appl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ies only to 5xx err"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ors, with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " at most 3 attempts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and exponential backoff."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "哪里改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首，更强调修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改位"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "多 3 次\"译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "at most 3 attempts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Add ret"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ry logic to ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " retry only "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "5xx respon"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ses, with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a maximum of 3 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "retries and exponential backo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ff between"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " them.</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "冒号引"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体规"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "则，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "补充\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "退避在重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试之间进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行\"的含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义，比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文略"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "显具体，但不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "增加新"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 698,
+            "promptTokens" : 1331,
+            "reasoningTokens" : 366
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-03",
+    "input" : "在 src/api/client.ts 里加个 retry，只对 5xx 重试，最多 3 次，用 exponential backoff"
+  }
+}

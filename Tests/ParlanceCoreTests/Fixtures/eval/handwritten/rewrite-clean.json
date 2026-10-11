@@ -1,0 +1,54 @@
+{
+  "kind": "rewrite",
+  "testCase": {
+    "id": "clean",
+    "category": "mixed-code",
+    "input": "修复 `fetchUser()`"
+  },
+  "attempts": [
+    {
+      "events": [
+        {
+          "text": {
+            "_0": "<be"
+          }
+        },
+        {
+          "text": {
+            "_0": "st>Fix ⟦"
+          }
+        },
+        {
+          "text": {
+            "_0": "0⟧.</best><gloss>修复函数。</gloss><alts><alt><text>Repair ⟦0⟧.</text><note>简短</note></alt></alts>"
+          }
+        },
+        {
+          "usage": {
+            "promptTokens": 10,
+            "completionTokens": 20,
+            "reasoningTokens": 3
+          }
+        },
+        {
+          "finished": {
+            "_0": "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "sectionsComplete": true,
+    "termPasses": 2,
+    "termVersions": 2,
+    "bestEligible": true,
+    "bestHasResidue": false,
+    "strictRetryUsed": false,
+    "fallback": false,
+    "failures": {}
+  },
+  "schemaVersion": 1,
+  "preset": "handwritten",
+  "model": "test-only"
+}

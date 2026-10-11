@@ -1,0 +1,65 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Do not modify database migration files. Only modify the service layer. Run unit tests after"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the modification.</best>\n<gloss>不要修改数据库迁移文件。只修改服务层。修改完成后运行单元测试。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><alt><text>Do not touch database migration files, update the service layer only, and run unit tests upon"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " completion.</text><note>使用动词 update 代替 modify，结构更加紧凑。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 101,
+            "promptTokens" : 837
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-06",
+    "input" : "不要动数据库迁移文件，只改服务层，改完跑一下单元测试"
+  }
+}

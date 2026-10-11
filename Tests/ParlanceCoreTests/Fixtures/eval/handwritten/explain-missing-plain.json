@@ -1,0 +1,44 @@
+{
+  "kind": "explain",
+  "testCase": {
+    "id": "missing-plain",
+    "source": "handwritten",
+    "input": "The cache is stale."
+  },
+  "attempts": [
+    {
+      "events": [
+        {
+          "text": {
+            "_0": "<translation>缓存已过期。</translation>"
+          }
+        },
+        {
+          "text": {
+            "_0": "<terms></terms>"
+          }
+        },
+        {
+          "finished": {
+            "_0": "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "metrics": {
+    "sectionsComplete": false,
+    "termPasses": 0,
+    "termVersions": 0,
+    "bestEligible": false,
+    "bestHasResidue": false,
+    "strictRetryUsed": false,
+    "fallback": false,
+    "failures": {
+      "malformed_sections": 1
+    }
+  },
+  "schemaVersion": 1,
+  "preset": "handwritten",
+  "model": "test-only"
+}

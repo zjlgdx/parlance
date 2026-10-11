@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Add a rate limit to the API: maximum 60 requests per user"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " per minute, returning 429 when exceeded.</best>\n<gloss>为 API 添加速率限制：每个用户每"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "分钟最多 60 次请求，超过时返回 429。</gloss>\n<alts><alt><text>Implement an"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " API rate limit of 60 requests per user per minute, returning a 429 status code upon excess.</text><note>使用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更专业的术语（rate limit 和 status code），使指令更符合技术规范。</note></alt></alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>“each user one minute max 60 times, over it return 429”表述不够"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "专业且存在语病，已优化为更符合技术指令规范的表达。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 176,
+            "promptTokens" : 844
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-07",
+    "input" : "add one limit for the api, each user one minute max 60 times, over it return 429"
+  }
+}

@@ -1,0 +1,621 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示：`git push` 在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "输"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出 `send-pack:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " unexpected disconnect"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 后，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "紧接着打"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "印了 `Everything up"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "-to-date`。我用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `git ls-remote"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " origin refs/heads/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "feat/retry` 检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查过，远程分支"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍停留在之前的提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "交，说明这次推送"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有成功。现在正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在重试。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "者提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "醒说，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "虽然 git"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " push 显示“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最新”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但远"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程分支并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "新，所"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以推送失败，现在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "准"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "备重新"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "推送。</plain>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<terms>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>Everything up"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "-to-date</word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "切都"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最新的（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Git 常"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "见"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示，表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有需要推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "送的新"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "内"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "容）</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "里有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "导"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "性"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "送中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "途"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "开，本"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "远程仍不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致，实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际上推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "送并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "未成功。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>send-pack"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ": unexpected disconn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ect</word><meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "send"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "-pack："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "外断"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "开连接</meaning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<here>表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示推送过程中与远"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "程服务器的连接意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "外中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断，是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "送失败的原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>git ls-rem"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ote orig"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "in refs/heads/fe"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "at/retry</word><me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning>查询远程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仓库 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "origin 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " feat/retry 分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "支指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "向的提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "交</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "meaning><here>作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "者用它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "核"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "远程分支是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "否真"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的更新，结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果显"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示仍是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "旧提交。</here></term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><term><word>Retr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ying now</word><meaning"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">现在正在重试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "者确"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认推送失败后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，决"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "定立"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "即重新执行推送操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 954,
+            "promptTokens" : 455,
+            "reasoningTokens" : 440
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-10",
+    "input" : "Heads up: `git push` printed `Everything up-to-date` right after `send-pack: unexpected disconnect`. I checked with `git ls-remote origin refs/heads/feat/retry` and the remote branch is still at the previous commit, so the push did not land. Retrying now.",
+    "source" : "claude-code"
+  }
+}

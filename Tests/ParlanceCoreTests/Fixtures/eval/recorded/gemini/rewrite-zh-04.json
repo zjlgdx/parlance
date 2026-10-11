@@ -1,0 +1,70 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">The previous fix introduced a regression: pagination on the order list causes the last page to duplicate items.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>上次那个修复引入了回归，订单列表分页的时候最后一页会重复显示</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><alt><text>The recent fix caused a regression where the last page of the order list pagination"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " shows duplicate items.</text><note>使用动词词组和关系从句，使表述更加流畅自然"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 104,
+            "promptTokens" : 836
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-04",
+    "input" : "上次那个修复引入了回归，订单列表分页的时候最后一页会重复显示"
+  }
+}

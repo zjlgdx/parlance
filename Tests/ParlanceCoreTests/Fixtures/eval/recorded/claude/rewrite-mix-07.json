@@ -1,0 +1,336 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " too slow. Check whether"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " an index should be added; the table"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " has 20 million rows."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</best>\n<gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 太慢了。检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查是否应该加索引"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "张表有两千万行。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧ runs too"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " slowly. Check whether"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " adding an index would help;"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the table has 20 million r"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ows.</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"run"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "s\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是执行速"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "度，并把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要不要加 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "index\"改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成\"would"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " help"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更具体"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt><al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><text>Check whether"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " an index should be added to speed"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " up ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧; the table has 20 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "million rows.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">把请求放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "首，直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接点"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "索引"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的目的是提"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "速"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指令放"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在前"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面的写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 703,
+            "promptTokens" : 1321,
+            "reasoningTokens" : 434
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "mixed-code",
+    "id" : "mix-07",
+    "input" : "`SELECT * FROM orders WHERE user_id = ?` 太慢了，帮我看看要不要加 index，表有两千万行"
+  }
+}

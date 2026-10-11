@@ -1,0 +1,286 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>Explain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " why the login page shows a bl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ank white screen in Safari"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " but"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " works fine in Chrome"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</best>\n<glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>解释为什么登"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "录页面在 Safari"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 中显示白屏，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而在 Chrome "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中运行正常。</g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Investig"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ate why the login page renders a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " blank white screen in Saf"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ari but works in Chrome"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"Investigate\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调排查原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因的动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作，比 \"Explain"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 更偏向实"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "际查"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "找问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题，但含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义仍是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "找"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出原因。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Find the cause of the blank"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " white login page in Safari,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " given that it works in Chr"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ome.</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Chrome 正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "常作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为已"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "知条"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件放在后"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面，突"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "找出 Safari 下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "白"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "屏的原因\"这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一目标，语气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 626,
+            "promptTokens" : 1163,
+            "reasoningTokens" : 349
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-01",
+    "input" : "帮我看看为什么登录页面在 Safari 上白屏，Chrome 上是好的"
+  }
+}

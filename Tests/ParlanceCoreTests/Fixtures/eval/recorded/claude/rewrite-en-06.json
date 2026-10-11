@@ -1,0 +1,471 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>The"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " test is flaky: it s"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ometimes passes and somet"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "imes fails. It"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " may be a timing problem."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Please check whether it is."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</best>\n<gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个测试不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "稳定："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时通"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "过，有时失败。可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能是时序"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题。请检查它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序问题。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>The test is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " flaky: it sometim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es passes and sometimes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fails. Check whether it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is a timing problem.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "简"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "洁的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "祈使句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，去掉了 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Please\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直接，符"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "agent 指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令风"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "格。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>This test is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " flaky, passing and fail"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ing intermittently. Please"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " check whether timing is the c"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ause.</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"intermittently\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "替"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代 \"sometim"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es pass"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es and s"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ometimes fails\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把 \"timing probl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "em\" 改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 \"timing is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the cause\"，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确，但措"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "辞更正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "sometime\" 应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为副"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词 \"sometimes\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，原句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "漏"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "掉了词"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "尾 -"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "s。</fix><fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\"maybe is\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少主语，应为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"maybe it is\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"it may be\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "）。</fix><fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\"pls\" 是非"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缩写，正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Please\"。</fix></f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1060,
+            "promptTokens" : 1161,
+            "reasoningTokens" : 634
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-06",
+    "input" : "the test is flaky, sometime pass sometime fail, maybe is timing problem, pls check"
+  }
+}

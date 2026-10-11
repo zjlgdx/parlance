@@ -1,0 +1,54 @@
+name: ci
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  gate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    outputs:
+      swift: ${{ steps.stage.outputs.swift }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Repository stage
+        id: stage
+        run: |
+          if [ -f Package.swift ] || [ -d App/Parlance.xcodeproj ]; then echo "swift=true" >> "$GITHUB_OUTPUT"; else echo "swift=false" >> "$GITHUB_OUTPUT"; fi
+      - name: Tools (installs a pinned version only where the runner lacks it)
+        run: bash scripts/install-tools.sh
+      - name: Gate (portable components)
+        env:
+          GATE_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          # base = PR base, or the previous main tip on push (all zeros on a new ref → no base: full scan)
+          if [ -n "${GATE_BASE:-}" ] && [ -n "$(printf '%s' "$GATE_BASE" | tr -d 0)" ]; then
+            bash scripts/gate --require-clean --base "$GATE_BASE" docs shell actions harness secrets
+          else
+            bash scripts/gate --require-clean docs shell actions harness secrets
+          fi
+
+  swift:
+    needs: gate
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Gate (swift)
+        run: bash scripts/gate --require-clean swift

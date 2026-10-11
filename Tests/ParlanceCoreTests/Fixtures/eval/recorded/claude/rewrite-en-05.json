@@ -1,0 +1,446 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Explain how data flows through this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " module, from the incoming request"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to the DB write.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解释数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "据在这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个模块中如何流转"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，从请求进入到写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "入数据库。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</gloss>\n<al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<alt><text>Expl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ain how data flows through this module"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ", from the incoming request to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the database write.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Spells out \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "DB\" as"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"database\"."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " The me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "aning is the same, but it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is more formal."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt><alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><text>Walk me through"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " how data flows through this module,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " from the incoming request to the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " DB write.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Walk me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " through\" mak"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es the request"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a step-by-step explan"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ation. It is more"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " conversational and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ke"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "eps the \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" from"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the original."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<fixes><f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix>\"can you explain me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "道。英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"explain to me\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，或者在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "agent 的指令里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "直接用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "祈使句 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Explain\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，省略 \"can you\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</fix><fix>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " module data flow\" 缺"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "少介"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "词或所"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "格。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应写成"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"data"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " flow in this module\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 或 \"this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " module's data flow\"。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix><fix>\"from"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " request come in\" 语法错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缺少定"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "冠词，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "谓不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一致。应写成 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "from the mo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ment the request comes in\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 \"from the incoming"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " request\"。</fix></f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 923,
+            "promptTokens" : 1150,
+            "reasoningTokens" : 513
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "broken-en",
+    "id" : "en-05",
+    "input" : "can you explain me how this module data flow, from request come in to write db"
+  }
+}

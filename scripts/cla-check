@@ -1,0 +1,5 @@
+#!/bin/bash
+# Check the pinned PR against the pinned base; land invokes its trusted temporary copy.
+set -uo pipefail
+LIB="$(cd "$(dirname "$0")" && pwd)/lib"
+exec python3 -B "$LIB/cla_check.py" "$@"

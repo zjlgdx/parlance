@@ -1,0 +1,80 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Add rate limiting to this endpoint: maximum 60 requests per user per minute,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " returning 429 when exceeded.</best>\n<gloss>为这个端点添加速率限制：每位"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用户每分钟最多 60 个请求，超出时返回 429。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Implement rate limiting for this endpoint limiting each user to 60 requests per minute and returning 4"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "29 on excess.</text><note>使用 Implement 替代 Add，语义更具技术指令性。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes><fix>输入为中文（Case A），无需提供 fixes 段落</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 145,
+            "promptTokens" : 845
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "zh",
+    "id" : "zh-05",
+    "input" : "给这个接口加一个限流，每个用户每分钟最多 60 次，超了返回 429"
+  }
+}

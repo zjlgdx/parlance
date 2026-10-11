@@ -1,0 +1,581 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<translation>等"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "待 `consumer.result"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 时没有时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "间限制。如果流在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "费者任务被取消时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "仍不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "束"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迭代，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "测试就会"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "挂起而不是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "失败。请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "把它包在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " `bounded { _"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " = await consumer.result }"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "` 中。</translation>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<plain>这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "段话"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "说明：直接等待 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`consumer.result` "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有超"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "制，可"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "能导致测试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "卡死"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "`bounded {"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ... }` 包裹"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "以"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "设置时限"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</plain>\n<ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms><term><word>Await"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "əˈwe"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪt/</ipa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><meaning>等待（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "异步操作完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成）</meaning><here"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "示程"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "序"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "暂停，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "等待 `consumer."
+          }
+        },
+        {
+          "text" : {
+            "_0" : "result` 这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个异步结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果返"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回。</here></term><term"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><word>bounded</word"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈba"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ʊnd"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ɪd/</ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<meaning>有界"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有限制"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的</meaning><here>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这里指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "等"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "待操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作加上时间上限，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "超"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "时"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "则"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "停"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "止等"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "待，避"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "免无"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "限期"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "挂起。</here></term>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<term><word>cancelled"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</word><ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈkæn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "sld"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>被"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "取消的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消费者任务被提前"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "终止，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "流不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会再"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "束迭代。</here></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "term><term><word>hang"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "s</word><ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "æ"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ŋz"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "/</ipa><mea"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ning>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "挂起，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "停"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "滞不动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</meaning><here>测"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有报"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错退"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出，而是一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "直卡住不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "返"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "回结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "果。</here></term></ter"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ms>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 768,
+            "promptTokens" : 438,
+            "reasoningTokens" : 289
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "explain",
+  "metrics" : {
+    "bestEligible" : false,
+    "bestHasResidue" : false,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 0,
+    "termVersions" : 0
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "id" : "ex-05",
+    "input" : "Await `consumer.result` waits with no time limit. If the stream stops ending its iteration when the consumer task is cancelled, the test hangs instead of failing. Wrap it in `bounded { _ = await consumer.result }`.",
+    "source" : "claude-code"
+  }
+}
