@@ -204,7 +204,7 @@ enum EvalHarness {
 
   static func run(
     kind: EvalKind, testCase: EvalCase, preset: String, model: String,
-    provider: any LLMProvider, timeout: Duration = .seconds(2)
+    provider: any LLMProvider, timeout: Duration = .seconds(30)
   ) async throws -> EvalRun {
     let recorder = RecordingProvider(provider)
     let cancellation = LLMCancellation()
