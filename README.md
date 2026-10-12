@@ -15,7 +15,7 @@ pl --version
 
 Installation builds from source. It requires **macOS 15.6 or later** and **Xcode or Command Line Tools 26.0 or later** (Swift 6.2+). Before macOS 26.2, use **26.0–26.3**. There is no prebuilt bottle.
 
-If `pl` runs Apple's plist utility instead, check `which pl`: Homebrew's `bin` directory must precede `/usr/bin` in `PATH`. Follow Homebrew's `brew shellenv` setup instructions for your shell. If `which pl` is right but `pl` still runs the plist utility, the terminal was opened before the install and remembers the old location: run `rehash` (zsh) or `hash -r` (bash), or open a new terminal.
+If `pl` runs Apple's plist utility instead, a terminal opened before the install may still remember that old location: run `rehash` (zsh) or `hash -r` (bash), or open a new terminal. If it still happens, check `which pl`: Homebrew's `bin` directory must precede `/usr/bin` in `PATH`. Follow Homebrew's `brew shellenv` setup instructions for your shell.
 
 ## Set up
 
