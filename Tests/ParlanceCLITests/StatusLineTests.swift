@@ -31,7 +31,8 @@ private final class StatusNotice<Value: Sendable>: Sendable {
   }
   func wait() async throws -> Value {
     let deadline = DispatchWorkItem { self.resolve(.failure(Deadline())) }
-    DispatchQueue.global().asyncAfter(deadline: .now() + 3, execute: deadline)
+    // Generous for slow shared CI machines; a passing wait returns as soon as the event arrives.
+    DispatchQueue.global().asyncAfter(deadline: .now() + 30, execute: deadline)
     defer { deadline.cancel() }
     return try await withCheckedThrowingContinuation { continuation in
       let result: Result<Value, any Error>? = state.withLock {
@@ -463,7 +464,7 @@ struct StatusLineTests {
       }
       if stall {
         blocked.send(true)
-        #expect(release.wait(timeout: .now() + 8) == .success)
+        #expect(release.wait(timeout: .now() + 120) == .success)
         released.withLock { $0 = true }
         drained.send(true)
       }

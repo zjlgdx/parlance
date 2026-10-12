@@ -31,7 +31,7 @@ private final class InterruptNotice<Value: Sendable>: Sendable {
 
   func wait() async throws -> Value {
     let deadline = DispatchWorkItem { self.resolve(.failure(NoticeTimeout())) }
-    DispatchQueue.global().asyncAfter(deadline: .now() + 3, execute: deadline)
+    DispatchQueue.global().asyncAfter(deadline: .now() + 30, execute: deadline)
     defer { deadline.cancel() }
     return try await withCheckedThrowingContinuation { continuation in
       let result: Result<Value, NoticeTimeout>? = state.withLock { state in

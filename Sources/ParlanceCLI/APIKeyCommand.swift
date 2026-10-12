@@ -66,7 +66,9 @@ enum APIKeyCommand {
     posix_spawn_file_actions_adddup2(&actions, output[1], STDOUT_FILENO)
     posix_spawn_file_actions_adddup2(&actions, error[1], STDERR_FILENO)
     for fd in [input] + output + error { posix_spawn_file_actions_addclose(&actions, fd) }
-    let strings = ["/bin/sh", "-c", command].map { strdup($0)! }
+    // Typed so older compilers (Swift 6.2) do not infer C pointers for the literal from strdup.
+    let arguments: [String] = ["/bin/sh", "-c", command]
+    let strings = arguments.map { strdup($0)! }
     let envStrings = environment.map { strdup("\($0.key)=\($0.value)")! }
     defer { for pointer in strings + envStrings { free(pointer) } }
     var argv: [UnsafeMutablePointer<CChar>?] = strings.map { $0 } + [nil]
