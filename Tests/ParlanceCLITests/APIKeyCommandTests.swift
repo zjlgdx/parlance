@@ -44,10 +44,23 @@ struct APIKeyCommandTests {
     #expect(result.stdout == Data("eof".utf8))
   }
 
-  @Test func backgroundDescendantDoesNotHoldCaptureOpen() async {
+  @Test func backgroundDescendantDoesNotHoldCaptureOpen() async throws {
+    let pidFile = FileManager.default.temporaryDirectory
+      .appendingPathComponent("pl-descendant-\(UUID().uuidString).pid")
+    defer {
+      // APIKeyCommand leaves descendants running by design; stop the one this test started.
+      if let text = try? String(contentsOf: pidFile, encoding: .utf8),
+        let pid = pid_t(text.trimmingCharacters(in: .whitespacesAndNewlines))
+      {
+        kill(pid, SIGTERM)
+      }
+      try? FileManager.default.removeItem(at: pidFile)
+    }
     let start = ContinuousClock.now
     // A held pipe would last until the timeout; the background sleep outlives both.
-    let result = await APIKeyCommand.run("(sleep 60 &) ; printf k", timeout: 30, environment: [:])
+    let result = await APIKeyCommand.run(
+      #"(sleep 60 & echo $! > "$PL_TEST_PID_FILE") ; printf k"#, timeout: 30,
+      environment: ["PL_TEST_PID_FILE": pidFile.path])
     #expect(result.termination == .exit(0))
     #expect(result.stdout == Data("k".utf8))
     #expect(start.duration(to: .now) < .seconds(30))
