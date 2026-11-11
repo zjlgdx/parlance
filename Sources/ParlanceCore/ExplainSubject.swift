@@ -82,6 +82,28 @@ public enum PreparedAttachment: Sendable, Equatable {
 }
 
 public struct PreparedSubject: Sendable, Equatable {
+  public var glossary: [GlossaryEntry] = []
+  public private(set) var glossaryWarnings: [String] = []
+  private var glossaryPrepared = false
+
+  /// Clients supply their shared store; a nil store keeps in-memory callers free of filesystem I/O.
+  func withGlossary(_ store: GlossaryStore?, settings: ExplainSettings) -> Self {
+    var copy = self
+    guard settings.glossaryEnabled else {
+      copy.glossary = []
+      copy.glossaryWarnings = []
+      return copy
+    }
+    guard !glossaryPrepared, let store else { return copy }
+    copy.glossaryPrepared = true
+    let read = store.read()
+    copy.glossaryWarnings = read.warnings
+    copy.glossary = Glossary.match(
+      read.entries, in: input,
+      targetLanguage: settings.targetLanguage, nativeLanguage: settings.nativeLanguage)
+    return copy
+  }
+
   public let input: String
   /// Actual redacted send windows, preserving which side of the selection they came from.
   public let context: ExplainContext?
@@ -160,6 +182,9 @@ public struct PreparedSubject: Sendable, Equatable {
 
   private init(input: String, preserving subject: PreparedSubject, partsPEM: Bool) {
     self.input = input
+    glossary = subject.glossary
+    glossaryWarnings = subject.glossaryWarnings
+    glossaryPrepared = subject.glossaryPrepared
     context = subject.context
     elsewhere = subject.elsewhere
     source = subject.source

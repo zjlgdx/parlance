@@ -57,7 +57,21 @@ pl explain < agent-output.txt
 pl explain "connection pool exhausted" --show-sent
 ```
 
-Both commands accept text arguments or stdin, plus `--target`, `--native`, `--provider`, `--model`, `--json`, `--no-color`, and `--verbose`. `fix` adds `--tone agent|casual` and `--mode polish|correct`: `correct` fixes only spelling, grammar and wrong words in text already in the target language, and in our evaluation met the scoring bar only on `gemini-3.8-flash`. `explain` adds `--session claude|codex|pi[:ID]`, `--context <file>` (or `-` for stdin), repeatable `--deep vocab|domain`, `--doc`, and `--show-sent`. Input text and context cannot both consume stdin. `--session` and `--context` cannot be combined.
+Save a personal glossary for consistent translations. Entries use the target and native languages in your config:
+
+```bash
+pl glossary add "backpressure" "背压" --note "slow producers when consumers fall behind"
+pl glossary list --json
+pl glossary remove "backpressure"
+pl glossary export --anki > glossary.tsv
+pl glossary path
+pl fix --show-sent "处理背压"
+pl explain --no-glossary "backpressure"
+```
+
+`fix`, `explain`, and `session watch` accept `--no-glossary`; set top-level `glossary = false` in `config.toml` to disable it by default. Neither `fix` nor `explain` adds entries automatically. The glossary path is fixed under your home directory and does not follow `XDG_CONFIG_HOME`. Anki export includes only the current language pair. Each row carries a stable ID in Anki's GUID column; Anki's import documentation says it uses this ID to update an existing note instead of adding a duplicate. Known limitation: language pairs that use the same script (such as English and French) match only on the target-language side.
+
+Both commands accept text arguments or stdin, plus `--target`, `--native`, `--provider`, `--model`, `--json`, `--show-sent`, `--no-glossary`, `--no-color`, and `--verbose`. `fix` adds `--tone agent|casual` and `--mode polish|correct`: `correct` fixes only spelling, grammar and wrong words in text already in the target language, and in our evaluation met the scoring bar only on `gemini-3.8-flash`. `explain` adds `--session claude|codex|pi[:ID]`, `--context <file>` (or `-` for stdin), repeatable `--deep vocab|domain`, and `--doc`. Input text and context cannot both consume stdin. `--session` and `--context` cannot be combined.
 
 When the input looks like a shell command, `explain` goes through it part by part: each command, option, pipe and redirection, with side effects marked. `--doc` explains a whole document of up to 60,000 characters: a short gist, what it asks you to decide or do, then each section. Without `--doc`, input over 20,000 characters is refused. `--doc` cannot be combined with `--deep` or with a `--session` lookup phrase; `pl explain --doc --session claude` explains a long latest reply. With `compatible`, including local models, the server decides the context window and some servers cut longer input without an error: set your model's context length large enough to hold the whole document.
 
@@ -85,6 +99,7 @@ Answer `y` to add the marketplace, or add it first with `/plugin marketplace add
 
 ## Privacy
 
+- Your glossary is a local file (`~/.config/parlance/glossary.jsonl`) holding only entries you save. Only entries matching the text you explain or rewrite are sent with the request. Use `--show-sent` on `pl explain` or `pl fix` to see which entries were sent. Turn it off with `--no-glossary` or `glossary = false` in `config.toml`.
 - There is no Parlance server and no telemetry. Requests go to the provider endpoint you configure.
 - API keys come from an environment variable, macOS Keychain, or an `api_key_cmd` helper. Keys are never written to the configuration file. Noninteractive and SSH requests skip Keychain reads; use the provider's environment variable or a configured helper for those calls.
 - `pl fix` does **not** redact secrets from its input. It removes terminal escape codes, replaces protected terms with placeholders when sending, and restores those terms in the returned rewrite. Avoid submitting secrets you do not want the provider to receive.

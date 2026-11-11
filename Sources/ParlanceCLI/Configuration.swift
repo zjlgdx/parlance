@@ -56,7 +56,7 @@ struct CLIConfiguration: Decodable {
     }
   }
   enum CodingKeys: String, CodingKey {
-    case provider, tone, mode, fixes, providers, models, effort, thinking
+    case provider, tone, mode, fixes, glossary, providers, models, effort, thinking
     case firstTextTimeout = "first_text_timeout"
     case targetLanguage = "target_language"
     case nativeLanguage = "native_language"
@@ -70,6 +70,7 @@ struct CLIConfiguration: Decodable {
   var tone: String?
   var mode: String?
   var fixes: Bool?
+  var glossary: Bool?
   var providers: [String: Provider]?
   var models: [String: Model]?
 
@@ -219,7 +220,7 @@ struct CLIConfiguration: Decodable {
 
   private static let rootFields: Set<String> = [
     "provider", "target_language", "native_language", "tone", "fixes", "providers", "models",
-    "effort", "thinking", "first_text_timeout", "mode",
+    "effort", "thinking", "first_text_timeout", "mode", "glossary",
   ]
   private static let providerFields: Set<String> = ["model", "base_url", "api_key_cmd"]
   private static let modelFields: Set<String> = [

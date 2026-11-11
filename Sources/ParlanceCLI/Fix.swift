@@ -22,7 +22,9 @@ public struct Fix: AsyncParsableCommand {
   @Option(help: "Provider preset ID.") var provider: String?
   @Option(help: "Model ID.") var model: String?
   @OptionGroup var reasoning: ReasoningOptions
+  @Flag(help: "Show the message sent to the provider on stderr.") var showSent = false
   @Flag(help: "Write one JSON object.") var json = false
+  @Flag(help: "Do not read or send the glossary.") var noGlossary = false
   @Flag(help: "Disable color.") var noColor = false
   @Flag(help: "Write request metadata to stderr.") var verbose = false
 
@@ -81,7 +83,8 @@ public struct Fix: AsyncParsableCommand {
     let settings = RewriteSettings(
       targetLanguage: target ?? config.targetLanguage ?? "en",
       nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans", tone: tone,
-      includeFixes: config.fixes ?? true, mode: mode)
+      includeFixes: config.fixes ?? true, mode: mode,
+      glossaryEnabled: !noGlossary && (config.glossary ?? true))
     func timing(strictRetried: Bool = false) -> [String: JSONValue] {
       [
         "first_token_ms": firstToken.map { .number(milliseconds($0)) } ?? .null,
@@ -94,9 +97,12 @@ public struct Fix: AsyncParsableCommand {
       reporter.begin(.fix)
       for try await update in RewriteRunner.run(
         input: input, settings: settings, provider: environment.makeProvider(resolved),
-        cancellation: cancellation)
+        cancellation: cancellation, glossaryStore: environment.glossaryStore)
       {
         switch update {
+        case .prepared(let prepared):
+          for warning in prepared.warnings { environment.stderr("pl: \(warning)\n") }
+          if showSent { environment.stderr(TerminalText.display(prepared.message) + "\n") }
         case .sections(let snapshot):
           guard !interrupts.isInterrupted else { continue }
           if !snapshot.rawText.isEmpty { reporter.firstToken() }

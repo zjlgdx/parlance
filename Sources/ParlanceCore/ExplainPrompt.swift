@@ -1,10 +1,14 @@
 import Foundation
 
 public struct ExplainSettings: Sendable, Equatable {
+  public var glossaryEnabled: Bool
   public var targetLanguage: String
   public var nativeLanguage: String
 
-  public init(targetLanguage: String = "en", nativeLanguage: String = "zh-Hans") {
+  public init(
+    targetLanguage: String = "en", nativeLanguage: String = "zh-Hans", glossaryEnabled: Bool = true
+  ) {
+    self.glossaryEnabled = glossaryEnabled
     self.targetLanguage = targetLanguage
     self.nativeLanguage = nativeLanguage
   }
@@ -77,7 +81,7 @@ public enum ExplainPrompt {
         "\n\nAttached \(name): no exact match for the input was found; it may still be described in other words."
     case nil: break
     }
-    return text
+    return text + Glossary.paragraph(subject.glossary, explain: true)
   }
 
   /// The language's English name ("en" → "English"), so the format names it outright; an unknown

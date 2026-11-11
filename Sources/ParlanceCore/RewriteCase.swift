@@ -80,7 +80,7 @@ public enum RewriteCase: Sendable, Equatable {
     }
   }
 
-  private static func scripts(for identifier: String?) -> Set<String>? {
+  static func scripts(for identifier: String?) -> Set<String>? {
     switch identifier {
     case "Hans", "Hant", "Hani": ["Hani"]
     case "Jpan": ["Hani", "Kana"]
@@ -91,7 +91,7 @@ public enum RewriteCase: Sendable, Equatable {
   }
 
   /// A deliberately limited block table: unlisted letters do not establish a script mismatch.
-  private static func script(of scalar: Unicode.Scalar) -> String? {
+  static func script(of scalar: Unicode.Scalar) -> String? {
     switch scalar.value {
     case 0x0041...0x024F, 0x1E00...0x1EFF, 0x2C60...0x2C7F, 0xA720...0xA7FF,
       0xAB30...0xAB6F, 0xFF21...0xFF5A:

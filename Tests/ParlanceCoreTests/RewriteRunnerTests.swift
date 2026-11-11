@@ -115,6 +115,7 @@ struct RewriteRunnerTests {
         provider: provider, cancellation: token)
       {
         switch update {
+        case .prepared: break
         case .sections(let snapshot):
           snapshots += 1
           #expect(snapshot.sections.first?.text == "partial")
@@ -166,8 +167,8 @@ struct RewriteRunnerTests {
       settings: RewriteSettings(targetLanguage: "fr", nativeLanguage: "ja"),
       provider: provider, cancellation: LLMCancellation())
     { updates.append(update) }
-    #expect(updates.count == 4)
-    #expect(updates.first == .retrying(after: .seconds(2), cause: .rateLimit))
+    #expect(updates.count == 5)
+    #expect(updates[1] == .retrying(after: .seconds(2), cause: .rateLimit))
     let request = try #require(provider.recordedRequests.first)
     #expect(request.messages.last == LLMMessage(role: .user, content: "unchanged ⟦0⟧"))
     #expect(request.maxOutputTokens == 4096)

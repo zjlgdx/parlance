@@ -50,6 +50,7 @@ public struct Config: AsyncParsableCommand {
         "native_language", config.nativeLanguage ?? "zh-Hans",
         source(config.nativeLanguage != nil))
       show("tone", config.tone ?? "agent", source(config.tone != nil))
+      show("glossary", String(config.glossary ?? true), source(config.glossary != nil))
       show("fixes", String(config.fixes ?? true), source(config.fixes != nil))
       show("mode", config.mode ?? "polish", source(config.mode != nil))
       show("model", resolved.model, source(entry?.model != nil))

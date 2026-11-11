@@ -82,14 +82,16 @@ public struct ProtectedInput: Sendable, Equatable {
 }
 
 public enum TermProtection {
-  public static func protect(_ input: String) -> ProtectedInput {
+  public static func protect(_ input: String, glossary: [GlossaryEntry] = []) -> ProtectedInput {
     let candidates: [ProtectedInput.Delimiters] = [
       .init(open: "⟦", close: "⟧"), .init(open: "⟪", close: "⟫"), .init(open: "〖", close: "〗"),
     ]
     let scalars = Array(input.unicodeScalars)
+    let delimiterScalars =
+      scalars + glossary.flatMap { ($0.target + $0.native + ($0.note ?? "")).unicodeScalars }
     guard
       let delimiters = candidates.first(where: {
-        !scalars.contains($0.open) && !scalars.contains($0.close)
+        !delimiterScalars.contains($0.open) && !delimiterScalars.contains($0.close)
       })
     else {
       return ProtectedInput(text: input, fragments: [], delimiters: nil, counts: [], kinds: [])

@@ -9,6 +9,7 @@ struct ExplainOutput {
   private var rendered = Set<[Int]>()
   /// The prepared input sent; command parts and document fields use it when decoding entities.
   var input = ""
+  var glossary: [GlossaryEntry] = []
 
   init(environment: CLIEnvironment, json: Bool, noColor: Bool, mode: ExplainMode = .quick) {
     self.environment = environment
@@ -82,6 +83,15 @@ struct ExplainOutput {
       }
     default: break
     }
+    if name == "terms" { writeGlossary() }
+  }
+
+  private func writeGlossary() {
+    guard !glossary.isEmpty else { return }
+    write("Glossary:")
+    for entry in glossary {
+      write("- \(entry.target): \(entry.native)" + (entry.note.map { " (\($0))" } ?? ""))
+    }
   }
 
   private func writeSection(_ section: SectionNode, input: String) {
@@ -107,6 +117,7 @@ struct ExplainOutput {
     case "domain": write("Domain: \(section.text)")
     default: break
     }
+    if section.name == "terms" { writeGlossary() }
   }
 
   mutating func finishOperation(_ snapshot: SectionsSnapshot, eligibility: Eligibility) {
@@ -165,6 +176,7 @@ struct ExplainOutput {
     var body: JSONValue = .null
     if diagnostic == nil, let sections = document?.sections {
       body = .object([
+        "glossary": glossaryJSON(document?.subject.glossary ?? []),
         "gist": safe(sections.gist), "decisions": .array(sections.decisions.map(safe)),
         "parts": .array(
           sections.parts.map {
@@ -184,6 +196,7 @@ struct ExplainOutput {
         deep.last { $0.section == name }?.snapshot.sections.first.map { safe($0.text) } ?? .null
       }
       body = .object([
+        "glossary": glossaryJSON(quick?.subject.glossary ?? []),
         "translation": safe(sections.translation), "plain": safe(sections.plain),
         "command": sections.command.map { parts in
           .array(

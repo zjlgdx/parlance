@@ -21,6 +21,7 @@ public struct Explain: AsyncParsableCommand {
   @Option(help: "Model ID.") var model: String?
   @OptionGroup var reasoning: ReasoningOptions
   @Flag(help: "Write one JSON object.") var json = false
+  @Flag(help: "Do not read or send the glossary.") var noGlossary = false
   @Flag(help: "Disable color.") var noColor = false
   @Flag(help: "Write request metadata to stderr.") var verbose = false
 
@@ -110,7 +111,8 @@ public struct Explain: AsyncParsableCommand {
       sections: sections,
       settings: ExplainSettings(
         targetLanguage: target ?? config.targetLanguage ?? "en",
-        nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans"),
+        nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans",
+        glossaryEnabled: !noGlossary && (config.glossary ?? true)),
       resolved: resolved)
   }
 }
@@ -126,6 +128,7 @@ struct ExplainExecution {
   let reporter: RequestReporter
   var completesCommand = true
   var reportsAbort = true
+  var reportGlossaryWarning: (@Sendable (String) -> Void)?
   let started = ContinuousClock.now
   var firstToken: Duration?
   var retried = false
@@ -146,14 +149,16 @@ struct ExplainExecution {
         reporter.begin(.document)
         let result = try await consume(
           ExplainRunner.document(
-            prepared: prepared, settings: settings, provider: provider, cancellation: cancellation))
+            prepared: prepared, settings: settings, provider: provider, cancellation: cancellation,
+            glossaryStore: output.environment.glossaryStore))
         document = result
         try finishOperation(result.snapshot, eligibility: result.eligibility)
       } else {
         reporter.begin(.quick)
         let quickResult = try await consume(
           ExplainRunner.quick(
-            prepared: prepared, settings: settings, provider: provider, cancellation: cancellation))
+            prepared: prepared, settings: settings, provider: provider, cancellation: cancellation,
+            glossaryStore: output.environment.glossaryStore))
         quick = quickResult
         try finishOperation(quickResult.snapshot, eligibility: quickResult.eligibility)
         for section in sections {
@@ -207,6 +212,14 @@ struct ExplainExecution {
       switch update {
       case .prepared(let subject):
         output.input = subject.input
+        output.glossary = subject.glossary
+        for warning in subject.glossaryWarnings {
+          if let reportGlossaryWarning {
+            reportGlossaryWarning(warning)
+          } else {
+            output.environment.stderr("pl: \(warning)\n")
+          }
+        }
         if showSent {
           output.environment.stderr(
             TerminalText.display(ExplainPrompt.user(subject: subject)) + "\n")
