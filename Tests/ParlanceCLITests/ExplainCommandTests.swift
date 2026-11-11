@@ -557,7 +557,10 @@ struct ExplainCommandTests {
       #expect(object["error"] is NSNull)
       #expect(object["fallback"] is NSNull)
       let result = try #require(object["result"] as? [String: Any])
-      #expect(Set(result.keys) == ["translation", "plain", "command", "terms", "vocab", "domain"])
+      #expect(
+        Set(result.keys) == [
+          "translation", "plain", "command", "terms", "glossary", "vocab", "domain",
+        ])
       #expect(result["translation"] as? String == "Translation.")
       #expect(result["plain"] as? String == "Simple explanation.")
       #expect(result["command"] is NSNull)
@@ -1593,7 +1596,7 @@ struct ExplainDocumentCommandTests {
       #expect(object["mode"] as? String == "document")
       #expect(object["schema"] as? Int == 1)
       let result = try #require(object["result"] as? [String: Any])
-      #expect(Set(result.keys) == ["gist", "decisions", "parts", "terms"])
+      #expect(Set(result.keys) == ["gist", "decisions", "parts", "terms", "glossary"])
       #expect(result["gist"] as? String == "Document overview.")
       #expect(result["decisions"] as? [String] == (decisions ? ["Approve plan."] : []))
       #expect(
@@ -1772,7 +1775,10 @@ struct ExplainDocumentCommandTests {
       ])
     #expect(object["mode"] as? String == "quick")
     let result = try #require(object["result"] as? [String: Any])
-    #expect(Set(result.keys) == ["translation", "plain", "command", "terms", "vocab", "domain"])
+    #expect(
+      Set(result.keys) == [
+        "translation", "plain", "command", "terms", "glossary", "vocab", "domain",
+      ])
     #expect(result["translation"] as? String == "Translation.")
     #expect(result["plain"] as? String == "Simple explanation.")
     #expect(result["command"] is NSNull)

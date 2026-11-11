@@ -218,19 +218,20 @@ public enum ExplainRunner {
   /// As in RewriteRunner, provider errors complete with an incomplete result.
   public static func quick(
     subject: ExplainSubject, settings: ExplainSettings, provider: any LLMProvider,
-    cancellation: LLMCancellation
+    cancellation: LLMCancellation, glossaryStore: GlossaryStore? = nil
   ) -> AsyncThrowingStream<ExplainUpdate<ExplainQuick>, any Error> {
     quick(
       prepared: PreparedSubject(subject: subject), settings: settings, provider: provider,
-      cancellation: cancellation)
+      cancellation: cancellation, glossaryStore: glossaryStore)
   }
 
   /// Reuses the exact redacted windows; preparing them again could clip a boundary placeholder.
   public static func quick(
     prepared: PreparedSubject, settings: ExplainSettings, provider: any LLMProvider,
-    cancellation: LLMCancellation
+    cancellation: LLMCancellation, glossaryStore: GlossaryStore? = nil
   ) -> AsyncThrowingStream<ExplainUpdate<ExplainQuick>, any Error> {
-    run(
+    let prepared = prepared.withGlossary(glossaryStore, settings: settings)
+    return run(
       request: ExplainPrompt.quick(subject: prepared, settings: settings),
       schema: ShellCommandDetector.isCommand(prepared.input) ? .explainCommand : .explainQuick,
       prepared: prepared, provider: provider, cancellation: cancellation
@@ -242,19 +243,19 @@ public enum ExplainRunner {
 
   public static func document(
     subject: ExplainSubject, settings: ExplainSettings, provider: any LLMProvider,
-    cancellation: LLMCancellation
+    cancellation: LLMCancellation, glossaryStore: GlossaryStore? = nil
   ) -> AsyncThrowingStream<ExplainUpdate<ExplainDocument>, any Error> {
     document(
       prepared: PreparedSubject(subject: subject), settings: settings, provider: provider,
-      cancellation: cancellation)
+      cancellation: cancellation, glossaryStore: glossaryStore)
   }
 
   /// Yields and sends the same redacted, attachment-free subject, including when switching modes.
   public static func document(
     prepared: PreparedSubject, settings: ExplainSettings, provider: any LLMProvider,
-    cancellation: LLMCancellation
+    cancellation: LLMCancellation, glossaryStore: GlossaryStore? = nil
   ) -> AsyncThrowingStream<ExplainUpdate<ExplainDocument>, any Error> {
-    let subject = prepared.forDocument()
+    let subject = prepared.forDocument().withGlossary(glossaryStore, settings: settings)
     return run(
       request: ExplainPrompt.document(subject: subject, settings: settings),
       schema: .explainDocument, prepared: subject, provider: provider, cancellation: cancellation
@@ -297,6 +298,27 @@ public enum ExplainRunner {
     }
   }
 
+  private static func filterTerms(
+    _ snapshot: SectionsSnapshot, prepared: PreparedSubject?,
+    schema: SectionSchema?
+  ) -> SectionsSnapshot {
+    guard let prepared, !prepared.glossary.isEmpty else { return snapshot }
+    var copy = snapshot
+    let document = schema == .explainDocument
+    for index in copy.sections.indices where copy.sections[index].name == "terms" {
+      copy.sections[index].children.removeAll { term in
+        var word = term.children.first { $0.name == "word" }?.text ?? ""
+        if document {
+          word =
+            CommandPart.xmlEntities.contains { prepared.input.contains($0.0) }
+            ? CommandPart.verbatim(word, in: prepared.input) : CommandPart.decodingXMLEntities(word)
+        }
+        return prepared.glossary.contains { Glossary.isSameTerm(word, entry: $0) }
+      }
+    }
+    return copy
+  }
+
   private static func run<Result: Sendable & Equatable>(
     request: LLMRequest, schema: SectionSchema?, prepared: PreparedSubject? = nil,
     provider: any LLMProvider, cancellation: LLMCancellation,
@@ -307,9 +329,14 @@ public enum ExplainRunner {
     let task = Task {
       let attempt = await RunnerAttempt.run(
         request: request, schema: schema, provider: provider, cancellation: cancellation,
-        sections: { continuation.yield(.sections($0)) },
+        sections: {
+          continuation.yield(.sections(filterTerms($0, prepared: prepared, schema: schema)))
+        },
         retrying: { continuation.yield(.retrying(after: $0, cause: $1)) })
-      continuation.yield(.completed(result(attempt)))
+      let filtered = RunnerAttempt(
+        snapshot: filterTerms(attempt.snapshot, prepared: prepared, schema: schema),
+        eligibility: attempt.eligibility, usage: attempt.usage)
+      continuation.yield(.completed(result(filtered)))
       continuation.finish()
     }
     continuation.onTermination = { reason in

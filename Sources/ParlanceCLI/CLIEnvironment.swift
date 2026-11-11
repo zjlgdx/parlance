@@ -21,7 +21,9 @@ public struct CLIEnvironment: Sendable {
   public var readSessionLines: @Sendable (String, (Data) -> Bool) throws -> Void
   public var sessionFileStatus: @Sendable (String) throws -> SessionFileStatus
   public var readSessionBytes: @Sendable (String, UInt64, Int) throws -> Data
+  public var timeZone: TimeZone = .current
   public var wallDate: @Sendable () -> Date
+  public var glossaryStoreOverride: GlossaryStore?
   public var homeDirectory: String
   public var readConfig: @Sendable (String) throws -> Data?
   public var makeKeychain: @Sendable (Bool) -> any KeychainStoring

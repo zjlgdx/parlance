@@ -1,6 +1,7 @@
 public struct RewriteSettings: Sendable, Equatable {
   public enum Tone: String, Sendable, CaseIterable { case agent, casual }
   public enum Mode: String, Sendable, CaseIterable { case polish, correct }
+  public var glossaryEnabled: Bool
   public var mode: Mode
   public var targetLanguage: String
   public var nativeLanguage: String
@@ -9,13 +10,14 @@ public struct RewriteSettings: Sendable, Equatable {
 
   public init(
     targetLanguage: String = "en", nativeLanguage: String = "zh-Hans", tone: Tone = .agent,
-    includeFixes: Bool = true, mode: Mode = .polish
+    includeFixes: Bool = true, mode: Mode = .polish, glossaryEnabled: Bool = true
   ) {
     self.targetLanguage = targetLanguage
     self.nativeLanguage = nativeLanguage
     self.tone = tone
     self.includeFixes = includeFixes
     self.mode = mode
+    self.glossaryEnabled = glossaryEnabled
   }
 }
 

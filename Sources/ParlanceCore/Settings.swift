@@ -16,6 +16,7 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
   public var rewriteMode = RewriteSettings().mode
   public var autoExpandItems: Set<ExplainDeepSection> = []
   public var excludedAppBundleIDs: [String] = []
+  public var glossaryEnabled = true
   public var contextEnabled = true
   public var screenContextEnabled = false
   /// Asks for the 纠错 (fixes) section when the input is already in the target language.
@@ -25,7 +26,7 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
 
   private enum CodingKeys: String, CodingKey {
     case providerPresetID, modelOverride, baseURLOverride, targetLanguage, nativeLanguage, tone
-    case rewriteMode
+    case rewriteMode, glossaryEnabled
     case autoExpandItems, excludedAppBundleIDs, screenContextEnabled, includeFixes, contextEnabled
   }
 
@@ -43,6 +44,7 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
     autoExpandItems = try values.decode(Set<ExplainDeepSection>.self, forKey: .autoExpandItems)
     excludedAppBundleIDs = try values.decode([String].self, forKey: .excludedAppBundleIDs)
     screenContextEnabled = try values.decode(Bool.self, forKey: .screenContextEnabled)
+    glossaryEnabled = try values.decodeIfPresent(Bool.self, forKey: .glossaryEnabled) ?? true
     contextEnabled = try values.decodeIfPresent(Bool.self, forKey: .contextEnabled) ?? true
     includeFixes = try values.decodeIfPresent(Bool.self, forKey: .includeFixes) ?? true
   }

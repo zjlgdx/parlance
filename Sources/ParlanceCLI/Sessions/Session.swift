@@ -20,6 +20,7 @@ public struct Session: AsyncParsableCommand {
     @Option(help: "Provider preset ID.") var provider: String?
     @Option(help: "Model ID.") var model: String?
     @OptionGroup var reasoning: ReasoningOptions
+    @Flag(help: "Do not read or send the glossary.") var noGlossary = false
     @Flag(help: "Disable color.") var noColor = false
     @Flag(help: "Write request metadata to stderr.") var verbose = false
     @Flag(help: "Show the redacted text sent to the provider on stderr.") var showSent = false
@@ -58,7 +59,8 @@ public struct Session: AsyncParsableCommand {
         binding: binding, file: file, environment: environment, resolved: resolved,
         settings: ExplainSettings(
           targetLanguage: target ?? config.targetLanguage ?? "en",
-          nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans"),
+          nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans",
+          glossaryEnabled: !noGlossary && (config.glossary ?? true)),
         noColor: noColor, verbose: verbose, showSent: showSent)
       try await watcher.run()
     }

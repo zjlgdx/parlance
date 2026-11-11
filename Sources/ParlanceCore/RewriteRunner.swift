@@ -55,9 +55,17 @@ public struct RewriteResult: Sendable, Equatable {
   public var altEligibility: [Eligibility]
   public var fallback: Fallback? = nil
   public var strictRetried = false
+  public var glossary: [GlossaryEntry] = []
+}
+
+public struct PreparedRewrite: Sendable, Equatable {
+  public let glossary: [GlossaryEntry]
+  public let message: String
+  public let warnings: [String]
 }
 
 public enum RewriteUpdate: Sendable, Equatable {
+  case prepared(PreparedRewrite)
   case sections(SectionsSnapshot)
   case retrying(after: Duration, cause: LLMErrorCode)
   case strictRetry
@@ -70,15 +78,23 @@ public enum RewriteRunner {
   /// Cancelling consumption cancels the supplied provider token and the forwarding task.
   public static func run(
     input: String, settings: RewriteSettings, provider: any LLMProvider,
-    cancellation: LLMCancellation
+    cancellation: LLMCancellation, glossaryStore: GlossaryStore? = nil
   ) -> AsyncThrowingStream<RewriteUpdate, any Error> {
     let (stream, continuation) = AsyncThrowingStream<RewriteUpdate, any Error>.makeStream()
     let task = Task {
-      let protection = TermProtection.protect(input)
+      var protection = TermProtection.protect(input)
+      let read = settings.glossaryEnabled ? glossaryStore?.read() ?? GlossaryRead() : GlossaryRead()
+      let glossary = Glossary.match(
+        read.entries, in: protection.text,
+        targetLanguage: settings.targetLanguage, nativeLanguage: settings.nativeLanguage)
+      if !glossary.isEmpty { protection = TermProtection.protect(input, glossary: glossary) }
+      let message = protection.text + Glossary.paragraph(glossary, explain: false)
+      continuation.yield(
+        .prepared(PreparedRewrite(glossary: glossary, message: message, warnings: read.warnings)))
       let inputCase = RewriteCase.classify(protection, settings: settings)
       let first = await attempt(
         settings: settings, protection: protection, inputCase: inputCase, strict: false,
-        provider: provider,
+        provider: provider, message: message,
         cancellation: cancellation, continuation: continuation)
       var result = first
       // A malformed best is not retried, like any other malformed reply.
@@ -89,7 +105,7 @@ public enum RewriteRunner {
         continuation.yield(.strictRetry)
         result = await attempt(
           settings: settings, protection: protection, inputCase: inputCase, strict: true,
-          provider: provider,
+          provider: provider, message: message,
           cancellation: cancellation, continuation: continuation)
         result.strictRetried = true
         result.usage = combinedUsage(first.usage, result.usage)
@@ -103,6 +119,7 @@ public enum RewriteRunner {
           result.fallback = .firstBest
         }
       }
+      result.glossary = glossary
       continuation.yield(.completed(result))
       continuation.finish()
     }
@@ -117,7 +134,7 @@ public enum RewriteRunner {
 
   private static func attempt(
     settings: RewriteSettings, protection: ProtectedInput, inputCase: RewriteCase,
-    strict: Bool, provider: any LLMProvider,
+    strict: Bool, provider: any LLMProvider, message: String,
     cancellation: LLMCancellation,
     continuation: AsyncThrowingStream<RewriteUpdate, any Error>.Continuation
   ) async -> RewriteResult {
@@ -127,7 +144,7 @@ public enum RewriteRunner {
           role: .system,
           content: RewritePrompt.system(
             settings: settings, protection: protection, strict: strict)),
-        LLMMessage(role: .user, content: protection.text),
+        LLMMessage(role: .user, content: message),
       ], maxOutputTokens: 4096)
     // Apply the alternative limit after dropping empty text, so an empty slot does not
     // displace a later usable alternative.

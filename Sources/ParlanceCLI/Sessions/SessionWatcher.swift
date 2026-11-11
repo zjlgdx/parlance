@@ -1,6 +1,7 @@
 import ArgumentParser
 import Foundation
 import ParlanceCore
+import os
 
 /// The event loop owns parsing and the queue; only the active explanation runs concurrently.
 struct SessionWatcher {
@@ -25,6 +26,12 @@ struct SessionWatcher {
   mutating func run() async throws {
     let reporter = RequestReporter(environment: environment, provider: resolved, verbose: verbose)
     let outputEnvironment = reporter.wrapping(environment)
+    let glossaryWarnings = OSAllocatedUnfairLock(initialState: Set<String>())
+    let reportGlossaryWarning: @Sendable (String) -> Void = { warning in
+      if glossaryWarnings.withLock({ $0.insert(warning).inserted }) {
+        outputEnvironment.stderr("pl: \(warning)\n")
+      }
+    }
     let events = AsyncStream<Event>.makeStream()
     let interrupts = CLIInterruptHandler(
       source: environment.interruptSource, exitImmediately: environment.exitImmediately,
@@ -148,7 +155,7 @@ struct SessionWatcher {
           var execution = ExplainExecution(
             output: ExplainOutput(environment: outputEnvironment, json: false, noColor: noColor),
             interrupts: interrupts, showSent: showSent, reporter: reporter, completesCommand: false,
-            reportsAbort: false)
+            reportsAbort: false, reportGlossaryWarning: reportGlossaryWarning)
           try await execution.run(
             prepared: prepared, sections: [], settings: settings, resolved: resolved)
           code = 0

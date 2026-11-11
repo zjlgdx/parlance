@@ -136,6 +136,7 @@ struct FixOutput {
         "gloss": sections.gloss.map { .string(TerminalText.display($0)) } ?? .null,
         "alts": .array(alternatives),
         "fixes": .array(sections.fixes.map { .string(TerminalText.display($0)) }),
+        "glossary": glossaryJSON(result.glossary),
       ])
     }
     let error: JSONValue =

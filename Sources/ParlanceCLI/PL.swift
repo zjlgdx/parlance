@@ -8,7 +8,9 @@ public struct PL: AsyncParsableCommand {
     discussion:
       "fix and explain accept --effort minimal|low|medium|high|xhigh|max, --thinking on|off (model-dependent), and --first-text-timeout 1–110 seconds (default 30).",
     version: Version.current,
-    subcommands: [Fix.self, Explain.self, Auth.self, Config.self, Session.self]
+    subcommands: [
+      Fix.self, Explain.self, Auth.self, Config.self, Session.self, GlossaryCommand.self,
+    ]
   )
 
   public init() {}
