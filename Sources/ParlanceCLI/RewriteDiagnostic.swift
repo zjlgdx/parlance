@@ -61,7 +61,7 @@ struct RewriteDiagnostic {
       switch kind {
       case .firstToken:
         diagnostic.message = "no first token arrived before the timeout."
-        diagnostic.nextStep = "Try a faster model with --model <id>."
+        diagnostic.nextStep = "Try a faster model: --model <id> or `pl config show`."
       case .idle: diagnostic.message = "the stream exceeded the idle timeout."
       case .total: diagnostic.message = "the request exceeded the total timeout."
       }
@@ -83,7 +83,10 @@ struct RewriteDiagnostic {
       diagnostic.httpStatus = status
       diagnostic.providerCode = providerCode
       diagnostic.message = "the provider rejected the request."
-      diagnostic.nextStep = "Check the model with --model <id>."
+      // A redirect is not followed (the key stays with the validated origin), so the base URL is wrong.
+      diagnostic.nextStep =
+        (300..<400).contains(status)
+        ? "Check the base URL in config.toml." : "Check the model and extra_body."
     case .emptyResponse: diagnostic.message = "the provider returned no text."
     case .malformedResponse: diagnostic.message = "the provider returned a malformed response."
     case .aborted:

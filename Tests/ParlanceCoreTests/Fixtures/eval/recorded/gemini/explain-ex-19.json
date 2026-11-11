@@ -9,58 +9,48 @@
         },
         {
           "text" : {
-            "_0" : ">The overall failure of the access control check is caused by the sandbox blocking the App from testing"
+            "_0" : ">The overall gate check failed because the sandbox prevented the app from testing the connection to test"
           }
         },
         {
           "text" : {
-            "_0" : " the connection to testmanagerd, while the package tests themselves all passed. It is recommended to rerun the complete check outside"
+            "_0" : "managerd, while the package tests themselves all passed. It is recommended to rerun the complete gate check outside the sandbox to confirm.</translation"
           }
         },
         {
           "text" : {
-            "_0" : " the sandbox to confirm.</translation>\n<plain>这句话解释了门禁测试失败是因为沙盒限制，并"
+            "_0" : ">\n<plain>这句话解释了门禁检查失败是因为沙盒限制导致无法连接 testmanagerd，建议在沙"
           }
         },
         {
           "text" : {
-            "_0" : "建议在沙盒外重新运行以确认结果。</plain>\n<terms><term><word>门禁</word>"
+            "_0" : "盒外重新运行来确认结果。</plain>\n<terms><term><word>gate check</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "\n<meaning>这里指代码提交或构建时的自动化检查/测试流程</meaning><here>自动化测试门"
+            "_0" : "meaning>门禁，质量关卡检查</meaning><here>门禁，指软件发布前的自动化验证流程</here></term"
           }
         },
         {
           "text" : {
-            "_0" : "禁</here></term><term><word>沙盒</word>\n<meaning>一种用于隔离运行程序的"
+            "_0" : "><term><word>sandbox</word>\n<meaning>沙盒，沙箱</meaning><here>沙"
           }
         },
         {
           "text" : {
-            "_0" : "安全机制</meaning><here>沙盒环境</here></term><term><word>testmanagerd</word>"
+            "_0" : "盒，用于隔离程序运行的安全环境</here></term><term><word>package test</word>\n<meaning"
           }
         },
         {
           "text" : {
-            "_0" : "\n<meaning>iOS 测试管理守护进程</meaning><here>testmanagerd 服务</here></term><term><"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "word>包测试</word>\n<meaning>对软件包本身进行的测试</meaning><here>包测试本身</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "></terms>"
+            "_0" : ">包测试</meaning><here>包测试，指对软件包本身进行的测试</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 224,
-            "promptTokens" : 292
+            "completionTokens" : 199,
+            "promptTokens" : 564
           }
         },
         {
@@ -75,6 +65,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

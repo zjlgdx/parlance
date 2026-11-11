@@ -1,10 +1,32 @@
 import ArgumentParser
 import Foundation
+import ParlanceCore
 
 /// Shared argument/stdin routing; request preprocessing removes escapes, not other controls.
 enum CommandInput {
-  static func read(_ text: [String], command: String, environment: CLIEnvironment) throws -> String
-  {
+  enum Limit {
+    case standard, explainQuick, explainDocument
+
+    var characters: Int { self == .explainDocument ? ExplainDocument.maximumCharacters : 20_000 }
+
+    func exceeded(_ environment: CLIEnvironment) throws -> Never {
+      switch self {
+      case .standard: try CommandInput.tooLong(environment)
+      case .explainQuick:
+        try CommandInput.fail(
+          "input exceeds 20,000 characters. Use --doc to explain a whole document.", environment)
+      case .explainDocument:
+        let count = characters.formatted(.number.locale(Locale(identifier: "en_US")))
+        try CommandInput.fail(
+          "input exceeds \(count) characters. Explain one part of the document at a time.",
+          environment)
+      }
+    }
+  }
+
+  static func read(
+    _ text: [String], command: String, environment: CLIEnvironment, limit: Limit = .standard
+  ) throws -> String {
     let input: String
     if !text.isEmpty && text != ["-"] {
       input = text.joined(separator: " ")
@@ -16,21 +38,27 @@ enum CommandInput {
       do { data = try environment.readStdin() } catch {
         try fail("could not read stdin. Pass UTF-8 text to pl \(command).", environment)
       }
-      guard data.count <= stdinLimit else { try tooLong(environment) }
+      guard data.count <= stdinLimit else { try limit.exceeded(environment) }
       guard let decoded = String(data: data, encoding: .utf8) else {
         try fail("input is not valid UTF-8. Pass UTF-8 text to pl \(command).", environment)
       }
       input = decoded
     }
+    return try validate(input, command: command, environment: environment, limit: limit)
+  }
+
+  static func validate(
+    _ input: String, command: String, environment: CLIEnvironment, limit: Limit = .standard
+  ) throws -> String {
     let cleaned = TerminalText.stripEscapes(input)
     guard !cleaned.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
       try fail("input is empty. Pass non-empty text to pl \(command).", environment)
     }
-    guard cleaned.count <= 20_000 else { try tooLong(environment) }
+    guard cleaned.count <= limit.characters else { try limit.exceeded(environment) }
     return cleaned
   }
 
-  /// Far above 20,000 characters of UTF-8 plus escapes; stdin reading stops past it, so piping a
+  /// Byte ceiling independent of the character limit; stdin reading stops past it, so piping a
   /// large file in fails fast instead of buffering it.
   static let stdinLimit = 1 << 20
 
@@ -54,7 +82,10 @@ enum CommandInput {
     return data
   }
 
-  static let contextBytes = 16 * 1024
+  static let contextBytes = ExplainContext.marginBytes
+  /// Escape codes are removed before the 16 KiB cut, so more than the margin is read; the extra
+  /// byte tells a file that fills the read window from one that was cut.
+  static let contextReadBytes = 4 * contextBytes + 1
 
   static func context(_ path: String?, environment: CLIEnvironment) throws -> String? {
     guard let path else { return nil }
@@ -68,26 +99,48 @@ enum CommandInput {
     } catch {
       try fail("could not read context. Pass a readable UTF-8 file.", environment)
     }
-    var tail = data.suffix(contextBytes)
+    // Only the last 16 KiB has to be valid UTF-8; earlier bytes are read for escape removal.
+    let decoded =
+      utf8(data).map { ($0, data.count == contextReadBytes) }
+      ?? utf8(data.suffix(contextBytes)).map { ($0, true) }
+    guard let (text, cut) = decoded else {
+      try fail("context is not valid UTF-8. Pass a UTF-8 file.", environment)
+    }
+    let clipped = clip(TerminalText.stripEscapes(text), cut: cut)
+    return clipped.isEmpty ? nil : clipped
+  }
+
+  /// Decodes strictly after skipping up to three continuation bytes left by a byte cut.
+  private static func utf8(_ data: Data) -> String? {
+    var tail = data[...]
     for _ in 0..<3 {
       guard let byte = tail.first, (0x80...0xBF).contains(byte) else { break }
       tail = tail.dropFirst()
     }
-    guard let text = String(data: tail, encoding: .utf8) else {
-      try fail("context is not valid UTF-8. Pass a UTF-8 file.", environment)
-    }
-    return TerminalText.stripEscapes(text)
+    return String(data: tail, encoding: .utf8)
+  }
+
+  /// Keeps the last `contextBytes` of escape-free text. The core leaves a cut first line out of
+  /// its search only when the margin is nearly full (`ExplainContext.marginBytes - 64` bytes), so
+  /// text that was cut but is shorter than that drops its partial first line here.
+  static func clip(_ text: String, cut: Bool) -> String {
+    var tail = Data(text.utf8.suffix(contextBytes))
+    while let first = tail.first, (0x80...0xBF).contains(first) { tail.removeFirst() }
+    let clipped = String(decoding: tail, as: UTF8.self)
+    guard cut, tail.count <= contextBytes - 64 else { return clipped }
+    guard let newline = clipped.firstIndex(where: \.isNewline) else { return "" }
+    return String(clipped[clipped.index(after: newline)...])
   }
 
   /// `-` is stdin. Seeks for regular files; stdin, pipes, FIFOs and process substitution cannot
-  /// seek, so they are read to EOF keeping only the last `contextBytes`.
+  /// seek, so they are read to EOF keeping only the last `contextReadBytes` (including the truncation indicator byte).
   static func readFileTail(_ path: String) throws -> Data {
     if path == "-" { return try readTail(FileHandle.standardInput) }
     let file = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
     defer { try? file.close() }
     if let end = try? file.seekToEnd() {
-      try file.seek(toOffset: end > contextBytes ? end - UInt64(contextBytes) : 0)
-      return try file.read(upToCount: contextBytes) ?? Data()
+      try file.seek(toOffset: end > contextReadBytes ? end - UInt64(contextReadBytes) : 0)
+      return try file.read(upToCount: contextReadBytes) ?? Data()
     }
     return try readTail(file)
   }
@@ -103,7 +156,7 @@ enum CommandInput {
           return
         }
         tail.append(chunk)
-        if tail.count > contextBytes { tail = Data(tail.suffix(contextBytes)) }
+        if tail.count > contextReadBytes { tail = Data(tail.suffix(contextReadBytes)) }
       }
     }
     return tail

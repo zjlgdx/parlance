@@ -9,78 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">这个偶发性故障是由防抖计时器与卸载清理之间产生的"
+            "_0" : ">这种偶发性故障是由防抖计时器与卸载清理操作之间的竞"
           }
         },
         {
           "text" : {
-            "_0" : "竞态条件引起的：计时器回调可能会在组件卸载后触发，并在陈旧的引用上调用 `setState"
+            "_0" : "态条件引起的：计时器回调可能会在组件卸载后触发，并在陈旧的引用上调用 `setState"
           }
         },
         {
           "text" : {
-            "_0" : "`。在 effect 的清理函数中清除该计时器可以彻底解决这个问题。</translation>\n\n<plain>这句话解释"
+            "_0" : "`。在 effect 的清理函数中清除计时器可以彻底解决这个问题。</translation>\n\n<plain>这段文本解释了 React"
           }
         },
         {
           "text" : {
-            "_0" : "了一个前端组件中因为定时器未及时清除导致的偶发 Bug 及其确定性的修复方法。</plain>\n\n<terms"
+            "_0" : " 组件中由防抖计时器和卸载清理引发的偶发性故障及其确定性的解决方法。</plain>\n\n<"
           }
         },
         {
           "text" : {
-            "_0" : "><term><word>flaky failure</word>\n<meaning>偶发性故障/不稳定失败</meaning>\n<here"
+            "_0" : "terms><term><word>flaky failure</word>\n<meaning>偶发性故障、不稳定的失败"
           }
         },
         {
           "text" : {
-            "_0" : ">指时好时坏、难以重现的测试或运行失败</here></term>\n<term><word"
+            "_0" : "</meaning><here>指时好时坏、难以重现的测试或运行失败</here></term><term><word"
           }
         },
         {
           "text" : {
-            "_0" : ">race</word>\n<meaning>竞态条件/竞争状态</meaning>\n<here>指多个操作执行"
+            "_0" : ">race</word>\n<meaning>竞态条件</meaning><here>指两个操作同时发生、顺序"
           }
         },
         {
           "text" : {
-            "_0" : "顺序不确定导致的冲突</here></term>\n<term><word>debounce timer</word>\n<meaning>防抖计时"
+            "_0" : "不确定导致的问题</here></term><term><word>stale reference</word>\n<meaning>陈旧引用</"
           }
         },
         {
           "text" : {
-            "_0" : "器</meaning>\n<here>用于限制函数执行频率的计时器</here></term>\n<term><word>unmount"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " cleanup</word>\n<meaning>卸载清理</meaning>\n<here>组件销毁时执行的清理逻辑"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</here></term>\n<term><word>stale reference</word>\n<meaning>陈旧引用</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning>\n<here>指向已过时或失效对象的引用</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "deterministically</word>\n<meaning>确定性地</meaning>\n<here>指通过可靠的方式彻底解决，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "不再偶发</here></term></terms>"
+            "_0" : "meaning><here>指向已卸载或过期组件实例的引用</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 343,
-            "promptTokens" : 310
+            "completionTokens" : 220,
+            "promptTokens" : 582
           }
         },
         {
@@ -95,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,33 +9,28 @@
         },
         {
           "text" : {
-            "_0" : ">Lower the log level to reduce noise in production, while ensuring that zero error logs are missed.</best"
+            "_0" : ">Lower the log level to reduce production noise, but ensure no error logs are missed.</best"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<gloss>把日志级别调低以减少生产环境中的噪音，同时确保一条错误日志都不漏"
+            "_0" : ">\n<gloss>把日志级别调低一点来减少线上噪声，但要确保一条错误日志都不漏掉。</gloss>\n"
           }
         },
         {
           "text" : {
-            "_0" : "掉。</gloss>\n<alts><alt><text>Decrease the log level to reduce production noise, making sure no error logs are omitted"
+            "_0" : "<alts><alt><text>Decrease the log level for production to reduce noise while keeping all error logs intact.</text><note"
           }
         },
         {
           "text" : {
-            "_0" : ".</text><note>使用 decrease 替换 lower，用语略有不同但同样符合技术指令风格。</note></alt></al"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ts>\n<fixes><fix>输入为中文，属于 Case A，不需要 fixes 部分。</fix></fixes>"
+            "_0" : ">使用 decrease 和 intact，表达更符合英文技术文档的规范。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 128,
-            "promptTokens" : 840
+            "completionTokens" : 99,
+            "promptTokens" : 1286
           }
         },
         {
@@ -50,6 +45,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

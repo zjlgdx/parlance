@@ -14,33 +14,28 @@
         },
         {
           "text" : {
-            "_0" : ">\n<gloss>将 ⟦0⟧ 替换为 ⟦1⟧，并停止使用 completion handler。</gloss>\n<al"
+            "_0" : ">\n<gloss>把 ⟦0⟧ 改成 ⟦1⟧，别再用 completion handlers 了。</gloss>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "ts><alt><text>Refactor ⟦0⟧ to ⟦1⟧, removing all completion handlers.</text><note"
+            "_0" : "alts><alt><text>Replace ⟦0⟧ with ⟦1⟧ and eliminate completion handlers.</text><note"
           }
         },
         {
           "text" : {
-            "_0" : ">用 Refactor 替代 Replace，语气更贴近代码重构场景。</note></alt></alts>\n<fixes><"
+            "_0" : ">使用 eliminate 代替 stop using，表达更符合技术指令的风格</note></alt></alts>\n<fixes><"
           }
         },
         {
           "text" : {
-            "_0" : "fix>“别再用 completion handlers 了”翻译为“stop using completion handlers.”更符合祈使语气。</fix></fixes"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">"
+            "_0" : "fix>输入已经是地道的英文，无需修改</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 131,
-            "promptTokens" : 964
+            "completionTokens" : 115,
+            "promptTokens" : 1410
           }
         },
         {
@@ -55,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 1,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

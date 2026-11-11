@@ -1,0 +1,477 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "R"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ename"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " function"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " something"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " clearer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " enable"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " debug"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " log"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "oss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "函数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的名字"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不清楚"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "请"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "名字"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "打开"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调试"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "日志"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "oss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Give"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " function"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " clearer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " name"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " turn"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " debug"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " log"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "化"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一些"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "同样"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意思"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 87,
+            "promptTokens" : 1262
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "deepseek-flash",
+  "preset" : "deepseek",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-03",
+    "input" : "This function's name is not clear, please change a name for it and open the debug log."
+  }
+}

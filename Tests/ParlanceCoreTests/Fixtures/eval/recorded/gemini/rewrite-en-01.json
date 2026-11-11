@@ -14,33 +14,33 @@
         },
         {
           "text" : {
-            "_0" : " correctly in Chrome.</best>\n<gloss>修复登录页面在 Safari 中显示白屏而在 Chrome 中工作正常的问题。</"
+            "_0" : " correctly in Chrome.</best>\n<gloss>请修复登录页面在 Safari 中显示白屏但在 Chrome 中正常的"
           }
         },
         {
           "text" : {
-            "_0" : "gloss>\n<alts><alt><text>Resolve the white screen issue on the login page in Safari that does"
+            "_0" : " Bug。</gloss>\n<alts><alt><text>Resolve the Safari-specific white screen issue on the login page.</text><"
           }
         },
         {
           "text" : {
-            "_0" : " not occur in Chrome.</text><note>使用 resolve 代替 fix，表达更加自然准确。</note></alt></al"
+            "_0" : "note>使用更简洁的“Safari-specific white screen issue”来指代 Safari 独有的白屏问题。</"
           }
         },
         {
           "text" : {
-            "_0" : "ts>\n<fixes><fix>原句中的 \"is white screen\" 语法不通顺，应改为"
+            "_0" : "note></alt></alts>\n<fixes><fix>“that login page is white screen”语法不当"
           }
         },
         {
           "text" : {
-            "_0" : " \"displays a white screen\" 或 \"has a white screen issue\"。</fix></fixes>"
+            "_0" : "，应使用“where the login page displays a white screen”来引导从句。</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 136,
-            "promptTokens" : 838
+            "completionTokens" : 141,
+            "promptTokens" : 1284
           }
         },
         {
@@ -55,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

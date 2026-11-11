@@ -14,33 +14,33 @@
         },
         {
           "text" : {
-            "_0" : " verify that there are no issues, and then execute it for real.</best>\n<gloss>使用 ⟦0⟧ 先"
+            "_0" : " and actually run it only after confirming there are no issues.</best>\n<gloss>用 ⟦0⟧ 先"
           }
         },
         {
           "text" : {
-            "_0" : "跑一遍迁移脚本 ⟦1⟧，确认没问题再真跑</gloss>\n<alts><alt><text>Execute"
+            "_0" : "跑一遍迁移脚本 ⟦1⟧，确认没问题再真跑</gloss>\n<alts><alt><text>Perform a"
           }
         },
         {
           "text" : {
-            "_0" : " migration script ⟦1⟧ with ⟦0⟧ first, ensure there are no errors, then run it.</text><note>使用"
+            "_0" : " dry run of the migration script ⟦1⟧ using ⟦0⟧ first, and execute it for real only after"
           }
         },
         {
           "text" : {
-            "_0" : " execute 代替 run，ensure 代替 verify，表述更正式。</note></alt></alts>\n<fixes><"
+            "_0" : " verifying everything is correct.</text><note>dry run: 干跑/预演，指在不实际改变系统"
           }
         },
         {
           "text" : {
-            "_0" : "fix>输入为中文，属于 Case A，不需要 fixes 部分。</fix></fixes>"
+            "_0" : "状态的情况下运行程序以检查问题</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 144,
-            "promptTokens" : 967
+            "completionTokens" : 134,
+            "promptTokens" : 1413
           }
         },
         {
@@ -55,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

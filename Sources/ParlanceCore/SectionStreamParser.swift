@@ -7,33 +7,66 @@ public struct SectionSchema: Sendable, Equatable {
     public var minimum: Int
     public var maximum: Int?
     public var retainedLimit: Int?
+    /// A closed leaf with only whitespace makes the whole response malformed.
+    public var nonEmpty: Bool
 
     public init(
       _ name: String, children: [Tag] = [], minimum: Int = 1, maximum: Int? = 1,
-      retainedLimit: Int? = nil
+      retainedLimit: Int? = nil, nonEmpty: Bool = false
     ) {
       self.name = name
       self.children = children
       self.minimum = minimum
       self.maximum = maximum
       self.retainedLimit = retainedLimit
+      self.nonEmpty = nonEmpty
     }
   }
   public var tags: [Tag]
   public init(tags: [Tag]) { self.tags = tags }
 
   public static let explainQuick = SectionSchema(tags: [
-    Tag("translation"), Tag("plain"),
+    Tag("translation", nonEmpty: true), Tag("plain", nonEmpty: true),
     Tag(
       "terms",
       children: [
         Tag(
-          "term", children: [Tag("word"), Tag("ipa", minimum: 0), Tag("meaning"), Tag("here")],
+          "term",
+          children: [
+            Tag("word", nonEmpty: true), Tag("ipa", minimum: 0), Tag("meaning", nonEmpty: true),
+            Tag("here"),
+          ],
           minimum: 0, maximum: nil)
       ]),
   ])
-  public static let explainVocab = SectionSchema(tags: [Tag("vocab")])
-  public static let explainDomain = SectionSchema(tags: [Tag("domain")])
+  public static let explainCommand: SectionSchema = {
+    var tags = explainQuick.tags
+    tags.insert(
+      Tag(
+        "command",
+        children: [
+          Tag(
+            "part",
+            children: [
+              Tag("code", nonEmpty: true), Tag("does", nonEmpty: true), Tag("effects", minimum: 0),
+            ], maximum: nil)
+        ]), at: 2)
+    return SectionSchema(tags: tags)
+  }()
+  public static let explainDocument = SectionSchema(tags: [
+    Tag("gist", nonEmpty: true),
+    Tag("decisions", children: [Tag("decision", minimum: 0, maximum: nil, nonEmpty: true)]),
+    Tag(
+      "parts",
+      children: [
+        Tag(
+          "part", children: [Tag("heading", nonEmpty: true), Tag("plain", nonEmpty: true)],
+          maximum: nil)
+      ]),
+    explainQuick.tags[2],
+  ])
+  public static let explainVocab = SectionSchema(tags: [Tag("vocab", nonEmpty: true)])
+  public static let explainDomain = SectionSchema(tags: [Tag("domain", nonEmpty: true)])
 
   public static let fix = SectionSchema(tags: [
     Tag("best"), Tag("gloss"),
@@ -166,6 +199,7 @@ public struct SectionStreamParser: Sendable, Equatable {
     let frame = stack.removeLast()
     invalid = invalid || !validCounts(frame.counts, rules: frame.tag.children)
     var node = frame.node
+    invalid = invalid || (frame.tag.nonEmpty && node.text.isEmpty)
     node.isClosed = true
     if stack.isEmpty {
       roots.append(node)

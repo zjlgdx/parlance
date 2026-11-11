@@ -9,43 +9,38 @@
         },
         {
           "text" : {
-            "_0" : ">Add rate limiting to this endpoint: maximum 60 requests per user per minute,"
+            "_0" : ">Add rate limiting to this endpoint: maximum 60 requests per user per minute, returning 4"
           }
         },
         {
           "text" : {
-            "_0" : " returning 429 when exceeded.</best>\n<gloss>为这个端点添加速率限制：每位"
+            "_0" : "29 when exceeded.</best>\n<gloss>给这个接口加一个限流，每个用户每分钟最多 "
           }
         },
         {
           "text" : {
-            "_0" : "用户每分钟最多 60 个请求，超出时返回 429。</gloss>\n<alts><"
+            "_0" : "60 次，超了返回 429</gloss>\n<alts><alt><text>Implement"
           }
         },
         {
           "text" : {
-            "_0" : "alt><text>Implement rate limiting for this endpoint limiting each user to 60 requests per minute and returning 4"
+            "_0" : " rate limiting for this endpoint allowing up to 60 requests per user per minute with a 429 Too Many Requests response on"
           }
         },
         {
           "text" : {
-            "_0" : "29 on excess.</text><note>使用 Implement 替代 Add，语义更具技术指令性。</note></alt></"
+            "_0" : " limit breach.</text><note>使用更正式的技术术语（breach、Too Many Requests）重写了需求"
           }
         },
         {
           "text" : {
-            "_0" : "alts>\n<fixes><fix>输入为中文（Case A），无需提供 fixes 段落</fix></fixes"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">"
+            "_0" : "描述。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 145,
-            "promptTokens" : 845
+            "completionTokens" : 133,
+            "promptTokens" : 1291
           }
         },
         {
@@ -60,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

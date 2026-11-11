@@ -9,68 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">当配置的 `api_key_cmd` 输出持续不断或意外"
+            "_0" : ">当配置的 `api_key_cmd` 输出连续的或大"
           }
         },
         {
           "text" : {
-            "_0" : "大量的标准输出/标准错误时，两个流都会无限制地追加长达 30 秒，因此该进程可能会"
+            "_0" : "到意料之外的 stdout/stderr 时，两个流都会无限制地被附加长达 30 秒，"
           }
         },
         {
           "text" : {
-            "_0" : "消耗数吉字节的内存/空间，并在超时触发之前被杀死。限制保留的输出，同时继续排"
+            "_0" : "因此该进程可能会消耗数 GB 的内存并在超时触发之前被杀死。限制保留的输出，同时继续排"
           }
         },
         {
           "text" : {
-            "_0" : "空两个管道。</translation>\n\n<plain>这段文本描述了一个安全/资源控制问题：需要限制命令输出流的大小以"
+            "_0" : "空两个管道。</translation>\n\n<plain>这段文本解释了命令输出过多导致的资源耗尽问题，并提出了"
           }
         },
         {
           "text" : {
-            "_0" : "防止内存耗尽，同时仍要读取管道中的数据避免阻塞。</plain>\n\n<terms><term><word>api_"
+            "_0" : "限制保留输出但继续清空管道的解决方案。</plain>\n\n<terms><term><word>stdout/stderr</word"
           }
         },
         {
           "text" : {
-            "_0" : "key_cmd</word><meaning>用于获取 API 密钥的配置命令</meaning><here>配置的用于"
+            "_0" : ">\n<meaning>标准输出/标准错误</meaning><here>程序输出数据的两个标准数据流</here></term"
           }
         },
         {
           "text" : {
-            "_0" : "获取 API 密钥的命令</here></term><term><word>stdout/stderr</word><meaning>标准输出和标准错误"
+            "_0" : "><term><word>Cap</word>\n<meaning>限制，设定上限</meaning><here>限制保留的输出数据量"
           }
         },
         {
           "text" : {
-            "_0" : "流</meaning><here>标准输出和标准错误流</here></term><term><word>appended without limit</word><"
+            "_0" : "</here></term><term><word>drain</word>\n<meaning>排空，耗尽</meaning><here>"
           }
         },
         {
           "text" : {
-            "_0" : "meaning>无限制地追加</meaning><here>无限制地追加</here></term><term><word>Cap"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " the retained output</word><meaning>限制保留的输出</meaning><here>限制保留的输出大小</here></term><term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><word>drain both pipes</word><meaning>排空两个管道</meaning><here>持续读取并排"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "空两个管道中的数据</here></term></terms>"
+            "_0" : "持续读取并清空管道中的数据以防阻塞</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 291,
-            "promptTokens" : 316
+            "completionTokens" : 217,
+            "promptTokens" : 588
           }
         },
         {
@@ -85,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,43 +9,43 @@
         },
         {
           "text" : {
-            "_0" : ">Refactor this class without breaking its usages. Explain how to do it safely.</best>\n<"
+            "_0" : ">Refactor this class without breaking other places that use it. Explain how to"
           }
         },
         {
           "text" : {
-            "_0" : "gloss>重构这个类且不破坏其用法。解释如何安全地做到这一点。</gloss>\n<al"
+            "_0" : " do it safely.</best>\n<gloss>重构这个类而不破坏其他使用它的地方。解释如何安全"
           }
         },
         {
           "text" : {
-            "_0" : "ts><alt><text>I want to refactor this class without breaking its usages. Explain how to do it safely.</"
+            "_0" : "地做到这一点。</gloss>\n<alts><alt><text>Refactor this class safely without breaking consumers.</text><"
           }
         },
         {
           "text" : {
-            "_0" : "text><note>保留了原文的“我想……”结构，语气更接近用户的起初表述。</note></alt></"
+            "_0" : "note>使用 consumers 代替 other places that use it，指代使用该类的外部代码或组件，表述更地道。</note"
           }
         },
         {
           "text" : {
-            "_0" : "alts>\n<fixes><fix>“not break other place who use it”语法不正确，且表达"
+            "_0" : "></alt></alts>\n<fixes><fix>\"how to do safe\" 属于语法错误，且带有"
           }
         },
         {
           "text" : {
-            "_0" : "不够地道，已修正为“without breaking its usages”。</fix><fix>“how to do safe”语法"
+            "_0" : "中式英语痕迹，应改为 \"Explain how to do it safely.\"（解释如何安全地做到这一点）。"
           }
         },
         {
           "text" : {
-            "_0" : "错误，已修正为“Explain how to do it safely.”。</fix></fixes>"
+            "_0" : "</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 165,
-            "promptTokens" : 839
+            "completionTokens" : 150,
+            "promptTokens" : 1285
           }
         },
         {
@@ -60,6 +60,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

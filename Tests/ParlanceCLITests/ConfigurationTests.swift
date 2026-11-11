@@ -1110,3 +1110,41 @@ extension ConfigurationTests {
     }
   }
 }
+
+extension ConfigurationTests {
+  @Test func rewriteModePrecedenceAndValidation() async throws {
+    for (config, flags, expected) in [
+      ("", ["--mode", "correct"], "correct it."),
+      ("mode = 'correct'", [], "correct it."),
+      ("mode = 'correct'", ["--mode", "polish"], "polish it."),
+    ] {
+      let harness = ConfigurationHarness()
+      #expect(await harness.run(["fix", "input"] + flags, config: config) == 0)
+      let prompt = try #require(harness.provider.recordedRequests.first?.messages.first?.content)
+      #expect(prompt.contains(expected))
+      #expect(!harness.snapshot.err.contains("unknown field"))
+    }
+    let flag = ConfigurationHarness()
+    #expect(await flag.run(["fix", "input", "--mode", "bogus"]) == 64)
+    #expect(flag.snapshot.err.contains("unknown mode. Choose --mode polish or --mode correct."))
+    let config = ConfigurationHarness()
+    #expect(await config.run(config: "mode = 'bogus'") == 78)
+    #expect(
+      config.snapshot.err.contains(
+        "invalid field mode. Choose polish or correct in config.toml."))
+    #expect(flag.provider.recordedRequests.isEmpty)
+    #expect(config.provider.recordedRequests.isEmpty)
+  }
+
+  @Test func configShowsRewriteModeAndSource() async {
+    for (config, expected) in [
+      ("", "mode = polish [default]"),
+      ("mode = 'correct'", "mode = correct [config]"),
+    ] {
+      let harness = ConfigurationHarness()
+      #expect(await harness.run(["config", "show"], config: config) == 0)
+      #expect(harness.snapshot.out.contains(expected))
+      #expect(harness.snapshot.err.isEmpty)
+    }
+  }
+}

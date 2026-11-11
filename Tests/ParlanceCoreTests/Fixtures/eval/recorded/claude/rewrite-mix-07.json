@@ -19,42 +19,42 @@
         },
         {
           "text" : {
-            "_0" : " an index should be added; the table"
+            "_0" : " I"
           }
         },
         {
           "text" : {
-            "_0" : " has 20 million rows."
+            "_0" : " should add an index;"
           }
         },
         {
           "text" : {
-            "_0" : "</best>\n<gloss"
+            "_0" : " the table has 20 million r"
           }
         },
         {
           "text" : {
-            "_0" : ">⟦0⟧"
+            "_0" : "ows.</best>\n<g"
           }
         },
         {
           "text" : {
-            "_0" : " 太慢了。检"
+            "_0" : "loss>⟦0"
           }
         },
         {
           "text" : {
-            "_0" : "查是否应该加索引"
+            "_0" : "⟧ 太慢了"
           }
         },
         {
           "text" : {
-            "_0" : "；"
+            "_0" : "。检查我是"
           }
         },
         {
           "text" : {
-            "_0" : "这"
+            "_0" : "否应该加索引；这"
           }
         },
         {
@@ -69,37 +69,52 @@
         },
         {
           "text" : {
-            "_0" : "ts>"
+            "_0" : "ts><alt><text>"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>⟦"
+            "_0" : "⟦0⟧ run"
           }
         },
         {
           "text" : {
-            "_0" : "0⟧ runs too"
+            "_0" : "s too slowly. Check"
           }
         },
         {
           "text" : {
-            "_0" : " slowly. Check whether"
+            "_0" : " whether adding an index would help"
           }
         },
         {
           "text" : {
-            "_0" : " adding an index would help;"
+            "_0" : "; the table has "
           }
         },
         {
           "text" : {
-            "_0" : " the table has 20 million r"
+            "_0" : "20 million rows.</text"
           }
         },
         {
           "text" : {
-            "_0" : "ows.</text><note>用"
+            "_0" : "><note>语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "偏向请"
           }
         },
         {
@@ -109,199 +124,149 @@
         },
         {
           "text" : {
-            "_0" : "\"run"
+            "_0" : "agent 评"
           }
         },
         {
           "text" : {
-            "_0" : "s\""
+            "_0" : "估加"
           }
         },
         {
           "text" : {
-            "_0" : " 明"
+            "_0" : "索引是"
           }
         },
         {
           "text" : {
-            "_0" : "确说"
+            "_0" : "否有帮助，而不"
           }
         },
         {
           "text" : {
-            "_0" : "的"
+            "_0" : "只是决"
           }
         },
         {
           "text" : {
-            "_0" : "是执行速"
+            "_0" : "定要"
           }
         },
         {
           "text" : {
-            "_0" : "度，并把"
+            "_0" : "不要加。"
           }
         },
         {
           "text" : {
-            "_0" : "\""
+            "_0" : "</note></alt><alt"
           }
         },
         {
           "text" : {
-            "_0" : "要不要加 "
+            "_0" : "><text>⟦0"
           }
         },
         {
           "text" : {
-            "_0" : "index\"改"
+            "_0" : "⟧ is too slow."
           }
         },
         {
           "text" : {
-            "_0" : "写"
+            "_0" : " Check whether an"
           }
         },
         {
           "text" : {
-            "_0" : "成\"would"
+            "_0" : " index should be added, since the table"
           }
         },
         {
           "text" : {
-            "_0" : " help"
+            "_0" : " has 20 million rows."
           }
         },
         {
           "text" : {
-            "_0" : "\"，语"
+            "_0" : "</text><note>把"
           }
         },
         {
           "text" : {
-            "_0" : "气更具体"
+            "_0" : "\"两"
           }
         },
         {
           "text" : {
-            "_0" : "。</note></alt><al"
+            "_0" : "千万行\"放"
           }
         },
         {
           "text" : {
-            "_0" : "t><text>Check whether"
+            "_0" : "在原"
           }
         },
         {
           "text" : {
-            "_0" : " an index should be added to speed"
+            "_0" : "因位"
           }
         },
         {
           "text" : {
-            "_0" : " up ⟦0"
+            "_0" : "置，突"
           }
         },
         {
           "text" : {
-            "_0" : "⟧; the table has 20 "
+            "_0" : "出表"
           }
         },
         {
           "text" : {
-            "_0" : "million rows.</text><note"
+            "_0" : "大"
           }
         },
         {
           "text" : {
-            "_0" : ">把请求放"
+            "_0" : "这"
           }
         },
         {
           "text" : {
-            "_0" : "在句"
+            "_0" : "一"
           }
         },
         {
           "text" : {
-            "_0" : "首，直"
+            "_0" : "背"
           }
         },
         {
           "text" : {
-            "_0" : "接点"
+            "_0" : "景，语"
           }
         },
         {
           "text" : {
-            "_0" : "明"
+            "_0" : "义与"
           }
         },
         {
           "text" : {
-            "_0" : "加"
+            "_0" : "原文一致。</note></"
           }
         },
         {
           "text" : {
-            "_0" : "索引"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "的目的是提"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "速"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "适"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "合把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "指令放"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "在前"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "面的写"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "法。</note></alt></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "alts>"
+            "_0" : "alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 703,
-            "promptTokens" : 1321,
-            "reasoningTokens" : 434
+            "completionTokens" : 794,
+            "promptTokens" : 1910,
+            "reasoningTokens" : 533
           }
         },
         {
@@ -316,6 +281,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

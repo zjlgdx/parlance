@@ -56,7 +56,7 @@ struct CLIConfiguration: Decodable {
     }
   }
   enum CodingKeys: String, CodingKey {
-    case provider, tone, fixes, providers, models, effort, thinking
+    case provider, tone, mode, fixes, providers, models, effort, thinking
     case firstTextTimeout = "first_text_timeout"
     case targetLanguage = "target_language"
     case nativeLanguage = "native_language"
@@ -68,6 +68,7 @@ struct CLIConfiguration: Decodable {
   var targetLanguage: String?
   var nativeLanguage: String?
   var tone: String?
+  var mode: String?
   var fixes: Bool?
   var providers: [String: Provider]?
   var models: [String: Model]?
@@ -135,6 +136,9 @@ struct CLIConfiguration: Decodable {
     }
     if let tone = result.tone, RewriteSettings.Tone(rawValue: tone) == nil {
       try cliFail(78, "invalid field tone. Choose agent or casual in config.toml.", environment)
+    }
+    if let mode = result.mode, RewriteSettings.Mode(rawValue: mode) == nil {
+      try cliFail(78, "invalid field mode. Choose polish or correct in config.toml.", environment)
     }
     for (id, entry) in result.providers ?? [:] {
       _ = try baseURL(for: ProviderPreset.named(id)!, entry: entry, environment: environment)
@@ -215,7 +219,7 @@ struct CLIConfiguration: Decodable {
 
   private static let rootFields: Set<String> = [
     "provider", "target_language", "native_language", "tone", "fixes", "providers", "models",
-    "effort", "thinking", "first_text_timeout",
+    "effort", "thinking", "first_text_timeout", "mode",
   ]
   private static let providerFields: Set<String> = ["model", "base_url", "api_key_cmd"]
   private static let modelFields: Set<String> = [

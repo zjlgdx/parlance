@@ -1,0 +1,82 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Ignore the lint warnings for now. Focus on explaining why the API returns 500 when the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " token expires.</best>\n<gloss>暂时忽略 lint 警告。重点解释为什么 token 过期时 API 返回 500。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gloss>\n<alts><alt><text>Ignore the lint warnings for now. Investigate why the API returns 50"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0 when the token expires.</text><note>使用 Investigate 代替 focus on explaining，表达“排查原因”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更符合技术指令的语气。</note></alt></alts>\n<fixes><fix>“token expire”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应改为“the token expires”，因为第三人称单数主语的动词需要加 -s。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 155,
+            "promptTokens" : 1288
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "informal-en",
+    "id" : "inf-02",
+    "input" : "u can ignore the lint warnings for now. focus on why the api return 500 when token expire"
+  }
+}

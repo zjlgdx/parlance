@@ -47,6 +47,7 @@ public enum Fallback: Sendable, Equatable { case firstBest }
 public struct RewriteResult: Sendable, Equatable {
   public var snapshot: SectionsSnapshot
   /// Present for a complete, structurally valid reply, including placeholder failures.
+  /// Empty alternatives are dropped; an empty best is `.malformed` with sections still present.
   /// Consumers must check each version's eligibility before copying its restored text.
   public var sections: FixSections?
   public var usage: LLMUsage?
@@ -80,8 +81,10 @@ public enum RewriteRunner {
         provider: provider,
         cancellation: cancellation, continuation: continuation)
       var result = first
-      if first.bestEligibility == .placeholdersChanged
-        || first.altEligibility.contains(.placeholdersChanged)
+      // A malformed best is not retried, like any other malformed reply.
+      if first.bestEligibility != .malformed,
+        first.bestEligibility == .placeholdersChanged
+          || first.altEligibility.contains(.placeholdersChanged)
       {
         continuation.yield(.strictRetry)
         result = await attempt(
@@ -126,13 +129,21 @@ public enum RewriteRunner {
             settings: settings, protection: protection, strict: strict)),
         LLMMessage(role: .user, content: protection.text),
       ], maxOutputTokens: 4096)
+    // Apply the alternative limit after dropping empty text, so an empty slot does not
+    // displace a later usable alternative.
+    var schema = SectionSchema.fix
+    for index in schema.tags.indices where schema.tags[index].name == "alts" {
+      schema.tags[index].children[0].retainedLimit = nil
+    }
     let attempt = await RunnerAttempt.run(
-      request: request, schema: .fix, provider: provider, cancellation: cancellation,
+      request: request, schema: schema, provider: provider, cancellation: cancellation,
       sections: {
-        continuation.yield(.sections(restored($0, protection: protection, inputCase: inputCase)))
+        continuation.yield(
+          .sections(
+            restored(retainingAlternatives($0), protection: protection, inputCase: inputCase)))
       },
       retrying: { continuation.yield(.retrying(after: $0, cause: $1)) })
-    let snapshot = attempt.snapshot
+    let snapshot = retainingAlternatives(attempt.snapshot)
     let eligibility = attempt.eligibility
     let display = restored(snapshot, protection: protection, inputCase: inputCase)
     let altCount = snapshot.sections.first { $0.name == "alts" }?.children.count ?? 0
@@ -142,6 +153,7 @@ public enum RewriteRunner {
     guard eligibility == .eligible else { return result }
     let original = FixSections(snapshot: snapshot)
     func validate(_ text: String) -> Eligibility {
+      if text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty { return .malformed }
       guard protection.delimiters != nil else { return .placeholdersUnavailable }
       return protection.validate(text) ? .eligible : .placeholdersChanged
     }
@@ -149,6 +161,19 @@ public enum RewriteRunner {
     result.altEligibility = original.alts.map { validate($0.text) }
     result.sections = FixSections(snapshot: display)
     return result
+  }
+
+  private static func retainingAlternatives(_ snapshot: SectionsSnapshot) -> SectionsSnapshot {
+    var snapshot = snapshot
+    let limit = SectionSchema.fix.tags.first { $0.name == "alts" }!.children[0].retainedLimit!
+    for index in snapshot.sections.indices where snapshot.sections[index].name == "alts" {
+      snapshot.sections[index].children = Array(
+        snapshot.sections[index].children.filter { alt in
+          let text = alt.children.first { $0.name == "text" }?.text ?? ""
+          return !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        }.prefix(limit))
+    }
+    return snapshot
   }
 
   private static func restored(

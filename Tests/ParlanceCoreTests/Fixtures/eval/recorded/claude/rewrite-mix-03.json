@@ -4,42 +4,47 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best>"
+            "_0" : "<"
           }
         },
         {
           "text" : {
-            "_0" : "Add a"
+            "_0" : "best>"
           }
         },
         {
           "text" : {
-            "_0" : " retry in"
+            "_0" : "Add a retry in "
           }
         },
         {
           "text" : {
-            "_0" : " ⟦0⟧"
+            "_0" : "⟦0⟧ that only"
           }
         },
         {
           "text" : {
-            "_0" : ". Retry only on 5"
+            "_0" : " retries on"
           }
         },
         {
           "text" : {
-            "_0" : "xx responses, up to "
+            "_0" : " 5xx responses, at"
           }
         },
         {
           "text" : {
-            "_0" : "3 times, using exponential"
+            "_0" : " most 3 times, using"
           }
         },
         {
           "text" : {
-            "_0" : " backoff.</best>"
+            "_0" : " exponential backoff.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>"
           }
         },
         {
@@ -54,17 +59,12 @@
         },
         {
           "text" : {
-            "_0" : "⟧ 中"
+            "_0" : "⟧ 中加入重试"
           }
         },
         {
           "text" : {
-            "_0" : "添加重"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "试。"
+            "_0" : "逻辑："
           }
         },
         {
@@ -94,264 +94,219 @@
         },
         {
           "text" : {
-            "_0" : "><alt><text>In"
+            "_0" : "><alt><text>Add"
           }
         },
         {
           "text" : {
-            "_0" : " ⟦0⟧"
+            "_0" : " retry logic to "
           }
         },
         {
           "text" : {
-            "_0" : ", add a retry that"
+            "_0" : "⟦0⟧:"
           }
         },
         {
           "text" : {
-            "_0" : " appl"
+            "_0" : " retry only on 5xx"
           }
         },
         {
           "text" : {
-            "_0" : "ies only to 5xx err"
+            "_0" : " responses, up"
           }
         },
         {
           "text" : {
-            "_0" : "ors, with"
+            "_0" : " to 3 times"
           }
         },
         {
           "text" : {
-            "_0" : " at most 3 attempts"
+            "_0" : ", with exponential backoff"
           }
         },
         {
           "text" : {
-            "_0" : " and exponential backoff."
+            "_0" : " between"
           }
         },
         {
           "text" : {
-            "_0" : "</text><note>把"
+            "_0" : " att"
           }
         },
         {
           "text" : {
-            "_0" : "\""
+            "_0" : "empts.</text><note>"
           }
         },
         {
           "text" : {
-            "_0" : "在"
+            "_0" : "与原文意"
           }
         },
         {
           "text" : {
-            "_0" : "哪里改"
+            "_0" : "思相同，句式更完"
           }
         },
         {
           "text" : {
-            "_0" : "\"放"
+            "_0" : "整，说明了"
           }
         },
         {
           "text" : {
-            "_0" : "在句"
+            "_0" : "指"
           }
         },
         {
           "text" : {
-            "_0" : "首，更强调修"
+            "_0" : "数退避是在"
           }
         },
         {
           "text" : {
-            "_0" : "改位"
+            "_0" : "两"
           }
         },
         {
           "text" : {
-            "_0" : "置；"
+            "_0" : "次"
           }
         },
         {
           "text" : {
-            "_0" : "\"最"
+            "_0" : "尝试之间使"
           }
         },
         {
           "text" : {
-            "_0" : "多 3 次\"译"
+            "_0" : "用的；"
           }
         },
         {
           "text" : {
-            "_0" : "为 "
+            "_0" : "\"3"
           }
         },
         {
           "text" : {
-            "_0" : "at most 3 attempts"
+            "_0" : " 次\"保持"
           }
         },
         {
           "text" : {
-            "_0" : "，语"
+            "_0" : "原样"
           }
         },
         {
           "text" : {
-            "_0" : "义与"
+            "_0" : "，没有区分是重试"
           }
         },
         {
           "text" : {
-            "_0" : "原文一"
+            "_0" : "次数还是总尝试"
           }
         },
         {
           "text" : {
-            "_0" : "致。</note></alt>"
+            "_0" : "次数。</note></alt"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>Add ret"
+            "_0" : "><alt><text>Impl"
           }
         },
         {
           "text" : {
-            "_0" : "ry logic to ⟦"
+            "_0" : "ement retry logic in "
           }
         },
         {
           "text" : {
-            "_0" : "0⟧:"
+            "_0" : "⟦0⟧ for"
           }
         },
         {
           "text" : {
-            "_0" : " retry only "
+            "_0" : " 5xx responses only:"
           }
         },
         {
           "text" : {
-            "_0" : "5xx respon"
+            "_0" : " at most 3 times"
           }
         },
         {
           "text" : {
-            "_0" : "ses, with"
+            "_0" : ", using exponential backoff"
           }
         },
         {
           "text" : {
-            "_0" : " a maximum of 3 "
+            "_0" : ".</text><note>用 "
           }
         },
         {
           "text" : {
-            "_0" : "retries and exponential backo"
+            "_0" : "implement 代替 "
           }
         },
         {
           "text" : {
-            "_0" : "ff between"
+            "_0" : "add，语"
           }
         },
         {
           "text" : {
-            "_0" : " them.</text><note>用"
+            "_0" : "气更"
           }
         },
         {
           "text" : {
-            "_0" : "冒号引"
+            "_0" : "偏向\""
           }
         },
         {
           "text" : {
-            "_0" : "出"
+            "_0" : "实现功"
           }
         },
         {
           "text" : {
-            "_0" : "具"
+            "_0" : "能\"；其"
           }
         },
         {
           "text" : {
-            "_0" : "体规"
+            "_0" : "余"
           }
         },
         {
           "text" : {
-            "_0" : "则，并"
+            "_0" : "内"
           }
         },
         {
           "text" : {
-            "_0" : "补充\""
+            "_0" : "容与原文一致。</"
           }
         },
         {
           "text" : {
-            "_0" : "退避在重"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "试之间进"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "行\"的含"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "义，比"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "原文略"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "显具体，但不"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "增加新"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "要"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "求。</note></alt></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "alts>"
+            "_0" : "note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 698,
-            "promptTokens" : 1331,
-            "reasoningTokens" : 366
+            "completionTokens" : 1003,
+            "promptTokens" : 1920,
+            "reasoningTokens" : 669
           }
         },
         {
@@ -366,6 +321,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

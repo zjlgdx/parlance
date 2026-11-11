@@ -71,6 +71,30 @@ struct FixCommandTests {
     #expect(await missingValue.run(["fix", "--model"]) == 64)
     #expect(missingValue.error.contains("--model"))
     #expect(missingValue.error.contains("Usage: pl fix"))
+    // #275: the --mode help names where fix-only mode holds, from the per-model scoring.
+    let help = Fix.helpMessage().split(whereSeparator: \.isWhitespace).joined(separator: " ")
+    #expect(help.contains("correct met the scoring bar only on gemini-3.8-flash"))
+    #expect(help.contains("other models often miss mistakes or reword the input"))
+  }
+
+  /// A model outside the profile table is noted once on stderr, until the user configures it.
+  @Test func unknownModelIsNotedOnceUntilConfigured() async {
+    let unknown = FixHarness()
+    #expect(
+      await unknown.run(["fix", "x", "--provider", "openai", "--model", "fake-model-x"]) == 0)
+    #expect(!unknown.output.isEmpty)
+    let notes = unknown.error.components(separatedBy: "first token may be slow").count - 1
+    #expect(notes == 1)
+    #expect(unknown.error.contains("[models.\"fake-model-x\"]"))
+    let configured = FixHarness()
+    #expect(
+      await configured.run(
+        ["fix", "x", "--provider", "openai", "--model", "fake-model-x"],
+        config: "[models.\"fake-model-x\"]\nsystem_role = \"system\"\n") == 0)
+    #expect(!configured.error.contains("first token may be slow"))
+    let known = FixHarness()
+    #expect(await known.run(["fix", "x", "--provider", "openai", "--model", "gpt-6-luna"]) == 0)
+    #expect(!known.error.contains("first token may be slow"))
   }
 
   @Test func retryAndErrorJSON() async throws {
@@ -112,19 +136,72 @@ struct FixCommandTests {
   }
 
   @Test func malformedAndTruncated() async {
-    for (text, reason) in [("raw <T>text", LLMFinishReason.stop), (validReply, .length)] {
+    for (text, reason) in [
+      ("raw <T>text", LLMFinishReason.stop), (validReply, .length),
+      (validReply.replacingOccurrences(of: "<best>Ship it.</best>", with: "<best> </best>"), .stop),
+    ] {
       let harness = FixHarness([.event(.text(text)), .event(.finished(reason))])
       #expect(await harness.run() == 8)
       #expect(harness.output.isEmpty)
       #expect(!harness.error.isEmpty)
+      if reason == .stop { #expect(harness.error.contains("could not recognise sections")) }
     }
     let tty = FixHarness([.event(.text("raw <T>text")), .event(.finished(.stop))])
     #expect(await tty.run(outputTTY: true) == 8)
     #expect(tty.output.contains("raw <T>text"))
     #expect(tty.error.contains("pl: could not recognise sections in the model output."))
+    let emptyBest = validReply.replacingOccurrences(
+      of: "<best>Ship it.</best>", with: "<best> </best>")
+    let emptyTTY = FixHarness([.event(.text(emptyBest)), .event(.finished(.stop))])
+    #expect(await emptyTTY.run(outputTTY: true) == 8)
+    #expect(emptyTTY.output.contains(emptyBest))
+    #expect(emptyTTY.error.contains("could not recognise sections"))
     let partial = FixHarness([.event(.text("<best>unfinished")), .error(.transport)])
     #expect(await partial.run(outputTTY: true) == 4)
     #expect(partial.output.contains("unfinished"))
+  }
+
+  @Test func emptyBestJSONHasMalformedErrorAndNoResult() async throws {
+    let reply = validReply.replacingOccurrences(of: "Ship it.", with: " \n ")
+    let harness = FixHarness([.event(.text(reply)), .event(.finished(.stop))])
+    #expect(await harness.run(["fix", "input", "--json"]) == 8)
+    #expect(harness.error.contains("could not recognise sections"))
+    let object = try jsonObject(harness)
+    #expect((object["error"] as? [String: Any])?["code"] as? String == "malformed_sections")
+    #expect(object["result"] is NSNull)
+  }
+
+  @Test func emptyAlternativesAreOmittedFromTTYAndJSON() async throws {
+    let reply = validReply.replacingOccurrences(
+      of: "</alts>",
+      with: "<alt><text> \n </text><note>empty note</note></alt>"
+        + "<alt><text>Send it.</text><note>second</note></alt></alts>")
+    let steps: [MockProvider.Step] = [.event(.text(reply)), .event(.finished(.stop))]
+    let tty = FixHarness(steps)
+    #expect(await tty.run(["fix", "input", "--no-color"], outputTTY: true) == 0)
+    #expect(tty.output == "Ship it.\n发布。\n1. Release it.\n正式\n2. Send it.\nsecond\n")
+    #expect(tty.error.isEmpty)
+    let json = FixHarness(steps)
+    #expect(await json.run(["fix", "input", "--json"]) == 0)
+    let result = try #require(try jsonObject(json)["result"] as? [String: Any])
+    let alts = try #require(result["alts"] as? [[String: Any]])
+    #expect(alts.compactMap { $0["text"] as? String } == ["Release it.", "Send it."])
+    #expect(alts.allSatisfy { $0["eligible"] as? Bool == true })
+  }
+
+  @Test func emptyAlternativeDoesNotShiftTTYEligibilityNumbering() async {
+    let reply = validReply.replacingOccurrences(of: "Ship it.", with: "⟦0⟧")
+      .replacingOccurrences(of: "Release it.", with: " \n ")
+      .replacingOccurrences(
+        of: "</alts>", with: "<alt><text>wrong</text><note>invalid</note></alt></alts>")
+    let steps: [MockProvider.Step] = [.event(.text(reply)), .event(.finished(.stop))]
+    let harness = FixHarness(scripts: [steps, steps])
+    #expect(await harness.run(["fix", "fooBar", "--no-color"], outputTTY: true) == 0)
+    #expect(harness.output.contains("1. wrong\n"))
+    #expect(harness.output.contains("alt 1: identifiers changed; not eligible\n"))
+    #expect(!harness.output.contains("1. \n"))
+    #expect(!harness.output.contains("2."))
+    #expect(!harness.output.contains("alt 2:"))
   }
 
   @Test func jsonObjects() async throws {
@@ -153,7 +230,8 @@ struct FixCommandTests {
         #expect(object["result"] is NSNull)
         let error = try #require(object["error"] as? [String: Any])
         #expect(error["code"] as? String == "malformed_sections")
-        for key in ["section", "http_status", "provider_code"] { #expect(error[key] is NSNull) }
+        for key in ["http_status", "provider_code"] { #expect(error[key] is NSNull) }
+        #expect(error["section"] == nil)
         #expect(!harness.output.contains("secret partial"))
       } else {
         #expect(object["status"] as? String == "ok")
@@ -514,5 +592,37 @@ struct TermFixCommandTests {
     let eligible = try #require((droppedResult["alts"] as? [[String: Any]])?.first)
     #expect(eligible["eligible"] as? Bool == true)
     #expect(eligible["note"] is NSNull)
+  }
+  @Test(arguments: [
+    (
+      LLMError.invalidRequest(status: 302, providerCode: nil),
+      "Check the base URL in config.toml."
+    ),
+    (.invalidRequest(status: 400, providerCode: nil), "Check the model and extra_body."),
+    (.timeout(.firstToken), "Try a faster model: --model <id> or `pl config show`."),
+  ])
+  func diagnosticNextSteps(error: LLMError, nextStep: String) async {
+    let harness = FixHarness([.error(error)])
+    #expect(await harness.run(["fix", "x"]) != 0)
+    #expect(harness.error.hasSuffix(" \(nextStep)\n"), "\(harness.error)")
+  }
+
+  @Test func errorJSONHasNoSection() async throws {
+    let harness = FixHarness([.error(.rateLimit(retryAfter: nil))])
+    #expect(await harness.run(["fix", "x", "--json"]) == 6)
+    let object = try #require(
+      JSONSerialization.jsonObject(with: Data(harness.output.utf8)) as? [String: Any])
+    let error = try #require(object["error"] as? [String: Any])
+    #expect(error["code"] as? String == "rate_limit")
+    #expect(error["section"] == nil)
+  }
+
+  /// Exit code 1 is an unexpected error (a defect). Every injected seam maps its own failures to a
+  /// specific code (a provider error outside `LLMError` becomes `transport`, exit 4), so this pins
+  /// the root command's fallback that `PL.execute` uses for anything else.
+  @Test func unexpectedErrorExitsOne() {
+    struct Unexpected: Error {}
+    #expect(PL.exitCode(for: Unexpected()).rawValue == 1)
+    #expect(PL.exitCode(for: ExitCode(4)).rawValue == 4)
   }
 }

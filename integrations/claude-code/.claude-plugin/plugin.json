@@ -1,0 +1,12 @@
+{
+  "name": "parlance",
+  "version": "0.1.0",
+  "description": "Explains each Claude Code reply in your native language, in a pane beside the chat, through the pl CLI.",
+  "author": {
+    "name": "zjlgdx",
+    "url": "https://github.com/zjlgdx"
+  },
+  "homepage": "https://github.com/zjlgdx/parlance",
+  "license": "GPL-3.0-or-later",
+  "types": "./types/index.d.ts"
+}

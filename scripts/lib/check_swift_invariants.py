@@ -95,14 +95,19 @@ hard-coded layout, and fail-closed.
    and C/C++ headerSearchPath must resolve inside that target's directory, so a search path cannot add an
    unscanned sibling header tree.
 2. Every package dependency declared in Package.swift is pinned in Package.resolved (path dependencies never
-   are, so they cannot be license-checked), and every pin is listed in scripts/dependency-licenses.json, under
-   its lowercase identity, with an allowed license (MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, Apache-2.0
-   WITH Swift-exception) and the `url` the pin resolves to: an approval is for one origin, so a fork or
-   replacement that keeps the identity has to be approved again. The allowlist has no stale entries. Prevents
-   a copyleft or unknown-license dependency entering the core, which would block the closed-source app from
-   reusing it. Package.resolved carries no license data and SwiftPM's SBOM has none either, so the allowlist
-   is maintained by hand (issue #2). scripts/gate runs `swift package resolve` first and refuses a
-   Package.resolved that resolution creates or rewrites, so the pins read here are the committed ones.
+   are, so they cannot be license-checked). Root pins are approved in scripts/dependency-licenses.json;
+   its stale entries are checked only against the root lockfile. When the App workspace lockfile
+   App/Parlance.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved exists, its pins must be
+   approved in that core allowlist or scripts/app-dependency-licenses.json, with no identity in both.
+   The App allowlist's stale entries are checked only against App pins; without the App lockfile it is not
+   read (the public CLI snapshot has neither). Both allowlists use lowercase identities, allowed licenses
+   (MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, Apache-2.0 WITH Swift-exception) and the pin's origin URL;
+   a fork retaining an identity needs its own approval. An optional minimum_version requires a semantic
+   version pin at or above that floor; revision-only pins cannot satisfy it. This keeps copyleft or
+   unknown-license dependencies out of the shared core and registers App dependencies separately.
+   Package.resolved and SwiftPM's SBOM carry no license data, so the allowlists are maintained by hand.
+   scripts/gate resolves the root package first and refuses a root Package.resolved created or rewritten
+   by resolution.
 3. No gitignored file sits in the package: Package.swift, Sources/, Tests/, every target directory, every
    `resources:` entry (which may lie outside its target) and whatever a symlink in them points at (SwiftPM
    follows the link, git stores only the link). SwiftPM builds what is on disk, while git leaves an ignored file
@@ -499,6 +504,8 @@ C_FAMILY_EXTS = (".m", ".mm", ".c", ".cc", ".cpp", ".cxx") + HEADER_EXTS
 SOURCE_EXTS = (".swift",) + C_FAMILY_EXTS
 DEFAULT_SOURCE_ROOTS = ("Sources", "Source", "src", "srcs")
 ALLOWLIST = "scripts/dependency-licenses.json"
+APP_ALLOWLIST = "scripts/app-dependency-licenses.json"
+APP_LOCKFILE = "App/Parlance.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved"
 ALLOWED_LICENSES = {"MIT", "Apache-2.0", "BSD-2-Clause", "BSD-3-Clause", "Apache-2.0 WITH Swift-exception"}
 # Ignored on purpose at any depth and never a source: .DS_Store and .gitignore's per-machine agent overrides.
 LOCAL_ONLY = {".DS_Store", "CLAUDE.local.md", "AGENTS.local.md", "AGENTS.override.md"}
@@ -559,12 +566,12 @@ def dependency_names(manifest):
     return names
 
 
-def resolved_pins():
+def resolved_pins(path="Package.resolved"):
     """Both supported lockfile versions store identities and revisions in the pins array."""
-    with open("Package.resolved", encoding="utf-8") as fh:
+    with open(path, encoding="utf-8") as fh:
         resolved = json.load(fh)
     if resolved.get("version") not in (2, 3):
-        raise ValueError(f"Package.resolved: unsupported format version {resolved.get('version')!r}")
+        raise ValueError(f"{path}: unsupported format version {resolved.get('version')!r}")
     return {pin["identity"].lower(): pin for pin in resolved.get("pins", [])}
 
 
@@ -962,6 +969,88 @@ def same_origin(url, location):
     return all(isinstance(u, str) and u.strip() for u in (url, location)) and origin(url) == origin(location)
 
 
+def semantic_version(value):
+    """A SemVer precedence key: numeric components, prereleases before releases, build metadata ignored."""
+    match = re.fullmatch(
+        r"(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)"
+        r"(?:-([0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*))?(?:\+[0-9A-Za-z-]+(?:\.[0-9A-Za-z-]+)*)?",
+        value if isinstance(value, str) else "",
+    )
+    if not match:
+        raise ValueError(f"invalid semantic version {value!r}")
+    prerelease = match[4]
+    identifiers = prerelease.split(".") if prerelease else []
+    if any(part.isdigit() and len(part) > 1 and part.startswith("0") for part in identifiers):
+        raise ValueError(f"invalid semantic version {value!r}")
+    return (
+        *(int(match[i]) for i in (1, 2, 3)), prerelease is None,
+        tuple((0, int(part)) if part.isdigit() else (1, part) for part in identifiers),
+    )
+
+
+def read_license_allowlist(path, lockfile, errors):
+    if not os.path.isfile(path):
+        return {}
+    try:
+        with open(path, encoding="utf-8") as fh:
+            listed = json.load(fh)
+        allow = {}
+        for key, entry in listed.items():
+            if key != key.lower():
+                errors.append(f"{lockfile}: {path}: key '{key}' must be the lowercase package identity '{key.lower()}'")
+            if not isinstance(entry, dict):
+                raise ValueError(f"entry '{key}' must be an object")
+            allow[key.lower()] = entry
+        return allow
+    except (OSError, ValueError, TypeError, AttributeError) as exc:
+        errors.append(f"{lockfile}: cannot read {path}: {exc}")
+        return {}
+
+
+def check_pin_licenses(pins, lockfile, allowlists):
+    errors = []
+    paths = " or ".join(path for path, _ in allowlists)
+    for identity, pin in sorted(pins.items()):
+        approval = next(((path, entries[identity]) for path, entries in allowlists if identity in entries), None)
+        if approval is None:
+            hint = f"; create {APP_ALLOWLIST} and add the App dependency" if (
+                lockfile == APP_LOCKFILE and not os.path.isfile(APP_ALLOWLIST)
+            ) else ""
+            errors.append(f"{lockfile}: dependency '{identity}' ({pin.get('location')}) is not in {paths}{hint}")
+            continue
+        path, entry = approval
+        if entry.get("license") not in ALLOWED_LICENSES:
+            errors.append(
+                f"{lockfile}: dependency '{identity}' in {path} has license {entry.get('license')!r}; "
+                f"allowed: {sorted(ALLOWED_LICENSES)}"
+            )
+        if not same_origin(entry.get("url"), pin.get("location")):
+            errors.append(
+                f"{lockfile}: dependency '{identity}' resolves to {pin.get('location')!r}, but {path} approved "
+                f"{entry.get('url')!r}: check the license of this origin and update the entry's url"
+            )
+        if "minimum_version" in entry:
+            version = (pin.get("state") or {}).get("version")
+            minimum = entry["minimum_version"]
+            try:
+                satisfies = semantic_version(version) >= semantic_version(minimum)
+            except ValueError:
+                satisfies = False
+            if not satisfies:
+                errors.append(
+                    f"{lockfile}: dependency '{identity}' version {version!r} does not satisfy "
+                    f"{path} minimum_version {minimum!r}; both must be valid semantic versions"
+                )
+    return errors
+
+
+def stale_license_entries(allow, pins, path, lockfile):
+    return [
+        f"{path}: stale entry '{identity}' is no longer pinned in {lockfile}; remove it"
+        for identity in sorted(set(allow) - set(pins))
+    ]
+
+
 def check_licenses(manifest):
     errors = []
     pins = {}
@@ -969,7 +1058,7 @@ def check_licenses(manifest):
         try:
             pins = resolved_pins()
         except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
-            return [f"cannot read dependency pins: {exc}"]
+            return [f"cannot read Package.resolved for {ALLOWLIST}: {exc}"]
     for identity, kind in sorted(declared_dependencies(manifest).items()):
         if identity in pins:
             continue
@@ -985,36 +1074,24 @@ def check_licenses(manifest):
             )
         else:
             errors.append(f"Package.swift declares dependency '{identity}', which Package.resolved does not pin")
-    if not pins and not os.path.isfile(ALLOWLIST):
-        return errors
-    if not os.path.isfile(ALLOWLIST):
+    core_allow = read_license_allowlist(ALLOWLIST, "Package.resolved", errors)
+    if pins and not os.path.isfile(ALLOWLIST):
         errors.append(
-            f"{ALLOWLIST} is missing but Package.resolved pins {len(pins)} package(s). Add an entry per pin: "
-            '{"<identity>": {"license": "<SPDX id>", "url": "<the pin\'s location>", "reason": "<why we need it>"}}'
+            f"{ALLOWLIST} is missing but Package.resolved pins {len(pins)} package(s). "
+            f"Create {ALLOWLIST} with an identity, license, url and reason per pin."
         )
-        return errors
-    with open(ALLOWLIST, encoding="utf-8") as fh:
-        listed = json.load(fh)
-    allow = {}
-    for key, entry in listed.items():  # Package.resolved writes identities in lowercase
-        if key != key.lower():
-            errors.append(f"{ALLOWLIST}: key '{key}' must be the lowercase package identity '{key.lower()}'")
-        allow[key.lower()] = entry
-    for identity, pin in sorted(pins.items()):
-        entry = allow.get(identity)
-        if entry is None:
-            errors.append(f"dependency '{identity}' ({pin.get('location')}) is not in {ALLOWLIST}")
-        elif entry.get("license") not in ALLOWED_LICENSES:
-            errors.append(
-                f"dependency '{identity}' has license {entry.get('license')!r}; allowed: {sorted(ALLOWED_LICENSES)}"
-            )
-        elif not same_origin(entry.get("url"), pin.get("location")):
-            errors.append(
-                f"dependency '{identity}' resolves to {pin.get('location')!r}, but {ALLOWLIST} approved "
-                f"{entry.get('url')!r}: check the license of this origin and update the entry's url"
-            )
-    for identity in sorted(set(allow) - set(pins)):
-        errors.append(f"{ALLOWLIST}: stale entry '{identity}' is no longer pinned in Package.resolved; remove it")
+    errors += check_pin_licenses(pins, "Package.resolved", [(ALLOWLIST, core_allow)])
+    errors += stale_license_entries(core_allow, pins, ALLOWLIST, "Package.resolved")
+    if os.path.isfile(APP_LOCKFILE):
+        try:
+            app_pins = resolved_pins(APP_LOCKFILE)
+        except (OSError, ValueError, KeyError, TypeError, AttributeError) as exc:
+            return errors + [f"cannot read {APP_LOCKFILE} for {ALLOWLIST} and {APP_ALLOWLIST}: {exc}"]
+        app_allow = read_license_allowlist(APP_ALLOWLIST, APP_LOCKFILE, errors)
+        for identity in sorted(set(core_allow) & set(app_allow)):
+            errors.append(f"{APP_LOCKFILE}: identity '{identity}' is in both {ALLOWLIST} and {APP_ALLOWLIST}")
+        errors += check_pin_licenses(app_pins, APP_LOCKFILE, [(ALLOWLIST, core_allow), (APP_ALLOWLIST, app_allow)])
+        errors += stale_license_entries(app_allow, app_pins, APP_ALLOWLIST, APP_LOCKFILE)
     return errors
 
 

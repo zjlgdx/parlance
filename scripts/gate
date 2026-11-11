@@ -14,7 +14,8 @@
 #            macOS 3.2 every script must run on) and shellcheck findings in repo shell scripts
 #   actions  invalid workflow syntax, expressions or runner labels (actionlint)
 #   harness  agent-harness drift: AGENTS.md over its byte budget, broken skill/agent frontmatter or paths, a CI
-#            workflow that stops running the gate as pinned; PR-reference, guard, git-hook, land, CI-runner,
+#            workflow that stops running the gate as pinned, a Claude Code mod or marketplace manifest that would
+#            not install (check_claude_mod.py); PR-reference, guard, git-hook, land, CI-runner,
 #            doctor, ticket-selection, Codex-worker, PR-title and gate regressions (runs their counterexample
 #            tables)
 #   secrets  committed (merge resolutions included), staged or untracked credentials (gitleaks with the repo's
@@ -231,7 +232,7 @@ harness_check() {  # harness_check <repo path> [args...]: run one check; a missi
 
 comp_harness() {
   need python3 "xcode-select --install" || return 1
-  if [ "$STAGED" -eq 1 ] && ! staged_change_matches '^(AGENTS\.md|CLAUDE\.md|\.claude/|\.githooks/|(public/)?\.github/workflows/|scripts/|tools/|docs/development\.md)'; then
+  if [ "$STAGED" -eq 1 ] && ! staged_change_matches '^(AGENTS\.md|CLAUDE\.md|\.claude/|\.githooks/|(public/)?\.github/workflows/|scripts/|tools/|docs/development\.md|integrations/|(public/)?\.claude-plugin/)'; then
     na "no staged harness changes"
     return 0
   fi
@@ -243,6 +244,8 @@ comp_harness() {
     unset $(git rev-parse --local-env-vars)
     rc=0
     harness_check scripts/lib/check_harness.py || rc=1
+    harness_check scripts/lib/check_claude_mod.py --self-test || rc=1
+    harness_check scripts/lib/check_claude_mod.py || rc=1
     harness_check scripts/lib/pr_refs.py --self-test || rc=1
     # Missing private files still fail in a private tree, even if AGENTS.md was deleted.
     if [ -e AGENTS.md ] || [ -e CLAUDE.md ] || [ -d .claude ] || [ -d tools ] \
@@ -253,6 +256,7 @@ comp_harness() {
       harness_check tools/ci-runner/test-controller.sh || rc=1
       harness_check tools/ci-runner/test-macos-controller.sh || rc=1
       harness_check scripts/lib/test-doctor.sh || rc=1
+      harness_check scripts/lib/test_app_release.py || rc=1
       harness_check .claude/skills/pl-next/scripts/test_select_next.py || rc=1
       harness_check .claude/skills/pl-next/scripts/test-codex-worker.sh || rc=1
     else
@@ -483,6 +487,17 @@ fi
 
 [ -n "$COMPONENTS" ] || COMPONENTS=" $ALL_COMPONENTS"
 
+# Lines that name a failure in a component log: Swift Testing issues, XCTest failures, compiler and linker
+# errors (`file:1:2: error:` or `clang: error:`; not a test's `f(error:)` label or a log's `, error:`),
+# xcodebuild results, `swift format lint --strict` findings (reported as errors), the self-tests' FAIL lines
+# and failure counts, the checkers' ❌ lines and violation, problem, finding and broken-link counts, and the
+# gate's own messages. Marks follow how each tool prints them, to keep passing test names out.
+FAIL_MARKS='✘|recorded an issue|^Test Case .* failed|with [1-9][0-9]* failures?|(^|: )error: |\*\* [A-Z ]*FAILED \*\*'
+FAIL_MARKS="$FAIL_MARKS"'|(^|: )FAIL[: []|^FAILED \(|expectations? failed|expectation\(s\) failed|wrong verdict'
+FAIL_MARKS="$FAIL_MARKS"'|❌|violation\(s\)|problem\(s\)|finding\(s\)|: broken link|broken link\(s\)|^syntax error'
+FAIL_MARKS="$FAIL_MARKS"'|is missing|missing tool|harness check missing|not tracked|out of date|invalid xcresult'
+FAIL_MARKS="$FAIL_MARKS"'|zero tests|tests failed|logged an error'
+
 PASSED=""; FAILED=""; SKIPPED=""
 for c in $COMPONENTS; do
   CUR=$c
@@ -499,6 +514,13 @@ for c in $COMPONENTS; do
     PASSED="$PASSED,$c"; printf 'gate: %-8s PASS  %3ss  %s\n' "$c" "$took" "$info"
   else
     FAILED="$FAILED,$c"; printf 'gate: %-8s FAIL  %3ss  %s (log: build/gate/%s.log)\n' "$c" "$took" "$info" "$c"
+    # A component runs several steps (swift: lint, package build and tests, App build and tests), so the
+    # failing one is often not in the tail. Print the lines that name a failure first.
+    marks=$(grep -n -E "$FAIL_MARKS" "$LOG_DIR/$c.log" | head -n 60)
+    if [ -n "$marks" ]; then
+      echo "----- $c: failure lines -----"
+      printf '%s\n' "$marks"
+    fi
     echo "----- $c: last 40 lines -----"
     tail -n 40 "$LOG_DIR/$c.log"
     echo "-----"

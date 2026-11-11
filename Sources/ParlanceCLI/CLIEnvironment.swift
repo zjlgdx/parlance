@@ -15,6 +15,13 @@ public struct CLIEnvironment: Sendable {
   public var interruptSource: CLIInterruptSource
   public var requestClock: CLIRequestClock
   public var exitImmediately: @Sendable (Int32) -> Void
+  public var currentDirectory: String
+  public var listSessionDirectory: @Sendable (String) throws -> [String]
+  public var sessionModificationDate: @Sendable (String) throws -> Date
+  public var readSessionLines: @Sendable (String, (Data) -> Bool) throws -> Void
+  public var sessionFileStatus: @Sendable (String) throws -> SessionFileStatus
+  public var readSessionBytes: @Sendable (String, UInt64, Int) throws -> Data
+  public var wallDate: @Sendable () -> Date
   public var homeDirectory: String
   public var readConfig: @Sendable (String) throws -> Data?
   public var makeKeychain: @Sendable (Bool) -> any KeychainStoring
@@ -39,8 +46,38 @@ public struct CLIEnvironment: Sendable {
     readPassphrase: @escaping @Sendable () throws -> String = { "" },
     readKeyLine: (@Sendable () throws -> Data)? = nil,
     readContextTail: (@Sendable (String) throws -> Data)? = nil,
-    requestClock: CLIRequestClock = .inactive
+    currentDirectory: String = "/test-cwd",
+    listSessionDirectory: @escaping @Sendable (String) throws -> [String] = { path in
+      try FileManager.default.contentsOfDirectory(atPath: path).map {
+        URL(fileURLWithPath: path).appendingPathComponent($0).path
+      }
+    },
+    sessionModificationDate: @escaping @Sendable (String) throws -> Date = { path in
+      let attributes = try FileManager.default.attributesOfItem(atPath: path)
+      guard attributes[.type] as? FileAttributeType == .typeRegular,
+        let date = attributes[.modificationDate] as? Date
+      else { throw CocoaError(.fileReadUnknown) }
+      return date
+    },
+    readSessionLines: (@Sendable (String, (Data) -> Bool) throws -> Void)? = nil,
+    requestClock: CLIRequestClock = .inactive,
+    sessionFileStatus: (@Sendable (String) throws -> SessionFileStatus)? = nil,
+    readSessionBytes: (@Sendable (String, UInt64, Int) throws -> Data)? = nil,
+    wallDate: @escaping @Sendable () -> Date = { Date() }
   ) {
+    self.sessionFileStatus = sessionFileStatus ?? { try SessionFileStatus.read($0) }
+    self.readSessionBytes =
+      readSessionBytes ?? { path, offset, count in
+        let file = try FileHandle(forReadingFrom: URL(fileURLWithPath: path))
+        defer { try? file.close() }
+        try file.seek(toOffset: offset)
+        return try file.read(upToCount: count) ?? Data()
+      }
+    self.wallDate = wallDate
+    self.currentDirectory = currentDirectory
+    self.listSessionDirectory = listSessionDirectory
+    self.sessionModificationDate = sessionModificationDate
+    self.readSessionLines = readSessionLines ?? { try SessionLines.read($0, visit: $1) }
     self.requestClock = requestClock
     self.readContextTail = readContextTail ?? { try CommandInput.readFileTail($0) }
     self.homeDirectory = homeDirectory
@@ -98,6 +135,6 @@ public struct CLIEnvironment: Sendable {
           data.append(byte)
         }
         return data
-      }, requestClock: .continuous)
+      }, currentDirectory: FileManager.default.currentDirectoryPath, requestClock: .continuous)
   }
 }

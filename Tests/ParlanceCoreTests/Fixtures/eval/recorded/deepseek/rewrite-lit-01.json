@@ -1,0 +1,442 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Review"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " my"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " code"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " give"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " feedback"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " naming"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "oss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "审查"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "我的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代码"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并就"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "命名"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给出"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意见"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "gl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "oss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Review"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " my"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " code"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " comment"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " naming"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "comment"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "侧重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "发表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "看法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "”，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " “"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "give"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " feedback"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语气"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "稍"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "轻"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 80,
+            "promptTokens" : 1258
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "deepseek-flash",
+  "preset" : "deepseek",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-01",
+    "input" : "Please do a review for my code and give me some opinions about the naming."
+  }
+}

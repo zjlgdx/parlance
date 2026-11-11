@@ -4,27 +4,107 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best>A"
+            "_0" : "<best>"
           }
         },
         {
           "text" : {
-            "_0" : " git rebase hit a con"
+            "_0" : "Rebase h"
           }
         },
         {
           "text" : {
-            "_0" : "flict: ⟦0"
+            "_0" : "it a conflict: "
           }
         },
         {
           "text" : {
-            "_0" : "⟧ was changed on"
+            "_0" : "⟦0⟧ was"
           }
         },
         {
           "text" : {
-            "_0" : " both sides. Explain the"
+            "_0" : " changed on both sides."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Explain the safest way to res"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "olve it.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>rebase"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 时发生冲突："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 两边都做"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "了修改。解释解"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "决它的最安全方法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</gloss>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>A git r"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ebase h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "it a conflict where"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " was changed on both sides"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Explain the"
           }
         },
         {
@@ -34,92 +114,27 @@
         },
         {
           "text" : {
-            "_0" : ".</best>\n<glo"
+            "_0" : ".</text><note>语气"
           }
         },
         {
           "text" : {
-            "_0" : "ss>git rebase 时"
+            "_0" : "更完"
           }
         },
         {
           "text" : {
-            "_0" : "发生冲突："
+            "_0" : "整，明"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧ 两"
+            "_0" : "确说明是"
           }
         },
         {
           "text" : {
-            "_0" : "边都被修改了。解"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "释处理这个问题的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "最安全方法。</g"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "loss>\n<alts>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>During git r"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ebase, a conflict occ"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "urred because ⟦0"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧ was modified on"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " both sides. Explain the"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " safest way to resolve it"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ".</text><note>把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "冲突原"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "因写得更明确，点"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "出是"
+            "_0" : " git"
           }
         },
         {
@@ -129,159 +144,124 @@
         },
         {
           "text" : {
-            "_0" : "程中两"
+            "_0" : "程中出"
           }
         },
         {
           "text" : {
-            "_0" : "边都改"
+            "_0" : "现的"
           }
         },
         {
           "text" : {
-            "_0" : "了同"
+            "_0" : "冲突，"
           }
         },
         {
           "text" : {
-            "_0" : "一处"
+            "_0" : "意"
           }
         },
         {
           "text" : {
-            "_0" : "。</note></alt><al"
+            "_0" : "思不"
           }
         },
         {
           "text" : {
-            "_0" : "t><text>Resolve"
+            "_0" : "变。</note></alt><"
           }
         },
         {
           "text" : {
-            "_0" : " the git"
+            "_0" : "alt><text>Reb"
           }
         },
         {
           "text" : {
-            "_0" : " rebase conflict on "
+            "_0" : "ase stopped with a confl"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧,"
+            "_0" : "ict where"
           }
         },
         {
           "text" : {
-            "_0" : " where both sides changed it."
+            "_0" : " ⟦0⟧"
           }
         },
         {
           "text" : {
-            "_0" : " Explain the safest way to"
+            "_0" : " was changed on both sides"
           }
         },
         {
           "text" : {
-            "_0" : " proceed.</text><note"
+            "_0" : ". Explain how to resol"
           }
         },
         {
           "text" : {
-            "_0" : ">把"
+            "_0" : "ve it safely.</text><"
           }
         },
         {
           "text" : {
-            "_0" : "任"
+            "_0" : "note>把"
           }
         },
         {
           "text" : {
-            "_0" : "务放"
+            "_0" : "\""
           }
         },
         {
           "text" : {
-            "_0" : "在句"
+            "_0" : "最安全\"改成副"
           }
         },
         {
           "text" : {
-            "_0" : "首，直"
+            "_0" : "词形"
           }
         },
         {
           "text" : {
-            "_0" : "接要求执"
+            "_0" : "式 saf"
           }
         },
         {
           "text" : {
-            "_0" : "行解"
+            "_0" : "ely，句"
           }
         },
         {
           "text" : {
-            "_0" : "决，并"
+            "_0" : "子更简"
           }
         },
         {
           "text" : {
-            "_0" : "把"
+            "_0" : "短"
           }
         },
         {
           "text" : {
-            "_0" : "“怎么处"
+            "_0" : "，意思相同。</note"
           }
         },
         {
           "text" : {
-            "_0" : "理最"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "安全”译"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "为"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "proceed 的安全做"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "法。"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</note></alt></alts"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">"
+            "_0" : "></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 787,
-            "promptTokens" : 1325,
-            "reasoningTokens" : 482
+            "completionTokens" : 1011,
+            "promptTokens" : 1914,
+            "reasoningTokens" : 728
           }
         },
         {
@@ -296,6 +276,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

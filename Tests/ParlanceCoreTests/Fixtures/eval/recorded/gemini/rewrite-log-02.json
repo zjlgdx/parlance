@@ -1,0 +1,92 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">CI tests are failing, here is the output:\nFAIL ⟦0⟧\n  ●"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦1⟧ › should create user\n    Expected: 201\n    Received: 500"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\nCheck this.</best>\n<gloss>CI 测试在持续集成上失败了，这是输出：\nFAIL ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧\n  ● ⟦1⟧ › should create user\n    Expected: 201\n    Received: 500"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n请检查这个。</gloss>\n<alts><alt><text>Check the failing CI test output:\nFAIL ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n  ● ⟦1⟧ › should create user\n    Expected: 201\n    Received: "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "500</text><note>将“tests is red on ci”改为了“failing CI test”，表达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更地道。</note></alt></alts>\n<fixes><fix>“tests is red”是直译，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更自然的表达是“tests are failing”或“failing tests”。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 225,
+            "promptTokens" : 1437
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "log-en",
+    "id" : "log-02",
+    "input" : "tests is red on ci, here the output:\nFAIL src/user.test.ts\n  ● UserService › should create user\n    Expected: 201\n    Received: 500\nplease check it"
+  }
+}

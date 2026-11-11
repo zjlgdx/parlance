@@ -55,7 +55,7 @@ enum RecordedTimeout: String, Codable, Sendable {
 enum RecordedError: Codable, Sendable, Equatable {
   case auth(status: Int?)
   case quota(status: Int)
-  case invalidRequest(status: Int, modelNotFound: Bool)
+  case invalidRequest(status: Int, providerCode: String?)
   case rateLimit(retryAfter: RecordedDuration?)
   case server(status: Int)
   case transport, aborted, emptyResponse, malformedResponse
@@ -66,7 +66,7 @@ enum RecordedError: Codable, Sendable, Equatable {
     case .auth(let status): self = .auth(status: status)
     case .quota(let status): self = .quota(status: status)
     case .invalidRequest(let status, let code):
-      self = .invalidRequest(status: status, modelNotFound: code == .modelNotFound)
+      self = .invalidRequest(status: status, providerCode: code?.rawValue)
     case .rateLimit(let delay): self = .rateLimit(retryAfter: delay.map(RecordedDuration.init))
     case .server(let status): self = .server(status: status)
     case .transport: self = .transport
@@ -80,8 +80,8 @@ enum RecordedError: Codable, Sendable, Equatable {
     switch self {
     case .auth(let status): .auth(status: status)
     case .quota(let status): .quota(status: status)
-    case .invalidRequest(let status, let found):
-      .invalidRequest(status: status, providerCode: found ? .modelNotFound : nil)
+    case .invalidRequest(let status, let code):
+      .invalidRequest(status: status, providerCode: code.flatMap(KnownProviderCode.init(rawValue:)))
     case .rateLimit(let delay): .rateLimit(retryAfter: delay?.value)
     case .server(let status): .server(status: status)
     case .transport: .transport

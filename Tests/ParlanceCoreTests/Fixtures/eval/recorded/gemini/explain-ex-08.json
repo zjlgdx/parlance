@@ -9,68 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">在我做出这个更改之前，有一个问题：这次迁移删除了 `legacy_status"
+            "_0" : ">在我做出这个更改之前，有一个问题：迁移会删除 `legacy_status` 列"
           }
         },
         {
           "text" : {
-            "_0" : "` 列，而该列仍然被 `jobs/export.py` 中的夜间导出作业读取。我应该在同一个 PR 中更新该"
+            "_0" : "，该列仍由 `jobs/export.py` 中的夜间导出任务读取。我应该在同一个 PR"
           }
         },
         {
           "text" : {
-            "_0" : "作业，还是保留该列并将其标记为已弃用？</translation>\n\n<plain>这段话询问"
+            "_0" : " 中更新该任务，还是保留该列并将其标记为已弃用？</translation>\n<plain>这句话"
           }
         },
         {
           "text" : {
-            "_0" : "在数据库迁移删除某个仍在使用中的字段时，应该直接修改消费端代码还是保留字段并标记弃用。</plain>\n\n<"
+            "_0" : "询问在数据库迁移删除了某个被批处理任务读取的列时，应该直接修改任务还是分步弃"
           }
         },
         {
           "text" : {
-            "_0" : "terms><term><word>migration</word><meaning>迁移；这里指数据库迁移脚本</meaning><here>数据库"
+            "_0" : "用。</plain>\n<terms><term><word>migration</word>\n<meaning>迁移；移居"
           }
         },
         {
           "text" : {
-            "_0" : "结构迁移</here></term><term><word>legacy_status</word><meaning>遗留状态；代码"
+            "_0" : "</meaning><here>数据库结构迁移或变更脚本</here></term><term><word>PR</word>\n<meaning"
           }
         },
         {
           "text" : {
-            "_0" : "中的一个旧字段名</meaning><here>被删除的旧数据库列名</here></term><term><word>"
+            "_0" : ">公关；公关稿；拉取请求</meaning><here>Pull Request（代码合并请求）</here></"
           }
         },
         {
           "text" : {
-            "_0" : "export job</word><meaning>导出作业；指定时运行的数据导出任务</meaning><here>nightly export job（"
+            "_0" : "term><term><word>deprecated</word>\n<meaning>不赞成的；反对的</meaning><here>已弃"
           }
         },
         {
           "text" : {
-            "_0" : "夜间导出作业）</here></term><term><word>PR</word><meaning>Pull Request；代码合并请求</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning><here>当前的开发合并请求</here></term><term><word>deprecated</word><meaning>已弃用的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "；表示某个功能不推荐使用但暂时保留</meaning><here>标记为不推荐使用但暂不删除的列</here"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "></term></terms>"
+            "_0" : "用（指代码或字段不再推荐使用但暂未移除）</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 290,
-            "promptTokens" : 313
+            "completionTokens" : 219,
+            "promptTokens" : 585
           }
         },
         {
@@ -85,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

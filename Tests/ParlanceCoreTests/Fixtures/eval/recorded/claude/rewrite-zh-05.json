@@ -14,7 +14,17 @@
         },
         {
           "text" : {
-            "_0" : " endpoint: each user may"
+            "_0" : " endpoint:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " each"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " user may"
           }
         },
         {
@@ -24,314 +34,229 @@
         },
         {
           "text" : {
-            "_0" : " per minute."
+            "_0" : " per minute. Return H"
           }
         },
         {
           "text" : {
-            "_0" : " Return 429 when a"
+            "_0" : "TTP 429 when the"
           }
         },
         {
           "text" : {
-            "_0" : " user exceeds the limit"
+            "_0" : " limit is exceeded."
           }
         },
         {
           "text" : {
-            "_0" : ".</best>\n<glo"
+            "_0" : "</best>\n<gloss"
           }
         },
         {
           "text" : {
-            "_0" : "ss>为"
+            "_0" : ">给"
           }
         },
         {
           "text" : {
-            "_0" : "这个接口添加限流"
+            "_0" : "这个接口加上"
           }
         },
         {
           "text" : {
-            "_0" : "：每个用户每分"
+            "_0" : "限流：每个用户每"
           }
         },
         {
           "text" : {
-            "_0" : "钟最多 60 次请"
+            "_0" : "分钟最多发"
           }
         },
         {
           "text" : {
-            "_0" : "求。"
+            "_0" : "起"
           }
         },
         {
           "text" : {
-            "_0" : "用"
+            "_0" : " 60 次请求。超"
           }
         },
         {
           "text" : {
-            "_0" : "户超出"
+            "_0" : "过限制"
           }
         },
         {
           "text" : {
-            "_0" : "限制时返回 429。"
+            "_0" : "时返回 HTTP"
           }
         },
         {
           "text" : {
-            "_0" : "</gloss>\n<al"
+            "_0" : " 429。</gloss>"
           }
         },
         {
           "text" : {
-            "_0" : "ts><alt><text>"
+            "_0" : "\n<alts><alt><"
           }
         },
         {
           "text" : {
-            "_0" : "Add"
+            "_0" : "text>Add per"
           }
         },
         {
           "text" : {
-            "_0" : " rate limiting to this API"
+            "_0" : "-user rate limiting to"
           }
         },
         {
           "text" : {
-            "_0" : " endpoint: lim"
+            "_0" : " this endpoint,"
           }
         },
         {
           "text" : {
-            "_0" : "it each user to 60 requ"
+            "_0" : " all"
           }
         },
         {
           "text" : {
-            "_0" : "ests per minute, and resp"
+            "_0" : "owing "
           }
         },
         {
           "text" : {
-            "_0" : "ond with HTTP 429"
+            "_0" : "60 requests per minute per"
           }
         },
         {
           "text" : {
-            "_0" : " when the limit is exce"
+            "_0" : " user,"
           }
         },
         {
           "text" : {
-            "_0" : "eded.</text><note"
+            "_0" : " and respond with 429 "
           }
         },
         {
           "text" : {
-            "_0" : ">把"
+            "_0" : "Too Many Requests when"
           }
         },
         {
           "text" : {
-            "_0" : "\"接口\"译"
+            "_0" : " a"
           }
         },
         {
           "text" : {
-            "_0" : "为 "
+            "_0" : " user exceeds it"
           }
         },
         {
           "text" : {
-            "_0" : "API endpoint，并"
+            "_0" : ".</text><note>与"
           }
         },
         {
           "text" : {
-            "_0" : "补"
+            "_0" : "原"
           }
         },
         {
           "text" : {
-            "_0" : "全"
+            "_0" : "文意"
           }
         },
         {
           "text" : {
-            "_0" : " "
+            "_0" : "思相同，只"
           }
         },
         {
           "text" : {
-            "_0" : "429"
+            "_0" : "是把\""
           }
         },
         {
           "text" : {
-            "_0" : " 的含"
+            "_0" : "每"
           }
         },
         {
           "text" : {
-            "_0" : "义为"
+            "_0" : "个用户\"明"
           }
         },
         {
           "text" : {
-            "_0" : " HTTP 429，"
+            "_0" : "确写"
           }
         },
         {
           "text" : {
-            "_0" : "语"
+            "_0" : "成 "
           }
         },
         {
           "text" : {
-            "_0" : "气更"
+            "_0" : "per-user，"
           }
         },
         {
           "text" : {
-            "_0" : "偏技"
+            "_0" : "并写"
           }
         },
         {
           "text" : {
-            "_0" : "术规"
+            "_0" : "出 429 的"
           }
         },
         {
           "text" : {
-            "_0" : "范。</note></alt>"
+            "_0" : "完"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>Limit"
+            "_0" : "整状"
           }
         },
         {
           "text" : {
-            "_0" : " each user to 60 requests"
+            "_0" : "态名"
           }
         },
         {
           "text" : {
-            "_0" : " per minute on this endpo"
+            "_0" : "称，"
           }
         },
         {
           "text" : {
-            "_0" : "int, and return "
+            "_0" : "便于理解。</note></"
           }
         },
         {
           "text" : {
-            "_0" : "429 for requests over the lim"
+            "_0" : "alt></"
           }
         },
         {
           "text" : {
-            "_0" : "it.</text><note>把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\"限"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "流\"的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "主"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "前"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "置为"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "对"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "用"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "户的限制，句"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "式更简短"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，强"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "调限"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "制对"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "象是用户而"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "非接"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "口本身。</note></al"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "t></alts>"
+            "_0" : "alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 647,
-            "promptTokens" : 1163,
-            "reasoningTokens" : 338
+            "completionTokens" : 432,
+            "promptTokens" : 1752,
+            "reasoningTokens" : 198
           }
         },
         {
@@ -346,14 +271,16 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },
     "fallback" : false,
     "sectionsComplete" : true,
     "strictRetryUsed" : false,
-    "termPasses" : 3,
-    "termVersions" : 3
+    "termPasses" : 2,
+    "termVersions" : 2
   },
   "model" : "claude-haiku-5-5",
   "preset" : "claude",

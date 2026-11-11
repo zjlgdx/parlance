@@ -68,8 +68,9 @@ public struct LLMUsage: Sendable, Equatable {
 }
 public enum LLMFinishReason: Sendable, Equatable { case stop, length, contentFilter, other }
 public enum LLMTimeout: Sendable, Equatable { case firstToken, idle, total }
-public enum KnownProviderCode: String, Sendable, Equatable {
+public enum KnownProviderCode: String, Sendable, Equatable, CaseIterable {
   case modelNotFound = "model_not_found"
+  case contextLengthExceeded = "context_length_exceeded"
 }
 public enum LLMErrorCode: String, Sendable, Codable, CaseIterable {
   case auth, quota

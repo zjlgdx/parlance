@@ -9,63 +9,68 @@
         },
         {
           "text" : {
-            "_0" : ">对于任何设置了 `PARLANCE_BASE_URL` 的人来说，"
+            "_0" : ">对于任何设置了 `PARLANCE_BASE_URL` 的人来说"
           }
         },
         {
           "text" : {
-            "_0" : "这是一个破坏性变更：该变量不再被读取。请指引他们在 config.toml 中的 `[providers.compatible]` 下设置"
+            "_0" : "，这是一个破坏性变更：不再读取该变量。请指引他们在 config.toml 中的 `[providers.compatible]` 下设置"
           }
         },
         {
           "text" : {
-            "_0" : " `base_url`。我会在发布说明中提及此事，而不是添加弃用兼容层。</translation>\n\n<"
+            "_0" : " `base_url`。我建议在发布说明中提及此事，而不是添加弃用兼容层。</translation>"
           }
         },
         {
           "text" : {
-            "_0" : "plain>这段话讨论了一个软件更新中的不兼容改动，决定移除某个环境变量并在配置文件中替换它，同时"
+            "_0" : "\n\n<plain>这段输入是一条软件开发评审或建议，指出某个环境变量已被废弃并移除，改"
           }
         },
         {
           "text" : {
-            "_0" : "选择直接在更新日志中说明而非保留过渡代码。</plain>\n\n<terms><term><word>breaking change</word><"
+            "_0" : "用配置文件中的新设置，建议直接写进发布说明中。</plain>\n\n<terms><term><word>breaking change</"
           }
         },
         {
           "text" : {
-            "_0" : "meaning>破坏性变更</meaning><here>会导致现有用户配置或代码失效的重大修改</here></term"
+            "_0" : "word>\n<ipa>/ˈbreɪkɪŋ tʃeɪndʒ/</ipa>\n<meaning"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<term><word>deprecationshim</word><meaning>弃用兼容层</meaning><here>"
+            "_0" : ">破坏性变更</meaning><here>会导致现有用户代码或配置失效的重大修改</here></term><term><word"
           }
         },
         {
           "text" : {
-            "_0" : "为向后兼容旧功能而临时保留的代码</here></term>\n<term><word>release notes</word><meaning"
+            "_0" : ">deprecation shim</word>\n<ipa>/ˌdeprəˈkeɪʃən ʃɪm/</ipa"
           }
         },
         {
           "text" : {
-            "_0" : ">发布说明</meaning><here>软件新版本更新日志</here></term>\n<term><word>"
+            "_0" : ">\n<meaning>弃用兼容层</meaning><here>为了向后兼容旧功能而临时保留的"
           }
         },
         {
           "text" : {
-            "_0" : "config.toml</word><meaning>TOML 配置文件</meaning><here>项目的配置文件</here></term></terms"
+            "_0" : "过渡代码</here></term><term><word>release notes</word>\n<ipa>/rɪˈliːs nəʊts"
           }
         },
         {
           "text" : {
-            "_0" : ">"
+            "_0" : "/</ipa>\n<meaning>发布说明</meaning><here>软件新版本更新内容的说明文档</here></term></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 250,
-            "promptTokens" : 319
+            "completionTokens" : 278,
+            "promptTokens" : 591
           }
         },
         {
@@ -80,6 +85,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

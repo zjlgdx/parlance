@@ -9,43 +9,43 @@
         },
         {
           "text" : {
-            "_0" : ">Fix ⟦0⟧ dependency array by adding ⟦1⟧, which causes"
+            "_0" : ">Fix ⟦0⟧ dependency array missing ⟦1⟧, which causes"
           }
         },
         {
           "text" : {
-            "_0" : " data not to refresh after switching users.</best>\n<gloss>修复 ⟦0⟧ 依赖数组，漏"
+            "_0" : " data not to refresh after switching users.</best>\n<gloss>修复 ⟦0⟧ 依赖数组漏了"
           }
         },
         {
           "text" : {
-            "_0" : "掉了 ⟦1⟧，导致切换用户后数据没刷新。</gloss>\n<alts><alt><text>Update"
+            "_0" : " ⟦1⟧，导致切换用户后数据没刷新。</gloss>\n<alts><alt><text>Fix ⟦0⟧"
           }
         },
         {
           "text" : {
-            "_0" : " the ⟦0⟧ dependency array to include ⟦1⟧, preventing data from not refreshing after switching users.</text><note>使用"
+            "_0" : " missing ⟦1⟧ in its dependency array, causing data not to refresh when switching users.</text><note>使用"
           }
         },
         {
           "text" : {
-            "_0" : "现在分词短语替代原因状语从句，使指令更紧凑。</note></alt></alts>\n<fixes><"
+            "_0" : "更符合规范的句式表达依赖项缺失及其导致的后果。</note></alt></alts>\n<fixes><"
           }
         },
         {
           "text" : {
-            "_0" : "fix>“漏了”直接机译为“missing”更地道，输入中的“导致……”从句稍"
+            "_0" : "fix>“漏了 ⟦1⟧”直接翻译为“missing ⟦1⟧”更符合技术英语的习惯"
           }
         },
         {
           "text" : {
-            "_0" : "显冗长，重写为祈使句加原因状语更符合技术指令风格。</fix></fixes>"
+            "_0" : "表达。</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 175,
-            "promptTokens" : 969
+            "completionTokens" : 152,
+            "promptTokens" : 1415
           }
         },
         {
@@ -60,6 +60,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 1,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

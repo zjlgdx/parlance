@@ -24,17 +24,12 @@
         },
         {
           "text" : {
-            "_0" : " first, and only"
+            "_0" : " first, and only run it for real"
           }
         },
         {
           "text" : {
-            "_0" : " run it for real after"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " confirming there"
+            "_0" : " once you have confirmed there"
           }
         },
         {
@@ -44,112 +39,107 @@
         },
         {
           "text" : {
-            "_0" : "\n<gloss>用 "
+            "_0" : "\n<gloss>先"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧"
+            "_0" : "用 ⟦0"
           }
         },
         {
           "text" : {
-            "_0" : " 先跑一遍"
+            "_0" : "⟧ 运行一"
           }
         },
         {
           "text" : {
-            "_0" : "迁移脚本 "
+            "_0" : "遍迁移脚本 "
           }
         },
         {
           "text" : {
-            "_0" : "⟦1⟧，"
+            "_0" : "⟦1⟧"
           }
         },
         {
           "text" : {
-            "_0" : "确认没问题后"
+            "_0" : "，确认没有问题后"
           }
         },
         {
           "text" : {
-            "_0" : "再真正"
+            "_0" : "再"
           }
         },
         {
           "text" : {
-            "_0" : "执"
+            "_0" : "正"
           }
         },
         {
           "text" : {
-            "_0" : "行。</gloss>"
+            "_0" : "式运行。</gloss"
           }
         },
         {
           "text" : {
-            "_0" : "\n<alts><alt>"
+            "_0" : ">\n<alts><"
           }
         },
         {
           "text" : {
-            "_0" : "<text>First"
+            "_0" : "alt><text>First run the"
           }
         },
         {
           "text" : {
-            "_0" : " run the migration script "
+            "_0" : " migration script ⟦1"
           }
         },
         {
           "text" : {
-            "_0" : "⟦1⟧ with "
+            "_0" : "⟧ with "
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧"
+            "_0" : "⟦0⟧ to check"
           }
         },
         {
           "text" : {
-            "_0" : " and verify there are no problems"
+            "_0" : " it. Once it looks f"
           }
         },
         {
           "text" : {
-            "_0" : " before running it for real.</text"
+            "_0" : "ine, run it for real.</"
           }
         },
         {
           "text" : {
-            "_0" : "><note>与"
+            "_0" : "text><note>与"
           }
         },
         {
           "text" : {
-            "_0" : " best 意"
+            "_0" : "最"
           }
         },
         {
           "text" : {
-            "_0" : "思相同，语"
+            "_0" : "佳版本意"
           }
         },
         {
           "text" : {
-            "_0" : "序"
+            "_0" : "思相"
           }
         },
         {
           "text" : {
-            "_0" : "更接近原"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "文，把"
+            "_0" : "同，把"
           }
         },
         {
@@ -164,32 +154,57 @@
         },
         {
           "text" : {
-            "_0" : "认没问题\"译"
+            "_0" : "认没问题\"拆成"
           }
         },
         {
           "text" : {
-            "_0" : "为明"
+            "_0" : "两句"
           }
         },
         {
           "text" : {
-            "_0" : "确的校"
+            "_0" : "，"
           }
         },
         {
           "text" : {
-            "_0" : "验动作 "
+            "_0" : "更直接地"
           }
         },
         {
           "text" : {
-            "_0" : "verify。</note></alt"
+            "_0" : "说明先"
           }
         },
         {
           "text" : {
-            "_0" : "><alt><text>Test"
+            "_0" : "检查、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再正式执"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "行的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "顺序。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Test"
           }
         },
         {
@@ -209,27 +224,32 @@
         },
         {
           "text" : {
-            "_0" : " running"
+            "_0" : " the"
           }
         },
         {
           "text" : {
-            "_0" : " it for real, and confirm"
+            "_0" : " real run,"
           }
         },
         {
           "text" : {
-            "_0" : " it complet"
+            "_0" : " and only pro"
           }
         },
         {
           "text" : {
-            "_0" : "es without probl"
+            "_0" : "ceed when"
           }
         },
         {
           "text" : {
-            "_0" : "ems.</text><note>用"
+            "_0" : " it pass"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es.</text><note>用"
           }
         },
         {
@@ -239,89 +259,84 @@
         },
         {
           "text" : {
-            "_0" : "test 概"
+            "_0" : "\"test"
           }
         },
         {
           "text" : {
-            "_0" : "括\""
+            "_0" : "\" 和 \"pass"
           }
         },
         {
           "text" : {
-            "_0" : "先跑一遍\"，"
+            "_0" : "es\" 表"
           }
         },
         {
           "text" : {
-            "_0" : "并把"
+            "_0" : "达\""
           }
         },
         {
           "text" : {
-            "_0" : "\"确认没"
+            "_0" : "先试"
           }
         },
         {
           "text" : {
-            "_0" : "问题\"写"
+            "_0" : "跑、"
           }
         },
         {
           "text" : {
-            "_0" : "成\""
+            "_0" : "通过后"
           }
         },
         {
           "text" : {
-            "_0" : "确认执"
+            "_0" : "再真"
           }
         },
         {
           "text" : {
-            "_0" : "行无"
+            "_0" : "跑\"，"
           }
         },
         {
           "text" : {
-            "_0" : "误"
+            "_0" : "强调以"
           }
         },
         {
           "text" : {
-            "_0" : "\"，语"
+            "_0" : "检"
           }
         },
         {
           "text" : {
-            "_0" : "气更"
+            "_0" : "查结果作"
           }
         },
         {
           "text" : {
-            "_0" : "偏向测"
+            "_0" : "为是"
           }
         },
         {
           "text" : {
-            "_0" : "试流"
+            "_0" : "否继续的条件。</"
           }
         },
         {
           "text" : {
-            "_0" : "程。</note></alt></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "alts>"
+            "_0" : "note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 701,
-            "promptTokens" : 1347,
-            "reasoningTokens" : 388
+            "completionTokens" : 794,
+            "promptTokens" : 1936,
+            "reasoningTokens" : 468
           }
         },
         {
@@ -336,6 +351,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

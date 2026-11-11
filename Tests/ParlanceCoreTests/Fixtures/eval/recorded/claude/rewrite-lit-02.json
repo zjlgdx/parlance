@@ -1,0 +1,463 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>This"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " page is very slow, which h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "urts the user experience.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这个页面非常慢"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，影响了用户体验"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</gloss>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>The page lo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ads very slowly, which h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "urts the user experience.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是加"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "载"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "慢。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原句"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的\"spe"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ed\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加载速度，这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "版本把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思说得"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更具体。</note></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Page performance is poor: the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " page is very slow and hur"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts the user experience.</text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"page"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " performance\"概"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "括问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式，适合技术报告"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "issue 标"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"The speed"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " of this page is very slow\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 有"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "spe"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ed 和 slow 重"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达了同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一件事，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " speed "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "... is sl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ow\" 直译"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "自中文\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "页"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面的速度很慢\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "自然的说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法是 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"This page is very slow\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 或 \"The page loads"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " sl"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "owly\"。</fix><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>\"the experience of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " users is not good\" 是直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "译自中文\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用户的体验不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "好\"。英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文更常"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"h"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "urts the user experience\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 \"mak"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es the user experience poor\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，这样更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "简"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "洁自"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "然。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 949,
+            "promptTokens" : 1740,
+            "reasoningTokens" : 566
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-02",
+    "input" : "The speed of this page is very slow, the experience of users is not good."
+  }
+}

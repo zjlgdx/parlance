@@ -4,12 +4,97 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best"
+            "_0" : "<best>"
           }
         },
         {
           "text" : {
-            "_0" : ">In"
+            "_0" : "Under Swift 6,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " calling ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ inside the class of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " reports a Sendable"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " warning. Explain how to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix it correctly.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "在 Swift 6 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "下，在 ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧ 的 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "class 里调用 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "会报 Sendable "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "警告。解释一下"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "怎么改才对。</g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>In"
           }
         },
         {
@@ -24,7 +109,7 @@
         },
         {
           "text" : {
-            "_0" : " inside the class of "
+            "_0" : " from a class inside "
           }
         },
         {
@@ -44,232 +129,27 @@
         },
         {
           "text" : {
-            "_0" : "ix this Sendable warning"
+            "_0" : "ix it properly.</text><"
           }
         },
         {
           "text" : {
-            "_0" : ".</best>\n<glo"
+            "_0" : "note>与"
           }
         },
         {
           "text" : {
-            "_0" : "ss>在 Swift "
+            "_0" : " "
           }
         },
         {
           "text" : {
-            "_0" : "6 下，在 "
+            "_0" : "best 意"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " 的 class 里调用"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " ⟦1"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " 会触发 Send"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "able 警告。说明如"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "何修复此 Send"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "able 警告。</glo"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ss>\n<alts>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>In Sw"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ift 6, explain how to"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " fix the Sendable war"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ning raised when calling "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦1⟧ in"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "side the class of ⟦"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "0⟧.</text>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<note>把问"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "题合"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "并进"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "一句"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，先"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "给出请求，语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "气"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "更直接"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "原"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "文的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "两"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "部"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "分信"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "息都"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "保留。"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</note></alt><alt"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><text>Swift 6"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ": calling ⟦1"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧ from a class in"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " ⟦0⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " gives a Sendable"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " warning. Explain the corre"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ct fix.</text><note"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">更简短"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，用 "
+            "_0" : "思相同，只是用 "
           }
         },
         {
@@ -279,64 +159,54 @@
         },
         {
           "text" : {
-            "_0" : "the correct fix\" 对"
+            "_0" : "triggers\" 和"
           }
         },
         {
           "text" : {
-            "_0" : "应原"
+            "_0" : " \"properly\" 更"
           }
         },
         {
           "text" : {
-            "_0" : "文的"
+            "_0" : "贴近原文\""
           }
         },
         {
           "text" : {
-            "_0" : " \"才对\"，强"
+            "_0" : "报"
           }
         },
         {
           "text" : {
-            "_0" : "调要"
+            "_0" : "警"
           }
         },
         {
           "text" : {
-            "_0" : "正"
+            "_0" : "告\"和\"才对\"的"
           }
         },
         {
           "text" : {
-            "_0" : "确的修法"
+            "_0" : "语气。</note></alt"
           }
         },
         {
           "text" : {
-            "_0" : "，而不只"
+            "_0" : "></"
           }
         },
         {
           "text" : {
-            "_0" : "是消"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "除警告。</note></al"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "t></alts>"
+            "_0" : "alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 1294,
-            "promptTokens" : 1357,
-            "reasoningTokens" : 936
+            "completionTokens" : 1034,
+            "promptTokens" : 1946,
+            "reasoningTokens" : 774
           }
         },
         {
@@ -351,14 +221,16 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },
     "fallback" : false,
     "sectionsComplete" : true,
     "strictRetryUsed" : false,
-    "termPasses" : 3,
-    "termVersions" : 3
+    "termPasses" : 2,
+    "termVersions" : 2
   },
   "model" : "claude-haiku-5-5",
   "preset" : "claude",

@@ -27,6 +27,7 @@ set -u
 # shellcheck disable=SC2046  # the variable names are single words
 unset $(git rev-parse --local-env-vars)
 ROOT=$(git rev-parse --show-toplevel) || exit 1
+python3 "$ROOT/scripts/lib/test_swift_licenses.py" || exit 1
 TMP=$(mktemp -d "${TMPDIR:-/tmp}/pl-swiftgate.XXXXXX") || exit 1
 trap 'rm -rf "$TMP"' EXIT
 export GIT_CONFIG_GLOBAL="$TMP/gitconfig" GIT_CONFIG_NOSYSTEM=1

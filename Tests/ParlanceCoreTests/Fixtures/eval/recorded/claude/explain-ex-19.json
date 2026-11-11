@@ -4,127 +4,107 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<translation>The"
+            "_0" : "<translation>"
           }
         },
         {
           "text" : {
-            "_0" : " over"
+            "_0" : "The overall gate failure is"
           }
         },
         {
           "text" : {
-            "_0" : "all gate check failed because the"
+            "_0" : " caused by the sandbox"
           }
         },
         {
           "text" : {
-            "_0" : " sandbox blocks the"
+            "_0" : " blocking the"
           }
         },
         {
           "text" : {
-            "_0" : " App's test connection to testm"
+            "_0" : " App test from connecting to test"
           }
         },
         {
           "text" : {
-            "_0" : "anagerd, while all the"
+            "_0" : "managerd,"
           }
         },
         {
           "text" : {
-            "_0" : " package tests themselves pass"
+            "_0" : " while the package tests themselves"
           }
         },
         {
           "text" : {
-            "_0" : ". It"
+            "_0" : " all passed. It is recomm"
           }
         },
         {
           "text" : {
-            "_0" : " is recommended to re-run"
+            "_0" : "ended to rerun the compl"
           }
         },
         {
           "text" : {
-            "_0" : " the complete gate check outside"
+            "_0" : "ete gate out"
           }
         },
         {
           "text" : {
-            "_0" : " the sandbox to confir"
+            "_0" : "side the sandbox to conf"
           }
         },
         {
           "text" : {
-            "_0" : "m.</translation>"
+            "_0" : "irm.</translation>"
           }
         },
         {
           "text" : {
-            "_0" : "\n<plain>这段话说"
+            "_0" : "\n<plain>门"
           }
         },
         {
           "text" : {
-            "_0" : "整"
+            "_0" : "禁整体失败是因"
           }
         },
         {
           "text" : {
-            "_0" : "体门禁检查失败"
+            "_0" : "为沙盒阻止"
           }
         },
         {
           "text" : {
-            "_0" : "，"
+            "_0" : "了 App 测"
           }
         },
         {
           "text" : {
-            "_0" : "原"
+            "_0" : "试连接 testmanag"
           }
         },
         {
           "text" : {
-            "_0" : "因是沙盒阻"
+            "_0" : "erd，而包测试本"
           }
         },
         {
           "text" : {
-            "_0" : "止了 "
+            "_0" : "身都通过了，建议"
           }
         },
         {
           "text" : {
-            "_0" : "App 连接 testman"
+            "_0" : "在沙盒外再完"
           }
         },
         {
           "text" : {
-            "_0" : "agerd，建议在"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "沙盒外"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "完"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "整重"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "跑一次"
+            "_0" : "整跑一次门禁"
           }
         },
         {
@@ -144,464 +124,229 @@
         },
         {
           "text" : {
-            "_0" : "gate check</word><ip"
+            "_0" : "quality gate</word>"
           }
         },
         {
           "text" : {
-            "_0" : "a>/"
+            "_0" : "\n<ipa>/"
           }
         },
         {
           "text" : {
-            "_0" : "ɡe"
+            "_0" : "ˈkwɒlə"
           }
         },
         {
           "text" : {
-            "_0" : "ɪt t"
+            "_0" : "ti "
           }
         },
         {
           "text" : {
-            "_0" : "ʃek"
+            "_0" : "ɡeɪt/</"
           }
         },
         {
           "text" : {
-            "_0" : "/</ipa><mea"
+            "_0" : "ipa>\n<mea"
           }
         },
         {
           "text" : {
-            "_0" : "ning>门"
+            "_0" : "ning>质"
           }
         },
         {
           "text" : {
-            "_0" : "禁检查，指流"
+            "_0" : "量门禁，"
           }
         },
         {
           "text" : {
-            "_0" : "程中判"
+            "_0" : "即一组必须全部通"
           }
         },
         {
           "text" : {
-            "_0" : "断"
+            "_0" : "过才"
           }
         },
         {
           "text" : {
-            "_0" : "能"
+            "_0" : "能继续后"
           }
         },
         {
           "text" : {
-            "_0" : "否继续推"
+            "_0" : "续"
           }
         },
         {
           "text" : {
-            "_0" : "进的一组检查。</"
+            "_0" : "流程的检查。"
           }
         },
         {
           "text" : {
-            "_0" : "meaning><here>对"
+            "_0" : "</meaning><"
           }
         },
         {
           "text" : {
-            "_0" : "应\""
+            "_0" : "here>这里指"
           }
         },
         {
           "text" : {
-            "_0" : "门禁\""
+            "_0" : "整"
           }
         },
         {
           "text" : {
-            "_0" : "，即"
+            "_0" : "套"
           }
         },
         {
           "text" : {
-            "_0" : "整体门"
+            "_0" : "检查整"
           }
         },
         {
           "text" : {
-            "_0" : "禁失"
+            "_0" : "体失败，需要重"
           }
         },
         {
           "text" : {
-            "_0" : "败指"
+            "_0" : "新完"
           }
         },
         {
           "text" : {
-            "_0" : "这"
+            "_0" : "整运"
           }
         },
         {
           "text" : {
-            "_0" : "组"
+            "_0" : "行以"
           }
         },
         {
           "text" : {
-            "_0" : "检查没有通过。</"
+            "_0" : "确认结"
           }
         },
         {
           "text" : {
-            "_0" : "here></term><term><word>"
+            "_0" : "果。</here></term><term"
           }
         },
         {
           "text" : {
-            "_0" : "sandbox</word>"
+            "_0" : "><word>sandbox</"
           }
         },
         {
           "text" : {
-            "_0" : "<ipa>/ˈs"
+            "_0" : "word>\n<ipa>"
           }
         },
         {
           "text" : {
-            "_0" : "ændbɒks"
+            "_0" : "/ˈsænd"
           }
         },
         {
           "text" : {
-            "_0" : "/</ipa><mea"
+            "_0" : "b"
           }
         },
         {
           "text" : {
-            "_0" : "ning>沙盒，一"
+            "_0" : "ɒks/</ipa>"
           }
         },
         {
           "text" : {
-            "_0" : "种隔离的运行环"
+            "_0" : "\n<meaning>沙"
           }
         },
         {
           "text" : {
-            "_0" : "境，限制程"
+            "_0" : "盒，一"
           }
         },
         {
           "text" : {
-            "_0" : "序的访问权限。</"
+            "_0" : "种隔离的"
           }
         },
         {
           "text" : {
-            "_0" : "meaning><here>"
+            "_0" : "运行环境，会"
           }
         },
         {
           "text" : {
-            "_0" : "沙盒限"
+            "_0" : "限制程序访"
           }
         },
         {
           "text" : {
-            "_0" : "制了"
+            "_0" : "问系统资源或"
           }
         },
         {
           "text" : {
-            "_0" : " App 与"
+            "_0" : "其"
           }
         },
         {
           "text" : {
-            "_0" : " testmanagerd "
+            "_0" : "他进程。</meaning"
           }
         },
         {
           "text" : {
-            "_0" : "的连接，是失"
+            "_0" : "><here>这里沙"
           }
         },
         {
           "text" : {
-            "_0" : "败的直"
+            "_0" : "盒限制了 App 测"
           }
         },
         {
           "text" : {
-            "_0" : "接原因。</here></term"
+            "_0" : "试与 testmanager"
           }
         },
         {
           "text" : {
-            "_0" : "><term><word>test"
+            "_0" : "d 的连接，是"
           }
         },
         {
           "text" : {
-            "_0" : "managerd</word>"
+            "_0" : "导致失败的原"
           }
         },
         {
           "text" : {
-            "_0" : "<meaning>系"
+            "_0" : "因。</here></term></ter"
           }
         },
         {
           "text" : {
-            "_0" : "统的测试管"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "理守"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "护进程标"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "识符"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "（保"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "持"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "原样"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，不翻译）。</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning><here>App "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "需要连"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "接它"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，但"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "被沙盒阻止"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "。</here></term><term>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<word>package tests</word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<ipa>/ˈp"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "æk"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ɪdʒ tests"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "/</ipa><mea"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ning>包测试，针"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "对软"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "件包本"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "身进"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "行的测试。</mea"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ning><here>包"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "测试本身全部通过"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，说明问题不"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "在包的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "内容上。</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><term><word>re-run"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " outside the sandbox</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "word><me"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "aning>在"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "沙盒外"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "重新运"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "行。"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</meaning><here>建"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "议的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "验"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "证方"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "法，用"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "于确"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "认门"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "禁失"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "败确"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "实是由沙盒造"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "成的。</here></term></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "terms>"
+            "_0" : "ms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 1278,
-            "promptTokens" : 427,
-            "reasoningTokens" : 686
+            "completionTokens" : 891,
+            "promptTokens" : 795,
+            "reasoningTokens" : 495
           }
         },
         {
@@ -616,6 +361,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

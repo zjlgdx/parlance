@@ -9,38 +9,33 @@
         },
         {
           "text" : {
-            "_0" : ">⟦0⟧ is too slow. Analyze whether an index is needed for the table"
+            "_0" : ">⟦0⟧ is too slow. Check whether an index is needed for the table containing 20"
           }
         },
         {
           "text" : {
-            "_0" : " with 20 million rows.</best>\n<gloss>⟦0⟧ 太慢了。分析含两千万行的"
+            "_0" : " million rows.</best>\n<gloss>⟦0⟧ 太慢了。检查包含两千万行的表是否需要索引"
           }
         },
         {
           "text" : {
-            "_0" : "表是否需要加索引。</gloss>\n<alts><alt><text>Check if ⟦0⟧ needs an index"
+            "_0" : "。</gloss>\n<alts><alt><text>Analyze the performance of ⟦0⟧ and determine whether to"
           }
         },
         {
           "text" : {
-            "_0" : ". The table has 20 million rows.</text><note>用祈使句简化了“帮我看看”，更"
+            "_0" : " add an index for a table with 20 million rows.</text><note>Analyze the performance：分析性能，用"
           }
         },
         {
           "text" : {
-            "_0" : "符合 agent 指令的简洁风格。</note></alt></alts>\n<fixes><fix>输入为混合"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "语言且非全英文，属于 Case A 翻译任务，故不生成 fixes 段落。</fix></fixes>"
+            "_0" : "更地道的英文表达了“看看”的意图</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 144,
-            "promptTokens" : 955
+            "completionTokens" : 117,
+            "promptTokens" : 1401
           }
         },
         {
@@ -55,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

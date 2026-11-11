@@ -53,6 +53,19 @@ struct ProviderContractTests {
       #expect(fixture.requests.count == 1)
     }
   }
+  @Test(arguments: ProviderPreset.all.filter { $0.wire != .anthropicMessages })
+  func contextLengthCode(preset: ProviderPreset) async throws {
+    let fixture = Fixture(
+      preset, status: 400,
+      scripts: [
+        [
+          .data(Data(#"{"error":{"code":"context_length_exceeded","message":"private"}}"#.utf8)),
+          .end,
+        ]
+      ])
+    let result = try await bounded { await collect(fixture.stream()) }
+    #expect(result.error == .invalidRequest(status: 400, providerCode: .contextLengthExceeded))
+  }
   @Test(arguments: ProviderPreset.all)
   func disconnect(preset: ProviderPreset) async throws {
     let fixture = Fixture(

@@ -14,37 +14,37 @@
         },
         {
           "text" : {
-            "_0" : " module, from the incoming request"
+            "_0" : " module, from when the request comes"
           }
         },
         {
           "text" : {
-            "_0" : " to the DB write.</best"
+            "_0" : " in to the DB write.</"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<gloss>请"
+            "_0" : "best>\n<gloss>"
           }
         },
         {
           "text" : {
-            "_0" : "解释数"
+            "_0" : "解释这个模块中数"
           }
         },
         {
           "text" : {
-            "_0" : "据在这"
+            "_0" : "据是"
           }
         },
         {
           "text" : {
-            "_0" : "个模块中如何流转"
+            "_0" : "如何流转的，从请"
           }
         },
         {
           "text" : {
-            "_0" : "，从请求进入到写"
+            "_0" : "求进入到写"
           }
         },
         {
@@ -59,77 +59,77 @@
         },
         {
           "text" : {
-            "_0" : "ts>"
+            "_0" : "ts><alt><"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>Expl"
+            "_0" : "text>Explain how data fl"
           }
         },
         {
           "text" : {
-            "_0" : "ain how data flows through this module"
+            "_0" : "ows through this module, from the inc"
           }
         },
         {
           "text" : {
-            "_0" : ", from the incoming request to"
+            "_0" : "oming request to the database write."
           }
         },
         {
           "text" : {
-            "_0" : " the database write.</text><note"
+            "_0" : "</text><note>用"
           }
         },
         {
           "text" : {
-            "_0" : ">Spells out \""
+            "_0" : " \""
           }
         },
         {
           "text" : {
-            "_0" : "DB\" as"
+            "_0" : "incoming request\" 代"
           }
         },
         {
           "text" : {
-            "_0" : " \"database\"."
+            "_0" : "替从句，"
           }
         },
         {
           "text" : {
-            "_0" : " The me"
+            "_0" : "更简洁；"
           }
         },
         {
           "text" : {
-            "_0" : "aning is the same, but it"
+            "_0" : "含义与"
           }
         },
         {
           "text" : {
-            "_0" : " is more formal."
+            "_0" : "原文相"
           }
         },
         {
           "text" : {
-            "_0" : "</note></alt><alt"
+            "_0" : "同。</note></alt><"
           }
         },
         {
           "text" : {
-            "_0" : "><text>Walk me through"
+            "_0" : "alt><text>Walk"
           }
         },
         {
           "text" : {
-            "_0" : " how data flows through this module,"
+            "_0" : " through how data moves through this module"
           }
         },
         {
           "text" : {
-            "_0" : " from the incoming request to the"
+            "_0" : ", from request arrival to the"
           }
         },
         {
@@ -139,279 +139,319 @@
         },
         {
           "text" : {
-            "_0" : ">\""
+            "_0" : ">用 \"walk through\""
           }
         },
         {
           "text" : {
-            "_0" : "Walk me"
+            "_0" : " 表示逐步讲"
           }
         },
         {
           "text" : {
-            "_0" : " through\" mak"
+            "_0" : "解，语"
           }
         },
         {
           "text" : {
-            "_0" : "es the request"
+            "_0" : "气更口语；\""
           }
         },
         {
           "text" : {
-            "_0" : " a step-by-step explan"
+            "_0" : "request"
           }
         },
         {
           "text" : {
-            "_0" : "ation. It is more"
+            "_0" : " arrival\" 指"
           }
         },
         {
           "text" : {
-            "_0" : " conversational and"
+            "_0" : "请求到"
           }
         },
         {
           "text" : {
-            "_0" : " ke"
+            "_0" : "达这一时"
           }
         },
         {
           "text" : {
-            "_0" : "eps the \""
+            "_0" : "刻。</note></alt></"
           }
         },
         {
           "text" : {
-            "_0" : "me"
+            "_0" : "alts>\n<fixes"
           }
         },
         {
           "text" : {
-            "_0" : "\" from"
+            "_0" : "><fix>\""
           }
         },
         {
           "text" : {
-            "_0" : " the original."
+            "_0" : "can you explain me\" 有"
           }
         },
         {
           "text" : {
-            "_0" : "</note></alt></alts"
+            "_0" : "误：expl"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<fixes><f"
+            "_0" : "ain 后不能直接接"
           }
         },
         {
           "text" : {
-            "_0" : "ix>\"can you explain me"
+            "_0" : " me。"
           }
         },
         {
           "text" : {
-            "_0" : "\" "
+            "_0" : "应改"
           }
         },
         {
           "text" : {
-            "_0" : "不"
+            "_0" : "为 \"can"
           }
         },
         {
           "text" : {
-            "_0" : "地"
+            "_0" : " you explain\" 或 \""
           }
         },
         {
           "text" : {
-            "_0" : "道。英"
+            "_0" : "can you explain to me\"。"
           }
         },
         {
           "text" : {
-            "_0" : "语中"
+            "_0" : "原句"
           }
         },
         {
           "text" : {
-            "_0" : "应说"
+            "_0" : "像"
           }
         },
         {
           "text" : {
-            "_0" : " \"explain to me\""
+            "_0" : "是"
           }
         },
         {
           "text" : {
-            "_0" : "，或者在"
+            "_0" : "直译自中文的\"你"
           }
         },
         {
           "text" : {
-            "_0" : "给 "
+            "_0" : "能给"
           }
         },
         {
           "text" : {
-            "_0" : "agent 的指令里"
+            "_0" : "我解释一"
           }
         },
         {
           "text" : {
-            "_0" : "直接用"
+            "_0" : "下\"。</fix><f"
           }
         },
         {
           "text" : {
-            "_0" : "祈使句 \""
+            "_0" : "ix>\"how this module data fl"
           }
         },
         {
           "text" : {
-            "_0" : "Explain\""
+            "_0" : "ow\" 语"
           }
         },
         {
           "text" : {
-            "_0" : "，省略 \"can you\""
+            "_0" : "序和"
           }
         },
         {
           "text" : {
-            "_0" : "。</fix><fix>"
+            "_0" : "主"
           }
         },
         {
           "text" : {
-            "_0" : "\"this"
+            "_0" : "谓一致都"
           }
         },
         {
           "text" : {
-            "_0" : " module data flow\" 缺"
+            "_0" : "有问题。"
           }
         },
         {
           "text" : {
-            "_0" : "少介"
+            "_0" : "应为"
           }
         },
         {
           "text" : {
-            "_0" : "词或所"
+            "_0" : " \"how data flows through this"
           }
         },
         {
           "text" : {
-            "_0" : "有"
+            "_0" : " module\"，\""
           }
         },
         {
           "text" : {
-            "_0" : "格。"
+            "_0" : "data\""
           }
         },
         {
           "text" : {
-            "_0" : "应写成"
+            "_0" : " 作"
           }
         },
         {
           "text" : {
-            "_0" : " \"data"
+            "_0" : "主"
           }
         },
         {
           "text" : {
-            "_0" : " flow in this module\""
+            "_0" : "语"
           }
         },
         {
           "text" : {
-            "_0" : " 或 \"this"
+            "_0" : "需"
           }
         },
         {
           "text" : {
-            "_0" : " module's data flow\"。</"
+            "_0" : "要用第三人称单"
           }
         },
         {
           "text" : {
-            "_0" : "fix><fix>\"from"
+            "_0" : "数 \"flows\"，并"
           }
         },
         {
           "text" : {
-            "_0" : " request come in\" 语法错"
+            "_0" : "用"
           }
         },
         {
           "text" : {
-            "_0" : "误："
+            "_0" : " \"through\" 表"
           }
         },
         {
           "text" : {
-            "_0" : "缺少定"
+            "_0" : "示流"
           }
         },
         {
           "text" : {
-            "_0" : "冠词，"
+            "_0" : "经模"
           }
         },
         {
           "text" : {
-            "_0" : "且主"
+            "_0" : "块。</fix><fix"
           }
         },
         {
           "text" : {
-            "_0" : "谓不"
+            "_0" : ">\"from request come in\" "
           }
         },
         {
           "text" : {
-            "_0" : "一致。应写成 \""
+            "_0" : "缺少 \""
           }
         },
         {
           "text" : {
-            "_0" : "from the mo"
+            "_0" : "when\" 和主"
           }
         },
         {
           "text" : {
-            "_0" : "ment the request comes in\" "
+            "_0" : "谓一致。"
           }
         },
         {
           "text" : {
-            "_0" : "或 \"from the incoming"
+            "_0" : "应为 \"from when the request"
           }
         },
         {
           "text" : {
-            "_0" : " request\"。</fix></f"
+            "_0" : " comes in\"，\""
           }
         },
         {
           "text" : {
-            "_0" : "ixes>"
+            "_0" : "the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " request\" 作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "主语需要 \"comes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"。原句像"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是直译自中文\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "请求进来"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 923,
-            "promptTokens" : 1150,
-            "reasoningTokens" : 513
+            "completionTokens" : 1111,
+            "promptTokens" : 1739,
+            "reasoningTokens" : 651
           }
         },
         {
@@ -426,6 +466,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

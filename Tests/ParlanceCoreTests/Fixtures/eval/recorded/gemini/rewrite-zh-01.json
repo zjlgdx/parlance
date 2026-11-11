@@ -14,23 +14,28 @@
         },
         {
           "text" : {
-            "_0" : "\n<gloss>调查为什么登录页面在 Safari 上显示白屏而在 Chrome 上工作正常。</gloss>\n<alts><"
+            "_0" : "\n<gloss>调查为什么登录页面在 Safari 上显示空白屏幕，而在 Chrome 上正常工作。</gloss>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "alt><text>Check why the login page results in a white screen on Safari compared to Chrome.</text><note>使用"
+            "_0" : "alts>\n<alt>\n<text>Diagnose the blank screen issue on Safari for the login page,"
           }
         },
         {
           "text" : {
-            "_0" : " results in a white screen 替代 shows a blank screen，表达更自然。</note></alt></alts>"
+            "_0" : " which does not occur on Chrome.</text>\n<note>使用 diagnose 替换 investigate，侧重于排查和诊断具体"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "问题。</note>\n</alt>\n</alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 98,
-            "promptTokens" : 836
+            "completionTokens" : 112,
+            "promptTokens" : 1282
           }
         },
         {
@@ -45,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

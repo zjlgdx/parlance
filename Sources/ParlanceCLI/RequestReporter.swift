@@ -40,7 +40,7 @@ public struct CLIRequestClock: Sendable {
 /// Known limit: in-stream errors carry mapped provider statuses (e.g. overloaded -> 529), even
 /// though the HTTP response that started the stream was 2xx.
 final class RequestReporter: Sendable {
-  enum Request: String { case fix, quick, vocab, domain }
+  enum Request: String { case fix, quick, document, vocab, domain }
   private struct State {
     var request: Request?
     var started: Duration = .zero
@@ -76,7 +76,17 @@ final class RequestReporter: Sendable {
       "effort=\(effort) thinking=\(thinking) first_text_timeout=\(provider.firstTextTimeout.components.seconds)"
   }
 
-  private static func safeField(_ value: String, key: String?) -> String {
+  /// A model outside the preset's profile table gets the minimal request, so thinking is not
+  /// lowered; a `[models."<id>"]` entry is the user's acknowledgement.
+  static func noteUnknownModel(_ provider: ResolvedProvider, environment: CLIEnvironment) {
+    guard !provider.isKnownModel, provider.override == nil else { return }
+    let model = safeField(provider.model, key: provider.apiKey)
+    environment.stderr(
+      "pl: model \(model) has no profile in preset \(provider.preset.id); the first token may be "
+        + "slow. Add [models.\"\(model)\"] to config.toml to configure it.\n")
+  }
+
+  static func safeField(_ value: String, key: String?) -> String {
     // A field with terminal controls is printed as a fixed marker: rewriting controls can split or
     // rebuild a secret, and real preset or model IDs never contain them. Redactor recognizes common
     // key formats; an arbitrary compatible-provider key also stays private.

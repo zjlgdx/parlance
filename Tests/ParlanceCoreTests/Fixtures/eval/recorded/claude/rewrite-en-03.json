@@ -9,57 +9,62 @@
         },
         {
           "text" : {
-            "_0" : "Explain why this function sometim"
+            "_0" : "Explain why this function returns null"
           }
         },
         {
           "text" : {
-            "_0" : "es returns null. I think it"
+            "_0" : " sometimes. I think it"
           }
         },
         {
           "text" : {
-            "_0" : " is because the cache is not "
+            "_0" : "'s because the cache isn't"
           }
         },
         {
           "text" : {
-            "_0" : "ready.</best>\n<g"
+            "_0" : " ready."
           }
         },
         {
           "text" : {
-            "_0" : "loss>解释一下为"
+            "_0" : "</best>\n<gloss"
           }
         },
         {
           "text" : {
-            "_0" : "什么这个函数有时"
+            "_0" : ">请解释为什么这"
           }
         },
         {
           "text" : {
-            "_0" : "会返回 null。我"
+            "_0" : "个函数有时会"
           }
         },
         {
           "text" : {
-            "_0" : "觉得是因为缓存"
+            "_0" : "返回 null。我认为"
           }
         },
         {
           "text" : {
-            "_0" : "还没准备好。</g"
+            "_0" : "是因为缓存还没"
           }
         },
         {
           "text" : {
-            "_0" : "loss>\n<alts>"
+            "_0" : "准备好。</gloss"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>Explain"
+            "_0" : ">\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Explain"
           }
         },
         {
@@ -79,122 +84,187 @@
         },
         {
           "text" : {
-            "_0" : ".</text><note>\""
+            "_0" : ".</text><note>把"
           }
         },
         {
           "text" : {
-            "_0" : "suspect\""
+            "_0" : "\""
           }
         },
         {
           "text" : {
-            "_0" : " 比 \"think\" 更"
+            "_0" : "有时\""
           }
         },
         {
           "text" : {
-            "_0" : "像"
+            "_0" : "放到"
           }
         },
         {
           "text" : {
-            "_0" : "是"
+            "_0" : "动词前，并把"
           }
         },
         {
           "text" : {
-            "_0" : "怀疑的语气，\""
+            "_0" : "\"我"
           }
         },
         {
           "text" : {
-            "_0" : "yet\" 强"
+            "_0" : "觉得\"改"
           }
         },
         {
           "text" : {
-            "_0" : "调"
+            "_0" : "成更"
           }
         },
         {
           "text" : {
-            "_0" : "缓存尚未就绪"
+            "_0" : "偏推"
           }
         },
         {
           "text" : {
-            "_0" : "。</note></alt><al"
+            "_0" : "测的\"I"
           }
         },
         {
           "text" : {
-            "_0" : "t><text>Explain why"
+            "_0" : " suspect\"，语气"
           }
         },
         {
           "text" : {
-            "_0" : " this function sometimes returns"
+            "_0" : "更接"
           }
         },
         {
           "text" : {
-            "_0" : " null; I think the cause is"
+            "_0" : "近原"
           }
         },
         {
           "text" : {
-            "_0" : " that the cache is not ready"
+            "_0" : "意"
           }
         },
         {
           "text" : {
-            "_0" : ".</text><note>用"
+            "_0" : "中"
           }
         },
         {
           "text" : {
-            "_0" : "分号把"
+            "_0" : "的"
           }
         },
         {
           "text" : {
-            "_0" : "两句合"
+            "_0" : "怀疑。</note></al"
           }
         },
         {
           "text" : {
-            "_0" : "并为一句，并"
+            "_0" : "t><alt><text>"
           }
         },
         {
           "text" : {
-            "_0" : "把"
+            "_0" : "Explain why this function returns null"
           }
         },
         {
           "text" : {
-            "_0" : "假设写"
+            "_0" : " sometimes."
           }
         },
         {
           "text" : {
-            "_0" : "成明"
+            "_0" : " Check whether the cache not"
           }
         },
         {
           "text" : {
-            "_0" : "确的 \"the cause\""
+            "_0" : " being ready is the cause."
           }
         },
         {
           "text" : {
-            "_0" : "，语气更正"
+            "_0" : "</text><note>把"
           }
         },
         {
           "text" : {
-            "_0" : "式。</note></alt></"
+            "_0" : "猜测改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成让"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "去"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "验证的指令，适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合你"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "希"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "望它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "先确认原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "因而不是直接接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "受你"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的判"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "断。</note></alt></"
           }
         },
         {
@@ -204,17 +274,32 @@
         },
         {
           "text" : {
-            "_0" : "><fix>\"why this function"
+            "_0" : "><fix>\""
           }
         },
         {
           "text" : {
-            "_0" : " return null\" 应为 \""
+            "_0" : "this function return"
           }
         },
         {
           "text" : {
-            "_0" : "why this function returns null\"："
+            "_0" : " null\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 应为 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"this function returns null\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "："
           }
         },
         {
@@ -224,94 +309,154 @@
         },
         {
           "text" : {
-            "_0" : "第三人称单数，"
+            "_0" : "单数第三人称，动"
           }
         },
         {
           "text" : {
-            "_0" : "动词需要"
+            "_0" : "词需要加"
           }
         },
         {
           "text" : {
-            "_0" : "加 s。</fix>"
+            "_0" : " -"
           }
         },
         {
           "text" : {
-            "_0" : "<fix>\"i think is because"
+            "_0" : "s。</"
           }
         },
         {
           "text" : {
-            "_0" : "\" 应为 \"I think"
+            "_0" : "fix><fix>\"i"
           }
         },
         {
           "text" : {
-            "_0" : " it is because\"：代"
+            "_0" : " think is because cache not ready"
           }
         },
         {
           "text" : {
-            "_0" : "词 I 需要"
+            "_0" : "\" 更"
           }
         },
         {
           "text" : {
-            "_0" : "大写，而"
+            "_0" : "自"
           }
         },
         {
           "text" : {
-            "_0" : "且 \"is because\" "
+            "_0" : "然的说"
           }
         },
         {
           "text" : {
-            "_0" : "缺少主语 it。</"
+            "_0" : "法是 \"I"
           }
         },
         {
           "text" : {
-            "_0" : "fix><fix>\"c"
+            "_0" : " think it's because the cache is"
           }
         },
         {
           "text" : {
-            "_0" : "ache not ready\" 应为"
+            "_0" : "n't ready\"：这"
           }
         },
         {
           "text" : {
-            "_0" : " \"the cache is not "
+            "_0" : "里是"
           }
         },
         {
           "text" : {
-            "_0" : "ready\"：缺少系动"
+            "_0" : "word"
           }
         },
         {
           "text" : {
-            "_0" : "词 is 和定冠"
+            "_0" : "-for-word的"
           }
         },
         {
           "text" : {
-            "_0" : "词 the。</fix></"
+            "_0" : "直译"
           }
         },
         {
           "text" : {
-            "_0" : "fixes>"
+            "_0" : "，缺少 \"it\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 位"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置不对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且缺少"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"the\" 和 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "isn't\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "否定结"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "构。</fix></fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 949,
-            "promptTokens" : 1150,
-            "reasoningTokens" : 546
+            "completionTokens" : 916,
+            "promptTokens" : 1739,
+            "reasoningTokens" : 501
           }
         },
         {
@@ -326,6 +471,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

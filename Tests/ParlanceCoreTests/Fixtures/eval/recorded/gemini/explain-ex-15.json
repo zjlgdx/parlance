@@ -9,73 +9,63 @@
         },
         {
           "text" : {
-            "_0" : ">已知限制，文档字符串中有记录：超时时只有 `/bin/sh` 被终止"
+            "_0" : ">已知限制，在 docstring 中有记录：超时时仅终止 `/bin/sh`。"
           }
         },
         {
           "text" : {
-            "_0" : "。它启动的辅助进程可能会比命令行工具（CLI）存活得更久，因为它故意留在前台进程组中，"
+            "_0" : "它启动的辅助程序可能会比 CLI 存活更久，因为该辅助程序刻意保留在前台进程"
           }
         },
         {
           "text" : {
-            "_0" : "这样通过 `/dev/tty` 提示的工具才能继续工作。</translation>\n\n<plain>这段文本解释了一个"
+            "_0" : "组中，以确保通过 `/dev/tty` 提示用户的工具能够继续正常工作。</translation>\n\n<plain>这段文字"
           }
         },
         {
           "text" : {
-            "_0" : "已知的程序限制：超时时只会杀死 shell 进程，而其启动的子进程可能会继续运行。</plain>\n\n<terms><"
+            "_0" : "解释了一个文档中记录的已知限制：当发生超时时，只有 `/bin/sh` 会被杀死，而它"
           }
         },
         {
           "text" : {
-            "_0" : "term><word>Known limit</word>\n<meaning>已知限制</meaning><here>已知限制</here></term"
+            "_0" : "启动的子进程可能会因为保持在前台进程组中而继续运行。</plain>\n\n<terms><term><word"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<term><word>docstring</word>\n<meaning>文档字符串</meaning><here>文档"
+            "_0" : ">docstring</word>\n<meaning>文档字符串，Python等语言中用于描述类、函数或模块的字符串"
           }
         },
         {
           "text" : {
-            "_0" : "字符串</here></term>\n<term><word>timeout</word>\n<meaning>超时</meaning><here>超时</"
+            "_0" : "</meaning><here>代码中的文档字符串，记录了该已知限制</here></term><term><word>"
           }
         },
         {
           "text" : {
-            "_0" : "here></term>\n<term><word>helper</word>\n<meaning>辅助程序，辅助进程</meaning><here"
+            "_0" : "foreground process group</word>\n<meaning>前台进程组，终端中可以直接接收键盘输入和信号的"
           }
         },
         {
           "text" : {
-            "_0" : ">辅助进程</here></term>\n<term><word>CLI</word>\n<meaning>命令行界面"
+            "_0" : "进程组</meaning><here>辅助程序刻意留在前台进程组中，以便与终端进行交互</here></term><"
           }
         },
         {
           "text" : {
-            "_0" : "，命令行工具</meaning><here>命令行工具</here></term>\n<term><word>foreground process group</word>\n<"
+            "_0" : "term><word>outlive</word>\n<meaning>比……活得长，比……存活时间"
           }
         },
         {
           "text" : {
-            "_0" : "meaning>前台进程组</meaning><here>前台进程组</here></term>\n<term><"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "word>/dev/tty</word>\n<meaning>控制终端设备文件</meaning><here>/dev/tty</here></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "term></terms>"
+            "_0" : "久</meaning><here>辅助程序的生命周期可能会比 CLI 更长</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 316,
-            "promptTokens" : 309
+            "completionTokens" : 274,
+            "promptTokens" : 581
           }
         },
         {
@@ -90,6 +80,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },
