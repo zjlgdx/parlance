@@ -1,0 +1,383 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not tou"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ch the migrations. Only"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix the failing test in the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " auth module.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要动"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "迁移文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件。只修"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复 auth 模块中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败的测试。</glo"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Don't"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " mod"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ify the migrations; just"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix the failing test in the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " auth module.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "留"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "了原文的口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气，用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缩写 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Don't\" 代替 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Do not\"，更接近"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "聊天式"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的指"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "令，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变。</note></alt><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Leave"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the migrations untouched and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fix only"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the failing test in the auth"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " module.</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Leave "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "... untouched\" 和 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix only\" 更正式地"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "强调范"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "围限制，适"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "合写进"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "任"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "务说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>原文没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要修改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的错"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "误。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "非"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式的写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法（p"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ls、dont、"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "全"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "小写）属于聊天"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "消"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "息的正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "常风格，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "此保留。</fix></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 695,
+            "promptTokens" : 1743,
+            "reasoningTokens" : 387
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "informal-en",
+    "id" : "inf-01",
+    "input" : "pls dont touch the migrations, just fix the failing test in the auth module"
+  }
+}

@@ -3,15 +3,6 @@
     {
       "events" : [
         {
-          "retrying" : {
-            "after" : {
-              "attoseconds" : 747000000000000000,
-              "seconds" : 0
-            },
-            "cause" : "rate_limit"
-          }
-        },
-        {
           "text" : {
             "_0" : "<translation"
           }
@@ -23,48 +14,43 @@
         },
         {
           "text" : {
-            "_0" : " and then triggering the cancellation token, delayed completion events from the old stream will be discarded because the generation numbers do not match.</translation>"
+            "_0" : " and then triggering the cancellation token, late completion events from the old stream are dropped due to a generation number mismatch.</translation>\n\n"
           }
         },
         {
           "text" : {
-            "_0" : "\n<plain>这句话解释了一个只在取消和完成操作同时发生时才会出现的竞态条件及其解决方法。</plain>\n<"
+            "_0" : "<plain>这段话解释了一种通过递增代际号和触发取消令牌来解决旧流迟到完成事件的竞"
           }
         },
         {
           "text" : {
-            "_0" : "terms><term><word>竞态</word>\n<meaning>竞态条件（Race Condition）</meaning><"
+            "_0" : "态条件的方法。</plain>\n\n<terms><term><word>race condition</word>\n<meaning>竞态"
           }
         },
         {
           "text" : {
-            "_0" : "here>多线程或异步编程中因执行顺序不确定而导致的问题</here></term>\n<term><word"
+            "_0" : "条件</meaning><here>多线程或异步操作中因执行顺序不当而导致的问题</here></term><term><word"
           }
         },
         {
           "text" : {
-            "_0" : ">取消令牌</word>\n<meaning>Cancellation Token</meaning><here>用于发出取消操作信号的对象</here></term>"
+            "_0" : ">generation number</word>\n<meaning>代际号</meaning><here>用于区分不同生命周期或版本流"
           }
         },
         {
           "text" : {
-            "_0" : "\n<term><word>代际号</word>\n<meaning>Generation number</meaning><here>用于"
+            "_0" : "的编号</here></term><term><word>cancellation token</word>\n<meaning>取消令牌</meaning><here>"
           }
         },
         {
           "text" : {
-            "_0" : "区分不同生命周期或版本的标识号</here></term>\n<term><word>流</word>\n<"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning>Stream</meaning><here>数据流或异步事件序列</here></term></terms>"
+            "_0" : "用于发出取消操作信号的对象</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 227,
-            "promptTokens" : 299
+            "completionTokens" : 196,
+            "promptTokens" : 571
           }
         },
         {
@@ -79,6 +65,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

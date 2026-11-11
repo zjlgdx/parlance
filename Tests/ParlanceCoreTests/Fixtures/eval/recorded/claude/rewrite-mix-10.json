@@ -14,187 +14,12 @@
         },
         {
           "text" : {
-            "_0" : "⟧ in ⟦"
+            "_0" : "⟧ in ⟦0"
           }
         },
         {
           "text" : {
-            "_0" : "0⟧ to read from"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " the environment variable "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦2⟧, defa"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ulting to 30 if it"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " is not set.</best>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<gloss>把 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦0⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " 里的 ⟦"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "1⟧ 改成"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "从环境变量 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦2⟧ "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "读取，未设置时默"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "认为 30。</glo"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ss>\n<alts>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>Update "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦0⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " so that ⟦1"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧ reads its value from"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " the environment variable "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦2⟧, falling"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " back to 30 when it is"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " unset.</text><note>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "明"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "确写"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "出改动目"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "标和回退逻辑"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "气更完"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "整，但"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "句子"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "更"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "长。</note></alt>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>In "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦0⟧, repl"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ace ⟦1"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧ with a read from the"
+            "_0" : "⟧ to read from the"
           }
         },
         {
@@ -204,89 +29,189 @@
         },
         {
           "text" : {
-            "_0" : "2⟧, using 30"
+            "_0" : "2⟧, defaul"
           }
         },
         {
           "text" : {
-            "_0" : " as the default when the variable"
+            "_0" : "ting to 30 if it is"
           }
         },
         {
           "text" : {
-            "_0" : " is not set.</text><note"
+            "_0" : " not set.</best>\n<"
           }
         },
         {
           "text" : {
-            "_0" : ">用"
+            "_0" : "gloss>把 "
           }
         },
         {
           "text" : {
-            "_0" : " replace 强"
+            "_0" : "⟦0⟧ "
           }
         },
         {
           "text" : {
-            "_0" : "调是"
+            "_0" : "里的 ⟦1"
           }
         },
         {
           "text" : {
-            "_0" : "替换原有的写"
+            "_0" : "⟧ 改成从"
           }
         },
         {
           "text" : {
-            "_0" : "死"
+            "_0" : "环境变量 "
           }
         },
         {
           "text" : {
-            "_0" : "值，适"
+            "_0" : "⟦2⟧ 读"
           }
         },
         {
           "text" : {
-            "_0" : "合想"
+            "_0" : "取"
           }
         },
         {
           "text" : {
-            "_0" : "突"
+            "_0" : "，未"
           }
         },
         {
           "text" : {
-            "_0" : "出改动性"
+            "_0" : "设置时默认为 30"
           }
         },
         {
           "text" : {
-            "_0" : "质"
+            "_0" : "。</gloss>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "的场"
+            "_0" : "alts><alt><"
           }
         },
         {
           "text" : {
-            "_0" : "合。</note></alt></"
+            "_0" : "text>Make ⟦"
           }
         },
         {
           "text" : {
-            "_0" : "alts>"
+            "_0" : "1⟧ in "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ read"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " from the env"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " var ⟦2"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧; if it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is unset, fall back to"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 30.</text><note>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 \"env var\" 代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "替 \"environment variable\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更简短"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“fall back to 30”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "和"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "文的“默"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "认 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "30”意思相"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "同。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "</note></alt></alts"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 865,
-            "promptTokens" : 1374,
-            "reasoningTokens" : 532
+            "completionTokens" : 602,
+            "promptTokens" : 1963,
+            "reasoningTokens" : 357
           }
         },
         {
@@ -301,14 +226,16 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },
     "fallback" : false,
     "sectionsComplete" : true,
     "strictRetryUsed" : false,
-    "termPasses" : 3,
-    "termVersions" : 3
+    "termPasses" : 2,
+    "termVersions" : 2
   },
   "model" : "claude-haiku-5-5",
   "preset" : "claude",

@@ -4,207 +4,12 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best"
+            "_0" : "<best>"
           }
         },
         {
           "text" : {
-            "_0" : ">"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Run ⟦0"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧, which f"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ails with ⟦1"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧. Check whether the"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " paths option in tsconf"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ig is misconfigured."
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</best>\n<gloss"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">运"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "行 ⟦0"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧，报错 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦1⟧。检"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "查 tsconfig "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "的 paths 选"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "项是否配错了。</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "gloss>\n<alts"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><alt><text>Run"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " ⟦0⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ", which errors with "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦1⟧. Check"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " whether the paths setting in"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " tsconfig is miscon"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "figured.</text><note"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "报"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "错\"译"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "成 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "errors，把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\"pa"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ths\"译成 set"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ting，语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "气更接近技术说明"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "指"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "向的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "仍是同"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "一个配置项。</note"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "></alt><alt><text"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">Running ⟦0"
+            "_0" : "Running ⟦0"
           }
         },
         {
@@ -214,104 +19,264 @@
         },
         {
           "text" : {
-            "_0" : "⟦1⟧."
+            "_0" : "⟦1⟧. Check"
           }
         },
         {
           "text" : {
-            "_0" : " Check whether t"
+            "_0" : " whether the tsconfig"
           }
         },
         {
           "text" : {
-            "_0" : "sconfig's paths m"
+            "_0" : " paths are misconfigured"
           }
         },
         {
           "text" : {
-            "_0" : "apping is wrong.</"
+            "_0" : ".</best>\n<glo"
           }
         },
         {
           "text" : {
-            "_0" : "text><note>用"
+            "_0" : "ss>运行 "
           }
         },
         {
           "text" : {
-            "_0" : " mapping 指"
+            "_0" : "⟦0⟧ 时"
           }
         },
         {
           "text" : {
-            "_0" : "代 paths 的作"
+            "_0" : "报错 ⟦1"
           }
         },
         {
           "text" : {
-            "_0" : "用，更具体"
+            "_0" : "⟧。检查 t"
           }
         },
         {
           "text" : {
-            "_0" : "，但把"
+            "_0" : "sconfig 的 pa"
           }
         },
         {
           "text" : {
-            "_0" : "\"配"
+            "_0" : "ths 是否配置错误"
           }
         },
         {
           "text" : {
-            "_0" : "错了"
+            "_0" : "。</gloss>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "\"改成了\"mapping"
+            "_0" : "alts><"
           }
         },
         {
           "text" : {
-            "_0" : " is wrong\"，判"
+            "_0" : "alt><text>Running "
           }
         },
         {
           "text" : {
-            "_0" : "断的"
+            "_0" : "⟦0⟧"
           }
         },
         {
           "text" : {
-            "_0" : "语气略"
+            "_0" : " fails with error ⟦"
           }
         },
         {
           "text" : {
-            "_0" : "强"
+            "_0" : "1⟧. Check wh"
           }
         },
         {
           "text" : {
-            "_0" : "。"
+            "_0" : "ether the paths setting in t"
           }
         },
         {
           "text" : {
-            "_0" : "</note></alt></alts"
+            "_0" : "sconfig is wrong"
           }
         },
         {
           "text" : {
-            "_0" : ">"
+            "_0" : ".</text><note>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "错了\"写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "成具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体的 pa"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ths "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "配"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "置项，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更明确，指向"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "同"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一个检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查对"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "象。</note></alt><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Running "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " throws ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧. Check whether the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " paths in tsconfig"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " are misconfigured.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>用 throws"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 代替 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fails with"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "贴近技术文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "档里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "描"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "述报错的习惯说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 922,
-            "promptTokens" : 1354,
-            "reasoningTokens" : 590
+            "completionTokens" : 903,
+            "promptTokens" : 1943,
+            "reasoningTokens" : 597
           }
         },
         {
@@ -326,6 +291,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,72 +9,52 @@
         },
         {
           "text" : {
-            "_0" : ">信号掩码重置是正确的。它通过 `POSIX_SPAWN_SETSIGMASK"
+            "_0" : ">该信号掩码重置是正确的。它使用 `POSIX_SPAWN"
           }
         },
         {
           "text" : {
-            "_0" : "` 设置了一个空掩码；失败路径会关闭所有六个描述符，并且 `destroy` 只有在"
+            "_0" : "_SETSIGMASK` 设置了一个空掩码；失败路径会关闭所有六个描述符，并且 `destroy"
           }
         },
         {
           "text" : {
-            "_0" : " `init` 成功后才会注册。如果没有它，从 GCD 工作线程派生的辅助进程将继承被阻塞的 SIG"
+            "_0" : "` 仅在 `init` 成功后才注册。如果没有它，从 GCD 工作线程派生的辅助线程"
           }
         },
         {
           "text" : {
-            "_0" : "TERM 和 SIGINT。</translation>\n\n<plain>这段话解释了一处代码修改的正确性，即它确保了生成的"
+            "_0" : "将继承被阻塞的 SIGTERM 和 SIGINT。</translation>\n\n<plain>这段话解释了一段代码中信号"
           }
         },
         {
           "text" : {
-            "_0" : "子进程不会意外继承被阻塞的信号。</plain>\n\n<terms><term><word>signal-mask</"
+            "_0" : "掩码重置的正确性及其防止子线程继承不当信号阻塞的作用。</plain>\n\n<terms><"
           }
         },
         {
           "text" : {
-            "_0" : "word>\n<meaning>信号掩码</meaning><here>信号掩码</here></term>\n<term><word"
+            "_0" : "term><word>signal-mask</word>\n<meaning>信号掩码</meaning><here>进程或线程用来"
           }
         },
         {
           "text" : {
-            "_0" : ">POSIX_SPAWN_SETSIGMASK</word>\n<meaning>POSIX 进程衍生设置信号掩码"
+            "_0" : "阻塞或解除阻塞特定信号的掩码</here></term><term><word>POSIX_SPAWN_SETSIGMASK</word"
           }
         },
         {
           "text" : {
-            "_0" : "标志</meaning><here>POSIX 进程衍生设置信号掩码标志</here></term>\n<term><"
+            "_0" : ">\n<meaning>POSIX 进程衍生设置信号掩码标志</meaning><here>用于在 `posix_spawn"
           }
         },
         {
           "text" : {
-            "_0" : "word>failure path</word>\n<meaning>失败路径</meaning><here>错误处理的分支路径</here></term"
+            "_0" : "` 期间设置新进程信号掩码的标志</here></term><term><word>GCD worker thread</word"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<term><word>descriptors</word>\n<meaning>描述符</meaning><here>文件描述"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "符</here></term>\n<term><word>GCD worker thread</word>\n<meaning>GCD 工作"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "线程</meaning><here>Grand Central Dispatch 工作线程</here></term>\n<term><word>SIGTERM</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "word>\n<meaning>终止信号</meaning><here>终止信号 SIGTERM</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "SIGINT</word>\n<meaning>中断信号</meaning><here>中断信号 SIGINT</here></term"
+            "_0" : ">\n<meaning>GCD 工作线程</meaning><here>Grand Central Dispatch 分派队列所使用的工作线程</here></term"
           }
         },
         {
@@ -84,8 +64,8 @@
         },
         {
           "usage" : {
-            "completionTokens" : 355,
-            "promptTokens" : 323
+            "completionTokens" : 253,
+            "promptTokens" : 595
           }
         },
         {
@@ -100,6 +80,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

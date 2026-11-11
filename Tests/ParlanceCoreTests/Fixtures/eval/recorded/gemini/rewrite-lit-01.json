@@ -1,0 +1,77 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Review the code and provide feedback on the naming conventions.</best>\n<gloss>审"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "阅代码并就命名规范提供反馈。</gloss>\n<alts><alt><text>Review the code and suggest improvements"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " for identifier names.</text><note>identifier names 更精确地指代代码中的标识符（变量、函数等"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "）命名。</note></alt></alts>\n<fixes><fix>\"give me some opinions about\" 是中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式英语直译，更自然的表达是 \"provide feedback on\" 或 \"suggest improvements for\"。</fix></fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 120,
+            "promptTokens" : 1282
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-01",
+    "input" : "Please do a review for my code and give me some opinions about the naming."
+  }
+}

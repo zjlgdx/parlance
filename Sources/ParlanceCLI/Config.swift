@@ -51,6 +51,7 @@ public struct Config: AsyncParsableCommand {
         source(config.nativeLanguage != nil))
       show("tone", config.tone ?? "agent", source(config.tone != nil))
       show("fixes", String(config.fixes ?? true), source(config.fixes != nil))
+      show("mode", config.mode ?? "polish", source(config.mode != nil))
       show("model", resolved.model, source(entry?.model != nil))
       show(
         "effort", resolved.effortFromExtraBody ? "<set>" : resolved.effectiveEffort,

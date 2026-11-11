@@ -1,0 +1,102 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Investigate and explain the reason for the following error encountered when running the sync script:\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Traceback (most recent call last):\n  File \"⟦0⟧\", line 42, in <module"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n    main()\n⟦1⟧: '⟦2⟧'</best>\n<gloss>调查并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "解释运行同步脚本时遇到以下错误的愿意：\nTraceback (most recent call last):\n  File \"⟦0⟧\", line "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "42, in <module>\n    main()\n⟦1⟧: '⟦2⟧'</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt><text>Determine why running the sync script produces this error:\nTraceback (most"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " recent call last):\n  File \"⟦0⟧\", line 42, in <module>\n    main"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "()\n⟦1⟧: '⟦2⟧'</text><note>使用 Determine 比 Investigate 更直接，适合"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查找错误原因的场景</note></alt></alts>\n<fixes><fix>将 \"when run\" 改为 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "when running\"，因为 when 引导时间状语从句或分词短语作状语时，动词应用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动名词形式 running。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 256,
+            "promptTokens" : 1454
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "log-en",
+    "id" : "log-03",
+    "input" : "Got this when run the sync script:\nTraceback (most recent call last):\n  File \"scripts/sync.py\", line 42, in <module>\n    main()\nKeyError: 'user_id'\nCan you find the reason?"
+  }
+}

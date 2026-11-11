@@ -9,73 +9,68 @@
         },
         {
           "text" : {
-            "_0" : ">This refactoring moved the retry logic from the UI layer to the provider layer, and"
+            "_0" : ">This refactoring moved the retry logic from the UI layer to the provider layer,"
           }
         },
         {
           "text" : {
-            "_0" : " the UI is now only responsible for displaying the state. The advantage is that there is only one retry strategy, while the disadvantage is that the"
+            "_0" : " and the UI is only responsible for displaying the state. The advantage is that there is only one retry policy, and the disadvantage is that"
           }
         },
         {
           "text" : {
-            "_0" : " UI cannot get the details of each retry, which would require adding a callback if needed.</translation>\n\n<plain>这段"
+            "_0" : " the UI cannot get the details of each retry, and needs to add a callback if needed.</translation>\n\n<plain>"
           }
         },
         {
           "text" : {
-            "_0" : "话解释了一次代码重构，将重试逻辑从UI层移到了provider层，分析了这种做法"
+            "_0" : "这段话解释了一次代码重构，即将重试逻辑从界面层移至提供者层带来的优缺点。</"
           }
         },
         {
           "text" : {
-            "_0" : "的利弊。</plain>\n\n<terms><term><word>重构</word><meaning>refactoring</"
+            "_0" : "plain>\n\n<terms><term><word>refactoring</word>\n<ipa>ˌriːˈfæ"
           }
         },
         {
           "text" : {
-            "_0" : "meaning><here>对代码结构进行调整以改善其可维护性和设计</here></term><term><word>"
+            "_0" : "ktərɪŋ</ipa>\n<meaning>重构</meaning><here>指对代码进行重新组织和"
           }
         },
         {
           "text" : {
-            "_0" : "重试逻辑</word><meaning>retry logic</meaning><here>程序在操作失败时重新尝试执行的逻辑"
+            "_0" : "结构调整，而不改变外部行为的过程</here></term>\n<term><word>retry logic</word>"
           }
         },
         {
           "text" : {
-            "_0" : "</here></term><term><word>UI 层</word><meaning>UI layer</meaning><here>用户界面"
+            "_0" : "\n<ipa>riːˈtraɪ ˈlɒdʒɪk</ipa>\n<meaning>重"
           }
         },
         {
           "text" : {
-            "_0" : "层，负责展示和与用户交互</here></term><term><word>provider 层</word><meaning>"
+            "_0" : "试逻辑</meaning><here>指在操作失败时自动重新尝试执行的程序逻辑</here></term>"
           }
         },
         {
           "text" : {
-            "_0" : "provider layer</meaning><here>提供数据或业务逻辑的管理层</here></term><term><word>重试策略</word><"
+            "_0" : "\n<term><word>provider layer</word>\n<ipa>prəˈvaɪdər ˈleɪər"
           }
         },
         {
           "text" : {
-            "_0" : "meaning>retry strategy</meaning><here>关于如何以及何时进行重试的规则</here></term><term><"
+            "_0" : "</ipa>\n<meaning>提供者层</meaning><here>指架构中负责管理状态和业务逻辑"
           }
         },
         {
           "text" : {
-            "_0" : "word>回调</word><meaning>callback</meaning><here>作为参数传递并在特定事件发生时执行的函数</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "here></term></terms>"
+            "_0" : "的层级</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 306,
-            "promptTokens" : 307
+            "completionTokens" : 279,
+            "promptTokens" : 579
           }
         },
         {
@@ -90,6 +85,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

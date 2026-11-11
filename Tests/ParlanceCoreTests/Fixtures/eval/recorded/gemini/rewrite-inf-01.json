@@ -1,0 +1,77 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Do not modify migrations. Fix the failing test in the auth module.</best>\n"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "<gloss>请勿修改迁移。修复 auth 模块中失败的测试。</gloss>\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Leave migrations untouched and fix the failing test in the auth module.</text><note>\"Leave untouched\" 比"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"do not touch\" 更地道。</note></alt></alts>\n<fixes><fix>将 \"pls dont\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 规范为祈使句 \"Do not\"（尽管原文的不规范为有意为之，此处主要针对语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气的调整）。</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 128,
+            "promptTokens" : 1281
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "informal-en",
+    "id" : "inf-01",
+    "input" : "pls dont touch the migrations, just fix the failing test in the auth module"
+  }
+}

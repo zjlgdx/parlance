@@ -9,107 +9,97 @@
         },
         {
           "text" : {
-            "_0" : " six items have"
+            "_0" : " six items have been fixed,"
           }
         },
         {
           "text" : {
-            "_0" : " been fixed, and"
+            "_0" : " and only the working tree was"
           }
         },
         {
           "text" : {
-            "_0" : " only the working tree was modified"
+            "_0" : " mod"
           }
         },
         {
           "text" : {
-            "_0" : ". Unified emp"
+            "_0" : "ified. Unified empty-"
           }
         },
         {
           "text" : {
-            "_0" : "ty-"
+            "_0" : "check: `KeySources."
           }
         },
         {
           "text" : {
-            "_0" : "value checking"
+            "_0" : "hasEnvironment"
           }
         },
         {
           "text" : {
-            "_0" : ": `KeySources.h"
+            "_0" : "Key` is shared by autom"
           }
         },
         {
           "text" : {
-            "_0" : "asEnvironmentK"
+            "_0" : "atic prov"
           }
         },
         {
           "text" : {
-            "_0" : "ey` is shared by autom"
+            "_0" : "ider selection, HTTP"
           }
         },
         {
           "text" : {
-            "_0" : "atic vendor selection,"
+            "_0" : " checks, key retrieval"
           }
         },
         {
           "text" : {
-            "_0" : " HTTP checks, key"
+            "_0" : ", and status; SSH vari"
           }
         },
         {
           "text" : {
-            "_0" : " retrieval, and status"
+            "_0" : "ables are still judged by \"pres"
           }
         },
         {
           "text" : {
-            "_0" : "; SSH variables are still"
+            "_0" : "ence.\""
           }
         },
         {
           "text" : {
-            "_0" : " judged by wh"
+            "_0" : "</translation>"
           }
         },
         {
           "text" : {
-            "_0" : "ether they exist.</translation"
+            "_0" : "\n<plain>六"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<plain>这"
+            "_0" : "个问题都已修复，"
           }
         },
         {
           "text" : {
-            "_0" : "段话说明六个"
+            "_0" : "改动只保"
           }
         },
         {
           "text" : {
-            "_0" : "问题已修复，且"
+            "_0" : "存在本地工作区（"
           }
         },
         {
           "text" : {
-            "_0" : "只改动了工作树，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "并把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "环"
+            "_0" : "尚未提交）；环"
           }
         },
         {
@@ -119,32 +109,37 @@
         },
         {
           "text" : {
-            "_0" : "Key 的判空逻"
+            "_0" : "Key 的判空"
           }
         },
         {
           "text" : {
-            "_0" : "辑统一到 "
+            "_0" : "逻辑已"
           }
         },
         {
           "text" : {
-            "_0" : "`KeySources.has"
+            "_0" : "统一到 `KeyS"
           }
         },
         {
           "text" : {
-            "_0" : "EnvironmentKey"
+            "_0" : "ources.hasEnviron"
           }
         },
         {
           "text" : {
-            "_0" : "`，而 SSH "
+            "_0" : "mentKey`，而 "
           }
         },
         {
           "text" : {
-            "_0" : "变量仍只"
+            "_0" : "SSH 变量仍"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "只"
           }
         },
         {
@@ -154,107 +149,137 @@
         },
         {
           "text" : {
-            "_0" : "断是"
+            "_0" : "断是否存在。</pl"
           }
         },
         {
           "text" : {
-            "_0" : "否存在。</plain>"
+            "_0" : "ain>\n<terms><term"
           }
         },
         {
           "text" : {
-            "_0" : "\n<terms><term><word"
+            "_0" : "><word>working tree</word"
           }
         },
         {
           "text" : {
-            "_0" : ">working tree</word><me"
+            "_0" : ">\n<ipa>/"
           }
         },
         {
           "text" : {
-            "_0" : "aning>工作树"
+            "_0" : "ˈwɜːr"
           }
         },
         {
           "text" : {
-            "_0" : "，指"
+            "_0" : "kɪŋ triː"
           }
         },
         {
           "text" : {
-            "_0" : " "
+            "_0" : "/</ipa>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "Git "
+            "_0" : "meaning>工作树"
           }
         },
         {
           "text" : {
-            "_0" : "仓库中实"
+            "_0" : "（Git"
           }
         },
         {
           "text" : {
-            "_0" : "际可"
+            "_0" : " 中"
           }
         },
         {
           "text" : {
-            "_0" : "编辑的文件目"
+            "_0" : "检出"
           }
         },
         {
           "text" : {
-            "_0" : "录，区"
+            "_0" : "文件、"
           }
         },
         {
           "text" : {
-            "_0" : "别于已"
+            "_0" : "可"
           }
         },
         {
           "text" : {
-            "_0" : "暂存或已"
+            "_0" : "直"
           }
         },
         {
           "text" : {
-            "_0" : "提交的内容。</me"
+            "_0" : "接编辑但"
           }
         },
         {
           "text" : {
-            "_0" : "aning><here>表"
+            "_0" : "尚未提交的目"
           }
         },
         {
           "text" : {
-            "_0" : "示这"
+            "_0" : "录状"
           }
         },
         {
           "text" : {
-            "_0" : "次修复只改动了本"
+            "_0" : "态）</meaning><"
           }
         },
         {
           "text" : {
-            "_0" : "地文"
+            "_0" : "here>指"
           }
         },
         {
           "text" : {
-            "_0" : "件，没"
+            "_0" : "修"
           }
         },
         {
           "text" : {
-            "_0" : "有暂存或提交。"
+            "_0" : "改只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "落在本地文"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "件里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，还"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "没有 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "commit 或推"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "送。"
           }
         },
         {
@@ -264,62 +289,57 @@
         },
         {
           "text" : {
-            "_0" : ">null"
+            "_0" : ">empty check</word>"
           }
         },
         {
           "text" : {
-            "_0" : " check</word><meaning>"
+            "_0" : "\n<me"
           }
         },
         {
           "text" : {
-            "_0" : "判"
+            "_0" : "aning>判空，"
           }
         },
         {
           "text" : {
-            "_0" : "空，"
+            "_0" : "检查某"
           }
         },
         {
           "text" : {
-            "_0" : "检"
+            "_0" : "个值是否为空或未"
           }
         },
         {
           "text" : {
-            "_0" : "查变"
+            "_0" : "设置</"
           }
         },
         {
           "text" : {
-            "_0" : "量是否为空或无效"
+            "_0" : "meaning><here>指统"
           }
         },
         {
           "text" : {
-            "_0" : "值的"
+            "_0" : "一判断环"
           }
         },
         {
           "text" : {
-            "_0" : "操作。</meaning>"
+            "_0" : "境变量 Key 是"
           }
         },
         {
           "text" : {
-            "_0" : "<here>这"
+            "_0" : "否有值的"
           }
         },
         {
           "text" : {
-            "_0" : "里指把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "多"
+            "_0" : "逻辑，多"
           }
         },
         {
@@ -329,189 +349,34 @@
         },
         {
           "text" : {
-            "_0" : "分"
+            "_0" : "功"
           }
         },
         {
           "text" : {
-            "_0" : "散的判空逻辑"
+            "_0" : "能共用同"
           }
         },
         {
           "text" : {
-            "_0" : "统一成同"
+            "_0" : "一个判断函"
           }
         },
         {
           "text" : {
-            "_0" : "一个函数处"
+            "_0" : "数。</here></term></ter"
           }
         },
         {
           "text" : {
-            "_0" : "理。</here></term><term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><word>hasEnv"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ironmentKey</word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<meaning>检"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "查环"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "境变"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "量中是否存在 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Key 的方法名"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "。</meaning><here>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "自"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "动选商、HTTP"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " 检查、取 Key"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " 和 status 都共"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "用这一"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "个"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "判断。"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</here></term><term><word"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">SSH</word><me"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "aning>安"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "全外"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "壳协议，用于加"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "密远程连接的网络"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "协议。</meaning>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<here>此处 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "SSH 变量没"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "有改"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "用"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "统一判空"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "仍按“存在”来"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "判断。</here></term></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "terms>"
+            "_0" : "ms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 878,
-            "promptTokens" : 441,
-            "reasoningTokens" : 360
+            "completionTokens" : 928,
+            "promptTokens" : 809,
+            "reasoningTokens" : 539
           }
         },
         {
@@ -526,6 +391,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

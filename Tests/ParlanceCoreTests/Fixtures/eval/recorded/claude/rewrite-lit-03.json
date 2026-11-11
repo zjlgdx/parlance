@@ -1,0 +1,288 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Rename this function to a clear"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "er name, and open the debug"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " log.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>把这个函数"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重命名为更清晰"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的名字，并打开调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "试日志。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Give this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " function a clearer name,"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " then open the debug log.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接，\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "give"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "... a clearer name\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "强"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "调为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "函数起"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一个更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "清"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "楚的名字，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "与原"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "致。</note></alt><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>The function name"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " is unclear: rename it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to something clearer, then open"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the debug log.</text><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note>先说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明问"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "题（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "名"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "字不清楚），再给"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "出操"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作，适合需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要说明原因的场"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "景。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"change a name"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " for it\" 是逐字"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "翻译的说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法，更自然的表达"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是 \"rename it\"（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "重命名它）。</f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 738,
+            "promptTokens" : 1742,
+            "reasoningTokens" : 468
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-03",
+    "input" : "This function's name is not clear, please change a name for it and open the debug log."
+  }
+}

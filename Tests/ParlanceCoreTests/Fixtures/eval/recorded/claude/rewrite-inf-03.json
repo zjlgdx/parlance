@@ -1,0 +1,378 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Looks good. Merge it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " once CI passes, and no"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " need to notify me.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>看"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "起来不错。CI "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "通过后合并，不用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "通知我。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>Looks"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " good. Merge it"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " once"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " CI passes;"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " no need to ping me.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>保"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "留了"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文的口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气，\"ping me\"直"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "接"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "沿用原文表"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "达，意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 相同，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "只是更随"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt><al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "t><text>Looks good"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ". Merge it after CI"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " passes, without notifying me"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ".</text><note>用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"without notifying me\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "代替 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\"no need to not"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ify me\"，语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更正式，适合书"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面记"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "录；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "含"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "义不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "变。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"mer"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ge it after ci pass\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 中"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"ci\" 应写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "作 \"CI\"（"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "缩写要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "大写），\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "pass\" 应"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"passes\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，因"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 \""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ci pass\" 作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为完"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "整子句时需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要第"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "三人称单数动词变"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "位。更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "自然的写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法是 \"after CI pass"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es\"。</fix></f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 960,
+            "promptTokens" : 1741,
+            "reasoningTokens" : 623
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 3,
+    "termVersions" : 3
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "informal-en",
+    "id" : "inf-03",
+    "input" : "ok looks good. merge it after ci pass, no need to ping me"
+  }
+}

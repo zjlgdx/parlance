@@ -1,0 +1,72 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Rename this unclear function and enable the debug log.</best>\n<gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">重命名这个含义不明的函数并启用调试日志。</gloss>\n<alts><alt><text>Rename this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ambiguous function and enable the debug log.</text><note>ambiguous 比 unclear 更精准地表达了函数名含义"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "不清晰的意思</note></alt></alts>\n<fixes><fix>“change a name for it” 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "中式英语，应改为更地道的 “rename this unclear function”</fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 113,
+            "promptTokens" : 1287
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-03",
+    "input" : "This function's name is not clear, please change a name for it and open the debug log."
+  }
+}

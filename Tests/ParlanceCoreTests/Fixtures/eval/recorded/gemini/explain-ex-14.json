@@ -9,78 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">两个测试断言过于薄弱，未能捕获到一次回归：语法错误的情况"
+            "_0" : ">有两个测试断言太弱了，以至于无法捕捉到回归错误"
           }
         },
         {
           "text" : {
-            "_0" : "仅检查是否出现了“line”和“column”这两个词，而自动选择的情况则从未断言究竟解析出了"
+            "_0" : "：语法错误的情况仅检查是否出现了“line”和“column”这两个词，而自动选择的情况从未断言解析"
           }
         },
         {
           "text" : {
-            "_0" : "哪个键。我收紧了这两项断言，并确认在回退该行为时两者都会失败。</translation>\n\n"
+            "_0" : "出了哪个键。我收紧了这两个断言，并确认当行为恢复时它们都会失败。</translation>\n"
           }
         },
         {
           "text" : {
-            "_0" : "<plain>这段文字解释了作者如何通过强化两个不够严格的测试断言来防止代码回归，并"
+            "_0" : "<plain>这句话解释了作者如何通过强化两个过于宽松的测试断言来修复未被发现的代码回归问题。</plain>"
           }
         },
         {
           "text" : {
-            "_0" : "验证了修改的有效性。</plain>\n\n<terms><term><word>test assertions</word>\n<meaning>测试断"
+            "_0" : "\n<terms><term><word>test assertion</word>\n<meaning>测试断言</meaning><here>代码"
           }
         },
         {
           "text" : {
-            "_0" : "言</meaning><here>测试代码中用于检查结果是否符合预期的判断语句</here></term>\n<term><"
+            "_0" : "中用于验证测试结果是否符合预期的判断语句</here></term><term><word>regression</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "word>regression</word>\n<meaning>软件回归（指原本正常的功能因代码修改而失效）</meaning><here>"
+            "_0" : "meaning>回归（指软件修改后旧功能失效的错误）</meaning><here>代码更新后意外重新出现或未"
           }
         },
         {
           "text" : {
-            "_0" : "代码修改导致旧错误复发的情况</here></term>\n<term><word>syntax-error case</word"
+            "_0" : "被捕获的错误</here></term><term><word>auto-selection</word>\n<meaning>自动选择</"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<meaning>语法错误用例</meaning><here>测试语法错误处理分支的场景</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\n<term><word>auto-selection case</word>\n<meaning>自动选择用例</meaning"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><here>测试自动选择机制的场景</here></term>\n<term><word>tightened</word>\n<"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning>收紧，强化</meaning><here>指使测试断言变得更加严格</here></term>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<term><word>reverted</word>\n<meaning>恢复，回退</meaning><here>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "指撤销代码修改，恢复到之前的状态</here></term></terms>"
+            "_0" : "meaning><here>系统中自动确定或匹配特定选项（如键）的逻辑</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 346,
-            "promptTokens" : 313
+            "completionTokens" : 227,
+            "promptTokens" : 585
           }
         },
         {
@@ -95,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,43 +9,38 @@
         },
         {
           "text" : {
-            "_0" : ">Add a retry mechanism in ⟦0⟧, targeting only 5xx errors,"
+            "_0" : ">Add a retry mechanism in ⟦0⟧, retrying only on 5xx errors up"
           }
         },
         {
           "text" : {
-            "_0" : " up to 3 attempts, using exponential backoff.</best>\n<gloss>在 ⟦0⟧ 里加个 retry，只"
+            "_0" : " to 3 times with exponential backoff.</best>\n<gloss>在 ⟦0⟧ 里加个重"
           }
         },
         {
           "text" : {
-            "_0" : "对 5xx 重试，最多 3 次，用 exponential backoff。</gloss>\n<alts><"
+            "_0" : "试，仅对 5xx 错误重试最多 3 次，使用指数退避。</gloss>\n<al"
           }
         },
         {
           "text" : {
-            "_0" : "alt><text>Implement exponential backoff retry logic in ⟦0⟧ for 5xx errors, with a maximum of 3 attempts"
+            "_0" : "ts><alt><text>Implement a retry with exponential backoff in ⟦0⟧, limited to 3 attempts"
           }
         },
         {
           "text" : {
-            "_0" : ".</text><note>使用更符合命令式风格的动词 Implement，并调整了语序。</note></alt></al"
+            "_0" : " and strictly for 5xx status codes.</text><note>用词更符合英文技术指令的习惯，表"
           }
         },
         {
           "text" : {
-            "_0" : "ts>\n<fixes><fix>输入为中文，属于 Case A，不需要 fixes 段落。</fix></fixes"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">"
+            "_0" : "述更为严密。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 152,
-            "promptTokens" : 962
+            "completionTokens" : 132,
+            "promptTokens" : 1408
           }
         },
         {
@@ -60,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

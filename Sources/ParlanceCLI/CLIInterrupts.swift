@@ -40,6 +40,7 @@ final class CLIInterruptHandler: Sendable {
     var token: LLMCancellation?
     var received: UInt = 0
     var interrupted = false
+    var cancelled = false
     var completed = false
   }
   private let state: OSAllocatedUnfairLock<State>
@@ -83,6 +84,16 @@ final class CLIInterruptHandler: Sendable {
     }
   }
 
+  /// Closes registration and cancels the active request when a watcher loses its input file.
+  func cancelOperations() {
+    let token = state.withLock {
+      $0.completed = true
+      $0.cancelled = true
+      return $0.token
+    }
+    token?.cancel()
+  }
+
   func endOperation() { state.withLock { $0.token = nil } }
 
   /// Commits the command's terminal outcome before output. Later signals cannot change it; a
@@ -95,6 +106,8 @@ final class CLIInterruptHandler: Sendable {
       return $0.interrupted
     }
   }
+
+  var isCancelled: Bool { state.withLock { $0.interrupted || $0.cancelled } }
 
   var isInterrupted: Bool { state.withLock { $0.interrupted } }
 

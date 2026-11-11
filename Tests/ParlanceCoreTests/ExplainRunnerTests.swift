@@ -91,7 +91,8 @@ struct ExplainWindowTests {
   @Test(arguments: [ExplainSubject.InputRedaction.redact, .keep])
   func originalWindowsAndPEMMatrix(_ policy: ExplainSubject.InputRedaction) async throws {
     for fixture in try Self.fixtures() {
-      let provider = MockProvider(scripts: [explainSteps()])
+      // Path and shell fixtures now require command parts; ordinary quick ignores that section.
+      let provider = MockProvider(scripts: [explainSteps(commandReply)])
       let result = try await quickResult(
         subject: ExplainSubject(
           input: fixture.input, context: fixture.context, inputRedaction: policy),
@@ -148,6 +149,33 @@ struct ExplainWindowTests {
 }
 
 struct ExplainRunnerTests {
+  @Test func preparedQuickPreservesBoundaryPlaceholderAndRequest() async throws {
+    let before =
+      "-----BEGIN PRIVATE KEY-----\nFAKE-TEST-ONLY\n-----END PRIVATE KEY-----"
+      + String(repeating: " ", count: 1499)
+    let provider = MockProvider(scripts: [explainSteps(), explainSteps()])
+    let original = try await quickResult(
+      subject: ExplainSubject(
+        input: "fake selection", context: .around(before: before, after: ""),
+        inputRedaction: .keep), provider: provider)
+    #expect(ExplainPrompt.user(subject: original.subject).contains("[REDACTED]"))
+    var completed = false
+    for try await update in ExplainRunner.quick(
+      prepared: original.subject, settings: ExplainSettings(), provider: provider,
+      cancellation: LLMCancellation())
+    {
+      if case .prepared(let prepared) = update { #expect(prepared == original.subject) }
+      if case .completed(let result) = update {
+        completed = true
+        #expect(result.subject == original.subject)
+        #expect(result.eligibility == .eligible)
+      }
+    }
+    #expect(completed)
+    #expect(provider.recordedRequests.count == 2)
+    #expect(provider.recordedRequests[0] == provider.recordedRequests[1])
+  }
+
   @Test func preparedBeforeHangingProvider() async throws {
     let token = LLMCancellation()
     defer { token.cancel() }
@@ -369,7 +397,17 @@ struct ExplainRunnerTests {
       "target-language input", "native-language input",
       "code", "paths", "--flags", "parameters", "identifiers", "[REDACTED]", "background only",
       "<translation>", "<plain>", "one simple sentence", "<terms>", "<word>", "<ipa>", "<meaning>",
-      "<here>",
+      "<here>", "Skip everyday words", "at most 3", "<terms></terms> empty",
+      // #272: cards go first to what a search would not answer.
+      "For target-language input, the reader", "what a search would not",
+      "first names specific to", "coined or combined here",
+      "short names that refer to something", "terms any developer knows",
+      "For native-language input, choose the target-language expressions",
+      "In <meaning>, give a well-known term its usual meaning",
+      "Write every <word> in French", "<meaning>its meaning in Japanese",
+      "the target-language expression for a",
+      "When the input contains a table", "as a Markdown table", "the same rows and columns",
+      "| --- | --- |",
     ] {
       #expect(quick.contains(fragment), "missing \(fragment)")
     }

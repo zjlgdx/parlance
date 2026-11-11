@@ -9,43 +9,63 @@
         },
         {
           "text" : {
-            "_0" : ">Add a rate limit to the API: maximum 60 requests per user"
+            "_0" : ">Add a rate limit to the API restricting each user to a maximum of 60 requests"
           }
         },
         {
           "text" : {
-            "_0" : " per minute, returning 429 when exceeded.</best>\n<gloss>为 API 添加速率限制：每个用户每"
+            "_0" : " per minute and return 429 when exceeded.</best>\n<gloss>为 API 添加速率限制，将"
           }
         },
         {
           "text" : {
-            "_0" : "分钟最多 60 次请求，超过时返回 429。</gloss>\n<alts><alt><text>Implement an"
+            "_0" : "每个用户限制为每分钟最多 60 次请求，并在超过时返回 429。</gloss>\n<alts>"
           }
         },
         {
           "text" : {
-            "_0" : " API rate limit of 60 requests per user per minute, returning a 429 status code upon excess.</text><note>使用"
+            "_0" : "\n  <alt>\n    <text>Implement a per-user rate limit of 60 requests per minute on"
           }
         },
         {
           "text" : {
-            "_0" : "更专业的术语（rate limit 和 status code），使指令更符合技术规范。</note></alt></alts>\n<fixes"
+            "_0" : " the API and return 429 when the limit is exceeded.</text>\n    <note>使用了更地道的 per"
           }
         },
         {
           "text" : {
-            "_0" : "><fix>“each user one minute max 60 times, over it return 429”表述不够"
+            "_0" : "-user rate limit（每个用户的速率限制）来表达对每个用户的频次限制。</note>\n  </alt>\n</"
           }
         },
         {
           "text" : {
-            "_0" : "专业且存在语病，已优化为更符合技术指令规范的表达。</fix></fixes>"
+            "_0" : "alts>\n<fixes>\n  <fix>\"add one limit\" 修改为 \"Add a limit\" 或"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"Add a rate limit\"，因为 \"one\" 在这里用作冠词不够地道，且 rate limit 是该"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "场景下的专业术语。</fix>\n  <fix>\"each user one minute max 60 times, over it return"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 429\" 修改为从句或分词短语结构，因为原文的堆砌式表达不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "符合英语语法规范。</fix>\n</fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 176,
-            "promptTokens" : 844
+            "completionTokens" : 263,
+            "promptTokens" : 1290
           }
         },
         {
@@ -60,6 +80,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

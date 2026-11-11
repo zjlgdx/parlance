@@ -1,19 +1,21 @@
 #!/bin/bash
 # scripts/lib/test-gate.sh — counterexample table for scripts/gate itself and its non-swift components (run by
-# `scripts/gate harness`; the slow swift table is test-swift-gate.sh). Runs the self-tests of the two static
-# lints (check_bash32.py, check_harness.py; each has to print its own success line) and check_harness.py on two
-# sample workflows it must report, then a copy of the gate in a throwaway repository, and checks that: a
-# failing tool is FAIL, never N/A (actionlint findings, usage and fatal errors), while "no workflows" is N/A;
-# files whose names contain spaces or non-ASCII characters reach the docs, shell and secrets checks, and files
-# deleted from the tree are skipped; bash 4+ syntax fails the shell component unless the line says
-# `# bash32-ok`, also after a quote inside a double-quoted `${...}`, while another program's `-v` and `wait`
+# `scripts/gate harness`; the slow swift table is test-swift-gate.sh). Runs the self-tests of the three static
+# lints (check_bash32.py, check_harness.py, check_claude_mod.py; each has to print its own success line) and
+# check_harness.py on two sample workflows it must report, then a copy of the gate in a throwaway repository,
+# and checks that: a failing tool is FAIL, never N/A (actionlint findings, usage and fatal errors), while "no
+# workflows" is N/A; files whose names contain spaces or non-ASCII characters reach the docs, shell and secrets
+# checks, and files deleted from the tree are skipped; bash 4+ syntax fails the shell component unless the line
+# says `# bash32-ok`, also after a quote inside a double-quoted `${...}`, while another program's `-v` and `wait`
 # flags and bash 3.2-safe fallbacks pass; a caller's SHELLCHECK_OPTS weakens neither shellcheck nor actionlint;
 # gitleaks applies the repo's .gitleaks.toml to untracked files, leaves a stash alone, sees a secret that only
 # a merge resolution added, is not blinded by the caller's git colour settings or by diff attributes, and
 # fails when it logs an error (a git warning is not one); every harness check is required and none sees a
 # hook's GIT_DIR/GIT_INDEX_FILE; `--staged` notices a harness file renamed out of the watched paths; a
 # component that changes the working tree, or HEAD moving while the gate runs (in a reftable checkout too,
-# where git can create one), fails the run and leaves no stamp. Exit 0 when every case behaves as expected.
+# where git can create one), fails the run and leaves no stamp; a failing component prints the lines that name
+# its failure even above the last 40, but not a passing test's `f(error:)` label or a log's `, error:`. Exit 0
+# when every case behaves as expected.
 
 set -u
 # shellcheck disable=SC2046  # the variable names are single words
@@ -29,7 +31,7 @@ git config --file "$GIT_CONFIG_GLOBAL" init.defaultBranch main
 
 failures=0
 cases=0
-for lint in check_bash32.py check_harness.py; do
+for lint in check_bash32.py check_harness.py check_claude_mod.py; do
   # Exit 0 is not enough: a copy that predates --self-test would run its normal check instead and pass.
   if ! python3 "$ROOT/scripts/lib/$lint" --self-test >"$TMP/out.log" 2>&1 \
     || ! grep -Eq "^${lint%.py}: self-test ok \([0-9]+ cases\)$" "$TMP/out.log"; then
@@ -92,8 +94,9 @@ jobs:
 EOF
 # Stand-ins for the harness checks, so the full runs below do not recurse into this table. The git-hooks one
 # fails if a hook's git variables reach it.
-CHECKS=(scripts/lib/check_harness.py scripts/lib/pr_refs.py scripts/lib/test_guard.py scripts/lib/test-git-hooks.sh
+CHECKS=(scripts/lib/check_harness.py scripts/lib/check_claude_mod.py scripts/lib/pr_refs.py scripts/lib/test_guard.py scripts/lib/test-git-hooks.sh
   scripts/lib/test-land.sh scripts/lib/test-cla-check.sh tools/ci-runner/test-controller.sh tools/ci-runner/test-macos-controller.sh scripts/lib/test-doctor.sh
+  scripts/lib/test_app_release.py
   .claude/skills/pl-next/scripts/test_select_next.py .claude/skills/pl-next/scripts/test-codex-worker.sh
   scripts/lib/check_pr_title.py scripts/lib/test-gate.sh)
 for f in "${CHECKS[@]}"; do
@@ -140,6 +143,16 @@ case " $* " in
   *' CODE_SIGN_IDENTITY=- CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= '*) ;;
   *) echo 'missing ad-hoc signing overrides'; exit 1 ;;
 esac
+if [ "${APP_BUILD_LOG:-0}" = 1 ]; then
+  echo 'check_swift_invariants: 1 violation(s)'
+  echo 'FAIL [stale-lease] reclaims a dead VM'
+  echo '✘ Test probeFails() recorded an issue at Probe.swift:3:5: Expectation failed: 1 == 2'
+  echo '✔ Test diagnosticNextSteps(error:nextStep:) passed after 0.001 seconds.'
+  echo '✔ Test "a syntax error or broken link is reported" passed after 0.001 seconds.'
+  echo 'Unable to get synchronousRemoteObjectProxy, error: Error Domain=NSCocoaErrorDomain Code=4097'
+  i=0
+  while [ "$i" -lt 60 ]; do echo "filler line $i"; i=$((i + 1)); done
+fi
 exit "${APP_BUILD_EXIT:-0}"
 EOF
 cat > "$TMP/appbin/xcrun" <<'EOF'
@@ -162,6 +175,19 @@ expect fail "App requires the repository formatter configuration" '\.swift-forma
 printf '{}\n' > .swift-format
 GATE_ENV=("PATH=$TMP/appbin:$PATH" "APP_BUILD_EXIT=1")
 expect fail "App build failure with otherwise passing result" 'swift +FAIL' swift
+# The failing lines sit above the last 40; a passing test's `f(error:)` label or name and a log's `, error:` are not.
+GATE_ENV=("PATH=$TMP/appbin:$PATH" "APP_BUILD_EXIT=1" "APP_BUILD_LOG=1")
+expect fail "a failure above the last 40 lines is printed" 'failure lines -----' swift
+marks=$(sed -n '/failure lines -----/,/last 40 lines -----/p' "$TMP/out.log")
+cases=$((cases + 1))
+if ! printf '%s\n' "$marks" | grep -q '✘ Test probeFails() recorded an issue' \
+  || ! printf '%s\n' "$marks" | grep -q 'check_swift_invariants: 1 violation(s)' \
+  || ! printf '%s\n' "$marks" | grep -q 'FAIL \[stale-lease\]' \
+  || printf '%s\n' "$marks" | grep -Eq 'diagnosticNextSteps|synchronousRemoteObjectProxy|is reported'; then
+  failures=$((failures + 1))
+  echo "test-gate: FAIL failure lines: expected only the ✘, violation and FAIL lines, got:"
+  printf '%s\n' "$marks" | sed 's/^/    /'
+fi
 for result in zero skipped failed missing malformed; do
   GATE_ENV=("PATH=$TMP/appbin:$PATH" "APP_RESULT=$result")
   expect fail "App result $result fails closed" 'swift +FAIL' swift

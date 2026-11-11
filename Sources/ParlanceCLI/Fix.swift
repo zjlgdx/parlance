@@ -8,6 +8,15 @@ public struct Fix: AsyncParsableCommand {
 
   @Argument(help: "Text to rewrite, or - to read stdin.") var text: [String] = []
   @Option(help: "Tone preset: agent or casual.") var tone: String?
+  @Option(
+    help:
+      """
+      Rewrite mode: polish, or correct to fix only spelling, grammar and wrong words \
+      (input already in the target language; other input is translated). In our evaluation \
+      correct met the scoring bar only on gemini-3.8-flash; other models often miss mistakes \
+      or reword the input.
+      """
+  ) var mode: String?
   @Option(help: "Target language (BCP 47).") var target: String?
   @Option(help: "Native language (BCP 47).") var native: String?
   @Option(help: "Provider preset ID.") var provider: String?
@@ -24,6 +33,9 @@ public struct Fix: AsyncParsableCommand {
     let config = try CLIConfiguration.load(environment)
     guard let tone = RewriteSettings.Tone(rawValue: tone ?? config.tone ?? "agent") else {
       try fail(64, "unknown tone. Choose --tone agent or --tone casual.", environment)
+    }
+    guard let mode = RewriteSettings.Mode(rawValue: mode ?? config.mode ?? "polish") else {
+      try fail(64, "unknown mode. Choose --mode polish or --mode correct.", environment)
     }
     let input = try CommandInput.read(text, command: "fix", environment: environment)
     var resolved = try config.resolve(
@@ -48,6 +60,7 @@ public struct Fix: AsyncParsableCommand {
         ])
       throw code
     }
+    RequestReporter.noteUnknownModel(resolved, environment: environment)
     let reporter = RequestReporter(environment: environment, provider: resolved, verbose: verbose)
     environment = reporter.wrapping(environment)
     let stopTicker = reporter.startTicker()
@@ -68,7 +81,7 @@ public struct Fix: AsyncParsableCommand {
     let settings = RewriteSettings(
       targetLanguage: target ?? config.targetLanguage ?? "en",
       nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans", tone: tone,
-      includeFixes: config.fixes ?? true)
+      includeFixes: config.fixes ?? true, mode: mode)
     func timing(strictRetried: Bool = false) -> [String: JSONValue] {
       [
         "first_token_ms": firstToken.map { .number(milliseconds($0)) } ?? .null,

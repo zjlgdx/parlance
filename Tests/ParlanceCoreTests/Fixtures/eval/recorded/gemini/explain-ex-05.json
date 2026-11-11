@@ -9,78 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">等待 `consumer.result` 是没有时间限制的。如果流在消费端"
+            "_0" : ">等待 `consumer.result` 是没有时间限制的。如果流在消费任务被取消时"
           }
         },
         {
           "text" : {
-            "_0" : "任务被取消时停止结束其迭代，测试将会挂起而不是失败。将其包装在 `bounded { _ ="
+            "_0" : "停止结束其迭代，测试将会挂起而不是失败。将其包装在 `bounded { _ = await consumer.result }"
           }
         },
         {
           "text" : {
-            "_0" : " await consumer.result }` 中。</translation>\n\n<plain>这段输入解释了为什么在测试中等待消费"
+            "_0" : "` 中。</translation>\n<plain>这句话解释了为什么在等待消费任务结果时需要加上时间限制，以防止"
           }
         },
         {
           "text" : {
-            "_0" : "端结果需要加上超时限制，以防止测试无限期挂起。</plain>\n\n<terms><term><word"
+            "_0" : "测试无限期挂起。</plain>\n<terms><term><word>consumer.result</word>\n<meaning>消费"
           }
         },
         {
           "text" : {
-            "_0" : ">consumer.result</word>\n<meaning>消费端结果</meaning>\n<here>消费端任务的"
+            "_0" : "者的结果</meaning><here>消费任务的执行结果</here></term><term><word>bounded</word>\n"
           }
         },
         {
           "text" : {
-            "_0" : "执行结果</here></term>\n<term><word>time limit</word>\n<meaning>时间限制</meaning"
+            "_0" : "<ipa>/ˈbaʊndɪd/</ipa>\n<meaning>有界的，有限制的</meaning><here>"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<here>超时限制</here></term>\n<term><word>stream</word>\n<meaning>"
+            "_0" : "带时间或资源限制的代码块包装器</here></term><term><word>hangs</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "流</meaning>\n<here>异步数据流</here></term>\n<term><word>iteration</"
+            "_0" : "ipa>/hæŋz/</ipa>\n<meaning>挂起，卡死</meaning><here>程序或"
           }
         },
         {
           "text" : {
-            "_0" : "word>\n<meaning>迭代</meaning>\n<here>对流的迭代处理</here></term>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<term><word>cancelled</word>\n<meaning>已取消</meaning>\n<here>任务"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "被取消的状态</here></term>\n<term><word>hangs</word>\n<meaning>挂"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "起</meaning>\n<here>程序卡住无响应</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "bounded</word>\n<meaning>有界的</meaning>\n<here>带有边界（如时间限制）的包装函数"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</here></term></terms>"
+            "_0" : "测试无限期等待而不继续执行</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 323,
-            "promptTokens" : 304
+            "completionTokens" : 217,
+            "promptTokens" : 576
           }
         },
         {
@@ -95,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

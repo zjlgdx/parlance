@@ -9,38 +9,33 @@
         },
         {
           "text" : {
-            "_0" : ">Check whether this code has concurrency issues. Explain whether two simultaneous requests could deduct"
+            "_0" : ">Check whether this code has concurrency issues and whether simultaneous requests could deduct the balance twice.</best>"
           }
         },
         {
           "text" : {
-            "_0" : " the balance twice.</best>\n<gloss>检查这段代码是否存在并发问题。说明两个并发请求是否会扣除两次余额。</gloss"
+            "_0" : "\n<gloss>检查这段代码是否有并发问题，以及同时进来的两个请求是否会把余额扣两次。</gloss"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<alts><alt><text>Analyze this code for concurrency issues and determine if simultaneous requests can cause the"
+            "_0" : ">\n<alts><alt><text>Check for race conditions in this code where simultaneous requests could double-deduct the balance.</"
           }
         },
         {
           "text" : {
-            "_0" : " balance to be deducted twice.</text><note>使用更具分析性的语气表达相同的需求。</note></alt></al"
+            "_0" : "text><note>race conditions（竞态条件）指并发编程中多个进程/线程同时访问共享资源导致的问题"
           }
         },
         {
           "text" : {
-            "_0" : "ts>\n<fixes><fix>原文为口语化问句，改写为祈使句以符合 coding agent 指"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "令的规范。同时将“两个请求同时进来”准确转化为技术表述。</fix></fixes>"
+            "_0" : "，比 concurrency issues（并发问题）更具体。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 145,
-            "promptTokens" : 836
+            "completionTokens" : 118,
+            "promptTokens" : 1282
           }
         },
         {
@@ -55,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

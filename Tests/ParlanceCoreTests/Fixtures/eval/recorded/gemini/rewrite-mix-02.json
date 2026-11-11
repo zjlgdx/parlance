@@ -9,43 +9,48 @@
         },
         {
           "text" : {
-            "_0" : ">Run ⟦0⟧ and check whether ⟦1⟧ occurs due to an"
+            "_0" : ">Run ⟦0⟧ and investigate the error ⟦1⟧ to check whether paths"
           }
         },
         {
           "text" : {
-            "_0" : " incorrect paths configuration in tsconfig.</best>\n<gloss>运行 ⟦0⟧ 并检查 ⟦1⟧ 是否"
+            "_0" : " in tsconfig are misconfigured.</best>\n<gloss>运行 ⟦0⟧ 并调查错误 ⟦1⟧，以"
           }
         },
         {
           "text" : {
-            "_0" : "由于 tsconfig 中的 paths 配置错误而发生。</gloss>\n<alts><alt><text>Execute ⟦0⟧ and investigate"
+            "_0" : "检查 tsconfig 中的 paths 是否配置错误。</gloss>\n<alts><alt><text>Run ⟦0⟧,"
           }
         },
         {
           "text" : {
-            "_0" : " if the error ⟦1⟧ is caused by a misconfigured paths in tsconfig.</text><note>使用 investigate"
+            "_0" : " check whether the error ⟦1⟧ is caused by a misconfiguration in tsconfig paths, and report the findings.</text><note"
           }
         },
         {
           "text" : {
-            "_0" : " 替代 check whether，语义更偏向深入排查。</note></alt></alts>\n<fixes><fix>"
+            "_0" : ">使用更符合命令式指令的句式，要求直接排查并汇报结果。</note></alt></al"
           }
         },
         {
           "text" : {
-            "_0" : "“帮我查一下是不是”被转化为命令式的“check whether”，符合面向编码代理的简洁技术语气要求"
+            "_0" : "ts>\n<fixes><fix>“跑 ⟦0⟧ 报错 ⟦1⟧”直译为“run"
           }
         },
         {
           "text" : {
-            "_0" : "。</fix></fixes>"
+            "_0" : " ⟦0⟧ errors ⟦1⟧”不符合英语语法，应改为“Run ⟦0⟧ and"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " investigate the error ⟦1⟧”。</fix></fix>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 151,
-            "promptTokens" : 967
+            "completionTokens" : 187,
+            "promptTokens" : 1413
           }
         },
         {
@@ -58,13 +63,15 @@
   ],
   "kind" : "rewrite",
   "metrics" : {
-    "bestEligible" : true,
+    "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 1,
+    "caseAFixesInResult" : 0,
     "failures" : {
-
+      "malformed_sections" : 1
     },
     "fallback" : false,
-    "sectionsComplete" : true,
+    "sectionsComplete" : false,
     "strictRetryUsed" : false,
     "termPasses" : 2,
     "termVersions" : 2

@@ -314,13 +314,35 @@ extension ProviderEdgeCaseTests {
     #expect(result.events == [.text("partial")])
     #expect(result.error == .transport)
   }
+  // Cancelling the consuming task ends iteration quietly or with the provider's `.aborted`: the
+  // stream runs onTermination before it finishes, so an `.aborted` committed there can land first.
+  // Both mean aborted (design §2); any other error is a defect.
   @Test func consumerTaskCancellation() async throws {
     let fixture = Fixture(.compatible, scripts: [[.hang]])
     let stream = fixture.stream()
     let consumer = Task { for try await _ in stream {} }
     try await fixture.waitForRequests(1)
     consumer.cancel()
-    do { try await bounded { try await consumer.value } } catch is CancellationError {}
+    expectConsumerCancellation(try await bounded { await consumer.result })
     try await fixture.waitForStop()
+  }
+  // No request is in flight during the retry wait, so the provider commits `.aborted` inside
+  // onTermination and the consumer always sees it: the side of the race above made deterministic.
+  @Test func consumerTaskCancellationDuringRetryWait() async throws {
+    let fixture = Fixture(.compatible, status: 503, scripts: [[.end]])
+    let stream = fixture.stream()
+    let (retrying, signal) = AsyncStream<Void>.makeStream()
+    let consumer = Task {
+      for try await event in stream { if case .retrying = event { signal.yield() } }
+    }
+    try await bounded { for await _ in retrying { return } }
+    consumer.cancel()
+    expectConsumerCancellation(try await bounded { await consumer.result })
+    fixture.harness.clock.advance(by: HTTPProvider.Limits.firstToken)
+    #expect(fixture.requests.count == 1)
+  }
+  private func expectConsumerCancellation(_ result: Result<Void, any Error>) {
+    guard case .failure(let error) = result else { return }
+    #expect(error is CancellationError || error as? LLMError == .aborted)
   }
 }

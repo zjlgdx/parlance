@@ -9,97 +9,82 @@
         },
         {
           "text" : {
-            "_0" : "Do not add any new dependency"
+            "_0" : "Do not use any new dependency"
           }
         },
         {
           "text" : {
-            "_0" : ". Its license must be MI"
+            "_0" : ". The license must be MIT"
           }
         },
         {
           "text" : {
-            "_0" : "T or Apache, so check"
+            "_0" : " or Apache; check it before"
           }
         },
         {
           "text" : {
-            "_0" : " the license before adding it.</"
+            "_0" : " adding one.</best>"
           }
         },
         {
           "text" : {
-            "_0" : "best>\n<g"
+            "_0" : "\n<gloss>不要使"
           }
         },
         {
           "text" : {
-            "_0" : "loss>不要添加任"
+            "_0" : "用任何新依"
           }
         },
         {
           "text" : {
-            "_0" : "何新的依赖。其"
+            "_0" : "赖。许可证必须"
           }
         },
         {
           "text" : {
-            "_0" : "许可证必须是 M"
+            "_0" : "是 MIT 或 "
           }
         },
         {
           "text" : {
-            "_0" : "IT 或 Apache"
+            "_0" : "Apache；添加前先"
           }
         },
         {
           "text" : {
-            "_0" : "，因此在添加之前"
+            "_0" : "检查。</gloss>"
           }
         },
         {
           "text" : {
-            "_0" : "检查许可证。</g"
+            "_0" : "\n<alts><"
           }
         },
         {
           "text" : {
-            "_0" : "loss>\n<alts>"
+            "_0" : "alt><text>Do not"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>Do not"
+            "_0" : " add any new dependencies."
           }
         },
         {
           "text" : {
-            "_0" : " add new"
+            "_0" : " Check that the license is MI"
           }
         },
         {
           "text" : {
-            "_0" : " dependencies. Any d"
+            "_0" : "T or Apache before adding"
           }
         },
         {
           "text" : {
-            "_0" : "ependency must use an MIT"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " or Apache license,"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " so check this before adding it."
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</text><note>把"
+            "_0" : " one.</text><note>把"
           }
         },
         {
@@ -109,27 +94,27 @@
         },
         {
           "text" : {
-            "_0" : "任"
+            "_0" : "use\"换"
           }
         },
         {
           "text" : {
-            "_0" : "何新的"
+            "_0" : "成\"add\"，更明"
           }
         },
         {
           "text" : {
-            "_0" : "依赖\"改为复"
+            "_0" : "确地指不"
           }
         },
         {
           "text" : {
-            "_0" : "数形"
+            "_0" : "引"
           }
         },
         {
           "text" : {
-            "_0" : "式，并用 "
+            "_0" : "入新依赖；"
           }
         },
         {
@@ -139,127 +124,67 @@
         },
         {
           "text" : {
-            "_0" : " this\" 指"
+            "_0" : " that"
           }
         },
         {
           "text" : {
-            "_0" : "代许"
+            "_0" : " the license is…"
           }
         },
         {
           "text" : {
-            "_0" : "可证，语"
+            "_0" : "\"让"
           }
         },
         {
           "text" : {
-            "_0" : "气更直接；"
+            "_0" : "检"
           }
         },
         {
           "text" : {
-            "_0" : "语"
+            "_0" : "查对"
           }
         },
         {
           "text" : {
-            "_0" : "义与"
+            "_0" : "象更"
           }
         },
         {
           "text" : {
-            "_0" : "最"
+            "_0" : "清楚。</note></al"
           }
         },
         {
           "text" : {
-            "_0" : "佳版本相同。</"
+            "_0" : "t><alt><text>"
           }
         },
         {
           "text" : {
-            "_0" : "note></alt><alt>"
+            "_0" : "Do not use any new dependency"
           }
         },
         {
           "text" : {
-            "_0" : "<text>Do not add new d"
+            "_0" : ". Before adding any depend"
           }
         },
         {
           "text" : {
-            "_0" : "ependencies unless their license is"
+            "_0" : "ency, check that its license is M"
           }
         },
         {
           "text" : {
-            "_0" : " MIT or Apache."
+            "_0" : "IT or Apache.</"
           }
         },
         {
           "text" : {
-            "_0" : " Check the license before adding any"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " dependency.</text><note"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">把许"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "可证要"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "求放"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "在条件从"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "句中，先"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "说明"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "限"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "制再"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "说明检"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "查步骤，把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\""
+            "_0" : "text><note>把"
           }
         },
         {
@@ -269,147 +194,137 @@
         },
         {
           "text" : {
-            "_0" : "可证必须是"
+            "_0" : "可证检"
           }
         },
         {
           "text" : {
-            "_0" : " MIT 或 "
+            "_0" : "查放"
           }
         },
         {
           "text" : {
-            "_0" : "Apache\"表"
+            "_0" : "在添"
           }
         },
         {
           "text" : {
-            "_0" : "述为允"
+            "_0" : "加依"
           }
         },
         {
           "text" : {
-            "_0" : "许添"
+            "_0" : "赖之前，并"
           }
         },
         {
           "text" : {
-            "_0" : "加的条件。</note></"
+            "_0" : "明"
           }
         },
         {
           "text" : {
-            "_0" : "alt></alts>"
+            "_0" : "确检"
           }
         },
         {
           "text" : {
-            "_0" : "\n<fixes><fix>\""
+            "_0" : "查的是"
           }
         },
         {
           "text" : {
-            "_0" : "please not use"
+            "_0" : "该"
           }
         },
         {
           "text" : {
-            "_0" : "\" 不"
+            "_0" : "依赖的许可证，"
           }
         },
         {
           "text" : {
-            "_0" : "正确："
+            "_0" : "句意更完"
           }
         },
         {
           "text" : {
-            "_0" : "祈使句"
+            "_0" : "整。</note></alt></"
           }
         },
         {
           "text" : {
-            "_0" : "的否定应"
+            "_0" : "alts>\n<fixes"
           }
         },
         {
           "text" : {
-            "_0" : "为"
+            "_0" : "><fix>\""
           }
         },
         {
           "text" : {
-            "_0" : " \""
+            "_0" : "please not use\" "
           }
         },
         {
           "text" : {
-            "_0" : "Do not\""
+            "_0" : "是"
           }
         },
         {
           "text" : {
-            "_0" : "，"
+            "_0" : "直译"
           }
         },
         {
           "text" : {
-            "_0" : "且"
+            "_0" : "自"
           }
         },
         {
           "text" : {
-            "_0" : " \"please\" 与"
+            "_0" : "\"请不要用"
           }
         },
         {
           "text" : {
-            "_0" : "指令语气不"
+            "_0" : "\"的说"
           }
         },
         {
           "text" : {
-            "_0" : "搭配，应删去。</"
+            "_0" : "法，"
           }
         },
         {
           "text" : {
-            "_0" : "fix><fix>\"the"
+            "_0" : "应"
           }
         },
         {
           "text" : {
-            "_0" : " license must be MIT or ap"
+            "_0" : "为 "
           }
         },
         {
           "text" : {
-            "_0" : "ache\" 中"
+            "_0" : "\"please don't use\" 或"
           }
         },
         {
           "text" : {
-            "_0" : " \"apache\" 是专"
+            "_0" : " \"do not use\"，"
           }
         },
         {
           "text" : {
-            "_0" : "有名词"
+            "_0" : "否定句需"
           }
         },
         {
           "text" : {
-            "_0" : "，应大"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "写为"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " \"Apache\"。"
+            "_0" : "要助动词。"
           }
         },
         {
@@ -419,124 +334,74 @@
         },
         {
           "text" : {
-            "_0" : "check before add"
+            "_0" : "check before add\" 中"
           }
         },
         {
           "text" : {
-            "_0" : "\" 不"
+            "_0" : " before 后"
           }
         },
         {
           "text" : {
-            "_0" : "正确：介词 \"before"
+            "_0" : "面"
           }
         },
         {
           "text" : {
-            "_0" : "\" 后应"
+            "_0" : "应"
           }
         },
         {
           "text" : {
-            "_0" : "接动名"
+            "_0" : "接动名词，应为 "
           }
         },
         {
           "text" : {
-            "_0" : "词"
+            "_0" : "\"check before adding\"。</"
           }
         },
         {
           "text" : {
-            "_0" : "，"
+            "_0" : "fix><fix>\"ap"
           }
         },
         {
           "text" : {
-            "_0" : "应为 \"check"
+            "_0" : "ache\" 是专有名词"
           }
         },
         {
           "text" : {
-            "_0" : " "
+            "_0" : "，许"
           }
         },
         {
           "text" : {
-            "_0" : "... before adding\""
+            "_0" : "可证名称应首字母"
           }
         },
         {
           "text" : {
-            "_0" : "。</fix>"
+            "_0" : "大写，写作 \""
           }
         },
         {
           "text" : {
-            "_0" : "<fix>两个独"
+            "_0" : "Apache\"。</fix></"
           }
         },
         {
           "text" : {
-            "_0" : "立分"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "句"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "仅用逗号连接，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "属"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "于"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "逗号连接错"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "误（comma splice"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "），应拆分为两个"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "句子或使用连接"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "词。</fix></fix"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "es>"
+            "_0" : "fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 1171,
-            "promptTokens" : 1154,
-            "reasoningTokens" : 659
+            "completionTokens" : 1099,
+            "promptTokens" : 1743,
+            "reasoningTokens" : 698
           }
         },
         {
@@ -551,6 +416,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

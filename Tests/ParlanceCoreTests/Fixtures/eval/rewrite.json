@@ -28,5 +28,14 @@
   {"id": "en-07", "category": "broken-en", "input": "add one limit for the api, each user one minute max 60 times, over it return 429"},
   {"id": "en-08", "category": "broken-en", "input": "i want refactor this class but not break other place who use it, how to do safe"},
   {"id": "en-09", "category": "broken-en", "input": "run `make test` have error about missing header, i already install the library before"},
-  {"id": "en-10", "category": "broken-en", "input": "please not use any new dependency, the license must be MIT or apache, check before add"}
+  {"id": "en-10", "category": "broken-en", "input": "please not use any new dependency, the license must be MIT or apache, check before add"},
+  {"id": "inf-01", "category": "informal-en", "input": "pls dont touch the migrations, just fix the failing test in the auth module"},
+  {"id": "inf-02", "category": "informal-en", "input": "u can ignore the lint warnings for now. focus on why the api return 500 when token expire"},
+  {"id": "inf-03", "category": "informal-en", "input": "ok looks good. merge it after ci pass, no need to ping me"},
+  {"id": "log-01", "category": "log-en", "input": "the build fail with this:\nerror[E0425]: cannot find value `cfg` in this scope\n  --> src/main.rs:14:9\nwhat i miss"},
+  {"id": "log-02", "category": "log-en", "input": "tests is red on ci, here the output:\nFAIL src/user.test.ts\n  ● UserService › should create user\n    Expected: 201\n    Received: 500\nplease check it"},
+  {"id": "log-03", "category": "log-en", "input": "Got this when run the sync script:\nTraceback (most recent call last):\n  File \"scripts/sync.py\", line 42, in <module>\n    main()\nKeyError: 'user_id'\nCan you find the reason?"},
+  {"id": "lit-01", "category": "literal-en", "input": "Please do a review for my code and give me some opinions about the naming."},
+  {"id": "lit-02", "category": "literal-en", "input": "The speed of this page is very slow, the experience of users is not good."},
+  {"id": "lit-03", "category": "literal-en", "input": "This function's name is not clear, please change a name for it and open the debug log."}
 ]

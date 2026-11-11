@@ -9,38 +9,38 @@
         },
         {
           "text" : {
-            "_0" : ">Explain the data flow of this module from the incoming request to the database write.</best>\n<"
+            "_0" : ">Explain the data flow of this module from the incoming request to the database write.</"
           }
         },
         {
           "text" : {
-            "_0" : "gloss>解释此模块从入站请求到数据库写入的数据流。</gloss>\n<alts><alt><text>Describe the"
+            "_0" : "best>\n<gloss>解释这个模块的数据流，从进来的请求到写入数据库。</gloss>\n<"
           }
         },
         {
           "text" : {
-            "_0" : " data flow of this module starting from request ingestion up to the database write operation.</text><note>使用更丰富的技术"
+            "_0" : "alts><alt><text>Describe how data flows through this module, starting with the incoming request and ending with the database write.</text"
           }
         },
         {
           "text" : {
-            "_0" : "词汇（ingestion、operation）替换了基础表达，描述更加精确。</note></alt></alts>\n<fixes><"
+            "_0" : "><note>使用描述（Describe）替代解释（Explain），使指令更侧重于流程的追踪。</note></alt></al"
           }
         },
         {
           "text" : {
-            "_0" : "fix>将 \"data flow\" 改为 \"the data flow of\", 并在 \"request come in\" 和 \"write"
+            "_0" : "ts>\n<fixes><fix>“explain me how”中的 “explain me” 语法不正确，应改为"
           }
         },
         {
           "text" : {
-            "_0" : " db\" 处加上了冠词和介词以符合语法。</fix></fixes>"
+            "_0" : " “explain to me” 或 “explain how”。</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 147,
-            "promptTokens" : 837
+            "completionTokens" : 139,
+            "promptTokens" : 1283
           }
         },
         {
@@ -55,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,27 +9,22 @@
         },
         {
           "text" : {
-            "_0" : " refactor moved the retry"
+            "_0" : " refactoring moved the ret"
           }
         },
         {
           "text" : {
-            "_0" : " logic from the UI layer"
+            "_0" : "ry logic from the UI lay"
           }
         },
         {
           "text" : {
-            "_0" : " to the provider layer, so"
+            "_0" : "er to the provider layer,"
           }
         },
         {
           "text" : {
-            "_0" : " the UI only displ"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ays state"
+            "_0" : " so the UI only displays status"
           }
         },
         {
@@ -44,67 +39,77 @@
         },
         {
           "text" : {
-            "_0" : " one place;"
+            "_0" : " one place."
           }
         },
         {
           "text" : {
-            "_0" : " the dr"
+            "_0" : " The downside is that the UI"
           }
         },
         {
           "text" : {
-            "_0" : "awback is that the UI can"
+            "_0" : " can"
           }
         },
         {
           "text" : {
-            "_0" : "'t see the"
+            "_0" : "'t get the details of each retry"
           }
         },
         {
           "text" : {
-            "_0" : " details of each retry, so a"
+            "_0" : ", so a callback would need to"
           }
         },
         {
           "text" : {
-            "_0" : " callback would need"
+            "_0" : " be added if those"
           }
         },
         {
           "text" : {
-            "_0" : " to be added if required"
+            "_0" : " details are needed.</translation"
           }
         },
         {
           "text" : {
-            "_0" : ".</translation>\n<pl"
+            "_0" : ">\n<plain>这段"
           }
         },
         {
           "text" : {
-            "_0" : "ain>这段"
+            "_0" : "话说"
           }
         },
         {
           "text" : {
-            "_0" : "话说明本"
+            "_0" : "的"
           }
         },
         {
           "text" : {
-            "_0" : "次重构把重试"
+            "_0" : "是："
           }
         },
         {
           "text" : {
-            "_0" : "逻辑移到了 prov"
+            "_0" : "把重试逻辑从"
           }
         },
         {
           "text" : {
-            "_0" : "ider 层，好"
+            "_0" : "界"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "面层移到 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "provider 层后，好"
           }
         },
         {
@@ -114,267 +119,322 @@
         },
         {
           "text" : {
-            "_0" : "略统"
+            "_0" : "略只有一处，坏"
           }
         },
         {
           "text" : {
-            "_0" : "一，代"
+            "_0" : "处是界面"
           }
         },
         {
           "text" : {
-            "_0" : "价是 UI 无"
+            "_0" : "拿不到每次重试的"
           }
         },
         {
           "text" : {
-            "_0" : "法获取每次重试的"
+            "_0" : "细"
           }
         },
         {
           "text" : {
-            "_0" : "细节，需要时"
+            "_0" : "节，需要时"
           }
         },
         {
           "text" : {
-            "_0" : "要"
+            "_0" : "要加回"
           }
         },
         {
           "text" : {
-            "_0" : "额"
+            "_0" : "调。</plain>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "外加回"
+            "_0" : "terms><term><word>ref"
           }
         },
         {
           "text" : {
-            "_0" : "调。</plain>"
+            "_0" : "actor</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "\n<terms><term><word>ref"
+            "_0" : "ipa>/"
           }
         },
         {
           "text" : {
-            "_0" : "actor</word><ipa"
+            "_0" : "ˌriː"
           }
         },
         {
           "text" : {
-            "_0" : ">/riːˈfæ"
+            "_0" : "ˈfæktə/</"
           }
         },
         {
           "text" : {
-            "_0" : "ktər/</ipa>"
+            "_0" : "ipa>\n<meaning"
           }
         },
         {
           "text" : {
-            "_0" : "<meaning>重构，在"
+            "_0" : ">重"
           }
         },
         {
           "text" : {
-            "_0" : "不改变外"
+            "_0" : "构：在不改变外"
           }
         },
         {
           "text" : {
-            "_0" : "部行为的前"
+            "_0" : "部行"
           }
         },
         {
           "text" : {
-            "_0" : "提下调"
+            "_0" : "为的前提下，调整"
           }
         },
         {
           "text" : {
-            "_0" : "整代码结构。</me"
+            "_0" : "代码的"
           }
         },
         {
           "text" : {
-            "_0" : "aning><here>对"
+            "_0" : "内部结构。</mea"
           }
         },
         {
           "text" : {
-            "_0" : "应“"
+            "_0" : "ning><"
           }
         },
         {
           "text" : {
-            "_0" : "这次重构”，指这"
+            "_0" : "here>这"
           }
         },
         {
           "text" : {
-            "_0" : "次对"
+            "_0" : "里指这"
           }
         },
         {
           "text" : {
-            "_0" : "代码结构的调"
+            "_0" : "次把重试逻辑"
           }
         },
         {
           "text" : {
-            "_0" : "整。</here></term><term"
+            "_0" : "挪到别"
           }
         },
         {
           "text" : {
-            "_0" : "><word>retry logic</"
+            "_0" : "的"
           }
         },
         {
           "text" : {
-            "_0" : "word><ipa>/"
+            "_0" : "层，是"
           }
         },
         {
           "text" : {
-            "_0" : "riː"
+            "_0" : "一"
           }
         },
         {
           "text" : {
-            "_0" : "ˈtraɪ "
+            "_0" : "次结构调"
           }
         },
         {
           "text" : {
-            "_0" : "ˈlɑ"
+            "_0" : "整。</here></term><"
           }
         },
         {
           "text" : {
-            "_0" : "d"
+            "_0" : "term><word>provider</word"
           }
         },
         {
           "text" : {
-            "_0" : "ʒ"
+            "_0" : ">\n<ipa>/"
           }
         },
         {
           "text" : {
-            "_0" : "ɪk/</ipa>"
+            "_0" : "pr"
           }
         },
         {
           "text" : {
-            "_0" : "<meaning>重试逻"
+            "_0" : "ə"
           }
         },
         {
           "text" : {
-            "_0" : "辑，即"
+            "_0" : "ˈva"
           }
         },
         {
           "text" : {
-            "_0" : "请"
+            "_0" : "ɪdə/</ip"
           }
         },
         {
           "text" : {
-            "_0" : "求失败后再"
+            "_0" : "a>\n<meaning>"
           }
         },
         {
           "text" : {
-            "_0" : "次"
+            "_0" : "提供者"
           }
         },
         {
           "text" : {
-            "_0" : "尝试的处"
+            "_0" : "；"
           }
         },
         {
           "text" : {
-            "_0" : "理代"
+            "_0" : "在软件里"
           }
         },
         {
           "text" : {
-            "_0" : "码。</meaning><here"
+            "_0" : "常"
           }
         },
         {
           "text" : {
-            "_0" : ">指“"
+            "_0" : "指封"
           }
         },
         {
           "text" : {
-            "_0" : "重试"
+            "_0" : "装某类"
           }
         },
         {
           "text" : {
-            "_0" : "逻辑”本"
+            "_0" : "服务或数据来"
           }
         },
         {
           "text" : {
-            "_0" : "身，被从"
+            "_0" : "源的模"
           }
         },
         {
           "text" : {
-            "_0" : " UI 层"
+            "_0" : "块或"
           }
         },
         {
           "text" : {
-            "_0" : "搬走"
+            "_0" : "对象。</meaning><"
           }
         },
         {
           "text" : {
-            "_0" : "。</here></"
+            "_0" : "here>这里指负"
           }
         },
         {
           "text" : {
-            "_0" : "term><term><word>provider"
+            "_0" : "责请"
           }
         },
         {
           "text" : {
-            "_0" : "</word><ipa>/"
+            "_0" : "求和"
           }
         },
         {
           "text" : {
-            "_0" : "prəˈvaɪ"
+            "_0" : "重试的"
           }
         },
         {
           "text" : {
-            "_0" : "dər/</ipa>"
+            "_0" : "那"
           }
         },
         {
           "text" : {
-            "_0" : "<meaning>提"
+            "_0" : "一层，UI 只从"
           }
         },
         {
           "text" : {
-            "_0" : "供者，"
+            "_0" : "它"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "那里获取状态。</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "here></term><term><word>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "callback</word>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ipa>/"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ˈkɔːlb"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "æk/</ipa>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<meaning>回调"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "：作"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为参"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数传入"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "、"
           }
         },
         {
@@ -384,117 +444,7 @@
         },
         {
           "text" : {
-            "_0" : "这"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "里指"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "封"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "装数据或服"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "务访"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "问的一"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "层。</meaning><here"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">“provider 层”是"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "项"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "目中的一个"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "架构层，负责实"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "际的请"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "求与重试。</here></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "term><term><word>callback"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</word><ipa>/"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ˈkɔːl"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "bæk/</ipa"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><meaning>回调，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "函"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "数作"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "为参数传入"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，在特"
+            "_0" : "特"
           }
         },
         {
@@ -504,64 +454,59 @@
         },
         {
           "text" : {
-            "_0" : "调用。</meaning>"
+            "_0" : "调用的函数。</me"
           }
         },
         {
           "text" : {
-            "_0" : "<here>指"
+            "_0" : "aning><here>这"
           }
         },
         {
           "text" : {
-            "_0" : "需要额外加的"
+            "_0" : "里指在"
           }
         },
         {
           "text" : {
-            "_0" : "回"
+            "_0" : "每"
           }
         },
         {
           "text" : {
-            "_0" : "调，"
+            "_0" : "次重试时通"
           }
         },
         {
           "text" : {
-            "_0" : "用"
+            "_0" : "知 UI 的"
           }
         },
         {
           "text" : {
-            "_0" : "于把"
+            "_0" : "函数，让 "
           }
         },
         {
           "text" : {
-            "_0" : "每次重试的细节通"
+            "_0" : "UI 能"
           }
         },
         {
           "text" : {
-            "_0" : "知给"
+            "_0" : "拿到重试细节。</"
           }
         },
         {
           "text" : {
-            "_0" : " UI。</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "></terms>"
+            "_0" : "here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 928,
-            "promptTokens" : 444,
-            "reasoningTokens" : 369
+            "completionTokens" : 783,
+            "promptTokens" : 812,
+            "reasoningTokens" : 287
           }
         },
         {
@@ -576,6 +521,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

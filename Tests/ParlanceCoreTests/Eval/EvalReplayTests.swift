@@ -11,9 +11,18 @@ struct EvalReplayTests {
     #expect(explanations.count >= 20)
     #expect(Set(rewrites.map(\.id)).count == rewrites.count)
     #expect(Set(explanations.map(\.id)).count == explanations.count)
-    #expect(Set(rewrites.compactMap(\.category)) == ["zh", "mixed-code", "broken-en"])
+    #expect(
+      Set(rewrites.compactMap(\.category))
+        == ["zh", "mixed-code", "broken-en", "informal-en", "log-en", "literal-en"])
     #expect(Set(explanations.compactMap(\.source)) == ["claude-code", "codex"])
     #expect((rewrites + explanations).allSatisfy { !$0.input.isEmpty })
+    // The #260 cases measure Case B fixes, so the core must polish them, not translate them.
+    for testCase in rewrites
+    where ["informal-en", "log-en", "literal-en"].contains(testCase.category ?? "") {
+      #expect(
+        RewriteCase.classify(testCase.input, settings: RewriteSettings()) == .polish,
+        "\(testCase.id)")
+    }
   }
 
   @Test func recordedReplays() async throws {
@@ -64,7 +73,9 @@ struct EvalReplayTests {
           "\(id)")
         #expect(replay.recording.metrics.caseAFixesInResult == 0, "\(recording.preset)/\(id)")
       }
-      if recording.testCase.id.hasPrefix("en-") { try await checkRetainedFixes(recording) }
+      if ["en-", "inf-", "log-", "lit-"].contains(where: id.hasPrefix) {
+        try await checkRetainedFixes(recording)
+      }
     }
     var metrics = replay.recording.metrics
     // Legacy recordings have no baseline for the new counters; retain every existing check.
@@ -97,7 +108,12 @@ struct EvalReplayTests {
       }
       throw TestDeadline()
     }
-    #expect(result.sections?.fixes == expected, "\(recording.preset)/\(recording.testCase.id)")
+    // A malformed reply has no sections to retain fixes in; it must be counted as incomplete.
+    guard let sections = result.sections else {
+      #expect(!recording.metrics.sectionsComplete, "\(recording.preset)/\(recording.testCase.id)")
+      return
+    }
+    #expect(sections.fixes == expected, "\(recording.preset)/\(recording.testCase.id)")
   }
 
   @Test func residueRejectsKnownUnknownAndForeignTokens() async throws {
@@ -124,14 +140,14 @@ struct EvalReplayTests {
   }
 
   @Test func recordingRoundTripsAllEventsAndErrors() throws {
-    let errors: [LLMError] = [
-      .auth(status: nil), .auth(status: 401), .quota(status: 402),
-      .invalidRequest(status: 400, providerCode: nil),
-      .invalidRequest(status: 404, providerCode: .modelNotFound),
-      .rateLimit(retryAfter: nil), .rateLimit(retryAfter: .milliseconds(125)),
-      .server(status: 503), .transport, .timeout(.firstToken), .timeout(.idle), .timeout(.total),
-      .aborted, .emptyResponse, .malformedResponse,
-    ]
+    let errors: [LLMError] =
+      [
+        .auth(status: nil), .auth(status: 401), .quota(status: 402),
+        .invalidRequest(status: 400, providerCode: nil),
+        .rateLimit(retryAfter: nil), .rateLimit(retryAfter: .milliseconds(125)),
+        .server(status: 503), .transport, .timeout(.firstToken), .timeout(.idle), .timeout(.total),
+        .aborted, .emptyResponse, .malformedResponse,
+      ] + KnownProviderCode.allCases.map { .invalidRequest(status: 404, providerCode: $0) }
     for error in errors {
       let decoded = try JSONDecoder().decode(
         RecordedError.self, from: JSONEncoder().encode(RecordedError(error)))

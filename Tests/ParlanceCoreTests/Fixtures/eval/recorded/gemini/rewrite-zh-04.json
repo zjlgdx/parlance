@@ -9,33 +9,33 @@
         },
         {
           "text" : {
-            "_0" : ">The previous fix introduced a regression: pagination on the order list causes the last page to duplicate items.</"
+            "_0" : ">The previous fix introduced a regression. The last page of the order list displays duplicate items during"
           }
         },
         {
           "text" : {
-            "_0" : "best>\n<gloss>上次那个修复引入了回归，订单列表分页的时候最后一页会重复显示</gloss"
+            "_0" : " pagination.</best>\n<gloss>上次那个修复引入了回归，订单列表分页的时候最后一页会重复显示</gloss"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<alts><alt><text>The recent fix caused a regression where the last page of the order list pagination"
+            "_0" : ">\n<alts><alt><text>The previous fix introduced a regression where the last page of the order list shows"
           }
         },
         {
           "text" : {
-            "_0" : " shows duplicate items.</text><note>使用动词词组和关系从句，使表述更加流畅自然"
+            "_0" : " duplicate items when paginating.</text><note>使用 where 从句将分页条件与重复显示的问题更紧密地结合"
           }
         },
         {
           "text" : {
-            "_0" : "。</note></alt></alts>"
+            "_0" : "在一起。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 104,
-            "promptTokens" : 836
+            "completionTokens" : 107,
+            "promptTokens" : 1282
           }
         },
         {
@@ -50,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

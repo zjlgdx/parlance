@@ -14,38 +14,28 @@
         },
         {
           "text" : {
-            "_0" : ".</best>\n<gloss>将此函数拆分为两个：一个用于解析，一个用于验证。相应地更新测试"
+            "_0" : ".</best>\n<gloss>把这个函数拆成两个：一个负责解析，一个负责校验。相应地更新测试。</gloss>"
           }
         },
         {
           "text" : {
-            "_0" : "。</gloss>\n<alts><alt><text>Refactor this function into two separate functions—one responsible for parsing"
+            "_0" : "\n<alts><alt><text>Refactor this function into a parser and a validator, and split their tests accordingly"
           }
         },
         {
           "text" : {
-            "_0" : " and the other for validation—and update the tests accordingly.</text><note>使用更正式的技术动词 refactor 代"
+            "_0" : ".</text><note>使用 refactor（重构）和 parser/validator 术语，使指令更具"
           }
         },
         {
           "text" : {
-            "_0" : "替 split，并用破折号使结构更紧凑。</note></alt></alts>\n<fixes"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><fix>输入已经是目标语言（英文），在此处不适用（输入为中文，属于 Case A）。</fix></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "fixes>"
+            "_0" : "工程规范性</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 149,
-            "promptTokens" : 839
+            "completionTokens" : 110,
+            "promptTokens" : 1285
           }
         },
         {
@@ -60,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

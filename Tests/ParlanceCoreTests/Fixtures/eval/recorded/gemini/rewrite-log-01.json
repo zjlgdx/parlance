@@ -1,0 +1,92 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">The build fails with this:\nerror[E0425]: cannot find value ⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧ in this scope\n  --> ⟦1⟧:14:9\nExplain what is missing.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>构建失败并显示如下错误：\nerror[E0425]: cannot find value "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ in this scope\n  --> ⟦1⟧:14:9\n解释缺少了什么。</gloss>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts><alt><text>The build fails with this:\nerror[E0425]: cannot find value "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ in this scope\n  --> ⟦1⟧:14:9\nIdentify the missing definition.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text><note>用 Identify 代替 Explain what is missing，更具指令性</note></alt></alts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>将 \"fail\" 改为 \"fails\"，因为主语 \"the build\" 是第三人称单数</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 208,
+            "promptTokens" : 1431
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "gemini-3.5-flash-lite",
+  "preset" : "gemini",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "log-en",
+    "id" : "log-01",
+    "input" : "the build fail with this:\nerror[E0425]: cannot find value `cfg` in this scope\n  --> src/main.rs:14:9\nwhat i miss"
+  }
+}

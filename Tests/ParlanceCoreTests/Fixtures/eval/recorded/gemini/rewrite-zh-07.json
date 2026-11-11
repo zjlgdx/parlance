@@ -14,33 +14,28 @@
         },
         {
           "text" : {
-            "_0" : ".</best>\n<gloss>写一个对PR评审意见的回复，解释为什么我不同意其中三条。</gloss>\n"
+            "_0" : ".</best>\n<gloss>写一个对 PR 评审意见的回复，解释为什么我不同意其中三条。</gloss>\n"
           }
         },
         {
           "text" : {
-            "_0" : "<alts><alt><text>Draft a response to the three PR review comments I disagree with, explaining the rationale"
+            "_0" : "<alts><alt><text>Draft a response to three PR review comments I disagree with and explain the reasons.</"
           }
         },
         {
           "text" : {
-            "_0" : ".</text><note>用 rationale 替换解释原因，显得更加专业和简洁。</note></alt></alts>\n<"
+            "_0" : "text><note>Draft a response 更加精炼自然，用在对 coding agent 的指令中很合适。</note></alt></"
           }
         },
         {
           "text" : {
-            "_0" : "fixes><fix>“帮我写个回复解释为什么”被转写为祈使句“Write a reply..."
-          }
-        },
-        {
-          "text" : {
-            "_0" : " explaining why”，符合面向编码代理的指令语调。</fix></fixes>"
+            "_0" : "alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 139,
-            "promptTokens" : 840
+            "completionTokens" : 103,
+            "promptTokens" : 1286
           }
         },
         {
@@ -55,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

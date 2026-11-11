@@ -19,38 +19,33 @@
         },
         {
           "text" : {
-            "_0" : " ⟦0⟧ 的类中调用 ⟦1⟧ 时报 Sendable 警告，解释该如何修改。</"
+            "_0" : " ⟦0⟧ 的类中调用 ⟦1⟧ 时引发 Sendable 警告，解释如何修复它。</gloss>\n<al"
           }
         },
         {
           "text" : {
-            "_0" : "gloss>\n<alts><alt><text>Explain the correct way to resolve the Sendable warning triggered by calling ⟦1⟧"
+            "_0" : "ts><alt><text>Explain how to fix Sendable warnings when calling ⟦1⟧ inside a class in ⟦0⟧ with"
           }
         },
         {
           "text" : {
-            "_0" : " within a class of ⟦0⟧ under Swift 6.</text><note>使用更正式的技术词汇（"
+            "_0" : " Swift 6.</text><note>与最佳版本相比，语序更自然流畅，符合技术人员的表达习惯。</note"
           }
         },
         {
           "text" : {
-            "_0" : "resolve、triggered by）来重写指令，使其语气更符合面向编码代理的规范。</note></alt></al"
+            "_0" : "></alt></alts>\n<fixes><fix>“怎么改才对”译为 “Explain how to fix”"
           }
         },
         {
           "text" : {
-            "_0" : "ts>\n<fixes><fix>原句是关于 Swift 6 警告的求助式问句，已"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "转换为面向编码代理的祈使句指令（Explain how to fix ...）。</fix></fixes>"
+            "_0" : " 而不是字面翻译 “how to change is correct”，更加符合英语技术指令的习惯。</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 189,
-            "promptTokens" : 971
+            "completionTokens" : 176,
+            "promptTokens" : 1417
           }
         },
         {
@@ -65,6 +60,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 1,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

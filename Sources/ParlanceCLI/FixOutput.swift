@@ -25,8 +25,12 @@ struct FixOutput {
       case "best": write(section.text, style: "1")
       case "gloss": write(section.text, style: "2")
       case "alts":
-        for (offset, alt) in section.children.enumerated() {
-          write("\(offset + 1). \(alt.children.first { $0.name == "text" }?.text ?? "")")
+        var number = 0
+        for alt in section.children {
+          let text = alt.children.first { $0.name == "text" }?.text ?? ""
+          guard !text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else { continue }
+          number += 1
+          write("\(number). \(text)")
           if let note = alt.children.first(where: { $0.name == "note" }) {
             write(note.text, style: "2")
           }
@@ -65,6 +69,11 @@ struct FixOutput {
         startNewBlock()
         write("retry failed; using first result", style: "2")
         write(sections.best, style: "1")
+      } else if result.bestEligibility == .malformed, !result.snapshot.rawText.isEmpty {
+        // An empty best has sections but no usable text, so it is shown whole like other
+        // malformed output.
+        startNewBlock()
+        write(result.snapshot.rawText)
       } else if diagnostic == nil || result.sections != nil {
         render(result.snapshot)
       } else if !result.snapshot.rawText.isEmpty, rendered.isEmpty || result.snapshot.isMalformed {
@@ -132,7 +141,7 @@ struct FixOutput {
     let error: JSONValue =
       diagnostic.map {
         .object([
-          "code": .string($0.code), "section": .null, "message": .string($0.message),
+          "code": .string($0.code), "message": .string($0.message),
           "http_status": $0.httpStatus.map { .integer($0) } ?? .null,
           "provider_code": $0.providerCode.map { .string($0.rawValue) } ?? .null,
         ])

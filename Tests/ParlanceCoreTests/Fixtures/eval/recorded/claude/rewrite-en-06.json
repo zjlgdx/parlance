@@ -4,57 +4,52 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best>The"
+            "_0" : "<best>"
           }
         },
         {
           "text" : {
-            "_0" : " test is flaky: it s"
+            "_0" : "Check why the test is fla"
           }
         },
         {
           "text" : {
-            "_0" : "ometimes passes and somet"
+            "_0" : "ky: it sometimes pass"
           }
         },
         {
           "text" : {
-            "_0" : "imes fails. It"
+            "_0" : "es and sometimes fails"
           }
         },
         {
           "text" : {
-            "_0" : " may be a timing problem."
+            "_0" : ", and it may be a timing"
           }
         },
         {
           "text" : {
-            "_0" : " Please check whether it is."
+            "_0" : " problem.</best>\n<"
           }
         },
         {
           "text" : {
-            "_0" : "</best>\n<gloss"
+            "_0" : "gloss>检查这个"
           }
         },
         {
           "text" : {
-            "_0" : ">这"
+            "_0" : "测"
           }
         },
         {
           "text" : {
-            "_0" : "个测试不"
+            "_0" : "试为什么不稳定"
           }
         },
         {
           "text" : {
-            "_0" : "稳定："
-          }
-        },
-        {
-          "text" : {
-            "_0" : "有"
+            "_0" : "：它有"
           }
         },
         {
@@ -64,7 +59,7 @@
         },
         {
           "text" : {
-            "_0" : "过，有时失败。可"
+            "_0" : "过、有时失败，可"
           }
         },
         {
@@ -74,82 +69,52 @@
         },
         {
           "text" : {
-            "_0" : "问题。请检查它"
+            "_0" : "问题。</gloss>"
           }
         },
         {
           "text" : {
-            "_0" : "是不"
+            "_0" : "\n<alts><alt><"
           }
         },
         {
           "text" : {
-            "_0" : "是时"
+            "_0" : "text>Investigate why this"
           }
         },
         {
           "text" : {
-            "_0" : "序问题。</gloss"
+            "_0" : " test is flaky. It pass"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<alts>"
+            "_0" : "es at"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>The test is"
+            "_0" : " some run"
           }
         },
         {
           "text" : {
-            "_0" : " flaky: it sometim"
+            "_0" : "s and fails at others"
           }
         },
         {
           "text" : {
-            "_0" : "es passes and sometimes"
+            "_0" : ", and the cause may be tim"
           }
         },
         {
           "text" : {
-            "_0" : " fails. Check whether it"
+            "_0" : "ing.</text><note>用"
           }
         },
         {
           "text" : {
-            "_0" : " is a timing problem.</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "text><note>更"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "简"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "洁的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "祈使句"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "写"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "法，去掉了 "
+            "_0" : " "
           }
         },
         {
@@ -159,92 +124,297 @@
         },
         {
           "text" : {
-            "_0" : "Please\""
+            "_0" : "Investigate\" 替换 "
           }
         },
         {
           "text" : {
-            "_0" : "，语"
+            "_0" : "\"Check\"，语气更"
           }
         },
         {
           "text" : {
-            "_0" : "气更直接，符"
+            "_0" : "偏向"
           }
         },
         {
           "text" : {
-            "_0" : "合 "
+            "_0" : "深入排"
           }
         },
         {
           "text" : {
-            "_0" : "agent 指"
+            "_0" : "查原"
           }
         },
         {
           "text" : {
-            "_0" : "令风"
+            "_0" : "因，与原"
           }
         },
         {
           "text" : {
-            "_0" : "格。</note></alt>"
+            "_0" : "文的意"
           }
         },
         {
           "text" : {
-            "_0" : "<alt><text>This test is"
+            "_0" : "思"
           }
         },
         {
           "text" : {
-            "_0" : " flaky, passing and fail"
+            "_0" : "一"
           }
         },
         {
           "text" : {
-            "_0" : "ing intermittently. Please"
+            "_0" : "致。</note></alt><"
           }
         },
         {
           "text" : {
-            "_0" : " check whether timing is the c"
+            "_0" : "alt><text>Check why"
           }
         },
         {
           "text" : {
-            "_0" : "ause.</text><note>用"
+            "_0" : " the test is flaky,"
           }
         },
         {
           "text" : {
-            "_0" : " \"intermittently\" "
+            "_0" : " since"
           }
         },
         {
           "text" : {
-            "_0" : "替"
+            "_0" : " it sometimes passes and"
           }
         },
         {
           "text" : {
-            "_0" : "代 \"sometim"
+            "_0" : " sometimes fails, poss"
           }
         },
         {
           "text" : {
-            "_0" : "es pass"
+            "_0" : "ibly due"
           }
         },
         {
           "text" : {
-            "_0" : "es and s"
+            "_0" : " to a timing issue.</"
           }
         },
         {
           "text" : {
-            "_0" : "ometimes fails\""
+            "_0" : "text><note>把 \"may"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " be"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a timing problem\" 合"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "并为 \"possibly due"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " to a timing issue\" "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "的从"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语句更紧凑，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "但仍保留原意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。</note></alt></al"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ts>\n<fixes><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>\"sometime p"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ass sometime"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fail\" 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逐字照"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "搬中文的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"sometimes passes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and sometimes fails\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "：s"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ometime 要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加 s"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，pass 要用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "第"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "三人称单"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数 pass"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "es，f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ail 要用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " fails，并用"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " and 连接两"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个分"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "句。</fix><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>\"maybe is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " timing problem\" 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逐字照搬的写法"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。应为 \"it may be"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " a timing problem\"：ma"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ybe 要改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "为 may"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " be"
           }
         },
         {
@@ -254,189 +424,29 @@
         },
         {
           "text" : {
-            "_0" : "把 \"timing probl"
+            "_0" : "补"
           }
         },
         {
           "text" : {
-            "_0" : "em\" 改"
+            "_0" : "上主语 it "
           }
         },
         {
           "text" : {
-            "_0" : "为 \"timing is"
+            "_0" : "和冠词 a。</"
           }
         },
         {
           "text" : {
-            "_0" : " the cause\"，语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "义"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "更明"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "确，但措"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "辞更正"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "式。</note></alt></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "alts>\n<fixes"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "><fix>\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "sometime\" 应"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "为副"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "词 \"sometimes\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，原句"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "漏"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "掉了词"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "尾 -"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "s。</fix><fix"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\"maybe is\" "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "缺少主语，应为"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " \"maybe it is\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "（"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "或 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\"it may be\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "）。</fix><fix"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\"pls\" 是非"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "正式"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "缩写，正"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "式指"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "令中"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "应写"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "作"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " \""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Please\"。</fix></f"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ixes>"
+            "_0" : "fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 1060,
-            "promptTokens" : 1161,
-            "reasoningTokens" : 634
+            "completionTokens" : 1253,
+            "promptTokens" : 1750,
+            "reasoningTokens" : 791
           }
         },
         {
@@ -451,6 +461,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

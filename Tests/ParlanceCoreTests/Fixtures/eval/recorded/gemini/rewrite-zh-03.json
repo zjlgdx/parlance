@@ -14,28 +14,28 @@
         },
         {
           "text" : {
-            "_0" : " the incoming request to the database write.</best>\n<gloss>先不要修改任何代码。请解释这个模块的数据流，"
+            "_0" : " the incoming request to the database write.</best>\n<gloss>先不要修改任何代码。解释一下这个模块的数据流，从"
           }
         },
         {
           "text" : {
-            "_0" : "从请求进入直到写入数据库。</gloss>\n<alts><alt><text>Without modifying any code, explain the data flow"
+            "_0" : "请求进来到写入数据库。</gloss>\n<alts><alt><text>Do not change any code yet. Describe"
           }
         },
         {
           "text" : {
-            "_0" : " of this module from the incoming request to the database write.</text><note>使用分词结构简化了句子，表达"
+            "_0" : " the request-to-database data flow for this module.</text><note>用词更符合技术指令的习惯，更加"
           }
         },
         {
           "text" : {
-            "_0" : "更紧凑。</note></alt></alts>"
+            "_0" : "精炼。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 109,
-            "promptTokens" : 840
+            "completionTokens" : 108,
+            "promptTokens" : 1286
           }
         },
         {
@@ -50,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

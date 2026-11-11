@@ -9,43 +9,38 @@
         },
         {
           "text" : {
-            "_0" : ">A conflict occurred during git rebase, and ⟦0⟧ was modified"
+            "_0" : ">Explain the safest way to resolve a conflict during a git rebase where "
           }
         },
         {
           "text" : {
-            "_0" : " on both sides. Explain the safest way to resolve it.</best>\n<gloss>在 git rebase 期间发生了"
+            "_0" : "⟦0⟧ was modified on both sides.</best>\n<gloss>解释在 git rebase 过程中，当"
           }
         },
         {
           "text" : {
-            "_0" : "冲突，且 ⟦0⟧ 在两侧都被修改了。解释最安全地解决它的方法。</gloss>\n<al"
+            "_0" : " ⟦0⟧ 在两侧都被修改时，最安全地解决冲突的方法。</gloss>\n<alts>\n"
           }
         },
         {
           "text" : {
-            "_0" : "ts><alt><text>Resolve the git rebase conflict where ⟦0⟧ was modified on both sides, using"
+            "_0" : "<alt>\n<text>Explain how to safely resolve a conflict during a git rebase when ⟦0⟧ has edits"
           }
         },
         {
           "text" : {
-            "_0" : " the safest approach.</text><note>使用祈使句直接指示代理解决冲突，语气更符合 agent 预"
+            "_0" : " on both branches.</text>\n<note>使用 branches 代替 sides，表述更为地道。</note>\n</alt"
           }
         },
         {
           "text" : {
-            "_0" : "设。</note></alt></alts>\n<fixes><fix>输入为中文且目标语言为英文，因此按照"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " Case A 处理，不包含 fixes 部分。</fix></fixes>"
+            "_0" : ">\n</alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 156,
-            "promptTokens" : 956
+            "completionTokens" : 126,
+            "promptTokens" : 1402
           }
         },
         {
@@ -60,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

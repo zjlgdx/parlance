@@ -19,7 +19,67 @@
         },
         {
           "text" : {
-            "_0" : "⟧"
+            "_0" : "⟧, and stop using"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " completion handlers.</best"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<gloss>把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ 改成 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "且不要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "再使用 completion handler"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 了。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "text>Replace "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧ with "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧"
           }
         },
         {
@@ -29,157 +89,82 @@
         },
         {
           "text" : {
-            "_0" : "ers.</best>\n<g"
+            "_0" : "ers.</text><note>“"
           }
         },
         {
           "text" : {
-            "_0" : "loss>把 "
+            "_0" : "Replace”比"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧ 改"
+            "_0" : "“"
           }
         },
         {
           "text" : {
-            "_0" : "成 ⟦1"
+            "_0" : "Change”更明"
           }
         },
         {
           "text" : {
-            "_0" : "⟧，不"
+            "_0" : "确地表"
           }
         },
         {
           "text" : {
-            "_0" : "要"
+            "_0" : "示替"
           }
         },
         {
           "text" : {
-            "_0" : "再使"
+            "_0" : "换"
           }
         },
         {
           "text" : {
-            "_0" : "用 completion handler"
+            "_0" : "掉原"
           }
         },
         {
           "text" : {
-            "_0" : "。</gloss>"
+            "_0" : "来"
           }
         },
         {
           "text" : {
-            "_0" : "\n<alts><alt><text>"
+            "_0" : "的写"
           }
         },
         {
           "text" : {
-            "_0" : "Replace ⟦0"
+            "_0" : "法，语"
           }
         },
         {
           "text" : {
-            "_0" : "⟧ with "
+            "_0" : "气与"
           }
         },
         {
           "text" : {
-            "_0" : "⟦1⟧ and st"
+            "_0" : "原文一"
           }
         },
         {
           "text" : {
-            "_0" : "op using the completion handler."
+            "_0" : "致"
           }
         },
         {
           "text" : {
-            "_0" : "</text><note>用"
+            "_0" : "。</note></alt><al"
           }
         },
         {
           "text" : {
-            "_0" : " "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Replace …"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " with\" 强"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "调替"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "换动"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "作，\"the completion handler"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\" 指"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "特"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "定的那"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "个回调，"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "语"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "气比"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "原文更具"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "体。</note></alt>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>Change "
+            "_0" : "t><text>Switch "
           }
         },
         {
@@ -194,79 +179,109 @@
         },
         {
           "text" : {
-            "_0" : "⟧ and don't use completion"
+            "_0" : "⟧ and remove the completion"
           }
         },
         {
           "text" : {
-            "_0" : " handlers anymore.</"
+            "_0" : " handler usage.</text><"
           }
         },
         {
           "text" : {
-            "_0" : "text><note>用 \"don"
+            "_0" : "note>把"
           }
         },
         {
           "text" : {
-            "_0" : "'t …"
+            "_0" : "“别"
           }
         },
         {
           "text" : {
-            "_0" : " anymore\" 直"
+            "_0" : "再用”具"
           }
         },
         {
           "text" : {
-            "_0" : "译"
+            "_0" : "体化为“删除 "
           }
         },
         {
           "text" : {
-            "_0" : "原"
+            "_0" : "completion handler 的用法"
           }
         },
         {
           "text" : {
-            "_0" : "文的\"别"
+            "_0" : "”，指明要"
           }
         },
         {
           "text" : {
-            "_0" : "再\""
+            "_0" : "删"
           }
         },
         {
           "text" : {
-            "_0" : "，语气更口语化，"
+            "_0" : "掉的是"
           }
         },
         {
           "text" : {
-            "_0" : "适"
+            "_0" : "现"
           }
         },
         {
           "text" : {
-            "_0" : "合直接下"
+            "_0" : "有代码中"
           }
         },
         {
           "text" : {
-            "_0" : "达指令。</note></al"
+            "_0" : "的用"
           }
         },
         {
           "text" : {
-            "_0" : "t></alts>"
+            "_0" : "法，适合需"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "要说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "明清"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理范"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "围的场"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "景。</note></alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 607,
-            "promptTokens" : 1341,
-            "reasoningTokens" : 336
+            "completionTokens" : 682,
+            "promptTokens" : 1930,
+            "reasoningTokens" : 399
           }
         },
         {
@@ -281,6 +296,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

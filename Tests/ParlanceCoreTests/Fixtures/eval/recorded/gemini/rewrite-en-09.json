@@ -19,33 +19,28 @@
         },
         {
           "text" : {
-            "_0" : "错误。</gloss>\n<alts><alt><text>Execute ⟦0⟧. Address the missing header error occurring"
+            "_0" : "错误。</gloss>\n<alts><alt><text>Execute ⟦0⟧. It throws a missing header error even"
           }
         },
         {
           "text" : {
-            "_0" : " even though the library is installed.</text><note>使用更具执行力的动词 Address 来替代描述性表"
+            "_0" : " though the library is already installed.</text><note>使用更符合命令执行语境的 Execute 代替 Run。</"
           }
         },
         {
           "text" : {
-            "_0" : "述，更符合指令风格。</note></alt></alts>\n<fixes><fix>“run ⟦0⟧ have"
+            "_0" : "note></alt></alts>\n<fixes><fix>“have error” 应改为单三形式的 “has error”"
           }
         },
         {
           "text" : {
-            "_0" : " error about missing header”语法不合规范，缺少主谓一致及介词，已修正为更地道的英文描述。</fix></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "fixes>"
+            "_0" : " 或改为被动语态 “results in an error”，因为主语是单数或不可数。</fix></fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 153,
-            "promptTokens" : 952
+            "completionTokens" : 149,
+            "promptTokens" : 1398
           }
         },
         {
@@ -60,6 +55,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

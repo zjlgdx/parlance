@@ -4,7 +4,12 @@
       "events" : [
         {
           "text" : {
-            "_0" : "<best>This"
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Fix the dependency array of"
           }
         },
         {
@@ -14,7 +19,72 @@
         },
         {
           "text" : {
-            "_0" : " dependency array is missing"
+            "_0" : ": it is missing "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧, so data"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " does not refresh after switching"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " users.</best>\n<g"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "loss>修复 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 的依赖数组："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "它缺少 "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧，导致"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "切换用户后数据不"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "刷新。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts>\n<"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt><text>⟦"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "0⟧ is missing"
           }
         },
         {
@@ -24,137 +94,32 @@
         },
         {
           "text" : {
-            "_0" : ", so data does not refresh"
+            "_0" : " in its dependency array,"
           }
         },
         {
           "text" : {
-            "_0" : " after switching users. Fix"
+            "_0" : " so data does not refresh after"
           }
         },
         {
           "text" : {
-            "_0" : " it.</best>\n<g"
+            "_0" : " switching users. Fix it"
           }
         },
         {
           "text" : {
-            "_0" : "loss>这个 "
+            "_0" : ".</text><note>语"
           }
         },
         {
           "text" : {
-            "_0" : "⟦0⟧ "
+            "_0" : "气更"
           }
         },
         {
           "text" : {
-            "_0" : "依"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "赖数组漏了 "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦1⟧"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "，导致切换用户后"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "数据不"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "刷新。修复"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "它。</gloss>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<alts>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<alt><text>The depend"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ency array of ⟦0"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟧ is missing "
-          }
-        },
-        {
-          "text" : {
-            "_0" : "⟦1⟧,"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " which causes data to not refres"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "h after switching users. F"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "ix it.</text><note>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "更正式"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "的"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "书"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "面语写"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "法，把"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\""
-          }
-        },
-        {
-          "text" : {
-            "_0" : "漏了\""
+            "_0" : "直接，先"
           }
         },
         {
@@ -164,57 +129,92 @@
         },
         {
           "text" : {
-            "_0" : "成\""
+            "_0" : "明"
           }
         },
         {
           "text" : {
-            "_0" : "缺少\"，并用\"which"
+            "_0" : "问题再"
           }
         },
         {
           "text" : {
-            "_0" : " causes\"明"
+            "_0" : "下"
           }
         },
         {
           "text" : {
-            "_0" : "确因"
+            "_0" : "指"
           }
         },
         {
           "text" : {
-            "_0" : "果关系。</note></al"
+            "_0" : "令\""
           }
         },
         {
           "text" : {
-            "_0" : "t><alt><text>"
+            "_0" : "修复\"，"
           }
         },
         {
           "text" : {
-            "_0" : "Fix ⟦0"
+            "_0" : "与原文\""
           }
         },
         {
           "text" : {
-            "_0" : "⟧: its dependency array"
+            "_0" : "修一下\"的"
           }
         },
         {
           "text" : {
-            "_0" : " is missing ⟦1"
+            "_0" : "意"
           }
         },
         {
           "text" : {
-            "_0" : "⟧, so data stays"
+            "_0" : "思一"
           }
         },
         {
           "text" : {
-            "_0" : " stale after switching users.</"
+            "_0" : "致。</note></alt>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alt><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Add ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ to the dependency array"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " of ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧, since its abs"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ence stops data from refresh"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ing after a user switch.</"
           }
         },
         {
@@ -224,84 +224,124 @@
         },
         {
           "text" : {
+            "_0" : "\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "修一下\"具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体化为\"添"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "加 ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧\"，明"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "确要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "做的改"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "动；"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "原文没"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "有指定"
+          }
+        },
+        {
+          "text" : {
             "_0" : "修"
           }
         },
         {
           "text" : {
-            "_0" : "复指"
+            "_0" : "法"
           }
         },
         {
           "text" : {
-            "_0" : "令放在开头，用\""
+            "_0" : "，所"
           }
         },
         {
           "text" : {
-            "_0" : "stale\"描"
+            "_0" : "以这里只是"
           }
         },
         {
           "text" : {
-            "_0" : "述数据未"
+            "_0" : "把"
           }
         },
         {
           "text" : {
-            "_0" : "刷新的"
+            "_0" : "缺失"
           }
         },
         {
           "text" : {
-            "_0" : "状态，句"
+            "_0" : "的依赖补"
           }
         },
         {
           "text" : {
-            "_0" : "子更"
+            "_0" : "上"
           }
         },
         {
           "text" : {
-            "_0" : "紧凑，不再"
+            "_0" : "这"
           }
         },
         {
           "text" : {
-            "_0" : "单"
+            "_0" : "一"
           }
         },
         {
           "text" : {
-            "_0" : "独加"
+            "_0" : "意"
           }
         },
         {
           "text" : {
-            "_0" : "一句\"Fix it.\""
+            "_0" : "思。</note></alt>"
           }
         },
         {
           "text" : {
-            "_0" : "。"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</note></alt></alts"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">"
+            "_0" : "\n</alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 765,
-            "promptTokens" : 1353,
-            "reasoningTokens" : 441
+            "completionTokens" : 917,
+            "promptTokens" : 1942,
+            "reasoningTokens" : 576
           }
         },
         {
@@ -316,6 +356,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,98 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">我无法在沙盒内部运行完整的门禁检查（gate）：应用程序"
+            "_0" : ">我无法在沙盒内部运行完整的门禁测试：应用测试需要 `com"
           }
         },
         {
           "text" : {
-            "_0" : "测试需要 `com.apple.testmanagerd.control`，而沙盒会阻止它。软件包构建、格式化以及"
+            "_0" : ".apple.testmanagerd.control`，但沙盒阻止了它。软件包构建、格式化和 "
           }
         },
         {
           "text" : {
-            "_0" : " 201 个软件包测试均已通过，8 个被跳过。请在沙盒外部运行 "
+            "_0" : "201 个软件包测试均已通过，8 个被跳过。请在沙盒外部运行 `scripts/gate` 以涵盖"
           }
         },
         {
           "text" : {
-            "_0" : "`scripts/gate` 以包含应用程序测试。</translation>\n\n<plain>这段输入说明了由于沙盒权限限制无法在"
+            "_0" : "应用测试。</translation>\n\n<plain>这段话说明由于沙盒权限限制，无法在沙盒内运行需要"
           }
         },
         {
           "text" : {
-            "_0" : "内部运行完整的应用测试，并给出了已通过和跳过的测试情况以及后续操作建议。</plain>\n\n<terms><"
+            "_0" : "特定系统权限的应用测试，并建议在沙盒外部执行完整脚本来完成测试。</plain>\n\n<terms><term><"
           }
         },
         {
           "text" : {
-            "_0" : "term><word>gate</word>\n<meaning>门禁；把关；自动化检查流程</meaning>\n<here"
+            "_0" : "word>gate</word>\n<meaning>门；大门；闸门；门禁</meaning><here>指"
           }
         },
         {
           "text" : {
-            "_0" : ">指代脚本中用于全面测试和检查的 gate 流程</here></term>\n<term><word"
+            "_0" : "包含构建、格式化和测试的整套门禁检查脚本</here></term><term><word>sandbox</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : ">sandbox</word>\n<meaning>沙盒；安全隔离区</meaning>\n<here>用于限制程序权限"
+            "_0" : "meaning>沙盒；沙箱</meaning><here>指用于隔离运行环境的安全沙盒</here></term></terms"
           }
         },
         {
           "text" : {
-            "_0" : "的安全运行环境</here></term>\n<term><word>App tests</word>\n<meaning>应用测试；"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "应用程序测试</meaning>\n<here>需要特定系统权限的应用程序相关测试</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Package build</word>\n<meaning>软件包构建；包编译</meaning>\n<here>编译构建软件包的过程</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\n<term><word>formatting</word>\n<meaning>格式化；代码格式检查</meaning>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<here>对代码风格和格式进行检查的过程</here></term>\n<term><word>package"
-          }
-        },
-        {
-          "text" : {
-            "_0" : " tests</word>\n<meaning>软件包测试；包测试</meaning>\n<here>针对软件包本身的单元"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "或集成测试</here></term>\n<term><word>skipped</word>\n<meaning>已跳过</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning>\n<here>在测试运行中被略过的测试用例数量</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "scripts/gate</word>\n<meaning>门禁脚本</meaning>\n<here>用于执行完整门"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "禁检查的脚本文件路径</here></term></terms>"
+            "_0" : ">"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 445,
-            "promptTokens" : 321
+            "completionTokens" : 207,
+            "promptTokens" : 593
           }
         },
         {
@@ -115,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

@@ -9,43 +9,48 @@
         },
         {
           "text" : {
-            "_0" : ">Increase the button size and make its color darker so that users can see it clearly.</best>"
+            "_0" : ">Increase the size of the button and use a darker color, as users currently"
           }
         },
         {
           "text" : {
-            "_0" : "\n<gloss>增大按钮尺寸并使其颜色更深，以便用户能清晰地看到它。</gloss>\n<alts><"
+            "_0" : " cannot see it clearly.</best>\n<gloss>增大按钮的尺寸并使用更深的颜色，因为用户目前无法"
           }
         },
         {
           "text" : {
-            "_0" : "alt><text>Enlarge the button and deepen its color to improve visibility.</text><note>使用更简洁的“"
+            "_0" : "清晰地看到它。</gloss>\n<alts>\n<alt>\n<text>Enlarge the button and"
           }
         },
         {
           "text" : {
-            "_0" : "Enlarge”和“deepen”替换了更长短语，更符合技术指令的风格。</note></"
+            "_0" : " darken its color, as it is currently hard for users to see.</text>\n<note>使用 enlarge 和 darken 使"
           }
         },
         {
           "text" : {
-            "_0" : "alt></alts>\n<fixes><fix>“more big”和“more deep”是错误的比较级语法"
+            "_0" : "表达更简洁地道。</note>\n</alt>\n</alts>\n<fixes>\n<fix>输入中的"
           }
         },
         {
           "text" : {
-            "_0" : "，应分别使用“bigger”（或“increase the size”）和“darker”（或“deepen”）。"
+            "_0" : " \"more big\" 和 \"more deep\" 是语法错误，正确的比较级形式应为 \"bigger\" 和 \"de"
           }
         },
         {
           "text" : {
-            "_0" : "</fix></fixes>"
+            "_0" : "eper\"，或者直接使用 \"increase the size\" 和 \"darker color\"。</fix>\n<fix>输入中的 \"clear\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 作为副词修饰动词 \"see\" 拼写错误，应用副词 \"clearly\"。</fix>\n</fixes>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 153,
-            "promptTokens" : 837
+            "completionTokens" : 201,
+            "promptTokens" : 1283
           }
         },
         {
@@ -60,6 +65,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

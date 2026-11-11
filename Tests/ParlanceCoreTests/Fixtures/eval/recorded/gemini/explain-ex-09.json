@@ -9,98 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">根本原因：`Package.resolved` 将 swift-collections 锁定在 "
+            "_0" : ">根本原因：`Package.resolved` 将 swift-collections 锁死"
           }
         },
         {
           "text" : {
-            "_0" : "1.1.0 版本，但新的目标模块导入了在 1.1.3 中才添加的 `OrderedSet"
+            "_0" : "在 1.1.0 版本，但新目标导入了在 1.1.3 中添加的"
           }
         },
         {
           "text" : {
-            "_0" : "` API。CI 环境使用的是锁定文件，因此会在那里失败，而本地构建则会浮动更新到较新版本。请"
+            "_0" : " `OrderedSet` API。CI 使用锁定文件，因此在那里失败，而本地构建会浮动到更新的版本。使用"
           }
         },
         {
           "text" : {
-            "_0" : "使用 `swift package update swift-collections` 来升级版本锁定。</translation>\n\n<plain>这段文本解释了由于"
+            "_0" : " `swift package update swift-collections` 升级锁定的版本。</translation>\n\n<plain>这段文本解释了一个持续"
           }
         },
         {
           "text" : {
-            "_0" : "版本锁定文件导致 CI 构建失败的原因，并给出了升级依赖包的解决方法。</plain>\n\n<terms><"
+            "_0" : "集成（CI）构建失败的原因：依赖包版本过旧缺少必要的 API，并给出了更新版本的解决方法。</plain>\n\n"
           }
         },
         {
           "text" : {
-            "_0" : "term><word>Root cause</word>\n<meaning>根本原因</meaning><here>导致问题的根本原因</here></term"
+            "_0" : "<terms><term><word>Root cause</word>\n<meaning>根本原因</meaning><here>导致构建"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<term><word>Package.resolved</word>\n<meaning>Swift 包管理器版本锁定文件</meaning><here"
+            "_0" : "失败的核心原因</here></term><term><word>lockfile</word>\n<meaning>锁定文件</"
           }
         },
         {
           "text" : {
-            "_0" : ">记录了项目中各依赖项具体锁定版本的文件的名称</here></term>\n<term><word>swift-collections</word"
+            "_0" : "meaning><here>用于固定依赖包版本的 Package.resolved 文件</here></term><term><word>Bump</word>\n<"
           }
         },
         {
           "text" : {
-            "_0" : ">\n<meaning>Swift 集合扩展库</meaning><here>项目中引用的第三方 Swift 集合库名称</here></term"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\n<term><word>OrderedSet</word>\n<meaning>有序集合</meaning><here>代码"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "中调用的具体 API 类型</here></term>\n<term><word>CI</word>\n<meaning>持续集成</"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning><here>自动化构建和测试环境</here></term>\n<term><word>lockfile</word"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">\n<meaning>锁定文件</meaning><here>指 Package.resolved，用于确保各环境依赖版本一致</here"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "></term>\n<term><word>float</word>\n<meaning>浮动（版本）</meaning><here>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "本地未严格限制锁定文件，自动使用了更新的版本</here></term>\n<term><word>Bump the pin</word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<meaning>提升固定版本</meaning><here>升级依赖包的锁定版本</here></term>\n<term><word"
-          }
-        },
-        {
-          "text" : {
-            "_0" : ">swift package update swift-collections</word>\n<meaning>更新 swift-collections 包的命令</meaning><"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "here>用于更新依赖版本的终端命令</here></term></terms>"
+            "_0" : "meaning>提升、增加</meaning><here>升级依赖包的锁定版本</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 458,
-            "promptTokens" : 328
+            "completionTokens" : 220,
+            "promptTokens" : 600
           }
         },
         {
@@ -115,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

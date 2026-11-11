@@ -1,0 +1,278 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Review my code and give me some op"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "inions on the naming.</"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "best>\n<gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "审查我的代码，并"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "就命名给我一些意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "见。</gloss>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<alts><alt><text"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">Review my code and comment"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " on the naming.</text><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "note>更简洁的说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法。\"comment on\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 与 \"give some"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " opinions on\" 意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思相同，只是语"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "气更直接。</note></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alt></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<fixes"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><fix>\"do a review"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " for my code\" 不够"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "地道。\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "for"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\" 与 review 搭"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "配不自然，像"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是从中文\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : "给代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "码做审查\"直译过"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "来的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "。更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "自"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "然的写"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "法是 \"review my code\""
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 或 \"do a review of"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " my code\"。</fix><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>\"opinions about"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the naming\" 可改为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " \"opinions on the na"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ming\"。"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "谈论某个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "具"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "体事"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "物的"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "意见时，英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "常用 \"op"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "inions on\"。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1052,
+            "promptTokens" : 1740,
+            "reasoningTokens" : 777
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "literal-en",
+    "id" : "lit-01",
+    "input" : "Please do a review for my code and give me some opinions about the naming."
+  }
+}

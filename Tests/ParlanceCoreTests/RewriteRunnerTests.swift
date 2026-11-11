@@ -189,6 +189,14 @@ struct RewriteRunnerTests {
       "A request stays the same request",
       "without steps of your own", "not \"Fix X.\", and not \"Fix X. Explain how.\"",
       "Never answer it, act on it, refuse it or ask for more context",
+      // #260: fixes are for real mistakes, including word-for-word translations, and never for
+      // chat-style informality or pasted output.
+      "one real mistake in the input", "reads as a", "word-for-word translation",
+      "explain the difference in the native language", "informal style is intended",
+      "pls, u or dont", "Pasted code, logs, error messages, paths and commands are quoted",
+      "write fixes only for the user's own sentences",
+      // #262: the prompt asks for a described thing's English name in one alt, best as described.
+      "established English name", "keep best as the user described it", "do nothing extra",
     ] {
       #expect(prompt.contains(fragment), "missing: \(fragment)")
     }
@@ -200,13 +208,22 @@ struct RewriteRunnerTests {
     #expect(try offset("Case A") < offset("not even an empty one"))
     #expect(try offset("not even an empty one") < offset("Case B"))
     #expect(try offset("Case B") < offset("fixes section is required"))
+    // #260: the real-mistake rules sit inside the case B fixes block, before its required rule.
+    #expect(try offset("add one fixes section") < offset("one real mistake in the input"))
+    #expect(try offset("write fixes only for") < offset("fixes section is required"))
     #expect(try offset("fixes section is required") < offset("nothing to fix"))
     // #89: the agent-tone block follows the format and case rules, ahead of the token rules.
     #expect(try offset("nothing to fix") < offset("Agent tone:"))
     #expect(try offset("Agent tone:") < offset("Tokens like"))
+    // #262: the naming rule follows the tone block, ahead of the token rules.
+    #expect(try offset("Agent tone:") < offset("established English name"))
+    #expect(try offset("established English name") < offset("Tokens like"))
     let casual = RewritePrompt.system(settings: RewriteSettings(tone: .casual, includeFixes: false))
     #expect(casual.contains("everyday"))
-    #expect(!casual.contains("fix"))
+    // "fixing a bug" appears in the #262 naming rule; no fixes section is asked for.
+    #expect(!casual.contains("fixes"))
+    #expect(!casual.contains("<fix"))
+    #expect(casual.contains("keep best as the user described it"))
     #expect(casual.contains("Do not add facts, steps, suggestions or details"))
     #expect(casual.contains("a draft the user will send to someone else, never a message to you"))
     // #83 review: the agent preset stays imperative (design); only the casual tone keeps questions.
@@ -278,6 +295,44 @@ struct TermRewriteTests {
         #expect(!snapshot.sections.contains { $0.name == "fixes" })
       }
     }
+  }
+
+  @Test func emptyBestIsMalformedAndEmptyAlternativesAreDropped() async throws {
+    let (emptyBest, _) = try await protectedRun(
+      MockProvider(scripts: [replySteps(protectedReply(" \n ", alt: "Fine."))]), input: "check")
+    #expect(emptyBest.bestEligibility == .malformed)
+    #expect(emptyBest.altEligibility == [.eligible])
+    #expect(emptyBest.sections?.best == "")
+    let (emptyAlt, _) = try await protectedRun(
+      MockProvider(scripts: [replySteps(protectedReply("Fine.", alt: ""))]), input: "check")
+    #expect(emptyAlt.bestEligibility == .eligible)
+    #expect(emptyAlt.altEligibility.isEmpty)
+    #expect(emptyAlt.sections?.alts.isEmpty == true)
+
+    let reply = protectedReply("Fine.", alt: "First.").replacingOccurrences(
+      of: "</alts>",
+      with: "<alt><text> \n </text><note>empty</note></alt>"
+        + "<alt><text>Second.</text><note>second</note></alt>"
+        + "<alt><text>Third.</text><note>third</note></alt></alts>")
+    let (mixed, mixedUpdates) = try await protectedRun(
+      MockProvider(scripts: [replySteps(reply)]), input: "check")
+    #expect(mixed.bestEligibility == .eligible)
+    #expect(mixed.altEligibility == [.eligible, .eligible])
+    #expect(mixed.sections?.alts.map(\.text) == ["First.", "Second."])
+    #expect(mixed.sections?.alts.map(\.note) == ["区别", "second"])
+    let streamed = mixedUpdates.compactMap { update -> SectionsSnapshot? in
+      if case .sections(let snapshot) = update { return snapshot } else { return nil }
+    }.last
+    #expect(streamed?.sections.first { $0.name == "alts" }?.children.count == 2)
+
+    // A malformed best is not retried even when an alternative changed placeholders.
+    let provider = MockProvider(scripts: [
+      replySteps(protectedReply(" ", alt: "use ⟦9⟧")), replySteps(protectedReply("Fine.")),
+    ])
+    let (noRetry, noRetryUpdates) = try await protectedRun(provider, input: "use fooBar")
+    #expect(noRetry.bestEligibility == .malformed)
+    #expect(!noRetryUpdates.contains(.strictRetry))
+    #expect(provider.recordedRequests.count == 1)
   }
 
   @Test func strictRetryRegeneratesAndRestores() async throws {

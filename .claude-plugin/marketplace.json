@@ -1,0 +1,14 @@
+{
+  "name": "parlance",
+  "owner": { "name": "zjlgdx", "url": "https://github.com/zjlgdx" },
+  "metadata": {
+    "description": "Parlance for Claude Code: native-language explanations of Claude's replies, through the pl CLI."
+  },
+  "plugins": [
+    {
+      "name": "parlance",
+      "source": "./integrations/claude-code",
+      "description": "Explains each Claude Code reply in your native language, in a pane beside the chat, through the pl CLI."
+    }
+  ]
+}

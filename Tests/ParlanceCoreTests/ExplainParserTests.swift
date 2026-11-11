@@ -51,6 +51,36 @@ struct ExplainParserTests {
     }
   }
 
+  @Test func emptyRequiredLeavesAreMalformed() {
+    let term = "<terms><term><word>w</word><meaning>m</meaning><here>h</here></term></terms>"
+    for (schema, text, malformed) in [
+      (SectionSchema.explainQuick, "<translation></translation><plain>p</plain>" + term, true),
+      (.explainQuick, "<translation>t</translation><plain> \n </plain>" + term, true),
+      (
+        .explainQuick,
+        "<translation>t</translation><plain>p</plain>"
+          + "<terms><term><word> </word><meaning>m</meaning><here>h</here></term></terms>", true
+      ),
+      (
+        .explainQuick,
+        "<translation>t</translation><plain>p</plain>"
+          + "<terms><term><word>w</word><meaning></meaning><here>h</here></term></terms>", true
+      ),
+      (
+        .explainQuick,
+        "<translation>t</translation><plain>p</plain>"
+          + "<terms><term><word>w</word><ipa></ipa><meaning>m</meaning><here></here></term></terms>",
+        false
+      ),
+      (.explainVocab, "<vocab></vocab>", true),
+      (.explainDomain, "<domain>  </domain>", true),
+    ] {
+      var parser = SectionStreamParser(schema: schema)
+      parser.feed(text)
+      #expect(parser.finish().isMalformed == malformed, "\(text)")
+    }
+  }
+
   @Test func childTagsOutsideParentStayText() {
     var parser = SectionStreamParser(schema: .explainQuick)
     let text = "<word>w</word><term>x</term><ipa>i</ipa><meaning>m</meaning><here>h</here><T>"

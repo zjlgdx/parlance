@@ -9,38 +9,33 @@
         },
         {
           "text" : {
-            "_0" : ">Write a script that deletes backups older than thirty days every day at midnight and prints the"
+            "_0" : ">Write a script that deletes backups older than thirty days every day at midnight,"
           }
         },
         {
           "text" : {
-            "_0" : " files to be deleted before deleting them.</best>\n<gloss>编写一个脚本，每天凌晨删除三十天前的备份，"
+            "_0" : " and prints the files to be deleted before deleting them.</best>\n<gloss>编写一个脚本，每天凌晨删除"
           }
         },
         {
           "text" : {
-            "_0" : "并在删除前打印要删除的文件。</gloss>\n<alts><alt><text>Create a daily midnight cron"
+            "_0" : "三十天前的备份，并在删除前打印要删除的文件。</gloss>\n<alts><alt><text>Write a"
           }
         },
         {
           "text" : {
-            "_0" : " job or script to delete backups older than 30 days, logging the filenames prior to deletion.</text><note>使用"
+            "_0" : " script to prune backups older than 30 days daily at midnight, logging the target files prior to deletion.</text><"
           }
         },
         {
           "text" : {
-            "_0" : "更偏向运维指令的表达方式，将“脚本”具体化为包含 cron 任务或脚本的表"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "述。</note></alt></alts>"
+            "_0" : "note>prune（清理）是处理旧备份的常用专业术语。</note></alt></alts>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 128,
-            "promptTokens" : 843
+            "completionTokens" : 116,
+            "promptTokens" : 1289
           }
         },
         {
@@ -55,6 +50,8 @@
   "metrics" : {
     "bestEligible" : true,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },

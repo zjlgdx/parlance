@@ -1,0 +1,458 @@
+{
+  "attempts" : [
+    {
+      "events" : [
+        {
+          "text" : {
+            "_0" : "<best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "The tests are failing on C"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "I. Here is the output:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\nFAIL "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧\n  "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "● ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ › should create user\n    "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Expected: 201\n    "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Received: 500\nCheck"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the failure.</best>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\n<gloss>C"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "I 上的测试失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败了。输出如下："
+          }
+        },
+        {
+          "text" : {
+            "_0" : "\nFAIL "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦0⟧\n  "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "● ⟦1"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧ › should create user\n    "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Expected: 201\n    "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "Received: 500\n检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "个失败。</gloss"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">\n<alts><alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "><text>"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "T"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ests are failing on CI."
+          }
+        },
+        {
+          "text" : {
+            "_0" : " Output below:\nFAI"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "L ⟦0"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟧\n  ● "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "⟦1⟧ › should"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " create user\n    Expected:"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 201\n    Received: "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "500\nInvestigate why this"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " test fails.</text><note"
+          }
+        },
+        {
+          "text" : {
+            "_0" : ">与"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "最"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "佳版本意"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "思相同，但把"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "“检"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "查这个失败”换成"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "了更"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "具体的“调查这个"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "测试为什么失"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "败”，要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "求代"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "理找出原因，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "而不只"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是看"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "眼。</note></alt"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "alts>\n<f"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "ixes><fix>“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "tests is red”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "谓不一致，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "复"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "数主"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语要"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "用 “are"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "”，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "应为 “the"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " tests are failing”。“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "red” 在"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "口"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语里"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "可以说"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，但正"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "式一"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "点用 “failing” "
+          }
+        },
+        {
+          "text" : {
+            "_0" : "更自然。</fix><"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "fix>“here the output”"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " 是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "逐字照"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "搬中文“"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "这"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "是"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "输出”的结构"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "，英"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "语应为"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " “here is the output”，"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "或 “Here is"
+          }
+        },
+        {
+          "text" : {
+            "_0" : " the output:”。</fix"
+          }
+        },
+        {
+          "text" : {
+            "_0" : "></fixes>"
+          }
+        },
+        {
+          "usage" : {
+            "completionTokens" : 1355,
+            "promptTokens" : 1953,
+            "reasoningTokens" : 908
+          }
+        },
+        {
+          "finished" : {
+            "_0" : "stop"
+          }
+        }
+      ]
+    }
+  ],
+  "kind" : "rewrite",
+  "metrics" : {
+    "bestEligible" : true,
+    "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
+    "failures" : {
+
+    },
+    "fallback" : false,
+    "sectionsComplete" : true,
+    "strictRetryUsed" : false,
+    "termPasses" : 2,
+    "termVersions" : 2
+  },
+  "model" : "claude-haiku-5-5",
+  "preset" : "claude",
+  "schemaVersion" : 1,
+  "testCase" : {
+    "category" : "log-en",
+    "id" : "log-02",
+    "input" : "tests is red on ci, here the output:\nFAIL src/user.test.ts\n  ● UserService › should create user\n    Expected: 201\n    Received: 500\nplease check it"
+  }
+}

@@ -9,118 +9,53 @@
         },
         {
           "text" : {
-            "_0" : ">注意：执行 `git push` 时，在 `send-pack:"
+            "_0" : ">注意：执行 `git push` 时，紧接着 `send-pack: unexpected"
           }
         },
         {
           "text" : {
-            "_0" : " unexpected disconnect` 之后立即显示了 `Everything up-to-date`。我用 `git ls-remote origin refs/heads/"
+            "_0" : " disconnect` 打印出了 `Everything up-to-date`。我用 `git ls-remote origin refs/"
           }
         },
         {
           "text" : {
-            "_0" : "feat/retry` 检查了一下，发现远程分支仍然停留在上一个提交，说明推送并未成功。现在"
+            "_0" : "heads/feat/retry` 检查了一下，远程分支仍然停留在上一个提交，所以推送并没有成功。现在"
           }
         },
         {
           "text" : {
-            "_0" : "重新尝试。</translation>\n\n<plain>这段输入描述了一个 Git 推送时遇到意外断开连接但显示"
+            "_0" : "重试。</translation>\n<plain>这段文字描述了一个 Git 推送时遇到意外断开连接、显示"
           }
         },
         {
           "text" : {
-            "_0" : "“已是最新”的虚假成功现象，以及作者通过检查远程分支确认未推送成功并决定重"
+            "_0" : "最新但实际未成功的故障排查过程。</plain>\n<terms><term><word>git push</word>\n<meaning>"
           }
         },
         {
           "text" : {
-            "_0" : "试的过程。</plain>\n\n<terms><term><word>Heads up</word>\n<meaning>注意，提"
+            "_0" : "将本地仓库的提交推送到远程仓库</meaning><here>将本地的更改上传到远程仓库的操作</here></term"
           }
         },
         {
           "text" : {
-            "_0" : "个醒，预警</meaning><here>用于提醒读者注意接下来发生的一个异常情况</here></term>"
+            "_0" : "><term><word>git ls-remote</word>\n<meaning>显示远程仓库的引用</meaning><here>用于"
           }
         },
         {
           "text" : {
-            "_0" : "\n<term><word>git push</word>\n<meaning>Git 推送</meaning><here>将"
+            "_0" : "检查远程分支实际指向哪个提交的命令</here></term><term><word>remote branch</word>\n"
           }
         },
         {
           "text" : {
-            "_0" : "本地仓库的提交上传到远程仓库的命令</here></term>\n<term><word>Everything up-to-"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "date</word>\n<meaning>一切都是最新的</meaning><here>Git 的提示信息，表示本地没有需要"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "推送到远程的新提交</here></term>\n<term><word>send-pack: unexpected disconnect</word>\n"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "<meaning>发送包：意外断开连接</meaning><here>Git 底层网络传输时发生的异常断"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "开错误</here></term>\n<term><word>git ls-remote</word>\n<meaning>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "查看远程仓库引用</meaning><here>用于列出远程仓库中分支和标签状态的命令</here></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "term>\n<term><word>origin</word>\n<meaning>起源，源</meaning><here>默认"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "的远程仓库名称</here></term>\n<term><word>refs/heads/feat/retry</word>\n<"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "meaning>引用/分支/feat/retry</meaning><here>特定远程分支的引用路径</here></term>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "\n<term><word>commit</word>\n<meaning>提交</meaning><here>Git 版本库中的一个代码快照节点"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "</here></term>\n<term><word>land</word>\n<meaning>着陆，成功送"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "达</meaning><here>指代码成功推送到远程仓库并生效</here></term>\n<term><word>"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "Retrying</word>\n<meaning>重试</meaning><here>再次执行刚才失败的操作</here></term></"
-          }
-        },
-        {
-          "text" : {
-            "_0" : "terms>"
+            "_0" : "<meaning>远程分支</meaning><here>托管在远程服务器上的代码分支</here></term></terms>"
           }
         },
         {
           "usage" : {
-            "completionTokens" : 526,
-            "promptTokens" : 323
+            "completionTokens" : 224,
+            "promptTokens" : 595
           }
         },
         {
@@ -135,6 +70,8 @@
   "metrics" : {
     "bestEligible" : false,
     "bestHasResidue" : false,
+    "caseAFixesInReply" : 0,
+    "caseAFixesInResult" : 0,
     "failures" : {
 
     },
