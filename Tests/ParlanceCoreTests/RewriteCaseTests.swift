@@ -73,6 +73,10 @@ struct RewriteCaseTests {
     #expect(
       RewriteCase.classify(
         "帮我看看", settings: RewriteSettings(targetLanguage: "hy", nativeLanguage: "zh-Hans"))
+        == .translate)  // #343: Armenian is no longer an unlisted script.
+    #expect(
+      RewriteCase.classify(
+        "Բարև 帮", settings: RewriteSettings(targetLanguage: "hy", nativeLanguage: "zh-Hans"))
         == .polish)
     #expect(RewriteCase.classify("Հայերեն", settings: RewriteSettings()) == .polish)
   }
@@ -124,5 +128,44 @@ struct RewriteCaseTests {
   func nativeWordsMakeCaseA(_ native: String, _ input: String) {
     let settings = RewriteSettings(targetLanguage: "en", nativeLanguage: native)
     #expect(RewriteCase.classify(input, settings: settings) == .translate)
+  }
+
+  @Test(arguments: [
+    ("bn", "আমি ভাত খাই"), ("ur", "میں ٹھیک ہوں"), ("ur-Aran", "میں ٹھیک ہوں"),
+    ("ur-Arab", "میں ٹھیک ہوں"), ("ta", "வணக்கம்"), ("te", "నమస్కారం"), ("ka", "გამარჯობა"),
+    ("hy", "Բարև ձեզ"), ("km", "សួស្តី"), ("my", "မင်္ဂလာပါ"), ("ja", "ユーザー"),
+  ])
+  func nativeScriptsFoundationInfersMakeCaseA(_ native: String, _ input: String) {
+    let settings = RewriteSettings(targetLanguage: "en", nativeLanguage: native)
+    #expect(RewriteCase.classify(input, settings: settings) == .translate)
+    #expect(RewriteCase.classify("fix " + input, settings: settings) == .translate)
+    #expect(RewriteCase.classify("please fix the flaky test", settings: settings) == .polish)
+    #expect(RewriteCase.canDistinguish(settings))
+  }
+
+  @Test(arguments: ["ms", "fil", "sw", "sr-Latn"])
+  func latinPairsTheRecognizerCannotJudgeStayCaseB(_ native: String) {
+    // The recognizer does not know these languages; design §4 keeps such pairs in case B.
+    let settings = RewriteSettings(targetLanguage: "en", nativeLanguage: native)
+    #expect(
+      RewriteCase.classify(
+        "Tolong semak dokumen ini dan betulkan kesilapan sebelum menghantarnya kepada rakan saya.",
+        settings: settings) == .polish)
+    #expect(!RewriteCase.canDistinguish(settings))
+  }
+
+  @Test func pairsThatCanBeToldApartLocally() {
+    for (target, native) in [
+      ("en", "zh-Hans"), ("en-US", "es-ES"), ("zh-Hans", "en"), ("de", "fr"),
+    ] {
+      #expect(
+        RewriteCase.canDistinguish(RewriteSettings(targetLanguage: target, nativeLanguage: native)))
+    }
+    // The same language, Han against Han plus kana, and an unknown tag leave nothing to go on.
+    for (target, native) in [("en-US", "en-GB"), ("ja", "zh-Hans"), ("en", "xx")] {
+      #expect(
+        !RewriteCase.canDistinguish(
+          RewriteSettings(targetLanguage: target, nativeLanguage: native)))
+    }
   }
 }

@@ -325,7 +325,8 @@ struct ExplainCommandTests {
 
   @Test func optionsAndConfiguration() async throws {
     for args in [
-      ["--tone", "agent"], ["--mode", "correct"], ["--deep", "other"], ["--deep"],
+      ["--tone", "agent"], ["--mode", "correct"], ["--formality", "formal"], ["--deep", "other"],
+      ["--deep"],
       ["--unknown\u{1B}[31m"],
     ] {
       let harness = ExplainHarness()
@@ -345,14 +346,14 @@ struct ExplainCommandTests {
         config: "provider = 'openai'\ntarget_language = 'ja'\nnative_language = 'ko'") == 0)
     #expect(configured.state.withLock { $0.resolved?.model } == "custom")
     let prompt = try #require(configured.provider.recordedRequests.first?.messages.first?.content)
-    #expect(prompt.contains("Target language: de"))
-    #expect(prompt.contains("Native language: fr"))
+    #expect(prompt.contains("Target language: German (de)"))
+    #expect(prompt.contains("Native language: French (fr)"))
     let defaults = ExplainHarness()
     #expect(await defaults.run() == 0)
     let defaultPrompt = try #require(
       defaults.provider.recordedRequests.first?.messages.first?.content)
-    #expect(defaultPrompt.contains("Target language: en"))
-    #expect(defaultPrompt.contains("Native language: zh-Hans"))
+    #expect(defaultPrompt.contains("Target language: English (en)"))
+    #expect(defaultPrompt.contains("Native language: Chinese, Simplified (zh-Hans)"))
     let invalid = ExplainHarness()
     #expect(await invalid.run(["explain", "x", "--json"], config: "api_key = 'fake'") == 78)
     #expect(invalid.output.isEmpty)

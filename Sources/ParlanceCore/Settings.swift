@@ -2,6 +2,7 @@ import Foundation
 
 extension RewriteSettings.Tone: Codable {}
 extension RewriteSettings.Mode: Codable {}
+extension RewriteSettings.Formality: Codable {}
 extension ExplainDeepSection: Codable {}
 
 /// The shared settings value. Each client owns its persistence and secret storage.
@@ -14,6 +15,8 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
   public var tone = RewriteSettings().tone
   /// The 改写档位: polish or 只改错.
   public var rewriteMode = RewriteSettings().mode
+  /// Kept when the target language changes; read only where `LanguageCatalog.marksFormality` holds.
+  public var formality = RewriteSettings().formality
   public var autoExpandItems: Set<ExplainDeepSection> = []
   public var excludedAppBundleIDs: [String] = []
   public var glossaryEnabled = true
@@ -26,7 +29,7 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
 
   private enum CodingKeys: String, CodingKey {
     case providerPresetID, modelOverride, baseURLOverride, targetLanguage, nativeLanguage, tone
-    case rewriteMode, glossaryEnabled
+    case rewriteMode, formality, glossaryEnabled
     case autoExpandItems, excludedAppBundleIDs, screenContextEnabled, includeFixes, contextEnabled
   }
 
@@ -41,6 +44,8 @@ public struct ParlanceSettings: Sendable, Equatable, Codable {
     tone = try values.decode(RewriteSettings.Tone.self, forKey: .tone)
     rewriteMode =
       try values.decodeIfPresent(RewriteSettings.Mode.self, forKey: .rewriteMode) ?? .polish
+    formality =
+      try values.decodeIfPresent(RewriteSettings.Formality.self, forKey: .formality) ?? .formal
     autoExpandItems = try values.decode(Set<ExplainDeepSection>.self, forKey: .autoExpandItems)
     excludedAppBundleIDs = try values.decode([String].self, forKey: .excludedAppBundleIDs)
     screenContextEnabled = try values.decode(Bool.self, forKey: .screenContextEnabled)

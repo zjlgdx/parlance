@@ -393,7 +393,8 @@ struct ExplainRunnerTests {
     let settings = ExplainSettings(targetLanguage: "fr", nativeLanguage: "ja")
     let quick = ExplainPrompt.quick(subject: subject, settings: settings).messages[0].content
     for fragment in [
-      "Target language: fr.", "Native language: ja.", "Judge the input's language",
+      "Target language: French (fr).", "Native language: Japanese (ja).",
+      "Judge the input's language",
       "target-language input", "native-language input",
       "code", "paths", "--flags", "parameters", "identifiers", "[REDACTED]", "background only",
       "<translation>", "<plain>", "one simple sentence", "<terms>", "<word>", "<ipa>", "<meaning>",

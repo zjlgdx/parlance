@@ -8,7 +8,8 @@ struct APIKeyCommandTests {
     let start = ContinuousClock.now
     let result = await APIKeyCommand.run("exec sleep 60", timeout: 0.2, environment: [:])
     #expect(result.termination == .timeout)
-    #expect(start.duration(to: .now) < .seconds(10))
+    // Well under the 60 s child: the timeout ended it. Loaded CI runners take seconds to schedule.
+    #expect(start.duration(to: .now) < .seconds(30))
   }
 
   @Test func realExitAndSignal() async {

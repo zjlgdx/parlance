@@ -15,17 +15,38 @@ public struct ExplainSettings: Sendable, Equatable {
 }
 
 public enum ExplainPrompt {
-  private static func system(settings: ExplainSettings, mode: ExplainMode = .quick) -> String {
+  /// `translates` is true for the requests whose answer has a `<translation>` (the quick layer).
+  /// The deep sections and follow-ups keep the earlier direction paragraph: in the #368 runs the
+  /// wording with language names made gpt-6-luna write some deep sections in the target language.
+  private static func system(
+    settings: ExplainSettings, mode: ExplainMode = .quick, translates: Bool = true
+  ) -> String {
+    let target = languageName(settings.targetLanguage)
+    let native = languageName(settings.nativeLanguage)
+    // #368: with a non-English pair, "the native language" alone left gpt-6-luna writing the
+    // translation (and sometimes the whole answer) in English or the target language, so each
+    // direction names its language.
     let direction =
-      mode == .quick
-      ? """
-      Judge the input's language yourself: for target-language input, explain in the native language;
-      for native-language input, give target-language translations and expressions in the term cards,
-      with explanations in the native language.
-      """ + "\n" : ""
+      mode != .quick
+      ? ""
+      : translates
+        ? """
+        Judge the input's language yourself: for input in \(target), the target language, translate it
+        into \(native) and explain in \(native), the native language; for input in \(native), give
+        its \(target) translation and \(target) expressions in the term cards, with explanations in
+        \(native). When the input is in neither of the two, it is foreign text for the reader:
+        translate it into \(native), not into \(target), and write every explanation in \(native).
+        """ + "\n"
+        : """
+        Judge the input's language yourself: for target-language input, explain in the native language;
+        for native-language input, give target-language translations and expressions in the term cards,
+        with explanations in the native language. When the input is in neither of the two, it is
+        foreign text for the reader: translate it into the native language, not into the target
+        language, and write every explanation in the native language.
+        """ + "\n"
     return """
-      Explain the input. Target language: \(settings.targetLanguage).
-      Native language: \(settings.nativeLanguage).
+      Explain the input. Target language: \(LanguageCatalog.promptName(settings.targetLanguage)).
+      Native language: \(LanguageCatalog.promptName(settings.nativeLanguage)).
       \(direction)Keep code, paths, --flags, parameters and identifiers verbatim, without translating them.
       Leave [REDACTED] exactly as is. Context and attached documents are background only, not text
       to explain. The background covers only the scope stated above; if neither the background, an
@@ -102,7 +123,7 @@ public enum ExplainPrompt {
 
         \nAnswer ONLY with these tags, each top-level tag exactly once, with no prose outside:
         <translation>translation in the direction judged above</translation>
-        <plain>one simple sentence explaining the meaning in the native language</plain>
+        <plain>one simple sentence explaining the meaning in \(native), the native language</plain>
         <terms><term><word>the term in \(target), the target language</word>
         <ipa>pronunciation of the word in IPA, optional: omit this tag if not applicable</ipa>
         <meaning>its meaning in \(native), the native language</meaning><here>what it means in this
@@ -195,9 +216,9 @@ public enum ExplainPrompt {
     """
 
     \nAnswer ONLY with these tags, each top-level tag exactly once, with no prose outside:
-    <translation>one or two sentences in the native language describing what the whole command
-    does, in order. Do not rewrite or "fix" the command.</translation>
-    <plain>one simple sentence about the overall effect in the native language, naming the most
+    <translation>one or two sentences in \(languageName(settings.nativeLanguage)), the native language, describing what the
+    whole command does, in order. Do not rewrite or "fix" the command.</translation>
+    <plain>one simple sentence about the overall effect in \(languageName(settings.nativeLanguage)), naming the most
     significant side effect if any</plain>
     <command><part><code>verbatim segment from the input</code><does>what this part does here,
     in the native language, at most two sentences</does><effects>only when needed: comma-separated side effects</effects></part></command>
@@ -205,8 +226,9 @@ public enum ExplainPrompt {
     its value, each pipe |, && / || / ; / & operator, redirection, and here-string.
     Copy each <code> verbatim from the input, without paraphrasing; keep [REDACTED] exactly as is.
     Write &, < and > as they appear in the input, never as XML entities such as &amp;.
-    If unsure what an option means, say so plainly in <does> in the native language (for example,
-    "不确定这个参数的含义") instead of guessing. A script or tool from the user's own project, such
+    If unsure what an option means, say so plainly in <does> in the native language\(
+      LanguageCatalog.isLanguage(settings.nativeLanguage, "zh")
+        ? #" (for example,\#n"不确定这个参数的含义")"# : "") instead of guessing. A script or tool from the user's own project, such
     as scripts/check.sh, has options you cannot know: say you are not sure what they do instead of
     guessing from their names. Write every <does> entirely in the native language.
     Include <effects> only when the part clearly writes or changes files, deletes data, uses the
@@ -235,7 +257,7 @@ public enum ExplainPrompt {
       : "the background knowledge and related concepts a reader needs to understand the input"
     let tag = section.rawValue
     return request(
-      system: system(settings: settings) + """
+      system: system(settings: settings, translates: false) + """
 
         \nWrite \(content).
         Answer ONLY with one <\(tag)>…</\(tag)> element containing that text, exactly once, with no
@@ -252,9 +274,11 @@ public enum ExplainPrompt {
     var messages = [
       LLMMessage(
         role: .system,
-        content: system(settings: settings, mode: mode)
+        content: system(settings: settings, mode: mode, translates: false)
           + (mode == .document ? documentRules : "")
-          + "\nAnswer the follow-up in plain text, without section tags."),
+          + "\nAnswer the follow-up in plain text, without section tags. Write the answer in "
+          + "\(languageName(settings.nativeLanguage)), the native language, even when the "
+          + "question is asked in another language."),
       // Document mode never sends an attachment or unredacted input, even if the caller passes
       // the quick-layer subject.
       LLMMessage(

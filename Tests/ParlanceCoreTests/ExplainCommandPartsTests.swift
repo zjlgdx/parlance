@@ -13,11 +13,13 @@ struct ExplainCommandPartsTests {
     let subject = PreparedSubject(
       subject: ExplainSubject(input: "a normal sentence", inputRedaction: .keep))
     let system = """
-      Explain the input. Target language: en.
-      Native language: ja.
-      Judge the input's language yourself: for target-language input, explain in the native language;
-      for native-language input, give target-language translations and expressions in the term cards,
-      with explanations in the native language.
+      Explain the input. Target language: English (en).
+      Native language: Japanese (ja).
+      Judge the input's language yourself: for input in English, the target language, translate it
+      into Japanese and explain in Japanese, the native language; for input in Japanese, give
+      its English translation and English expressions in the term cards, with explanations in
+      Japanese. When the input is in neither of the two, it is foreign text for the reader:
+      translate it into Japanese, not into English, and write every explanation in Japanese.
       Keep code, paths, --flags, parameters and identifiers verbatim, without translating them.
       Leave [REDACTED] exactly as is. Context and attached documents are background only, not text
       to explain. The background covers only the scope stated above; if neither the background, an
@@ -28,7 +30,7 @@ struct ExplainCommandPartsTests {
 
       \nAnswer ONLY with these tags, each top-level tag exactly once, with no prose outside:
       <translation>translation in the direction judged above</translation>
-      <plain>one simple sentence explaining the meaning in the native language</plain>
+      <plain>one simple sentence explaining the meaning in Japanese, the native language</plain>
       <terms><term><word>the term in English, the target language</word>
       <ipa>pronunciation of the word in IPA, optional: omit this tag if not applicable</ipa>
       <meaning>its meaning in Japanese, the native language</meaning><here>what it means in this
@@ -69,7 +71,7 @@ struct ExplainCommandPartsTests {
     #expect(prompt.hasPrefix(system + "\n"))
     for fragment in [
       "<command>", "<part>", "<code>", "<does>", "<effects>", "If unsure", "instead of guessing",
-      "不确定这个参数的含义", "[REDACTED]", "here-string", "Do not rewrite", "at most 3",
+      "[REDACTED]", "here-string", "Do not rewrite", "at most 3",
       "redirecting to /dev/null", "sudo, su or doas", "never as XML entities",
       "user's own project", "entirely in the native language",
       "writes, deletes, network, privilege",
