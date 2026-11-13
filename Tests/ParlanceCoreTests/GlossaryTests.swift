@@ -288,4 +288,79 @@ extension GlossaryTests {
       try glossaryEntry(added: date).admitted()
     }
   }
+
+  private func entry(
+    _ target: String, _ native: String, _ targetLanguage: String, _ nativeLanguage: String
+  ) -> GlossaryEntry {
+    GlossaryEntry(
+      target: target, native: native, targetLanguage: targetLanguage,
+      nativeLanguage: nativeLanguage, added: "2026-11-12")
+  }
+
+  private func matches(_ entry: GlossaryEntry, _ text: String) -> Bool {
+    !Glossary.match(
+      [entry], in: text, targetLanguage: entry.targetLanguage,
+      nativeLanguage: entry.nativeLanguage
+    ).isEmpty
+  }
+
+  @Test func englishEndingsApplyOnlyToEnglishTargets() {
+    let german = entry("Camp", "营地", "de", "zh-Hans")
+    for text in ["Wir fahren zum Camping.", "Tested und gecamped", "Camped", "Camps", "Campes"] {
+      #expect(!matches(german, text))
+      #expect(!Glossary.isSameTerm(text, entry: german))
+    }
+    for text in ["Das Camp ist offen.", "CAMP", "camp"] { #expect(matches(german, text)) }
+    #expect(Glossary.isSameTerm("camp", entry: german))
+    #expect(!matches(german, "Campus"))
+    for language in ["en", "en-GB"] {
+      let english = entry("limit", "限制", language, "zh-Hans")
+      for text in ["limits", "limites", "limited", "limiting"] {
+        #expect(matches(english, text))
+        #expect(Glossary.isSameTerm(text, entry: english))
+      }
+      #expect(!matches(english, "limitless"))
+    }
+  }
+
+  @Test func cyrillicAndGreekTargetsMatchWholeWords() {
+    let russian = entry("код", "代码", "ru", "zh-Hans")
+    for text in ["кодировка файла", "штрихкод", "код_1", "коды"] {
+      #expect(!matches(russian, text))
+    }
+    for text in ["этот код работает", "Код.", "КОД", "(код)"] { #expect(matches(russian, text)) }
+    #expect(Glossary.isSameTerm("Код", entry: russian))
+    #expect(!Glossary.isSameTerm("кодировка", entry: russian))
+    #expect(!Glossary.isSameTerm("коды", entry: russian))
+    let greek = entry("νέο", "新的", "el", "zh-Hans")
+    #expect(!matches(greek, "νέοι άνθρωποι"))
+    #expect(matches(greek, "ένα νέο σχέδιο"))
+    #expect(!Glossary.isSameTerm("νέοι", entry: greek))
+    #expect(Glossary.isSameTerm("νέο", entry: greek))
+  }
+
+  @Test func otherScriptsKeepSubstringMatching() {
+    let chinese = entry("限流", "rate limiting", "zh-Hans", "en")
+    #expect(matches(chinese, "这里需要限流策略"))
+    #expect(Glossary.isSameTerm("限流", entry: chinese))
+    #expect(!Glossary.isSameTerm("限流策略", entry: chinese))
+    let japanese = entry("割り込み", "interrupt", "ja", "en")
+    #expect(matches(japanese, "割り込み処理を追加します"))
+    #expect(Glossary.isSameTerm("割り込み", entry: japanese))
+    #expect(!Glossary.isSameTerm("割り込み処理", entry: japanese))
+    for (target, text, language) in [
+      ("서버", "서버에서 실행합니다", "ko"), ("خادم", "الخادم يعمل", "ar"), ("เซิร์ฟเวอร์", "ที่เซิร์ฟเวอร์นี้", "th"),
+    ] {
+      #expect(matches(entry(target, "server", language, "en"), text))
+    }
+    // The native side is unchanged: a whole native expression in a script the target lacks.
+    #expect(matches(entry("код", "代码", "ru", "zh-Hans"), "看一下代码"))
+    #expect(matches(entry("rate limit", "হার সীমা", "en", "bn"), "এখানে হার সীমা দরকার"))
+  }
+
+  @Test func ideographicZeroCountsAsHan() {
+    #expect(LanguageScripts.containsLetter("〇〇", in: ["Hani"]))
+    #expect(!LanguageScripts.containsLetter("〇〇", in: ["Latn"]))
+    #expect(!LanguageScripts.containsLetter("2024", in: ["Hani"]))
+  }
 }

@@ -12,11 +12,23 @@ public struct Fix: AsyncParsableCommand {
     help:
       """
       Rewrite mode: polish, or correct to fix only spelling, grammar and wrong words \
-      (input already in the target language; other input is translated). In our evaluation \
+      (input already in the target language; other input is translated). In our evaluation, \
+      which covered English as the target language only, \
       correct met the scoring bar only on gemini-3.8-flash; other models often miss mistakes \
       or reword the input.
       """
   ) var mode: String?
+  @Option(
+    help:
+      """
+      Formality: formal or informal. Applies only with --tone casual, for a target language \
+      that marks formality in its grammar (such as German, French, Spanish, Japanese or \
+      Korean), when the input is not already in the target language; ignored otherwise. \
+      A form of address in the input (such as 你 or 您) does not change it; in our evaluation \
+      gpt-6-luna still followed a familiar one in Chinese input in about 1 run in 4 when \
+      writing Spanish.
+      """
+  ) var formality: String?
   @Option(help: "Target language (BCP 47).") var target: String?
   @Option(help: "Native language (BCP 47).") var native: String?
   @Option(help: "Provider preset ID.") var provider: String?
@@ -38,6 +50,13 @@ public struct Fix: AsyncParsableCommand {
     }
     guard let mode = RewriteSettings.Mode(rawValue: mode ?? config.mode ?? "polish") else {
       try fail(64, "unknown mode. Choose --mode polish or --mode correct.", environment)
+    }
+    guard
+      let formality = RewriteSettings.Formality(
+        rawValue: formality ?? config.formality ?? "formal")
+    else {
+      try fail(
+        64, "unknown formality. Choose --formality formal or --formality informal.", environment)
     }
     let input = try CommandInput.read(text, command: "fix", environment: environment)
     var resolved = try config.resolve(
@@ -84,7 +103,7 @@ public struct Fix: AsyncParsableCommand {
       targetLanguage: target ?? config.targetLanguage ?? "en",
       nativeLanguage: native ?? config.nativeLanguage ?? "zh-Hans", tone: tone,
       includeFixes: config.fixes ?? true, mode: mode,
-      glossaryEnabled: !noGlossary && (config.glossary ?? true))
+      glossaryEnabled: !noGlossary && (config.glossary ?? true), formality: formality)
     func timing(strictRetried: Bool = false) -> [String: JSONValue] {
       [
         "first_token_ms": firstToken.map { .number(milliseconds($0)) } ?? .null,

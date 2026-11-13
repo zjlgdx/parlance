@@ -59,6 +59,7 @@ struct FixCommandTests {
     #expect(root.provider.recordedRequests.isEmpty)
     for args in [
       ["fix", "x", "--tone", "invalid"], ["fix", "--model"],
+      ["fix", "x", "--formality", "polite"], ["fix", "x", "--formality"],
       ["fix", "x", "--unknown\u{1B}[31m"],
     ] {
       let harness = FixHarness()
@@ -74,7 +75,64 @@ struct FixCommandTests {
     // #275: the --mode help names where fix-only mode holds, from the per-model scoring.
     let help = Fix.helpMessage().split(whereSeparator: \.isWhitespace).joined(separator: " ")
     #expect(help.contains("correct met the scoring bar only on gemini-3.8-flash"))
+    #expect(help.contains("covered English as the target language only"))
     #expect(help.contains("other models often miss mistakes or reword the input"))
+    // #357: the --formality help names when the option takes effect.
+    #expect(help.contains("--formality <formality>"))
+    #expect(help.contains("Formality: formal or informal. Applies only with --tone casual"))
+    #expect(help.contains("a target language that marks formality in its grammar"))
+    #expect(
+      help.contains("when the input is not already in the target language; ignored otherwise"))
+    // #367: the help names the measured limit of the rule for address cues in the input.
+    #expect(help.contains("A form of address in the input (such as 你 or 您) does not change it"))
+    #expect(help.contains("gpt-6-luna still followed a familiar one in Chinese input"))
+  }
+
+  /// #357: flag over config key over the formal default; accepted without effect elsewhere.
+  @Test func formalityOptionAndConfigKey() async throws {
+    func prompt(_ arguments: [String], config: String? = nil) async throws -> String {
+      let harness = FixHarness()
+      #expect(await harness.run(["fix", "x", "--native", "en"] + arguments, config: config) == 0)
+      #expect(harness.error.isEmpty)
+      return try #require(harness.provider.recordedRequests.first?.messages.first?.content)
+    }
+    let formal = "use the formal register in best and in every alt"
+    let informal = "use the informal register in best and in every alt"
+    let casual = ["--target", "de", "--tone", "casual"]
+    #expect(try await prompt(casual).contains(formal))
+    #expect(try await prompt(casual + ["--formality", "formal"]).contains(formal))
+    #expect(try await prompt(casual + ["--formality", "informal"]).contains(informal))
+    #expect(try await prompt(casual, config: "formality = 'informal'").contains(informal))
+    #expect(
+      try await prompt(casual + ["--formality", "formal"], config: "formality = 'informal'")
+        .contains(formal))
+    #expect(
+      try await prompt(
+        ["--target", "ja-JP"], config: "tone = 'casual'\nformality = 'informal'"
+      ).contains(informal))
+    for arguments in [
+      ["--target", "de"], ["--target", "en", "--tone", "casual"],
+      ["--target", "xx", "--tone", "casual"],
+    ] {
+      let unset = try await prompt(arguments)
+      #expect(!unset.contains("register"))
+      #expect(try await prompt(arguments + ["--formality", "informal"]) == unset)
+      #expect(try await prompt(arguments, config: "formality = 'informal'") == unset)
+    }
+    let unknown = FixHarness()
+    #expect(await unknown.run(["fix", "x", "--formality", "polite"]) == 64)
+    #expect(
+      unknown.error
+        == "pl: unknown formality. Choose --formality formal or --formality informal.\n")
+    #expect(unknown.provider.recordedRequests.isEmpty)
+    let flagOverBadConfig = FixHarness()
+    #expect(
+      await flagOverBadConfig.run(
+        ["fix", "x", "--formality", "formal"], config: "formality = 'polite'") == 78)
+    #expect(
+      flagOverBadConfig.error
+        == "pl: invalid field formality. Choose formal or informal in config.toml.\n")
+    #expect(flagOverBadConfig.provider.recordedRequests.isEmpty)
   }
 
   /// A model outside the profile table is noted once on stderr, until the user configures it.
@@ -391,8 +449,8 @@ struct FixCommandTests {
       #expect(harness.state.withLock { $0.resolved?.preset } == preset)
       #expect(harness.state.withLock { $0.resolved?.apiKey } == "fake-key")
       let prompt = try #require(harness.provider.recordedRequests.first?.messages.first?.content)
-      #expect(prompt.contains("Target language: de"))
-      #expect(prompt.contains("Native language: fr"))
+      #expect(prompt.contains("Target language: German (de)"))
+      #expect(prompt.contains("Native language: French (fr)"))
       #expect(prompt.contains("everyday"))
     }
     let explicit = FixHarness()

@@ -154,8 +154,8 @@ struct ConfigurationTests {
     #expect(resolved.override?.maxOutputField == .maxCompletionTokens)
     #expect(resolved.override?.systemRole == .developer)
     let prompt = try #require(harness.provider.recordedRequests.first?.messages.first?.content)
-    #expect(prompt.contains("Target language: de"))
-    #expect(prompt.contains("Native language: fr"))
+    #expect(prompt.contains("Target language: German (de)"))
+    #expect(prompt.contains("Native language: French (fr)"))
     #expect(prompt.contains("everyday"))
     #expect(!prompt.contains("<fixes>"))
     let cli = ConfigurationHarness()
@@ -169,8 +169,8 @@ struct ConfigurationTests {
     #expect(cli.snapshot.resolved?.preset == .openai)
     #expect(cli.snapshot.resolved?.model == "cli-model")
     let cliPrompt = try #require(cli.provider.recordedRequests.first?.messages.first?.content)
-    #expect(cliPrompt.contains("Target language: ja"))
-    #expect(cliPrompt.contains("Native language: en"))
+    #expect(cliPrompt.contains("Target language: Japanese (ja)"))
+    #expect(cliPrompt.contains("Native language: English (en)"))
     #expect(!cliPrompt.contains("everyday"))
   }
 
@@ -274,6 +274,8 @@ struct ConfigurationTests {
       ("tone = 12", "tone"), ("fixes = 'fake-test-value'", "fixes"),
       ("target_language = []", "target_language"), ("native_language = 1", "native_language"),
       ("provider = 'fake-test-value'", "provider"), ("tone = 'fake-test-value'", "tone"),
+      ("formality = 'fake-test-value'", "invalid field formality."),
+      ("formality = 12", "invalid type at formality."),
       ("[providers.openai]\nbase_url = false", "providers.openai.base_url"),
       ("[providers.openai]\napi_key_cmd = 1", "providers.openai.api_key_cmd"),
       ("[providers.openai]\nmodel = []", "providers.openai.model"),
@@ -920,7 +922,19 @@ extension ConfigurationTests {
     #expect(await defaults.run(["config", "show"]) == 0)
     for text in [
       "effort = none [default]", "thinking = off [default]", "first_text_timeout = 30 [default]",
+      "tone = agent [default]\nformality = formal [default]\n",
     ] { #expect(defaults.snapshot.out.contains(text)) }
+    // #357
+    let formality = ConfigurationHarness()
+    #expect(await formality.run(["config", "show"], config: "formality = 'informal'") == 0)
+    #expect(formality.snapshot.out.contains("formality = informal [config]\n"))
+    #expect(formality.snapshot.err.isEmpty)
+    let invalid = ConfigurationHarness()
+    #expect(await invalid.run(["config", "show"], config: "formality = 'polite'") == 78)
+    #expect(
+      invalid.snapshot.err
+        == "pl: invalid field formality. Choose formal or informal in config.toml.\n")
+    #expect(invalid.snapshot.out.isEmpty)
   }
 }
 

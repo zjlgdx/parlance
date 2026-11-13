@@ -290,19 +290,14 @@ public enum Glossary {
     let text = text.precomposedStringWithCanonicalMapping
     let whole = NSRange(text.startIndex..., in: text)
     var candidates: [(entry: GlossaryEntry, ranges: [NSRange], length: Int, identity: String)] = []
+    let targetScripts = LanguageScripts.codes(for: targetLanguage)
+    let nativeScripts = LanguageScripts.codes(for: nativeLanguage)
     for entry in entries
     where entry.targetLanguage == targetLanguage && entry.nativeLanguage == nativeLanguage {
-      var ranges = targetPattern(entry.target)?.matches(in: text, range: whole).map(\.range) ?? []
+      var ranges = targetPattern(entry)?.matches(in: text, range: whole).map(\.range) ?? []
       let native = entry.native.precomposedStringWithCanonicalMapping
-      if native.count >= 2,
-        let targetScripts = RewriteCase.scripts(
-          for: Locale.Language(identifier: targetLanguage).script?.identifier),
-        let nativeScripts = RewriteCase.scripts(
-          for: Locale.Language(identifier: nativeLanguage).script?.identifier),
-        targetScripts != nativeScripts,
-        native.unicodeScalars.contains(where: {
-          RewriteCase.script(of: $0).map(nativeScripts.contains) == true
-        })
+      if native.count >= 2, let targetScripts, let nativeScripts, targetScripts != nativeScripts,
+        LanguageScripts.containsLetter(native, in: nativeScripts)
       {
         let pattern = try! NSRegularExpression(
           pattern: NSRegularExpression.escapedPattern(for: native))
@@ -333,23 +328,28 @@ public enum Glossary {
     return result
   }
 
-  private static func targetPattern(_ target: String) -> NSRegularExpression? {
-    let target = target.trimmingCharacters(in: .whitespacesAndNewlines)
+  /// Expressions with Latin, Cyrillic or Greek letters match whole words; English targets also
+  /// accept the endings s, es, ed and ing. Other scripts match as substrings.
+  private static func targetPattern(_ entry: GlossaryEntry) -> NSRegularExpression? {
+    let target = entry.target.trimmingCharacters(in: .whitespacesAndNewlines)
       .precomposedStringWithCanonicalMapping
     guard !target.isEmpty else { return nil }
     let pieces = target.components(separatedBy: CharacterSet(charactersIn: "- "))
     let pattern = pieces.map(NSRegularExpression.escapedPattern).joined(separator: "[- ]")
-    let latin = target.unicodeScalars.contains { RewriteCase.script(of: $0) == "Latn" }
+    let words = LanguageScripts.containsLetter(target, in: ["Latn", "Cyrl", "Grek"])
+    let english =
+      Locale.Language(identifier: entry.targetLanguage).languageCode?.identifier == "en"
     return try? NSRegularExpression(
-      pattern: (latin ? #"(?<![\p{L}\p{N}_])"# : "") + pattern
-        + (latin ? #"(?:s|es|ed|ing)?(?![\p{L}\p{N}_])"# : ""), options: .caseInsensitive)
+      pattern: (words ? #"(?<![\p{L}\p{N}_])"# : "") + pattern
+        + (words && english ? "(?:s|es|ed|ing)?" : "")
+        + (words ? #"(?![\p{L}\p{N}_])"# : ""), options: .caseInsensitive)
   }
 
   public static func isSameTerm(_ word: String, entry: GlossaryEntry) -> Bool {
     if word == entry.native { return true }
     let word = word.precomposedStringWithCanonicalMapping
     let whole = NSRange(word.startIndex..., in: word)
-    return targetPattern(entry.target)?.firstMatch(in: word, range: whole)?.range == whole
+    return targetPattern(entry)?.firstMatch(in: word, range: whole)?.range == whole
   }
 
   public static func paragraph(_ entries: [GlossaryEntry], explain: Bool) -> String {

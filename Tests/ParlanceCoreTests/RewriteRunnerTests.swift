@@ -194,10 +194,12 @@ struct RewriteRunnerTests {
       // chat-style informality or pasted output.
       "one real mistake in the input", "reads as a", "word-for-word translation",
       "explain the difference in the native language", "informal style is intended",
-      "pls, u or dont", "Pasted code, logs, error messages, paths and commands are quoted",
+      "chat abbreviations", "Pasted code, logs, error messages, paths and commands are quoted",
       "write fixes only for the user's own sentences",
-      // #262: the prompt asks for a described thing's English name in one alt, best as described.
-      "established English name", "keep best as the user described it", "do nothing extra",
+      // #262: the prompt asks for a described thing's name in one alt, best as described.
+      "the name established in the target language (often the English one)",
+      "keep best as the user described it",
+      "do nothing extra",
     ] {
       #expect(prompt.contains(fragment), "missing: \(fragment)")
     }
@@ -217,8 +219,8 @@ struct RewriteRunnerTests {
     #expect(try offset("nothing to fix") < offset("Agent tone:"))
     #expect(try offset("Agent tone:") < offset("Tokens like"))
     // #262: the naming rule follows the tone block, ahead of the token rules.
-    #expect(try offset("Agent tone:") < offset("established English name"))
-    #expect(try offset("established English name") < offset("Tokens like"))
+    #expect(try offset("Agent tone:") < offset("name established in the target language"))
+    #expect(try offset("name established in the target language") < offset("Tokens like"))
     let casual = RewritePrompt.system(settings: RewriteSettings(tone: .casual, includeFixes: false))
     #expect(casual.contains("everyday"))
     // "fixing a bug" appears in the #262 naming rule; no fixes section is asked for.
