@@ -167,7 +167,7 @@ struct PiSessionWatchRevisionTests {
     let last = fixture.provider.recordedRequests.last?.messages.last?.content
     #expect(last?.hasPrefix("Input:\nprivate-reply-\(backlog ? 4 : 3)") == true)
     let header = fixture.output.split(separator: "\n").last { $0.hasPrefix("── pi ·") }
-    #expect(header?.hasPrefix("── pi · 第 \(backlog ? 3 : 2) 轮") == true)
+    #expect(header?.hasPrefix("── pi · turn \(backlog ? 3 : 2)") == true)
     if backlog {
       #expect(fixture.error.contains("pl: skipped turns 2;"))
     } else {

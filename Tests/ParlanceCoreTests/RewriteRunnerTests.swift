@@ -33,6 +33,35 @@ func runRewrite(_ provider: any LLMProvider) async throws -> RewriteResult {
 }
 
 struct RewriteRunnerTests {
+  /// A back-translation into the language the versions are already written in repeats the best
+  /// version, so it is left out of the streaming views and the result (#383).
+  @Test(arguments: [
+    ("en", "en", false), ("en-GB", "en", false), ("zh-Hant", "zh-Hans", true),
+    ("en", "zh-Hans", true),
+  ])
+  func glossOnlyAcrossLanguages(target: String, native: String, kept: Bool) async throws {
+    let provider = MockProvider(scripts: [replySteps(protectedReply("Fix it.", gloss: "Fix it."))])
+    let (result, streamed) = try await bounded {
+      var streamed = false
+      for try await update in RewriteRunner.run(
+        input: "fix it", settings: RewriteSettings(targetLanguage: target, nativeLanguage: native),
+        provider: provider, cancellation: LLMCancellation())
+      {
+        if case .sections(let snapshot) = update,
+          snapshot.sections.contains(where: { $0.name == "gloss" })
+        {
+          streamed = true
+        }
+        if case .completed(let result) = update { return (result, streamed) }
+      }
+      throw TestDeadline()
+    }
+    #expect(streamed == kept)
+    #expect((result.sections?.gloss != nil) == kept)
+    #expect(result.snapshot.sections.contains { $0.name == "gloss" } == kept)
+    #expect(result.bestEligibility == .eligible)
+  }
+
   @Test(arguments: ["帮我看看", "please fix the bug"])
   func fixesFollowInputCase(_ input: String) async throws {
     let chunks = [

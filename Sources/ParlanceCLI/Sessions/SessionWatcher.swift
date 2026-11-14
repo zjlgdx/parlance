@@ -151,7 +151,7 @@ struct SessionWatcher {
           formatter.locale = Locale(identifier: "en_US_POSIX")
           formatter.dateFormat = "HH:mm"
           outputEnvironment.stdout(
-            "── \(name) · 第 \(turns[position].index) 轮 · \(formatter.string(from: date)) ──\n")
+            "── \(name) · turn \(turns[position].index) · \(formatter.string(from: date)) ──\n")
           var execution = ExplainExecution(
             output: ExplainOutput(environment: outputEnvironment, json: false, noColor: noColor),
             interrupts: interrupts, showSent: showSent, reporter: reporter, completesCommand: false,
