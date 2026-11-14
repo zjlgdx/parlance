@@ -1,3 +1,5 @@
+import Foundation
+
 public enum IncompleteReason: Sendable, Equatable {
   case error(LLMError)
   case length, contentFilter, other
@@ -138,6 +140,9 @@ public enum RewriteRunner {
     cancellation: LLMCancellation,
     continuation: AsyncThrowingStream<RewriteUpdate, any Error>.Continuation
   ) async -> RewriteResult {
+    // A back-translation into the language the versions are written in only repeats the best
+    // version, so it is left out of every view when the two settings name one written language.
+    let gloss = !sameWrittenLanguage(settings.targetLanguage, settings.nativeLanguage)
     let request = LLMRequest(
       messages: [
         LLMMessage(
@@ -157,12 +162,15 @@ public enum RewriteRunner {
       sections: {
         continuation.yield(
           .sections(
-            restored(retainingAlternatives($0), protection: protection, inputCase: inputCase)))
+            restored(
+              retainingAlternatives($0), protection: protection, inputCase: inputCase,
+              gloss: gloss)))
       },
       retrying: { continuation.yield(.retrying(after: $0, cause: $1)) })
     let snapshot = retainingAlternatives(attempt.snapshot)
     let eligibility = attempt.eligibility
-    let display = restored(snapshot, protection: protection, inputCase: inputCase)
+    let display = restored(
+      snapshot, protection: protection, inputCase: inputCase, gloss: gloss)
     let altCount = snapshot.sections.first { $0.name == "alts" }?.children.count ?? 0
     var result = RewriteResult(
       snapshot: display, sections: nil, usage: attempt.usage, bestEligibility: eligibility,
@@ -180,6 +188,14 @@ public enum RewriteRunner {
     return result
   }
 
+  /// True when both tags name the same language in the same script: `en` and `en-GB`, but not
+  /// `zh-Hans` and `zh-Hant`.
+  private static func sameWrittenLanguage(_ a: String, _ b: String) -> Bool {
+    let (a, b) = (Locale.Language(identifier: a), Locale.Language(identifier: b))
+    guard let code = a.languageCode, code == b.languageCode else { return false }
+    return a.script == b.script
+  }
+
   private static func retainingAlternatives(_ snapshot: SectionsSnapshot) -> SectionsSnapshot {
     var snapshot = snapshot
     let limit = SectionSchema.fix.tags.first { $0.name == "alts" }!.children[0].retainedLimit!
@@ -194,7 +210,7 @@ public enum RewriteRunner {
   }
 
   private static func restored(
-    _ snapshot: SectionsSnapshot, protection: ProtectedInput, inputCase: RewriteCase
+    _ snapshot: SectionsSnapshot, protection: ProtectedInput, inputCase: RewriteCase, gloss: Bool
   ) -> SectionsSnapshot {
     func restore(_ node: SectionNode) -> SectionNode? {
       var node = node
@@ -208,6 +224,7 @@ public enum RewriteRunner {
     }
     var snapshot = snapshot
     if inputCase == .translate { snapshot.sections.removeAll { $0.name == "fixes" } }
+    if !gloss { snapshot.sections.removeAll { $0.name == "gloss" } }
     snapshot.sections = snapshot.sections.compactMap(restore)
     snapshot.rawText = protection.restore(snapshot.rawText)
     return snapshot

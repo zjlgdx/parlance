@@ -382,6 +382,6 @@ extension SessionWatchRevisionTests {
       fixture.provider.recordedRequests.allSatisfy {
         $0.messages.last?.content.hasPrefix("Input:\nSame reply") == true
       })
-    #expect(fixture.output.components(separatedBy: "第 1 轮").count == 3)
+    #expect(fixture.output.components(separatedBy: "turn 1").count == 3)
   }
 }

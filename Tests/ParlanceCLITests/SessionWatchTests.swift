@@ -45,7 +45,8 @@ struct SessionWatchTests {
     formatter.locale = Locale(identifier: "en_US_POSIX")
     formatter.dateFormat = "HH:mm"
     #expect(
-      fixture.output.hasPrefix("── \(name) · 第 2 轮 · \(formatter.string(from: fixture.date)) ──\n"))
+      fixture.output.hasPrefix("── \(name) · turn 2 · \(formatter.string(from: fixture.date)) ──\n")
+    )
     #expect(fixture.output.contains("Translated.\nPlain: Explanation.\nTerms:\n"))
     let requests = fixture.provider.recordedRequests
     #expect(requests.count == 1)
@@ -88,7 +89,7 @@ struct SessionWatchTests {
     fixture.signal()
     #expect(await fixture.result(task) == 130)
     #expect(fixture.provider.recordedRequests.count == 2)
-    #expect(fixture.output.components(separatedBy: "第 1 轮").count == 2)
+    #expect(fixture.output.components(separatedBy: "turn 1").count == 2)
     let reads = fixture.state.withLock { $0.reads }
     #expect(reads.first?.1 == 0)
     #expect(reads.dropFirst().allSatisfy { $0.1 > 0 })
@@ -126,8 +127,8 @@ struct SessionWatchTests {
       fixture.error.contains(
         "pl: skipped turns 2, 3; look up a phrase from them with pl explain --session \(agent):aaaaaaaa-1111 \"<phrase>\".\n"
       ))
-    #expect(!fixture.output.contains("第 2 轮"))
-    #expect(!fixture.output.contains("第 3 轮"))
+    #expect(!fixture.output.contains("turn 2"))
+    #expect(!fixture.output.contains("turn 3"))
     #expect(!fixture.error.contains("private-"))
   }
 
@@ -300,7 +301,7 @@ struct SessionWatchTests {
     fixture.signal()
     #expect(await fixture.result(task) == 130)
     #expect(fixture.provider.recordedRequests.count == 2)
-    #expect(fixture.output.components(separatedBy: "第 1 轮").count == 3)
+    #expect(fixture.output.components(separatedBy: "turn 1").count == 3)
     #expect(
       fixture.provider.recordedRequests.last?.messages.last?.content.hasPrefix(
         "Input:\nprivate-final-reply") == true)
@@ -440,7 +441,7 @@ extension SessionWatchTests {
     fixture.signal()
     #expect(await fixture.result(task) == 130)
     #expect(fixture.provider.recordedRequests.count == 1)
-    #expect(fixture.output.contains("第 1 轮"))
+    #expect(fixture.output.contains("turn 1"))
     #expect(!fixture.error.contains("hidden-thought"))
   }
 }
